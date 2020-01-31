@@ -1,0 +1,233 @@
+# todo: https://itnext.io/pimp-my-kubernetes-shell-f144710232a0<Paste>
+# {{{ Aliases
+# {{{ Easier navigation
+## .., ..., ...., ....., and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+alias cdd="cd ~/Downloads/"
+alias cdg="cd ~/git/"
+alias cdot="cd ~/git/dotfiles/"
+alias cdgo="cd \$GOPATH"
+# }}}
+# {{{ Archlinux specific aliases
+alias makepkg='chrt --idle 0 ionice -c idle makepkg'
+# }}}
+# {{{ Misc
+alias awsconsole="~/git/awsconsole/awsconsole -b google-chrome-stable"
+alias codebuild="~/git/aws-codebuild-docker-images/local_builds/codebuild_build.sh"
+alias ewm="cd ~/git/ewmg"
+alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
+alias jctlw="sudo journalctl -u wpa_supplicant@wlp58s0"
+alias key="ssh-add ~/git/ssh_keys/id_bashton_alan"
+alias keyb="ssh-add ~/git/ssh_keys/id_bashton"
+alias keycl="ssh-add -D"
+alias keyaur="ssh-add ~/git/ssh_keys/id_aur"
+alias keyp="ssh-add ~/git/ssh_keys/id_personal"
+alias keypa="ssh-add ~/git/ssh_keys/id_alan-aws"
+alias keypo="ssh-add ~/git/ssh_keys/id_personal_old"
+alias kmse='export EYAML_CONFIG=$PWD/.kms-eyaml.yaml'
+alias misg="cd ~/git/missguided"
+alias rewifi="sudo systemctl restart wpa_supplicant@wlp58s0"
+alias sdl="cd ~/git/superdry/laguna"
+alias sde="cd ~/git/superdry/superdry-everest"
+alias sdm="cd ~/git/superdry/superdry-maverick"
+alias sdo="cd ~/git/superdry/osaka"
+alias sdw="cd ~/git/superdry/windcheater"
+alias sdh="cd ~/git/superdry/superdry-henley"
+# alias sleep="i3lock && sudo systemctl suspend"
+alias snowrep="~/git/bashton-servicenow/reports.py"
+alias snowtick="~/git/bashton-servicenow/view-ticket.py --nobox"
+alias suspend="xscreensaver-command -lock && sleep 1 && sudo systemctl suspend"
+alias tf="terraform"
+alias tw="task +work"
+alias tp="task +personal"
+alias vim="nvim"
+alias vi="nvim"
+alias gpu-on="sudo tee /proc/acpi/bbswitch <<<ON"
+alias gpu-off="sudo tee /proc/acpi/bbswitch <<<OFF"
+
+if uname -a | grep 'Darwin' &> /dev/null; then
+  alias ll='ls -G';
+  alias ls='ls -G';
+else
+  alias ll='exa -l --grid --git';
+  alias ls='exa';
+  alias lt='exa --tree --git --long';
+fi
+# }}}
+# }}}
+# {{{ Environment variables
+export ARDUINO_PATH="/usr/share/arduino"
+export AWS_DEFAULT_REGION="eu-west-1"
+export EDITOR="vim"
+export GOPATH="$HOME/go"
+export HISTCONTROL=ignoredups:ignorespace
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:$HOME/.yarn/bin/"
+
+# {{{ nnn settings
+export NNN_USE_EDITOR=1
+export NNN_BMS="h:~;d:~/Downloads;S:~/git/superdry;g:~/git;D:~/Documents;"
+# }}}
+
+if [ -z "$SSH_AUTH_SOCK" ];
+then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+# }}}
+# {{{ Bash helper functions
+if [ ! -e "$HOME/.local/share" ]; then
+  mkdir -p "$HOME/.local/share"
+fi
+
+# {{{ Installations
+# {{{ Asdf installation
+ASDF_DIR="$HOME/.local/share/asdf"
+if [ ! -e "$ASDF_DIR" ]; then
+  git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR" --branch v0.5.0
+fi
+# }}}
+# {{{ base16 installation
+BASE16_SHELL="$HOME/.config/base16-shell/"
+if [ ! -e "${BASE16_SHELL}" ]; then
+  git clone git@github.com:chriskempson/base16-shell.git "${BASE16_SHELL}"
+fi
+# }}}
+# {{{ Bash preexec
+BASH_PREEXEC="$HOME/.local/share/bash-preexec"
+if [ ! -e "${BASH_PREEXEC}" ]; then
+  git clone https://github.com/rcaloras/bash-preexec.git "${BASH_PREEXEC}"
+fi
+# }}}
+# }}}
+# {{{ Source existing files bash helpers
+SOURCE_FILES=(
+    $HOME/git/bashton-my-aws/functions
+    $HOME/git/bashton-sshuttle/sshuttle-vpn
+    $HOME/git/puppet-log-reader/bash-functions.sh
+    /usr/share/bash-completion/bash_completion
+    /usr/share/doc/pkgfile/command-not-found.bash
+    /usr/share/git/completion/git-completion.bash
+    /usr/local/git/contrib/completion/git-completion.bash
+    /usr/share/git/completion/git-prompt.sh
+    /usr/local/etc/bash_completion.d/git-prompt.sh
+    /usr/lib/ruby/gems/2.5.0/gems/tmuxinator-0.12.0/completion/tmuxinator.bash
+    "$HOME/.local/share/asdf/completions/asdf.bash"
+    "$HOME/.local/share/asdf/asdf.sh"
+    "${BASH_PREEXEC}/bash-preexec.sh"
+)
+
+for FILE in "${SOURCE_FILES[@]}";
+do
+    if [ -e "$FILE" ];
+    then
+        source "$FILE"
+    fi
+done
+# }}}
+# {{{ FASD Initialisation
+if command -v fasd &>/dev/null; then
+  eval "$(fasd --init auto)"
+fi
+# }}}
+# {{{ ASDF plugin installation
+# ASDF_PLUGINS=(
+#   kops
+#   kube-capacity
+#   kubectl
+#   kubectl-bindrole
+#   kubefedctl
+#   kubeseal
+#   kubesec
+#   kubeval
+#   ruby
+#   terraform
+#   terraform-validator
+#   tflint
+# )
+
+# for plugin in "${ASDF_PLUGINS[@]}"; do
+#   if [ ! -e ".asdf/plugins/${plugin}" ]; then
+#     asdf plugin-add "${plugin}"
+#     ASDF_LATEST=$(asdf list-all "${plugin}" | tail -n1)
+#     asdf install "${plugin}" "${ASDF_LATEST}"
+#     asdf global "${plugin}" "${ASDF_LATEST}"
+#     unset ASDF_LATEST
+#   fi
+# done
+# }}}
+# {{{ ranger cd
+function rcd {
+    # create a temp file and store the name
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+
+    # run ranger and ask it to output the last path into the
+    # temp file
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+
+    # if the temp file exists read and the content of the temp
+    # file was not equal to the current path
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        # change directory to the path in the temp file
+        cd -- "$(cat "$tempfile")"
+    fi
+
+    # its not super necessary to have this line for deleting
+    # the temp file since Linux should handle it on the next
+    # boot
+    rm -f -- "$tempfile"
+}
+# }}}
+# {{{ Bash Preexec functions
+function __tf_warning() {
+  # are we running terraform?
+  if grep -qE  "^terraform\ ?.*|make\ ?.*" <<< "$1"; then
+    # do we have a session token?
+    if env | grep -q ^AWS_SESSION_TOKEN;  then
+      # is it valid for less than 25 minutes?
+      if [ "$(awsexpires)" -lt 25 ]; then
+        _profile="$(env | grep ^AWS_DEFAULT_PROFILE | awk -F= '{print $2}')"
+        echo "[TERRAFORM] refreshing session token for ${_profile}"
+        awseval "${_profile}"
+      fi
+    fi
+  fi
+}
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+export preexec_functions+=(__tf_warning)
+# }}}
+  eval "$(direnv hook bash)"
+# }}}
+# {{{ Bash prompt config
+# setup git ps1 prompt
+GIT_PS1_SHOWCOLORHINTS=true
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM="auto"
+PROMPT_DIRTRIM=2
+
+PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+
+# {{{ base16 colour theme setup
+[ -n "$PS1" ] && \
+[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+eval "$("$BASE16_SHELL/profile_helper.sh")"
+# }}}
+# }}}
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# {{{ Direnv setup
+eval "$(direnv hook bash)"
+# }}}
