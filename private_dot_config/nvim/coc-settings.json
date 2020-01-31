@@ -1,0 +1,75 @@
+{
+  "coc.browser.enable": true,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "typescript",
+    "json",
+    "jsonc"
+  ],
+  "prettier.printWidth": 160,
+  "prettier.singleQuote": true,
+  "codeLens.enable": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": true,
+  "signature.target": "echo",
+  "snippets.extends": {
+    "javascriptreact": [
+      "javascript"
+    ],
+    "typescript": [
+      "javascript"
+    ]
+  },
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        "compile_commands.json",
+        ".ccls",
+        ".root",
+        ".git/"
+      ],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/ccls"
+      }
+    },
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": [
+        "terraform"
+      ],
+      "initializationOptions": {}
+    },
+    "puppet": {
+      "command": "ruby",
+      "args": [
+        "~/.local/share/language-servers/puppet-editor-services/puppet-languageserver",
+        "--stdio",
+        "--puppet-settings=--moduledir,/path/to/module/path"
+      ],
+      "cwd": "/path/to/puppet-editor-services",
+      "filetypes": [
+        "puppet"
+      ],
+      "rootPatterns": [
+        ".git/",
+        "metadata.json"
+      ]
+    }
+  },
+  "coc.preferences.extensionUpdateCheck": "daily"
+}
