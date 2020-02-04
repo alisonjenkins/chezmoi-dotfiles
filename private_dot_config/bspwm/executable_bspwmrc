@@ -1,8 +1,14 @@
 #! /bin/sh
 sxhkd &
-dex bspwm -ae bspwm &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+picom &
+dex bspwm -ae bspwm &
+~/.config/polybar/launch.sh &
+st &
+chromium &
+slack &
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -12,6 +18,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
+bspc rule -a slack desktop='^1'
 bspc rule -a st desktop='^2'
 bspc rule -a kitty desktop='^2'
 bspc rule -a Chromium desktop='^3'
