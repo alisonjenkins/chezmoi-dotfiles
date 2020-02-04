@@ -1,0 +1,9 @@
+[Unit]
+Description=Pomodoro daemon
+
+[Service]
+Type=simple
+ExecStart=/home/alan/git/i3doro/i3doro.py
+
+[Install]
+WantedBy=default.target

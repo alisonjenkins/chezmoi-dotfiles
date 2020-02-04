@@ -1,0 +1,13 @@
+[Unit]
+Description=Compton compositing manager.
+
+[Service]
+ExecStart=/usr/bin/compton
+ExecPost=%h/.fehbg
+Type=simple
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=environment.target
+

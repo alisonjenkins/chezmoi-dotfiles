@@ -1,0 +1,10 @@
+[Unit]
+Description=Sets a random wallpaper
+
+[Service]
+WorkingDirectory=%h/git
+ExecStart=%h/bin/random-wallpaper
+Type=oneshot
+
+[Install]
+WantedBy=environment.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=lxsession polkit daemon.
+
+[Service]
+ExecStart=/usr/bin/lxpolkit
+Type=simple
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=environment.target
+

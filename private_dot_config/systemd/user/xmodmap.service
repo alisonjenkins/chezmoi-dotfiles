@@ -1,0 +1,12 @@
+[Unit]
+Description=Setup environment
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Environment=DISPLAY=:0
+# User-specific setup
+ExecStart=/usr/bin/xmodmap ~/.config/xmodmap/config
+
+[Install]
+WantedBy=environment.target

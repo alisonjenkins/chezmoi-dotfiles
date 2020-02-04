@@ -1,0 +1,12 @@
+[Unit]
+Description=lxpolkit is a polkit authentication agent.
+After=polkit.service
+
+[Service]
+ExecStart=/usr/bin/lxpolkit
+Type=forking
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=environment.target
