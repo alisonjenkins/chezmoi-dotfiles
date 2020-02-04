@@ -17,8 +17,8 @@ super + {1,2,3,4,5,6,7,8,9,0}
 super + shift + {1,2,3,4,5,6,7,8,9,0}
     id=$(bspc query --nodes --node); bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0}; bspc desktop --focus next; bspc node --focus ${id}
 
-super + Delete : {e}
-    bspc quit
+super + Delete : {e,s,S,r,l}
+    {bspc quit,systemctl suspend,systemctl shutdown,systemctl reboot,betterlockscreen -l}
 
 super + Escape : {h,w}
     pkill -USR1 -x {sxhkd,bspwm}
@@ -32,57 +32,13 @@ super + f
     else \ 
         bspc node focused -t tiled; \ 
     fi
-#super + F1
-#rofi -show window
 
-#super + F2
-#rofi -show run
+super + alt + l
+   betterlockscreen -l
 
-#super + F3
-#rofi -show ssh
+super + shift + q
+    bspc node -c
 
-#super + {_,alt + }Return
-#{switch-or-run "urxvt.URxvt" ,_} urxvt
-
-#super + {_,alt + }t
-#{switch-or-run "urxvt.URxvt" ,_} urxvt
-
-#super + {_,alt + }s
-#{switch-or-run "sublime_text.Sublime_text" ,_} subl
-
-#super + {_,alt + }a
-#{switch-or-run "atom.Atom" ,_} atom
-
-#super + {_,alt + }b
-#{switch-or-run "([A-Za-z0-9]*)\.Thunderbird" ,_} thunderbird
-
-#super + {_,alt + }e
-#    {switch-or-run "pcmanfm.Pcmanfm" ,_} "pcmanfm $HOME"
-#
-#super + {_,alt + }f
-#    {switch-or-run "filezilla.Filezilla" ,_} filezilla
-#
-#super + {_,alt + }g
-#    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
-#
-#super + {_,alt + }z
-#    {switch-or-run "mail.google.com.chromium-browser" ,_} "chromium-browser --app=https://mail.google.com/"
-#
-#super + {_,alt + }p
-#    {switch-or-run "([A-Za-z0-9]*).slack.com.chromium-browser" ,_} "chromium-browser --app=https://pimenteo.slack.com/"
-#
-#super + {_,alt + }c
-#    {switch-or-run "gnome-calculator.Gnome-calculator" ,_} gnome-calculator
-#
-#super + {_,alt + }m
-#    {switch-or-run "cmus.URxvt" ,_} cmus-window
-#
-#super + F12
-#    {switch-or-run "popup-calendar.URxvt" ,_} popup-calendar
-#
-#super + l
-#    screenlock
-#
 #Print
 #    copyq && maim --format png /dev/stdout | copyq copy image/png -
 #
@@ -285,54 +241,54 @@ super + f
 #
 #
 #### SPECIAL KEYS ###
-#XF86Music
-#    {switch-or-run "cmus.URxvt" ,_} cmus-window
-#
-#XF86AudioMedia
-#    {switch-or-run "cmus.URxvt" ,_} cmus-window
-#
-#XF86Audio{Prev,Next}
-#    cmus-remote --{prev,next}
-#
-#XF86AudioPlay
-#    cmus-remote --pause
-#
-#XF86Audio{LowerVolume,RaiseVolume}
-#    amixer -q sset Master 5%{-,+}
-#
-#XF86AudioMute
-#    amixer -q set Master toggle
-#
-#XF86Calculator
-#    {switch-or-run "gnome-calculator.Gnome-calculator" ,_} gnome-calculator
-#
-#XF86Display
-#    {switch-or-run "urxvt.URxvt" ,_} urxvt
-#
-#XF86Explorer
-#    {switch-or-run "pcmanfm.Pcmanfm" ,_} pcmanfm
-#
-#XF86HomePage
-#    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
-#
-#XF86WWW
-#    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
-#
-#XF86Search
-#    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
-#
-#XF86Mail
-#    {switch-or-run "([A-Za-z0-9]*)\.Thunderbird" ,_}thunderbird
-#
-#XF86Messenger
-#    pidgin
-#
-#
+XF86Music
+    {switch-or-run "cmus.URxvt" ,_} cmus-window
+
+XF86AudioMedia
+    {switch-or-run "cmus.URxvt" ,_} cmus-window
+
+XF86Audio{Prev,Next}
+    playerctl {previous,next}
+
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioPause
+     playerctl pause
+
+XF86Audio{LowerVolume,RaiseVolume}
+    pactl set-sink-volume $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) {-,+}2
+
+XF86AudioMute
+    pactl set-sink-mute $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) toggle
+
+XF86Calculator
+    {switch-or-run "gnome-calculator.Gnome-calculator" ,_} gnome-calculator
+
+XF86Explorer
+    nautilus
+
+XF86HomePage
+    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+
+XF86WWW
+    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+
+XF86Search
+    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+
+XF86Mail
+    {switch-or-run "([A-Za-z0-9]*)\.Thunderbird" ,_}thunderbird
+
+XF86Messenger
+    pidgin
+
+
 #### MOUSE ###
-#
-## focus
-#~button{1-3}
-#    ; bspc node pointed -f
+
+# focus
+# ~button{1-3}
+#     ; bspc node pointed -f
 
 # Resize is now handled directly in bspwm with pointer_modifer and pointer_action
 # # start move/resize
