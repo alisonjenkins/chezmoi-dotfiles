@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+function get_mfa() {
+  MFA=$(zenity --entry --text="MFA Code")
+}
+
+shopt -s nullglob globstar
+
+private_mode=0
+
+if [[ $1 == "--private-mode" ]]; then
+  private_mode=1
+  shift
+fi
+
+aws_profiles=( $(grep '\[profile ' ~/.aws/config | sed -e 's/\[profile //' -e 's/\]//') )
+
+profile=$(printf '%s\n' "${aws_profiles[@]}" | rofi -dmenu "$@")
+
+[[ -n $profile ]] || exit
+
+if [[ $private_mode -eq 0 ]]; then
+  INCOGNITO=""
+else
+  INCOGNITO="--incognito"
+fi
+
+# if [[ "$profile" == *RW ]]; then
+#   get_mfa
+#   # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" --mfa-token "$MFA" "$profile"
+#   ~/git/awsconsole/awsconsole --browser chromium --mfa-token "$MFA" "$profile"
+# else
+  # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" "$profile"
+~/git/awsconsole/awsconsole --browser chromium "$profile"
+# fi

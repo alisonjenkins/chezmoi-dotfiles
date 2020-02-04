@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+get_partitions() # {{{
+{
+    local DISKNAME="$1"
+
+    NUM_DISKS=$(lsblk -J | jq  '.[] | length')
+    for CUR_DISK in $(seq 0 $((NUM_DISKS - 1)));
+    do
+        if [ $(lsblk -J | jq -r ".[][$CUR_DISK].name") == "$DISKNAME" ];
+        then
+            DISK_CHILDREN=$(lsblk -J | jq -r ".[][$CUR_DISK].children")
+            break
+        fi
+    done
+} #}}}
+get_partition() # {{{
+{
+    local CHILD_NUM="$1"
+    PART_NAME=$(echo "$DISK_CHILDREN" | jq -r ".[$CHILD_NUM].name")
+} # }}}
+
+if [[ "$EUID" != "0" ]]; then
+  echo "Please run this script as root or sudo"
+  exit
+fi
+
+if [[ "$#" -ne 1 ]]; then
+        printf "ERROR: Invalid usage.\n"
+        printf "  Usage: %s [drive_path]\n" "$0"
+        printf "where drive_path is the block device path of the drive containing the disk to image (*WARNING* all data will be destoryed on the drive!).\n"
+        exit
+fi
+
+DRIVE_PATH="$1"
+
+printf "Are you sure you want to wipe %s and flash it with Raspbian Lite?\n" "$DRIVE_PATH"
+read -r ANSWER
+
+if [[ "$ANSWER" != "yes" ]]; then
+  printf "\nAborting as the answer was not exactly 'yes'\n"
+  exit
+fi
+
+TEMPDIR="$(mktemp -d)"
+cd "$TEMPDIR"
+
+RASPBIAN_ZIP_PATH="/var/cache/raspbian.zip"
+
+echo -e "\n* Downloading latest Raspbian Lite Image"
+test -f "$RASPBIAN_ZIP_PATH" || aria2c "https://downloads.raspberrypi.org/raspbian_lite_latest" --dir "/" -o "$RASPBIAN_ZIP_PATH"
+unzip "$RASPBIAN_ZIP_PATH" -d "$TEMPDIR"
+IMGPATH=$(find "$TEMPDIR" -name '*.img')
+dd if="$IMGPATH" of="${DRIVE_PATH}" bs=1M status=progress
+sync
+
+mkdir boot
+get_partitions "$(echo $DRIVE_PATH | cut -d'/' -f3)"
+get_partition 0
+mount "/dev/$PART_NAME" boot
+touch boot/ssh
+umount boot
+
+echo -e "\n* Cleaning up"
+cd /tmp
+rm -Rf "$TEMPDIR"

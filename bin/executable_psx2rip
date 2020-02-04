@@ -1,0 +1,63 @@
+#!/bin/bash
+set -euo pipefail
+
+if [[ "$#" -ne 1 && "$#" -ne 2 ]]; then
+        printf "ERROR: Invalid usage.\n"
+        printf "  Usage: $0 [drive_path] [game_name]\n"
+        printf "where drive_path is the block device path of the drive containing the disk to rip.\n"
+        printf "where game_name is the name of the game being ripped.\n"
+        exit
+fi
+
+export PSX2DIR=$HOME/games/psx2
+test ! -d "$PSX2DIR" && mkdir -p "$PSX2DIR"
+
+MAXCSO_FOUND=false
+
+if command -v isoinfo &>/dev/null; then
+  ISOINFO_FOUND=true
+fi
+
+if command -v maxcso &>/dev/null; then
+  MAXCSO_FOUND=true
+fi
+
+
+if [ -f /etc/arch-release ] && [[ ! $ISOINFO_FOUND || ! $MAXCSO_FOUND ]]; then
+  COMMAND="yay -S"
+  if ! $ISOINFO_FOUND; then
+    COMMAND="$COMMAND cdrtools"
+  fi
+
+  if ! $MAXCSO_FOUND; then
+    COMMAND="$COMMAND maxcso"
+  fi
+  printf "Dependencies for this script are missing please run:\n%s" "$COMMAND"
+  exit
+elif [[ ! $ISOINFO_FOUND || ! $MAXCSO_FOUND ]]; then
+  COMMAND_LIST=""
+  if ! $ISOINFO_FOUND; then
+    COMMAND_LIST="$COMMAND_LIST isoinfo"
+  fi
+
+  if ! $MAXCSO_FOUND; then
+    COMMAND_LIST="$COMMAND_LIST maxcso"
+  fi
+  printf "Dependencies for this script are missing please install the packages that provide the following commands:\n%s" "$COMMAND_LIST"
+  exit
+fi
+
+set +u
+if [ -n "$2" ]; then
+  GAME_NAME="$2"
+  set -u
+else
+  GAME_NAME=$(isoinfo -d -i "$1" | grep 'Volume id' | cut -d' ' -f 3)
+fi
+
+cd "$PSX2DIR"
+dd if="$1" of="$GAME_NAME.iso" status=progress
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+
+maxcso "$GAME_NAME.iso" -o "$GAME_NAME.cso"
+rm "$GAME_NAME.iso"

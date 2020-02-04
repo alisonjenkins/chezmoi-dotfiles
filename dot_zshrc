@@ -1,0 +1,260 @@
+# {{{ Aliases
+# {{{ Easier navigation
+## .., ..., ...., ....., and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+alias cdd="cd ~/Downloads/"
+alias cdg="cd ~/git/"
+alias cdot="cd ~/git/dotfiles/"
+alias cdgo="cd \$GOPATH"
+# }}}
+# {{{ Archlinux specific aliases
+alias makepkg='chrt --idle 0 ionice -c idle makepkg'
+# }}}
+# {{{ Misc
+alias awsconsole="~/git/awsconsole/awsconsole -b google-chrome-stable"
+alias ewm="cd ~/git/ewmg"
+alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
+alias jctlw="sudo journalctl -u wpa_supplicant@wlp58s0"
+alias key="ssh-add ~/git/ssh_keys/id_bashton_alan"
+alias keyb="ssh-add ~/git/ssh_keys/id_bashton"
+alias keycl="ssh-add -D"
+alias keyp="ssh-add ~/git/ssh_keys/id_personal"
+alias keypa="ssh-add ~/git/ssh_keys/id_alan-aws"
+alias keypo="ssh-add ~/git/ssh_keys/id_personal_old"
+alias kmse='export EYAML_CONFIG=$PWD/.kms-eyaml.yaml'
+alias misg="cd ~/git/missguided"
+alias rewifi="sudo systemctl restart wpa_supplicant@wlp58s0"
+alias sdl="cd ~/git/superdry/laguna"
+alias sde="cd ~/git/superdry/superdry-everest"
+alias sdm="cd ~/git/superdry/superdry-maverick"
+alias sdo="cd ~/git/superdry/osaka"
+alias sdw="cd ~/git/superdry/windcheater"
+alias sdh="cd ~/git/superdry/superdry-henley"
+# alias sleep="i3lock && sudo systemctl suspend"
+alias snowrep="~/git/bashton-servicenow/reports.py"
+alias snowtick="~/git/bashton-servicenow/view-ticket.py --nobox"
+alias suspend="xscreensaver-command -lock && sleep 1 && sudo systemctl suspend"
+alias tf="terraform"
+alias tw="task +work"
+alias tp="task +personal"
+alias vim="nvim"
+alias vi="nvim"
+alias gpu-on="sudo tee /proc/acpi/bbswitch <<<ON"
+alias gpu-off="sudo tee /proc/acpi/bbswitch <<<OFF"
+
+if uname -a | grep 'Darwin' &> /dev/null; then
+  alias ll='ls -G';
+  alias ls='ls -G';
+else
+  alias ll='exa -l --grid --git';
+  alias ls='exa';
+  alias lt='exa --tree --git --long';
+fi
+# }}}
+# }}}
+# {{{ Environment variables
+export ARDUINO_PATH="/usr/share/arduino"
+export AWS_DEFAULT_REGION="eu-west-1"
+export EDITOR="vim"
+export GOPATH="/home/alan/go"
+export HISTCONTROL=ignoredups:ignorespace
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/home/alan/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:/home/alan/go/bin"
+export PATH="$PATH:/home/alan/bin"
+export PATH="$PATH:/home/alan/.local/bin"
+export PATH="$PATH:/home/alan/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:/home/alan/.gem/ruby/2.6.0/bin"
+# }}}
+
+# {{{ oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.config/oh-my-zsh"
+
+if ! test -d "$ZSH"; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git "$ZSH"
+fi
+
+if ! test -d "$ZSH/themes/powerlevel10k"; then
+  git clone https://github.com/romkatv/powerlevel10k.git "$ZSH/themes/powerlevel10k"
+fi
+
+if ! test -d "$HOME/.config/base16-shell"; then
+  git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
+fi
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+  [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+  eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+if ! test -d "$ZSH/plugins/assume-role"; then
+  git clone https://github.com/weizard/assume-role.git "$ZSH/plugins/assume-role"
+fi
+
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  # assume-role
+  # command-not-found
+  adb
+  alias-finder
+  ansible
+  archlinux
+  asdf
+  autopep8
+  aws
+  battery
+  bgnotify
+  colorize
+  docker
+  docker-compose
+  dotenv
+  fzf
+  git
+  git-auto-fetch
+  git-extras
+  git-prompt
+  gitfast
+  golang
+  gpg-agent
+  jsontools
+  kube-ps1
+  kubectl
+  man
+  minikube
+  nmap
+  node
+  npm
+  pass
+  pep8
+  python
+  ripgrep
+  ssh-agent
+  sudo
+  systemd
+  terraform
+  tig
+  vi-mode
+  yarn
+)
+
+source $ZSH/oh-my-zsh.sh
+autoload bashcompinit
+bashcompinit
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f "$ZSH/p10k.zsh" ]] && source "$ZSH/p10k.zsh"
+# }}}
+# {{{ Source existing files bash helpers
+SOURCE_FILES=(
+    "$HOME/git/bashton-my-aws/functions"
+    "$HOME/git/bashton-sshuttle/sshuttle-vpn"
+    "$HOME/puppet-log-reader/bash-functions.sh"
+    /usr/share/doc/pkgfile/command-not-found.bash
+)
+
+for FILE in "${SOURCE_FILES[@]}";
+do
+    if [ -e "$FILE" ];
+    then
+        source "$FILE"
+    fi
+done
+# }}}
+# {{{ ranger cd
+function rcd {
+    # create a temp file and store the name
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+
+    # run ranger and ask it to output the last path into the
+    # temp file
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+
+    # if the temp file exists read and the content of the temp
+    # file was not equal to the current path
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        # change directory to the path in the temp file
+        cd -- "$(cat "$tempfile")"
+    fi
+
+    # its not super necessary to have this line for deleting
+    # the temp file since Linux should handle it on the next
+    # boot
+    rm -f -- "$tempfile"
+}
+# }}}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+get_partitions() # {{{
+{
+    local DISKNAME="$1"
+
+    NUM_DISKS=$(lsblk -J | jq  '.[] | length')
+    for CUR_DISK in $(seq 0 $((NUM_DISKS - 1)));
+    do
+        if [ $(lsblk -J | jq -r ".[][$CUR_DISK].name") == "$DISKNAME" ];
+        then
+            DISK_CHILDREN=$(lsblk -J | jq -r ".[][$CUR_DISK].children")
+            break
+        fi
+    done
+} #}}}
+get_partition() # {{{
+{
+    local CHILD_NUM="$1"
+    PART_NAME=$(echo "$DISK_CHILDREN" | jq -r ".[$CHILD_NUM].name")
+} # }}}
+
+declare -A SBC_TYPES
+SBC_TYPES=(
+  [raspi]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz"
+  [raspi3]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz"
+  [raspi3_64]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-3-latest.tar.gz"
+)
+
+if [[ "$#" -ne 2 ]]; then
+        printf "ERROR: Invalid usage.\n"
+        printf "  Usage: %s [drive_path] [sbc_type]\n" "$0"
+        printf "where drive_path is the block device path of the drive containing the disk to image (*WARNING* all data will be destoryed on the drive!).\n"
+        printf "where sbc_type is the type of single board computer we are imaging.\n"
+        exit
+fi
+
+DRIVE_PATH="$1"
+SBC_TYPE="$2"
+
+SBC_TYPE_FOUND=false
+for CUR_SBC_TYPE in "${SBC_TYPES[@]}"; do
+  if [[ "$CUR_SBC_TYPE" == "$SBC_TYPE" ]]; then
+    SBC_TYPE_FOUND=true
+    break
+  fi
+done
+
+if [[ ! "$SBC_TYPE_FOUND" ]]; then
+  echo -e "Invalid SBC type: '$SBC_TYPE'"
+  echo -e "Please use on of:\n"
+  for CUR_SBC_TYPE in "${SBC_TYPES[@]}"; do
+    echo -e "\t$CUR_SBC_TYPE\n"
+  done
+fi
+
+printf "Are you sure you want to wipe %s and flash it with Arch Linux ARM?\n" "$DRIVE_PATH"
+read -r ANSWER
+
+if [[ "$ANSWER" != "yes" ]]; then
+  printf "\nAborting as the answer was not exactly 'yes'\n"
+  exit
+fi
+
+echo -e "\n* Partitioning disk"
+parted -s "$DRIVE_PATH" "mklabel msdos"
+parted -s "$DRIVE_PATH" "mkpart primary fat32 1M 100M"
+parted -s "$DRIVE_PATH" "mkpart primary ext4 100M -1"
+
+echo -e "\n* Formatting partitions"
+get_partitions "$(echo $DRIVE_PATH | cut -d'/' -f3)"
+get_partition 0
+mkfs.vfat -F 32 "/dev/$PART_NAME"
+get_partition 1
+mkfs.ext4 "/dev/$PART_NAME"
+
+echo -e "\n* Mounting partitions"
+TEMPDIR="$(mktemp -d)"
+cd "$TEMPDIR"
+mkdir boot
+mkdir root
+get_partition 0
+mount "/dev/$PART_NAME" boot
+get_partition 1
+mount "/dev/$PART_NAME" root
+
+echo -e "\n* Downloading Arch tar"
+aria2c "${SBC_TYPES[$SBC_TYPE]}" -o arch.tar.gz
+bsdtar -xpf arch.tar.gz -C root
+sync
+
+echo -e "\n* Copying boot files"
+mv root/boot/* boot
+
+echo -e "\n* Unmounting partitions"
+umount boot root
+
+echo -e "\n* Cleaning up"
+cd /tmp
+rm -Rf "$TEMPDIR"

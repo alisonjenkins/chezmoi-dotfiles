@@ -1,0 +1,5 @@
+#!/bin/bash
+if ! test -d "$HOME/git/wallpapers"; then
+  git clone https://github.com/LukeSmithxyz/wallpapers.git "$HOME/git/wallpapers"
+fi;
+feh --bg-fill "$(find "$HOME/git/wallpapers/" -type f | shuf -n1)"
