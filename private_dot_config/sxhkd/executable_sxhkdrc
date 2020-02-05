@@ -1,9 +1,10 @@
-#! /bin/sh
-
 ### WM INDEPENDENT HOTKEYS ###
-
 super + d
     rofi -show drun -show-icons -matching fuzzy -theme ~/.config/rofi/themes/onedark.rasi -location 2
+
+# Pass + AWSMenu
+super + shift + {a,s,x}
+  /home/alan/.config/rofi/scripts/{passmenu,passmenu --type,awsmenu}
 
 super + Return
     kitty --single-instance --session ~/.config/kitty/session-tmux.conf
