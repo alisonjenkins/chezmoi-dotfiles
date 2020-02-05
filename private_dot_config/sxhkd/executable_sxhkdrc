@@ -23,7 +23,8 @@ super + Delete : {e,s,S,r,l}
 super + Escape : {h,w}
     pkill -USR1 -x {sxhkd,bspwm}
 
-super + {h,j,k,l}
+# Switch windows via direction
+super + {j,k,l,semicolon}
     bspc node -f {west,north,south,east}
 
 super + f
@@ -38,6 +39,13 @@ super + alt + l
 
 super + shift + q
     bspc node -c
+
+# Move desktop to screen in direction
+super + shift + alt + {j,semicolon}
+  desk=`bspc query -D -d focused`; \
+  bspc desktop -m {prev,next}; \
+  bspc monitor -f {prev,next}; \
+  bspc desktop -f $desk
 
 #Print
 #    copyq && maim --format png /dev/stdout | copyq copy image/png -
