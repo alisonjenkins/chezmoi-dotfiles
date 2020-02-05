@@ -64,9 +64,10 @@ Print : {a, shift + a, s, shift + s, r, shift + r, m, shift + m, g, shift + g}
 #alt + space
 #    $HOME/projects/benoth/i3-hud-menu/i3-hud-menu-rofi.py
 #
-## make sxhkd reload its configuration files
-#super + Escape
-#    ~/.config/sxhkd/rofi-system-menu.sh
+#
+# make sxhkd reload its configuration files
+super + shift + r
+    pkill sxhkd && sxhkd
 #
 #
 #### BSPWM HOTKEYS ###
