@@ -48,9 +48,10 @@ super + shift + alt + {j,semicolon}
   bspc monitor -f {prev,next}; \
   bspc desktop -f $desk
 
-#Print
-#    copyq && maim --format png /dev/stdout | copyq copy image/png -
-#
+# Screen shots
+Print : {a, shift + a, s, shift + s, r, shift + r, m, shift + m, g, shift + g}
+    ~/.config/i3/scripts/screenshot/{active_window.sh -clipboard,active_window.sh,screen.sh -clipboard,screen.sh,rectangle.sh -clipboard,rectangle.sh,monitor.sh -clipboard,monitor.sh,gif.sh -clipboard,gif.sh}
+
 #shift + Print
 #    copyq && maim -s --format png /dev/stdout | copyq copy image/png -
 #
