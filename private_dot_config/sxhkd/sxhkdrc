@@ -7,39 +7,39 @@ super + shift + {a,s,x}
   /home/alan/.config/rofi/scripts/{passmenu,passmenu --type,awsmenu}
 
 super + Return
-    kitty --single-instance --session ~/.config/kitty/session-tmux.conf
+  kitty --single-instance --session ~/.config/kitty/session-tmux.conf
 
 super + shift + Return
-    st
+  st
 
 super + {1,2,3,4,5,6,7,8,9,0}
-    bspc desktop -f {1,2,3,4,5,6,7,8,9,0}
+  bspc desktop -f {1,2,3,4,5,6,7,8,9,0}
 
 super + shift + {1,2,3,4,5,6,7,8,9,0}
-    id=$(bspc query --nodes --node); bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0}; bspc desktop --focus next; bspc node --focus ${id}
+  id=$(bspc query --nodes --node); bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0}; bspc desktop --focus next; bspc node --focus ${id}
 
-super + Delete : {e,s,S,r,l}
-    {bspc quit,systemctl suspend,systemctl shutdown,systemctl reboot,betterlockscreen -l}
+super + Delete ; {e,s,S,r,l}
+  {bspc quit,systemctl suspend,systemctl shutdown,systemctl reboot,betterlockscreen -l}
 
-super + Escape : {h,w}
-    pkill -USR1 -x {sxhkd,bspwm}
+super + Escape + {h,w}
+  pkill -USR1 -x {sxhkd,bspwm}
 
 # Switch windows via direction
 super + {j,k,l,semicolon}
-    bspc node -f {west,north,south,east}
+  bspc node -f {west,north,south,east}
 
 super + f
-    if [ -z "$(bspc query -N -n focused.fullscreen)" ]; then \ 
-        bspc node focused -t fullscreen; \ 
-    else \ 
-        bspc node focused -t tiled; \ 
-    fi
+  if [ -z "$(bspc query -N -n focused.fullscreen)" ]; then \ 
+    bspc node focused -t fullscreen; \ 
+  else \ 
+    bspc node focused -t tiled; \ 
+  fi
 
 super + alt + l
-   betterlockscreen -l
+  betterlockscreen -l
 
 super + shift + q
-    bspc node -c
+  bspc node -c
 
 # Move desktop to screen in direction
 super + shift + alt + {j,semicolon}
@@ -49,8 +49,8 @@ super + shift + alt + {j,semicolon}
   bspc desktop -f $desk
 
 # Screen shots
-Print : {a, shift + a, s, shift + s, r, shift + r, m, shift + m, g, shift + g}
-    ~/.config/i3/scripts/screenshot/{active_window.sh -clipboard,active_window.sh,screen.sh -clipboard,screen.sh,rectangle.sh -clipboard,rectangle.sh,monitor.sh -clipboard,monitor.sh,gif.sh -clipboard,gif.sh}
+Print ; {a,shift+a,s,shift+s,r,shift+r,m,shift+m,g,shift+g}
+  ~/.config/i3/scripts/screenshot/{active_window.sh -clipboard,active_window.sh,screen.sh -clipboard,screen.sh,rectangle.sh -clipboard,rectangle.sh,monitor.sh -clipboard,monitor.sh,gif.sh -clipboard,gif.sh}
 
 #shift + Print
 #    copyq && maim -s --format png /dev/stdout | copyq copy image/png -
@@ -65,11 +65,12 @@ Print : {a, shift + a, s, shift + s, r, shift + r, m, shift + m, g, shift + g}
 #    $HOME/projects/benoth/i3-hud-menu/i3-hud-menu-rofi.py
 #
 #
+
 # make sxhkd reload its configuration files
 super + shift + r
-    pkill sxhkd && sxhkd
-#
-#
+  pkill -SIGUSR1 sxhkd; \
+  $HOME/.config/polybar/launch.sh;
+
 #### BSPWM HOTKEYS ###
 #
 ## close and kill
@@ -253,46 +254,46 @@ super + shift + r
 #
 #### SPECIAL KEYS ###
 XF86Music
-    {switch-or-run "cmus.URxvt" ,_} cmus-window
+  {switch-or-run "cmus.URxvt" ,_} cmus-window
 
 XF86AudioMedia
-    {switch-or-run "cmus.URxvt" ,_} cmus-window
+  {switch-or-run "cmus.URxvt" ,_} cmus-window
 
 XF86Audio{Prev,Next}
-    playerctl {previous,next}
+  playerctl {previous,next}
 
 XF86AudioPlay
-    playerctl play-pause
+  playerctl play-pause
 
 XF86AudioPause
-     playerctl pause
+  playerctl pause
 
 XF86Audio{LowerVolume,RaiseVolume}
-    pactl set-sink-volume $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) {-,+}2
+  pactl set-sink-volume $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) {-,+}2
 
 XF86AudioMute
-    pactl set-sink-mute $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) toggle
+  pactl set-sink-mute $(pactl info | grep 'Default Sink:' | cut -d' ' -f3) toggle
 
 XF86Calculator
-    {switch-or-run "gnome-calculator.Gnome-calculator" ,_} gnome-calculator
+  {switch-or-run "gnome-calculator.Gnome-calculator" ,_} gnome-calculator
 
 XF86Explorer
-    nautilus
+  nautilus
 
 XF86HomePage
-    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+  {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
 
 XF86WWW
-    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+  {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
 
 XF86Search
-    {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
+  {switch-or-run "chromium-browser.chromium-browser" ,_} chromium-browser
 
 XF86Mail
-    {switch-or-run "([A-Za-z0-9]*)\.Thunderbird" ,_}thunderbird
+  {switch-or-run "([A-Za-z0-9]*)\.Thunderbird" ,_}thunderbird
 
 XF86Messenger
-    pidgin
+  pidgin
 
 
 #### MOUSE ###
