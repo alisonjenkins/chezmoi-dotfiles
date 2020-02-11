@@ -13,7 +13,7 @@ clight &
 picom &
 dex bspwm -ae bspwm &
 ~/.config/polybar/launch.sh &
-$(sleep 2 && st) &
+$(sleep 2 && st -e tmux new-session -As main) &
 chromium &
 slack &
 
