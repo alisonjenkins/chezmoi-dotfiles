@@ -247,7 +247,8 @@ Plug 'tpope/vim-obsession'                           " Automatic vim session sav
 Plug 'tpope/vim-repeat'                              " Adds repeat ('.') support to various plugins.
 Plug 'tpope/vim-sensible'                            " Vim sensible defaults (allows you to delete a huge amount of stuff from your Vimrc).
 Plug 'tpope/vim-speeddating'                         " Improves the CTRL-A and CTRL-X increment and decrement shortcuts to work with dates.
-Plug 'tpope/vim-surround'                            " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
+" Plug 'tpope/vim-surround'                            " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
+Plug 'machakann/vim-sandwich'                        " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
 Plug 'tpope/vim-unimpaired'                          " Adds various mappings for, moving between files, buffers and toggling Vim options on and off (see :help unimpaired ).
 " Plug 'wakatime/vim-wakatime'                         " Automatic time tracking using WakaTime https://wakatime.com/vim
 
@@ -574,8 +575,8 @@ let g:doge_mapping = "<Leader>D"
 " }}}}
 " {{{ easymotion
 " Quick searching
-nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
+" nmap s <Plug>(easymotion-s2)
+" nmap t <Plug>(easymotion-t2)
 
 " Quick line jumping
 map <Leader>l <Plug>(easymotion-lineforward)
