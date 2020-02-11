@@ -116,6 +116,12 @@ zplug "softmoth/zsh-vim-mode"
 zplug "unixorn/kubectx-zshplugin"
 zplug "zsh-users/zsh-completions"
 
+# if command -v fasd &> /dev/null; then
+#   if command -v fzf &> /dev/null; then
+zplug "wookayin/fzf-fasd"
+  # fi
+# fi
+
 # zplug "tevren/gitfast-zsh-plugin"
 # zplug "hschne/fzf-git"
 
@@ -215,3 +221,5 @@ set -o vi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+(( $+commands[fasd] )) && eval "$(fasd --init auto)"
