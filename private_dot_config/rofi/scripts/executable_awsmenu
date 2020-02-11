@@ -12,6 +12,8 @@ if [[ $1 == "--private-mode" ]]; then
   shift
 fi
 
+export AWS_DEFAULT_REGION=eu-west-1
+
 aws_profiles=( $(grep '\[profile ' ~/.aws/config | sed -e 's/\[profile //' -e 's/\]//') )
 
 profile=$(printf '%s\n' "${aws_profiles[@]}" | rofi -dmenu "$@")
@@ -24,11 +26,12 @@ else
   INCOGNITO="--incognito"
 fi
 
-# if [[ "$profile" == *RW ]]; then
-#   get_mfa
-#   # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" --mfa-token "$MFA" "$profile"
-#   ~/git/awsconsole/awsconsole --browser chromium --mfa-token "$MFA" "$profile"
-# else
-  # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" "$profile"
-~/git/awsconsole/awsconsole --browser chromium "$profile"
-# fi
+if [[ "$profile" == *RW ]]; then
+  get_mfa
+  # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" --mfa-token "$MFA" "$profile"
+  URL=$(assume-role -console -mfa-token "$MFA" "$profile")
+else
+  URL=$(assume-role -console "$profile")
+fi
+
+chromium "$URL"
