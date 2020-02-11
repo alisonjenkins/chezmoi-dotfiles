@@ -99,7 +99,6 @@ fi
 zplug "Dbz/kube-aliases"
 zplug "chriskempson/base16-shell"
 zplug "fabiokiatkowski/exercism.plugin.zsh"
-zplug "hschne/fzf-git"
 zplug "joepvd/zsh-hints"
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "macunha1/zsh-terraform"
@@ -108,8 +107,11 @@ zplug "molovo/tipz"
 zplug "qoomon/zsh-lazyload"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "softmoth/zsh-vim-mode"
-zplug "tevren/gitfast-zsh-plugin"
 zplug "unixorn/kubectx-zshplugin"
+zplug "zsh-users/zsh-completions"
+
+# zplug "tevren/gitfast-zsh-plugin"
+# zplug "hschne/fzf-git"
 
 # Then, source plugins and add commands to $PATH
 zplug load
