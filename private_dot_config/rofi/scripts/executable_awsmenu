@@ -29,9 +29,9 @@ fi
 if [[ "$profile" == *RW ]]; then
   get_mfa
   # ~/git/awsconsole/awsconsole --browser google-chrome-stable "$INCOGNITO" --mfa-token "$MFA" "$profile"
-  URL=$(assume-role -console -mfa-token "$MFA" "$profile")
-else
-  URL=$(assume-role -console "$profile")
+  export AWS_MFA_TOKEN="$MFA"
 fi
+
+URL=$(assume-role -console "$profile")
 
 chromium "$URL"
