@@ -30,6 +30,7 @@ alias cdgo="cd \$GOPATH"
 alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 # }}}
 # {{{ Misc
+alias awseval='function(){eval $(command assume-role $@);}'
 alias awsconsole='~/git/awsconsole/awsconsole -b google-chrome-stable'
 alias ewm='cd ~/git/ewmg'
 alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
@@ -115,6 +116,7 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "softmoth/zsh-vim-mode"
 zplug "unixorn/kubectx-zshplugin"
 zplug "zsh-users/zsh-completions"
+zplug "weizard/assume-role"
 
 # if command -v fasd &> /dev/null; then
 #   if command -v fzf &> /dev/null; then
@@ -215,6 +217,10 @@ function rcd {
     rm -f -- "$tempfile"
 }
 # }}}
+
+if ! command -v assume-role &>/dev/null; then
+  go get -u github.com/alanjjenkins/assume-role
+fi
 
 set -o vi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
