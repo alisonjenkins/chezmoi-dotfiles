@@ -382,7 +382,7 @@ else
   let vimrcpath = $HOME . "/git/dotfiles/vim/vimrc"
   nnoremap <silent> <LocalLeader>vs :source ~/git/dotfiles/vim/vimrc<CR>
   nnoremap <silent> <LocalLeader>vt :tabnew ~/git/dotfiles/vim/vimrc<CR>
-  nnoremap <silent> <LocalLeader>ve :e ~/git/dotfiles/vim/vimrc<CR>
+  nnoremap <silent> <LocalLeader>ve :e ~/.local/share/chezmoi/dot_vimrc<CR>
   nnoremap <silent> <LocalLeader>vc :vsplit ~/git/dotfiles/vim/cheatsheet.md<CR>
   nnoremap <silent> <LocalLeader>vd :e ~/.vim/ <CR>
   nnoremap <silent> <LocalLeader>tN :e ~/Dropbox/todo/todo.txt<CR>
