@@ -195,6 +195,8 @@ Plug 'vim-vdebug/vdebug'                                                   " Mul
 " Plug 'jiangmiao/auto-pairs'                          " Automatically creates paired brackets and quotes. Has a toggle shortcut <Alt-p>.
 " Plug 'wellle/targets.vim'                            " Adds more text objects to operate on. For example by default we can do ci{ to change text inside brackets. This adds more objects like that to change, delete, etc. Read the docs at: https://github.com/wellle/targets.vim
 " Plug 'Raimondi/delimitMate'                          " Automatic closing of brackets / parens / etc
+" Plug 'rstacruz/vim-closer'                           " Closes brackets. Perfect companion to vim-endwise. Basically, a more conservative version of auto-pairs that only works when you press Enter.
+" Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
 Plug 'bronson/vim-trailing-whitespace'               " Highlights trailing whitespace in red, adds :FixWhitespace command to strip.
 Plug 'chiel92/vim-autoformat'                      " Automatic code formatting
 Plug 'claco/jasmine.vim'                             " Runs Javascript Jasmine tests.
@@ -203,12 +205,10 @@ Plug 'kkoomen/vim-doge'                              " DOcumentation GEnerator. 
 Plug 'lukaszb/vim-web-indent'                        " Auto indentation support for Javascript and HTML.
 Plug 'mattn/emmet-vim'                               " Allows you to write abbreviated HTML and then when a trigger key combo is pressed expand to full length html (key combo is C-y).
 Plug 'rhysd/vim-fixjson'                             " Nicely formats JSON and fixes common JSON mistakes (missing commas in arrays... etc)
-Plug 'rstacruz/vim-closer'                           " Closes brackets. Perfect companion to vim-endwise. Basically, a more conservative version of auto-pairs that only works when you press Enter.
 Plug 'rstacruz/vim-hyperstyle'                       " Adds shortcuts for quickly writing CSS.
 Plug 'tommcdo/vim-exchange'                          " Easy text exchange operator for vim use cx{motion} to initiate exchange. Go to what you want to exchange and do the same and they will be swapped.
 Plug 'tpope/vim-commentary'                          " Commenting plugin, use gcc to comment out a line. gc and then a motion to comment out that area.
 Plug 'tpope/vim-cucumber'                            " Adds support for the Cucumber Ruby acceptance testing framework to Vim.
-Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
 Plug 'tpope/vim-scriptease'                          " A Vim plugin to help with creating Vim Plugins.
 Plug 'tpope/vim-sleuth'                              " Heuristically sets the indent level for the file based on the existing indentation within the file.
 Plug 'vim-scripts/Align'                             " Adds an Align command for aligning based on a character for example select text you want to align and then run ( :'<,'>Align = ) to align the lines by their '=' sign. See :help align.
