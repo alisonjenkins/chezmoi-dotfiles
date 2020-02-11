@@ -733,13 +733,6 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-colorscheme solarized8
-
 " If base16 is in use make vim use the same colourscheme as the rest of the
 " terminal
 if filereadable(expand("~/.vimrc_background"))
@@ -747,23 +740,6 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" cursor will change color depending on vim mode in use
-" let &t_SI = "\<Esc>]12;yellow\x7"
-" let &t_SR = "\<Esc>]12;red\x7"
-" let &t_EI = "\<Esc>]12;green\x7"
-"
-" if exists('$TMUX')
-"     let &t_EI = "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
-"     let &t_SI = "\<Esc>Ptmux;\<Esc>\033]PlFBA922\033\\"
-"     silent !echo -ne "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
-"     autocmd VimLeave * silent !echo -ne "\<Esc>Ptmux;\<Esc>\033]Pl3971ED\033\\"
-" else
-"     let &t_EI = "\033]Pl3971ED\033\\"
-"     let &t_SI = "\033]PlFBA922\033\\"
-"     silent !echo -ne "\033]Pl3971ED\033\\"
-"     autocmd VimLeave * silent !echo -ne "\033]Pl3971ED\033\\"
-" endif
-"}}}
 " GUI Fonts " {{{
 if has("gui_running")
   if has("gui_gtk2")
