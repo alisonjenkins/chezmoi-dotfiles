@@ -117,6 +117,7 @@ zplug "softmoth/zsh-vim-mode"
 zplug "unixorn/kubectx-zshplugin"
 zplug "zsh-users/zsh-completions"
 zplug "weizard/assume-role"
+zplug "plugins/aws",   from:oh-my-zsh
 
 # if command -v fasd &> /dev/null; then
 #   if command -v fzf &> /dev/null; then
