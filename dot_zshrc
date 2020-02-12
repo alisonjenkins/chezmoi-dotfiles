@@ -87,6 +87,9 @@ export PATH="$PATH:/home/alan/.local/bin"
 export PATH="$PATH:/home/alan/.gem/ruby/2.5.0/bin"
 export PATH="$PATH:/home/alan/.gem/ruby/2.6.0/bin"
 # }}}
+# {{{ ZSH Options
+KEYTIMEOUT=1
+# }}}
 
 export ZPLUG_HOME="$HOME/.local/share/zplug"
 if [ ! -e "$ZPLUG_HOME" ]; then
