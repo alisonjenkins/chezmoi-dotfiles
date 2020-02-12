@@ -76,16 +76,16 @@ fi
 export ARDUINO_PATH='/usr/share/arduino'
 export AWS_DEFAULT_REGION='eu-west-1'
 export EDITOR='vim'
-export GOPATH='/home/alan/go'
+export GOPATH="/home/$USER/go"
 export HISTCONTROL=ignoredups:ignorespace
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/home/alan/.gem/ruby/2.4.0/bin"
-export PATH="$PATH:/home/alan/go/bin"
-export PATH="$PATH:/home/alan/bin"
-export PATH="$PATH:/home/alan/.local/bin"
-export PATH="$PATH:/home/alan/.gem/ruby/2.5.0/bin"
-export PATH="$PATH:/home/alan/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:/home/$USER/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:/home/$USER/go/bin"
+export PATH="$PATH:/home/$USER/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:/home/$USER/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:/home/$USER/.gem/ruby/2.6.0/bin"
 # }}}
 # {{{ ZSH Options
 KEYTIMEOUT=1
