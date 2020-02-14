@@ -30,7 +30,6 @@ alias cdgo="cd \$GOPATH"
 alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 # }}}
 # {{{ Misc
-alias awsconsole='~/git/awsconsole/awsconsole -b google-chrome-stable'
 alias ewm='cd ~/git/ewmg'
 alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
 alias jctlw='sudo journalctl -u wpa_supplicant@wlp58s0'
@@ -118,7 +117,7 @@ zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "softmoth/zsh-vim-mode"
 zplug "unixorn/kubectx-zshplugin"
 zplug "zsh-users/zsh-completions"
-zplug "alanjjenkins/assume-role"
+zplug "alanjjenkins/assume-role-1"
 zplug "plugins/aws",   from:oh-my-zsh
 
 # if command -v fasd &> /dev/null; then
