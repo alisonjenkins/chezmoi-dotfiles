@@ -701,7 +701,7 @@ set nolist " Display unprintable characters f12 - switches
 
 set foldenable " Turn on folding
 set foldmethod=marker " Fold on the marker
-set foldlevel=0 " Don't autofold anything (but I can still fold manually)
+set foldlevel=10 " Don't autofold anything (but I can still fold manually)
 set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
 
 set mouse=a   " Enable mouse
