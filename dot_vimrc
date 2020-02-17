@@ -173,10 +173,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#
 Plug 'Yggdroot/indentLine'                           " adds indentation lines showing the different indentation levels.
 Plug 'gorodinskiy/vim-coloresque'                    " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'jnurmine/Zenburn'                              " Adds the Zenburn theme.
-function FixupBase16(info)
-    !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
-endfunction
-Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
+Plug 'chriskempson/base16-vim'
 Plug 'lifepillar/vim-solarized8'                     " Adds a 256 colour versions of the Solarized light and dark
 Plug 'vim-airline/vim-airline'                       " Adds a pretty and useful Vim status line.
 Plug 'vim-airline/vim-airline-themes'                " Themes for Vim Airline.
