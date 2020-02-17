@@ -196,7 +196,7 @@ Plug 'vim-vdebug/vdebug'                                                   " Mul
 " Plug 'wellle/targets.vim'                            " Adds more text objects to operate on. For example by default we can do ci{ to change text inside brackets. This adds more objects like that to change, delete, etc. Read the docs at: https://github.com/wellle/targets.vim
 " Plug 'Raimondi/delimitMate'                          " Automatic closing of brackets / parens / etc
 " Plug 'rstacruz/vim-closer'                           " Closes brackets. Perfect companion to vim-endwise. Basically, a more conservative version of auto-pairs that only works when you press Enter.
-" Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
+Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
 Plug 'bronson/vim-trailing-whitespace'               " Highlights trailing whitespace in red, adds :FixWhitespace command to strip.
 Plug 'chiel92/vim-autoformat'                      " Automatic code formatting
 Plug 'claco/jasmine.vim'                             " Runs Javascript Jasmine tests.
