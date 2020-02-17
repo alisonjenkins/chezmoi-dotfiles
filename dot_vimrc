@@ -184,7 +184,6 @@ Plug 'markcornick/vim-vagrant'                                             " Add
 Plug 'tmux-plugins/vim-tmux-focus-events'                                  " Focus gained and focus lost (used by plugins) do not work in Tmux, this fixes that.
 Plug 'tpope/vim-eunuch'                                                    " Adds support for many unix commands into Vim (too many commands added to list here).
 Plug 'tpope/vim-tbone'                                                     " Adds tmux support to Vim (:Tmux for running any tmux command, :Tyank for yanking to Tmux's clipboard, :Tput for pasting from Tmux's clipboard and more).
-Plug 'itchyny/calendar.vim'                                                " Adds a Calendar to Vim. Has Google calendar integration.
 Plug 'vim-vdebug/vdebug'                                                   " Multi programming language debugging in Vim.
 " }}}
 " {{{ Text / code editing
