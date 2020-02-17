@@ -47,6 +47,15 @@
         "cacheDirectory": "/tmp/ccls"
       }
     },
+    "rust": {
+      "command": "ra_lsp_server",
+      "filetypes": [
+        "rust"
+      ],
+      "rootPatterns": [
+        "Cargo.toml"
+      ]
+    },
     "terraform": {
       "command": "terraform-lsp",
       "filetypes": [
