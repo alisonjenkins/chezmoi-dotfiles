@@ -135,16 +135,17 @@ Plug 'wting/cheetah.vim'                      " Cheetah templating syntax suppor
 Plug 'sheerun/vim-polyglot'                   " Syntax files for many different languages
 " }}}
 " {{{ Git plugins
+" Plug 'tpope/vim-fugitive'         " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
+" Plug 'gregsexton/gitv'            " Extension to fugitive to see the git branching history.
+" Plug 'int3/vim-extradite'         " Extension to fugitive that adds a git commit browser.
+" Plug 'junegunn/gv.vim'            " A git log viewer.
 Plug 'airblade/vim-gitgutter'     " adds a +-~ to the gutter where things have been changed from what git is aware.
 Plug 'christoomey/vim-conflicted' " Aids in resolving merge conflicts.
-Plug 'gregsexton/gitv'            " Extension to fugitive to see the git branching history.
-Plug 'int3/vim-extradite'         " Extension to fugitive that adds a git commit browser.
 Plug 'jreybert/vimagit'           " Adds a nice Vim UI for staging hunks of files. Use :Magit to activate.
-Plug 'junegunn/gv.vim'            " A git log viewer.
 Plug 'lambdalisue/gina.vim'       " Asynchronous Git plugin. Use check help at :help gina-usage
 Plug 'mattn/gist-vim'             " Adds :Gist command for creating a Github gist from the current buffer or selected text.
+Plug 'neoclide/vim-easygit'       " Replacement to Fugitive. Doesn't prompt as much as fugitive.
 Plug 'rhysd/committia.vim'        " Improved commit message window.
-Plug 'tpope/vim-fugitive'         " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
 " }}}
 " {{{ File / directory navigation plugins
 " Plug 'scrooloose/nerdtree'
@@ -422,10 +423,10 @@ inoremap <C-S> <C-O>:update<CR>
 " show/Hide hidden Chars
 map <silent> <F12> :set invlist<CR>
 
-map <F1> :Gwrite<CR>
+map <F1> :w<CR>:Gadd<CR>
 map <F2> :Gcommit<CR>
 map <F3> :Gina push<CR>
-imap <F1> <ESC>:Gwrite<CR>i
+imap <F1> <ESC>:w<CR>:Gadd<CR>i
 imap <F2> <ESC>:Gcommit<CR>
 imap <F3> <ESC>:Gina push<CR>i
 
@@ -573,6 +574,9 @@ au filetype todo imap <buffer> @ @<C-X><C-O>
 " {{{ DOGE
 let g:doge_mapping = "<Leader>D"
 " }}}}
+" {{{ easygit
+let g:easygit_enable_command = 1
+" }}}
 " {{{ easymotion
 " Quick searching
 " nmap s <Plug>(easymotion-s2)
