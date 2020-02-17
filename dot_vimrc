@@ -380,8 +380,8 @@ if has('win32') || has('win64')
   " nnoremap <silent> <LocalLeader>ts :e ~/Dropbox/TaskPaper/TodoSomeday.taskpaper<CR>
 else
   let vimrcpath = $HOME . "/git/dotfiles/vim/vimrc"
-  nnoremap <silent> <LocalLeader>vs :source ~/git/dotfiles/vim/vimrc<CR>
-  nnoremap <silent> <LocalLeader>vt :tabnew ~/git/dotfiles/vim/vimrc<CR>
+  nnoremap <silent> <LocalLeader>vs :source ~/.local/share/chezmoi/dot_vimrc<CR>
+  nnoremap <silent> <LocalLeader>vt :tabnew ~/.local/share/chezmoi/dot_vimrc<CR>
   nnoremap <silent> <LocalLeader>ve :e ~/.local/share/chezmoi/dot_vimrc<CR>
   nnoremap <silent> <LocalLeader>vc :vsplit ~/git/dotfiles/vim/cheatsheet.md<CR>
   nnoremap <silent> <LocalLeader>vd :e ~/.vim/ <CR>
