@@ -349,9 +349,6 @@ map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Jump around using enter and backspace instead of g
-" nnoremap <CR> G
-" nnoremap <BS> gg
 nmap <silent> <Leader>a :Startify<CR>
 
 " Toggle display of NERD Tree
@@ -632,7 +629,7 @@ if has("nvim")
   set inccommand=split
 end
 " }}}
-" Gui and theme options"{{{
+"{{{  Gui and theme options
 if has('gui_running')
   set background=dark
   set guioptions-=m
