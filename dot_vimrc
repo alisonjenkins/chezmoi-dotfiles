@@ -114,10 +114,10 @@ Plug 'tpope/vim-tbone'                                                     " Add
 Plug 'vim-vdebug/vdebug'                                                   " Multi programming language debugging in Vim.
 " }}}
 " {{{ Text / code editing
-Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
 Plug 'bronson/vim-trailing-whitespace'               " Highlights trailing whitespace in red, adds :FixWhitespace command to strip.
 Plug 'chiel92/vim-autoformat'                        " Automatic code formatting
 Plug 'claco/jasmine.vim'                             " Runs Javascript Jasmine tests.
+Plug 'editorconfig/editorconfig-vim'                 " Adds EditorConfig https://editorconfig.org/ support to vim.
 Plug 'godlygeek/tabular', {'on': ['Tabularize', 'AddTabularPattern', 'AddTabularPipeline']} " Plugin for aligning text.
 Plug 'kkoomen/vim-doge'                              " DOcumentation GEnerator. Mappings <Leader>D
 Plug 'lukaszb/vim-web-indent'                        " Auto indentation support for Javascript and HTML.
@@ -127,6 +127,7 @@ Plug 'rstacruz/vim-hyperstyle'                       " Adds shortcuts for quickl
 Plug 'tommcdo/vim-exchange'                          " Easy text exchange operator for vim use cx{motion} to initiate exchange. Go to what you want to exchange and do the same and they will be swapped.
 Plug 'tpope/vim-commentary'                          " Commenting plugin, use gcc to comment out a line. gc and then a motion to comment out that area.
 Plug 'tpope/vim-cucumber'                            " Adds support for the Cucumber Ruby acceptance testing framework to Vim.
+Plug 'tpope/vim-endwise'                             " Intelligently ends certain structures automatically if you did not close them manually.
 Plug 'tpope/vim-scriptease'                          " A Vim plugin to help with creating Vim Plugins.
 Plug 'tpope/vim-sleuth'                              " Heuristically sets the indent level for the file based on the existing indentation within the file.
 Plug 'vim-scripts/Align'                             " Adds an Align command for aligning based on a character for example select text you want to align and then run ( :'<,'>Align = ) to align the lines by their '=' sign. See :help align.
