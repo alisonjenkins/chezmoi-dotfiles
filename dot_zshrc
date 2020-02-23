@@ -31,7 +31,7 @@ alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 # }}}
 # {{{ Misc
 alias ewm='cd ~/git/ewmg'
-alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
+alias fpm='podman run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
 alias jctlw='sudo journalctl -u wpa_supplicant@wlp58s0'
 alias key='ssh-add ~/git/ssh_keys/id_bashton_alan'
 alias keyb='ssh-add ~/git/ssh_keys/id_bashton'
