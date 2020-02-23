@@ -137,7 +137,7 @@ Plug 'vimwiki/vimwiki'                               " Adds Vim wiki for taking 
 Plug 'w0rp/ale'                                      " Asyncronous linting engine (does linting and sytnax checking of source code while you edit it).
 " }}}
 " {{{ Vim functionality improvements
-PLug 'camspiers/animate.vim'                         " Dependency of lens.vim to enable animation of the resize of splits.
+Plug 'camspiers/animate.vim'                         " Dependency of lens.vim to enable animation of the resize of splits.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}           " asynchronous execution plugin for Vim.
 Plug 'camspiers/lens.vim'                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
 Plug 'ciaranm/securemodelines'                       " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
