@@ -357,11 +357,7 @@ nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " Toggle Lens (resizing of splits on enter)
 function! MyToggleLens()
-  if g:lens#enter_disabled == 0
-    let g:lens#enter_disabled = 1
-  elseif g:lens#enter_disabled == 1
-    let g:lens#enter_disabled = 0
-  endif
+  let g:lens#enter_disabled = !g:lens#enter_disabled
 endfunction
 nmap <silent> <Leader>r :call MyToggleLens()<CR>
 
