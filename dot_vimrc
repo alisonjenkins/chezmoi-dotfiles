@@ -137,33 +137,34 @@ Plug 'vimwiki/vimwiki'                               " Adds Vim wiki for taking 
 Plug 'w0rp/ale'                                      " Asyncronous linting engine (does linting and sytnax checking of source code while you edit it).
 " }}}
 " {{{ Vim functionality improvements
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Allows using Neovim inside Chrome.
-Plug 'rafaqz/ranger.vim'
-Plug 'tpope/vim-rsi'                                 " Adds Readline shortcuts to vim command mode.
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
-Plug 'xolox/vim-notes'                               " Adds :Note command to create a new note. The notes are automatically named and saved into a Notes directory in ~/Documents/Notes
-Plug 'xolox/vim-misc'                                " Dependency of vim-notes
+PLug 'camspiers/animate.vim'                         " Dependency of lens.vim to enable animation of the resize of splits.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}           " asynchronous execution plugin for Vim.
+Plug 'camspiers/lens.vim'                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
 Plug 'ciaranm/securemodelines'                       " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'                        " Adds the ability to use Vim as a REST client. Requires cURL.
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Allows using Neovim inside Chrome.
 Plug 'haya14busa/is.vim'                             " Improves incremental searching in Vim.
 Plug 'haya14busa/vim-operator-flashy'                " Adds a temporary highlight of what text was yanked.
 Plug 'kana/vim-operator-user'                        " Dependency of vim-operator-flashy.
 Plug 'kshenoy/vim-signature'                         " Enhanced vim mark support (adds gutter icons for marks and extra mappings).
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
+Plug 'machakann/vim-sandwich'                        " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
 Plug 'majutsushi/tagbar'                             " Adds a tagbar for exhuberant ctags command is :TagbarToggle (mapped to F8 key).
 Plug 'mbbill/undotree'                               " Adds :UndotreeToggle command to enable you to visualise your undo history and the changes you have made to the file (mapped to F5).
 Plug 'mhinz/vim-startify'                            " Adds Startify which is a nice startup screen for Vim with the most recently opened files.
 Plug 'mtth/scratch.vim'                              " Adds the gs command to normal mode to open a scratch buffer (for making quick notes).
 Plug 'powerman/vim-plugin-AnsiEsc'                   " ANSI colour code support (using for taskwiki).
-Plug 'roman/golden-ratio'                            " Resizes Vim splits based on the golden ratio to ensure that you are able to see what you are editing.
+Plug 'rafaqz/ranger.vim'
 Plug 'simeji/winresizer'                             " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                     " Allows you to select more text in visual mode by repeatedly pressing 'v'.
 Plug 'tpope/vim-obsession'                           " Automatic vim session saving plugin.
 Plug 'tpope/vim-repeat'                              " Adds repeat ('.') support to various plugins.
+Plug 'tpope/vim-rsi'                                 " Adds Readline shortcuts to vim command mode.
 Plug 'tpope/vim-sensible'                            " Vim sensible defaults (allows you to delete a huge amount of stuff from your Vimrc).
 Plug 'tpope/vim-speeddating'                         " Improves the CTRL-A and CTRL-X increment and decrement shortcuts to work with dates.
-Plug 'machakann/vim-sandwich'                        " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
 Plug 'tpope/vim-unimpaired'                          " Adds various mappings for, moving between files, buffers and toggling Vim options on and off (see :help unimpaired ).
+Plug 'xolox/vim-misc'                                " Dependency of vim-notes
+Plug 'xolox/vim-notes'                               " Adds :Note command to create a new note. The notes are automatically named and saved into a Notes directory in ~/Documents/Notes
 
 if has('win32') || has('win64')
   Plug 'powerline/fonts', { 'do': './install.ps1' }
