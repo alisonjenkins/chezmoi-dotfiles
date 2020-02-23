@@ -355,8 +355,15 @@ nmap <silent> <Leader>a :Startify<CR>
 " Toggle display of NERD Tree
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
-" Toggle GolenRatio
-nmap <silent> <Leader>r :GoldenRatioToggle<CR>
+" Toggle Lens (resizing of splits on enter)
+function! MyToggleLens()
+  if g:lens#enter_disabled == 0
+    let g:lens#enter_disabled = 1
+  elseif g:lens#enter_disabled == 1
+    let g:lens#enter_disabled = 0
+  endif
+endfunction
+nmap <silent> <Leader>r :call MyToggleLens()<CR>
 
 " Run Magit
 nmap <silent> <Leader>G :Magit<CR>
