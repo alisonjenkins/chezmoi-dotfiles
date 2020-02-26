@@ -34,6 +34,7 @@ alias ewm='cd ~/git/ewmg'
 alias fpm='podman run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
 alias jctlw='sudo journalctl -u wpa_supplicant@wlp58s0'
 alias key='ssh-add ~/git/ssh_keys/id_bashton_alan'
+alias keyaur="ssh-add ~/git/ssh_keys/id_aur"
 alias keyb='ssh-add ~/git/ssh_keys/id_bashton'
 alias keycl='ssh-add -D'
 alias keyp='ssh-add ~/git/ssh_keys/id_personal'
