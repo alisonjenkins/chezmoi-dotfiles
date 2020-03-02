@@ -354,29 +354,20 @@ bindsym $mod+Shift+x exec "/home/alan/.config/rofi/scripts/awsmenu"
 
 # launcher shortcuts
 bindsym Mod4+Mod1+l exec betterlockscreen -l
-# bindsym Mod4+Mod1+Shift+l exec xscreensaver-command --lock
-# bindsym Mod4+Mod1+l exec xscreensaver-command --lock && keepass --lock-all
-# bindsym Mod4+Mod1+Shift+l exec xscreensaver-command --lock
-bindsym $mod+p exec i3finder
-bindsym $mod+g exec i3finder -a move
-bindsym $mod+b exec i3finder -a back
 
 # autostart
 # exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id /usr/bin/lxsession
+exec --no-startup-id /usr/bin/lxsession -s i3
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xss-lock -- betterlockscreen -l &
 exec --no-startup-id libinput-gestures-setup start &
 exec /usr/bin/nice -n 19 /usr/bin/slack
 exec kitty --single-instance --session ~/.config/kitty/session-tmux.conf
-# exec /usr/bin/nice -n 19 /usr/bin/firefox
-# exec /usr/bin/nice -n 19 /usr/bin/google-chrome-stable
-exec /usr/bin/chromium
-# exec cbatticon
-#exec --no-startup-id clight
+
+# Launch the default web browser
+#exec gtk-launch $(xdg-settings get default-web-browser)
+
 exec libinput-gestures-setup start
-# exec /usr/bin/nice -n 19 /usr/bin/run_keybase
-#exec /usr/bin/nice -n 19 /usr/bin/pidgin
 exec /usr/bin/xflux -l 51.9444199
 exec /usr/bin/nm-applet
 exec /usr/bin/blueman-applet
@@ -388,6 +379,7 @@ assign [class="^Termite$"] → 2
 assign [class="^st$"] → 2
 assign [class="^st-256color$"] → 2
 assign [class="^kitty$"] → 2
+assign [class="sins of a solar empire rebellion.exe"] → 4
 assign [window_role="^browser$"] → 3
 # workaround for spotify not setting window hints correctly.
 for_window [class="Spotify"] move to workspace 9
@@ -400,6 +392,7 @@ for_window [instance="^crx.*$" window_role="pop-up"]  sticky   enable
 
 ## Keybase
 for_window [class="Keybase"] floating enable, move position mouse
+for_window [class="sins of a solar empire rebellion.exe"] floating enable
 
 # floating windows
 for_window [window_role="pop-up"] floating enable
