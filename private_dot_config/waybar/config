@@ -4,7 +4,8 @@
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    //, "custom/media"
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
       //"mpd",
@@ -51,8 +52,9 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d | %H:%M}",
+        "tooltip": false,
+        "timezone": "Europe/London"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -116,16 +118,16 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     }
+    /* "custom/media": { */
+    /*     "format": "{icon} {}", */
+    /*     "return-type": "json", */
+    /*     "max-length": 40, */
+    /*     "format-icons": { */
+    /*         "spotify": "", */
+    /*         "default": "🎜" */
+    /*     }, */
+    /*     "escape": true, */
+    /*     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder */
+    /* } */
 }
