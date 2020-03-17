@@ -108,21 +108,22 @@ if ! zplug check --verbose; then
 fi
 
 zplug "Dbz/kube-aliases"
+zplug "alanjjenkins/assume-role-1"
+zplug "alanjjenkins/zsh-my-aws"
 zplug "chriskempson/base16-shell"
 zplug "fabiokiatkowski/exercism.plugin.zsh"
+zplug "hschne/fzf-git"
 zplug "joepvd/zsh-hints"
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "macunha1/zsh-terraform"
 zplug "marzocchi/zsh-notify"
 zplug "molovo/tipz"
+zplug "plugins/aws",   from:oh-my-zsh
 zplug "qoomon/zsh-lazyload"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "softmoth/zsh-vim-mode"
 zplug "unixorn/kubectx-zshplugin"
 zplug "zsh-users/zsh-completions"
-zplug "alanjjenkins/assume-role-1"
-zplug "alanjjenkins/zsh-my-aws"
-zplug "plugins/aws",   from:oh-my-zsh
 
 # if command -v fasd &> /dev/null; then
 #   if command -v fzf &> /dev/null; then
