@@ -282,3 +282,4 @@ setopt multios # perform implicit tees or cats when multiple redirections are at
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 (( $+commands[fasd] )) && eval "$(fasd --init auto)"
+eval "$(direnv hook zsh)"
