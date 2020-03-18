@@ -100,16 +100,17 @@ Plug 'scrooloose/snipmate-snippets'                             " A collection o
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#install()}} " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
+Plug 'RRethy/vim-hexokinase'                         " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'Yggdroot/indentLine'                           " adds indentation lines showing the different indentation levels.
-Plug 'gorodinskiy/vim-coloresque'                    " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'chriskempson/base16-vim'
+Plug 'jszakmeister/vim-togglecursor'                 " Handles changing the cursor shape while taking into account things that can break it.
 Plug 'vim-airline/vim-airline'                       " Adds a pretty and useful Vim status line.
 Plug 'vim-airline/vim-airline-themes'                " Themes for Vim Airline.
-Plug 'jszakmeister/vim-togglecursor'                 " Handles changing the cursor shape while taking into account things that can break it.
 " }}}
 " {{{ External tool integration
-Plug 'lambdalisue/suda.vim'                                                " Adds the ability to write to a file using sudo
+Plug 'hashivim/vim-terraform'                                              " Allows running Terraform from inside Vim
 Plug 'jplaut/vim-arduino-ino'                                              " Adds support for the Arduino Ino commandline interface for programming Arduinos.
+Plug 'lambdalisue/suda.vim'                                                " Adds the ability to write to a file using sudo
 Plug 'markcornick/vim-vagrant'                                             " Adds :Vagrant command for interacting with Vagrant from within Vim.
 Plug 'tmux-plugins/vim-tmux-focus-events'                                  " Focus gained and focus lost (used by plugins) do not work in Tmux, this fixes that.
 Plug 'tpope/vim-eunuch'                                                    " Adds support for many unix commands into Vim (too many commands added to list here).
