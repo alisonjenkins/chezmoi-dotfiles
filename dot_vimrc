@@ -100,12 +100,12 @@ Plug 'scrooloose/snipmate-snippets'                             " A collection o
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#install()}} " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
-Plug 'RRethy/vim-hexokinase'                         " highlights colour descriptions in CSS files with the colour they will create.
-Plug 'Yggdroot/indentLine'                           " adds indentation lines showing the different indentation levels.
-Plug 'chriskempson/base16-vim'
-Plug 'jszakmeister/vim-togglecursor'                 " Handles changing the cursor shape while taking into account things that can break it.
-Plug 'vim-airline/vim-airline'                       " Adds a pretty and useful Vim status line.
-Plug 'vim-airline/vim-airline-themes'                " Themes for Vim Airline.
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.
+Plug 'Yggdroot/indentLine'                                " adds indentation lines showing the different indentation levels.
+Plug 'chriskempson/base16-vim'                            " Adds base16 colour scheme support to Vim
+Plug 'jszakmeister/vim-togglecursor'                      " Handles changing the cursor shape while taking into account things that can break it.
+Plug 'vim-airline/vim-airline'                            " Adds a pretty and useful Vim status line.
+Plug 'vim-airline/vim-airline-themes'                     " Themes for Vim Airline.
 " }}}
 " {{{ External tool integration
 Plug 'hashivim/vim-terraform'                                              " Allows running Terraform from inside Vim
@@ -147,7 +147,6 @@ Plug 'camspiers/animate.vim'                         " Dependency of lens.vim to
 Plug 'camspiers/lens.vim'                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
 Plug 'ciaranm/securemodelines'                       " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'                        " Adds the ability to use Vim as a REST client. Requires cURL.
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Allows using Neovim inside Chrome.
 Plug 'haya14busa/is.vim'                             " Improves incremental searching in Vim.
 Plug 'haya14busa/vim-operator-flashy'                " Adds a temporary highlight of what text was yanked.
 Plug 'junegunn/vim-peekaboo'                         " Plugin to show the contents of registers when you use '\"' '@' or CTRL-R in insert mode.
