@@ -12,11 +12,14 @@ super + Return
 super + shift + Return
   st -e tmux new-session -As main
 
-super + {1,2,3,4,5,6,7,8,9,0}
-  bspc desktop -f {1,2,3,4,5,6,7,8,9,0}
+super + {_,shift + ,ctrl + shift +,ctrl +}{0-9}
+  ;~/bin/bspwm_dynamic_desktops {--df,--ns,--nm,--da} {0-9}
 
-super + shift + {1,2,3,4,5,6,7,8,9,0}
-  id=$(bspc query --nodes --node); bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0}; bspc desktop --focus next; bspc node --focus ${id}
+#super + shift + {1,2,3,4,5,6,7,8,9,0}
+#  id=$(bspc query --nodes --node);
+#  bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0};
+#  bspc desktop --focus next;
+#  bspc node --focus ${id}
 
 super + Delete ; {e,s,S,r,l}
   {bspc quit,systemctl suspend,systemctl shutdown,systemctl reboot,betterlockscreen -l}
