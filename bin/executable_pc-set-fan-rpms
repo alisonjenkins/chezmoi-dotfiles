@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case "$1" in
+  quiet)
+    FAN_RPM=800
+    ;;
+  balanced)
+    FAN_RPM=1200
+    ;;
+  performance)
+    FAN_RPM=2000
+    ;;
+  *)
+    FAN_RPM=800
+    ;;
+esac
+
+PUMP_CHANNEL=5
+for fan_channel in $(seq 0 3); do
+  echo "Channel $fan_channel"
+  sleep 0.5
+  sudo OpenCorsairLink --device 0 --fan channel=$fan_channel,mode=1,rpm=$FAN_RPM
+done
+
+# Set pump rpm
+sudo OpenCorsairLink --device 0 --fan channel=$PUMP_CHANNEL,mode=1,rpm=1200
