@@ -139,7 +139,7 @@ Plug 'vim-scripts/DrawIt'                            " Drawit allows you to draw
 Plug 'vim-scripts/VOoM'                              " Vim Outliner of Markups. Allows you to create outlines of code and markup files.
 Plug 'vimoutliner/vimoutliner'                       " Adds an outliner to vim for planning things out.
 Plug 'vimwiki/vimwiki'                               " Adds Vim wiki for taking notes (use <Space>ww to open) see :help vimwiki.
-Plug 'w0rp/ale'                                      " Asyncronous linting engine (does linting and sytnax checking of source code while you edit it).
+Plug 'dense-analysis/ale'                            " Asyncronous linting engine (does linting and sytnax checking of source code while you edit it).
 " }}}
 " {{{ Vim functionality improvements
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}           " asynchronous execution plugin for Vim.
