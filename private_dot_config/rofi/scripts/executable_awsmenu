@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-function get_mfa() {
-  MFA=$(zenity --entry --text="MFA Code")
-}
-
 shopt -s nullglob globstar
 
 private_mode=0
@@ -25,12 +21,7 @@ if [[ $private_mode -eq 0 ]]; then
 else
   INCOGNITO="--incognito"
 fi
-
-if [[ "$profile" == *RW ]]; then
-  get_mfa
-  export AWS_MFA_TOKEN="$MFA"
-fi
-
+export AWS_MFA_ZENITY="true"
 URL=$(assume-role -console "$profile")
 
 xdg-open "$URL"
