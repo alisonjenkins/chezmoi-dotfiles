@@ -31,8 +31,19 @@ alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 # }}}
 # {{{ Misc
 alias ewm='cd ~/git/ewmg'
-alias fpm='podman run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
-alias jctlw='sudo journalctl -u wpa_supplicant@wlp58s0'
+
+if command -v podman &>/dev/null; then
+  alias fpm='podman run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
+else
+  alias fpm='docker run --rm -v "${WORKSPACE}:/source" -v /etc/passwd:/etc/passwd:ro --user=$(id -u):$(id -g) claranet/fpm'
+fi
+
+if command -v podman &>/dev/null; then
+  alias saws="podman run -it --rm -e AWS_DEEFAULT_REGION=$AWS_DEFAULT_REGION AWS_ACCESS_KEY_ID=$AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN AWS_SECURITY_TOKEN=$AWS_SECURITY_TOKEN ASSUMED_ROLE=$ASSUMED_ROLE -v $HOME/.aws:/root/.aws joshdvir/saws"
+else
+  alias saws="docker run -it --rm -e AWS_DEEFAULT_REGION=$AWS_DEFAULT_REGION AWS_ACCESS_KEY_ID=$AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN AWS_SECURITY_TOKEN=$AWS_SECURITY_TOKEN ASSUMED_ROLE=$ASSUMED_ROLE -v $HOME/.aws:/root/.aws joshdvir/saws"
+fi
+
 alias key='ssh-add ~/git/ssh_keys/id_bashton_alan'
 alias keyaur="ssh-add ~/git/ssh_keys/id_aur"
 alias keyb='ssh-add ~/git/ssh_keys/id_bashton'
@@ -212,6 +223,31 @@ function rcd {
     # the temp file since Linux should handle it on the next
     # boot
     rm -f -- "$tempfile"
+}
+# }}}
+# {{{ Broot
+# This function starts broot and executes the command
+# it produces, if any.
+# It's needed because some shell commands, like `cd`,
+# have no useful effect if executed in a subshell.
+function br {
+    f=$(mktemp)
+    (
+        set +e
+        broot --outcmd "$f" "$@"
+        code=$?
+        if [ "$code" != 0 ]; then
+            rm -f "$f"
+            exit "$code"
+        fi
+    )
+    code=$?
+    if [ "$code" != 0 ]; then
+        return "$code"
+    fi
+    d=$(<"$f")
+    rm -f "$f"
+    eval "$d"
 }
 # }}}
 
