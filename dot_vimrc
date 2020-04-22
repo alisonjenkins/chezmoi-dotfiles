@@ -126,6 +126,7 @@ Plug 'editorconfig/editorconfig-vim'                 " Adds EditorConfig https:/
 Plug 'godlygeek/tabular', {'on': ['Tabularize', 'AddTabularPattern', 'AddTabularPipeline']} " Plugin for aligning text.
 Plug 'kkoomen/vim-doge'                              " DOcumentation GEnerator. Mappings <Leader>D
 Plug 'lukaszb/vim-web-indent'                        " Auto indentation support for Javascript and HTML.
+Plug 'masukomi/vim-markdown-folding'                 " Add folding support to markdown
 Plug 'mattn/emmet-vim'                               " Allows you to write abbreviated HTML and then when a trigger key combo is pressed expand to full length html (key combo is C-y).
 Plug 'psf/black'                                     " Automatic Python code formatter
 Plug 'rhysd/vim-fixjson'                             " Nicely formats JSON and fixes common JSON mistakes (missing commas in arrays... etc)
