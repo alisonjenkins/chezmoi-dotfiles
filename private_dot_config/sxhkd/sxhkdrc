@@ -21,8 +21,8 @@ super + {_,shift + ,ctrl + shift +,ctrl +}{0-9}
 #  bspc desktop --focus next;
 #  bspc node --focus ${id}
 
-super + Delete ; {e,s,S,r,l}
-  {bspc quit,systemctl suspend,systemctl shutdown,systemctl reboot,betterlockscreen -l}
+super + Delete ; {e,s,h,S,r,l}
+  {bspc quit,systemctl suspend,systemctl hibernate,systemctl poweroff,systemctl reboot,betterlockscreen -l}
 
 super + Escape + {h,w}
   pkill -USR1 -x {sxhkd,bspwm}
