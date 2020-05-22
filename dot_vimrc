@@ -54,7 +54,6 @@ if executable('task')
   Plug 'farseer90718/vim-taskwarrior', {'on': ['TW', 'TWUndo', 'TWEditTaskrc', 'TWEditVitrc', 'TWDeleteCompleted', 'TWAdd', 'TWAnnotate', 'TWComplete', 'TWDelete', 'TWDeleteAnnotation', 'TWModifyInteractive', 'TWReportInfo', 'TWSync', 'TWToggleReadonly', 'TWToggleHLField', 'TWHistory', 'TWHistoryClear', 'TWBookmark', 'TWBookmarkClear']} " Task warrior syntax support.
   Plug 'tbabej/taskwiki'                        " Taskwiki format (integrates with Task warrior (depends on it)).
 endif
-Plug 'lervag/vimtex'                          " Adds Syntax and completion for Latex
 Plug 'aaronbieber/vim-quicktask'              " A task / project management plugin for Vim.
 Plug 'burnettk/vim-angular'                   " AngularJS syntax support
 Plug 'chrisyip/Better-CSS-Syntax-for-Vim'     " Adds CSS3 syntax support.
@@ -62,13 +61,15 @@ Plug 'dbeniamine/todo.txt-vim'                " todo.txt syntax plugin for vim.
 Plug 'digitaltoad/vim-pug'                    " Pug templating engine syntax support.
 Plug 'fatih/vim-go'                           " Golang syntax.
 Plug 'jtratner/vim-flavored-markdown'         " Github flavoured Markdown syntax support.
+Plug 'lervag/vimtex'                          " Adds Syntax and completion for Latex
 Plug 'luochen1990/rainbow'                    " Adds 'rainbow' parenthesis (colour codes them to easier see matching pairs)
 Plug 'mhinz/vim-hugefile'                     " Disables Filetype autocmds, syntax highlighting, folding, swapfiles, MatchParen for files bigger than 2MB to ensure that Vim opens them quickly.
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax for various Javascript libraries (to allow completion)
+Plug 'sheerun/vim-polyglot'                   " Syntax files for many different languages
 Plug 'tmhedberg/SimpylFold'                   " simple, correct folding for Python.
+Plug 'tpope/vim-markdown'                     " Syntax for Markdown.
 Plug 'vim-scripts/jQuery'                     " Adds syntax support for JQuery.
 Plug 'wting/cheetah.vim'                      " Cheetah templating syntax support.
-Plug 'sheerun/vim-polyglot'                   " Syntax files for many different languages
 " }}}
 " {{{ Git plugins
 Plug 'airblade/vim-gitgutter'     " adds a +-~ to the gutter where things have been changed from what git is aware.
@@ -129,6 +130,7 @@ Plug 'lukaszb/vim-web-indent'                                                   
 Plug 'masukomi/vim-markdown-folding'                                                        " Add folding support to markdown
 Plug 'mattn/emmet-vim'                                                                      " Allows you to write abbreviated HTML and then when a trigger key combo is pressed expand to full length html (key combo is C-y).
 Plug 'psf/black'                                                                            " Automatic Python code formatter
+Plug 'reedes/vim-pencil'                                                                    " For editing prose-oriented file types such as text, markdown, mail, rst, tex, textile, and asciidoc
 Plug 'rhysd/vim-fixjson'                                                                    " Nicely formats JSON and fixes common JSON mistakes (missing commas in arrays... etc)
 Plug 'rstacruz/vim-hyperstyle'                                                              " Adds shortcuts for quickly writing CSS.
 Plug 'tommcdo/vim-exchange'                                                                 " Easy text exchange operator for vim use cx{motion} to initiate exchange. Go to what you want to exchange and do the same and they will be swapped.
@@ -549,6 +551,9 @@ let g:notes_directories = ['~/Documents/Notes']
 " {{{ vim-operator-flashy
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
+" }}}
+" {{{ vim-polyglot
+let g:polyglot_disabled = ['markdown']
 " }}}
 " WhichKey {{{
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
