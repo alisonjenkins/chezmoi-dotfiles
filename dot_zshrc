@@ -56,6 +56,7 @@ alias kmse='export EYAML_CONFIG=$PWD/.kms-eyaml.yaml'
 alias snowrep='~/git/bashton-servicenow/reports.py'
 alias snowtick='~/git/bashton-servicenow/view-ticket.py --nobox'
 alias snowticks='~/git/bashton-servicenow/sn-tickets.py --team mario'
+alias snowticks-luigi="~/git/bashton-servicenow/sn-tickets.py --team luigi"
 alias tw='task +work'
 alias tp='task +personal'
 alias vim='nvim'
