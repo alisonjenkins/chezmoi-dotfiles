@@ -83,6 +83,9 @@ Plug 'mattn/gist-vim'             " Adds :Gist command for creating a Github gis
 Plug 'rhysd/committia.vim'        " Improved commit message window.
 Plug 'tpope/vim-fugitive'         " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
 " }}}
+" {{{ Gamified Vim Practice
+Plug 'ThePrimeagen/vim-be-good'   " Practice for jumping to lines Type :VimBeGood (Might need to run :UpdateRemotePlugins first)
+" }}}
 " {{{ File / directory navigation plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder of files (mapped to <leader>;)
 Plug 'junegunn/fzf.vim'
