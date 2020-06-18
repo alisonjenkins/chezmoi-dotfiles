@@ -1,5 +1,4 @@
 {
-  "coc.browser.enable": true,
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
