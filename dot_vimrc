@@ -507,6 +507,9 @@ noremap - :RangerEdit<cr>
 " {{{ Rainbow
 let g:rainbow_active = 0
 " }}}
+" {{{ Ripgrep
+let g:rg_derive_root = 1
+" }}}
 " {{{ Pymode
 let g:pymode_lint_config = '$HOME/.pylint.rc'
 let g:pymode_options_max_line_length=100
