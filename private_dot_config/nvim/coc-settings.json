@@ -2,9 +2,10 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
-    "typescript",
     "json",
-    "jsonc"
+    "jsonc",
+    "terraform",
+    "typescript"
   ],
   "prettier.printWidth": 160,
   "prettier.singleQuote": true,
@@ -56,11 +57,16 @@
       ]
     },
     "terraform": {
-      "command": "terraform-lsp",
-      "filetypes": [
-        "terraform"
+      "command": "terraform-ls",
+      "args": [
+        "serve"
       ],
-      "initializationOptions": {}
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
     },
     "puppet": {
       "command": "ruby",
