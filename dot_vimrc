@@ -587,7 +587,12 @@ set novisualbell  " No blinking
 set noerrorbells  " No noise.
 set vb t_vb= " disable any beeps or flashes on error
 set shortmess+=c
-set signcolumn=auto
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 set cmdheight=1
 set cursorline
 set updatetime=300
