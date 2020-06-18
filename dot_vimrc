@@ -221,6 +221,7 @@ set hidden      " The current buffer can be put to the background without writin
 set undofile
 " Match and search
 set hlsearch    " highlight search
+set incsearch   " Incremental search
 set ignorecase  " Do case in sensitive matching with
 set smartcase   " be sensitive when there's a capital letter
 " Don't automatically add newlines to end of file:
