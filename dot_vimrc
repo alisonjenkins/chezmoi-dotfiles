@@ -149,14 +149,14 @@ Plug 'vimoutliner/vimoutliner'                                                  
 Plug 'vimwiki/vimwiki'                                                                      " Adds Vim wiki for taking notes (use <Space>ww to open) see :help vimwiki.
 " }}}
 " {{{ Vim functionality improvements
+" Plug 'camspiers/animate.vim'                                         " Dependency of lens.vim to enable animation of the resize of splits.
+" Plug 'camspiers/lens.vim'                                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
+" Plug 'junegunn/vim-peekaboo'                                       " Plugin to show the contents of registers when you use '\ " ' '@' or CTRL-R in insert mode.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}                           " asynchronous execution plugin for Vim.
-Plug 'camspiers/animate.vim'                                         " Dependency of lens.vim to enable animation of the resize of splits.
-Plug 'camspiers/lens.vim'                                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
 Plug 'ciaranm/securemodelines'                                       " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'                                        " Adds the ability to use Vim as a REST client. Requires cURL.
 Plug 'haya14busa/is.vim'                                             " Improves incremental searching in Vim.
 Plug 'haya14busa/vim-operator-flashy'                                " Adds a temporary highlight of what text was yanked.
-                                                                     " Plug 'junegunn/vim-peekaboo'                                                                                                         " Plugin to show the contents of registers when you use '\ " ' '@' or CTRL-R in insert mode.
 Plug 'kana/vim-operator-user'                                        " Dependency of vim-operator-flashy.
 Plug 'kshenoy/vim-signature'                                         " Enhanced vim mark support (adds gutter icons for marks and extra mappings).
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
@@ -167,6 +167,7 @@ Plug 'mhinz/vim-startify'                                            " Adds Star
 Plug 'mtth/scratch.vim'                                              " Adds the gs command to normal mode to open a scratch buffer (for making quick notes).
 Plug 'powerman/vim-plugin-AnsiEsc'                                   " ANSI colour code support (using for taskwiki).
 Plug 'rafaqz/ranger.vim'
+Plug 'roman/golden-ratio'                                            " Resizes the split you are in to the golden ratio of the editing space.
 Plug 'simeji/winresizer'                                             " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                                     " Allows you to select more text in visual mode by repeatedly pressing 'v'.
 Plug 'tpope/vim-obsession'                                           " Automatic vim session saving plugin.
