@@ -9,7 +9,7 @@ if [ "$DESKTOP_SESSION" == '/usr/share/xsessions/bspwm' ]; then
 fi
 
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-  MONITOR=$m polybar --reload bar1 --config="$HOME/.config/polybar/$CONFIG" &
+  MONITOR=$m polybar --reload pri --config="$HOME/.config/polybar/$CONFIG" &
 done
 
 echo "Bars launched..."
