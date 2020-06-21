@@ -21,7 +21,7 @@ source ~/.fehbg &
 clight &
 picom &
 dex bspwm -ae bspwm &
-steam &
+steam -silent &
 ~/.config/polybar/launch.sh &
 #$(sleep 2 && st -e tmux new-session -As main) &
 # st -e tmux new-session -As main &
