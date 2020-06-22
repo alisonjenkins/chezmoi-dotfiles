@@ -52,7 +52,7 @@ call plug#begin()
 " {{{ Syntax plugins
 if executable('task')
   Plug 'farseer90718/vim-taskwarrior', {'on': ['TW', 'TWUndo', 'TWEditTaskrc', 'TWEditVitrc', 'TWDeleteCompleted', 'TWAdd', 'TWAnnotate', 'TWComplete', 'TWDelete', 'TWDeleteAnnotation', 'TWModifyInteractive', 'TWReportInfo', 'TWSync', 'TWToggleReadonly', 'TWToggleHLField', 'TWHistory', 'TWHistoryClear', 'TWBookmark', 'TWBookmarkClear']} " Task warrior syntax support.
-  Plug 'tbabej/taskwiki'                        " Taskwiki format (integrates with Task warrior (depends on it)).
+  " Plug 'tbabej/taskwiki'                        " Taskwiki format (integrates with Task warrior (depends on it)).
 endif
 Plug 'aaronbieber/vim-quicktask'              " A task / project management plugin for Vim.
 Plug 'burnettk/vim-angular'                   " AngularJS syntax support
