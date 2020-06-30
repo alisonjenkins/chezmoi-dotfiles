@@ -316,10 +316,6 @@ nnoremap <silent> <LocalLeader><Space> :noh<CR>
 " Buffer maps
 "" Close buffer without closing split
 nmap <silent> <LocalLeader>d :bp\|bd #<CR>
-"" Next buffer
-nmap <silent> <LocalLeader>n :bn<CR>
-"" Previous buffer
-nmap <silent> <LocalLeader>n :bp<CR>
 
 " Folding shortcuts
 "" Fold all the things
