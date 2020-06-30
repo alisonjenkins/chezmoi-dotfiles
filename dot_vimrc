@@ -106,12 +106,13 @@ Plug 'scrooloose/snipmate-snippets'                                             
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#install()}} " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
+"Plug 'vim-airline/vim-airline'                            " Adds a pretty and useful Vim status line.
+"Plug 'vim-airline/vim-airline-themes'                     " Themes for Vim Airline.
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'Yggdroot/indentLine'                                " adds indentation lines showing the different indentation levels.
 Plug 'chriskempson/base16-vim'                            " Adds base16 colour scheme support to Vim
 Plug 'jszakmeister/vim-togglecursor'                      " Handles changing the cursor shape while taking into account things that can break it.
-Plug 'vim-airline/vim-airline'                            " Adds a pretty and useful Vim status line.
-Plug 'vim-airline/vim-airline-themes'                     " Themes for Vim Airline.
+Plug 'itchyny/lightline.vim'                              " Adds a pretty and useful Vim status line (more minimal than Airline).
 " }}}
 " {{{ External tool integration
 Plug 'hashivim/vim-terraform'             " Allows running Terraform from inside Vim
