@@ -322,6 +322,8 @@ nmap <silent> <LocalLeader>d :bp\|bd #<CR>
 nmap <silent> <Leader>zc :set foldlevel=0<CR>
 "" Unfold top level.
 nmap <silent> <Leader>za :set foldlevel=1<CR>
+"" Unfold everything.
+nmap <silent> <Leader>zA :set foldlevel=999<CR>
 
 " Split line(opposite to S-J joining line)
 nnoremap <silent> <C-J> gEa<CR><ESC>ew
@@ -361,7 +363,7 @@ nmap <silent> <Leader>a :Startify<CR>
 " nmap <silent> <Leader>r :call MyToggleLens()<CR>
 
 " Run Git commands
-nnoremap <Leader>G :Git 
+nnoremap <Leader>G :Git\ 
 " " }}}
 " Plugin Config " {{{
 " {{{ ale linters
