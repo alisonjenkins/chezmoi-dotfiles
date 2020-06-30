@@ -76,7 +76,6 @@ Plug 'airblade/vim-gitgutter'        " adds a +-~ to the gutter where things hav
 Plug 'christoomey/vim-conflicted'    " Aids in resolving merge conflicts.
 Plug 'gregsexton/gitv'               " Extension to fugitive to see the git branching history.
 Plug 'int3/vim-extradite'            " Extension to fugitive that adds a git commit browser.
-Plug 'jreybert/vimagit'              " Adds a nice Vim UI for staging hunks of files. Use :Magit to activate.
 Plug 'junegunn/gv.vim'               " A git log viewer.
 Plug 'lambdalisue/gina.vim'          " Asynchronous Git plugin. Use check help at :help gina-usage
 Plug 'mattn/gist-vim'                " Adds :Gist command for creating a Github gist from the current buffer or selected text.
@@ -371,8 +370,8 @@ nmap <silent> <Leader>a :Startify<CR>
 " endfunction
 " nmap <silent> <Leader>r :call MyToggleLens()<CR>
 
-" Run Magit
-nmap <silent> <Leader>G :Magit<CR>
+" Run Git commands
+nnoremap <Leader>G :Git 
 " " }}}
 " Plugin Config " {{{
 " {{{ ale linters
