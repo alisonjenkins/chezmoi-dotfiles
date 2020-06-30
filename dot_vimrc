@@ -77,7 +77,7 @@ Plug 'christoomey/vim-conflicted'    " Aids in resolving merge conflicts.
 Plug 'gregsexton/gitv'               " Extension to fugitive to see the git branching history.
 Plug 'int3/vim-extradite'            " Extension to fugitive that adds a git commit browser.
 Plug 'junegunn/gv.vim'               " A git log viewer.
-Plug 'lambdalisue/gina.vim'          " Asynchronous Git plugin. Use check help at :help gina-usage
+" Plug 'lambdalisue/gina.vim'          " Asynchronous Git plugin. Use check help at :help gina-usage
 Plug 'mattn/gist-vim'                " Adds :Gist command for creating a Github gist from the current buffer or selected text.
 Plug 'rhysd/committia.vim'           " Improved commit message window.
 Plug 'tpope/vim-fugitive'            " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
@@ -350,10 +350,10 @@ map <silent> <F12> :set invlist<CR>
 
 map <F1> :Gwrite<CR>
 map <F2> :Gcommit<CR>
-map <F3> :Gina push<CR>
+map <F3> :Git push<CR>
 imap <F1> <ESC>:Gwrite<CR>i
 imap <F2> <ESC>:Gcommit<CR>
-imap <F3> <ESC>:Gina push<CR>i
+imap <F3> <ESC>:Git push<CR>i
 
 " generate HTML version current buffer using current color scheme
 map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR>
