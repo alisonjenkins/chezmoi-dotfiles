@@ -105,8 +105,6 @@ Plug 'scrooloose/snipmate-snippets'                                             
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#install()}} " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
-"Plug 'vim-airline/vim-airline'                            " Adds a pretty and useful Vim status line.
-"Plug 'vim-airline/vim-airline-themes'                     " Themes for Vim Airline.
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'Yggdroot/indentLine'                                " adds indentation lines showing the different indentation levels.
 Plug 'chriskempson/base16-vim'                            " Adds base16 colour scheme support to Vim
@@ -151,10 +149,6 @@ Plug 'vimoutliner/vimoutliner'                                                  
 Plug 'vimwiki/vimwiki'                                                                      " Adds Vim wiki for taking notes (use <Space>ww to open) see :help vimwiki.
 " }}}
 " {{{ Vim functionality improvements
-" Plug 'camspiers/animate.vim'                                        " Dependency of lens.vim to enable animation of the resize of splits.
-" Plug 'camspiers/lens.vim'                                           " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
-" Plug 'junegunn/vim-peekaboo'                                        " Plugin to show the contents of registers when you use '\ " ' '@' or CTRL-R in insert mode.
-"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " asynchronous execution plugin for Vim.
 Plug 'ciaranm/securemodelines'             " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'              " Adds the ability to use Vim as a REST client. Requires cURL.
