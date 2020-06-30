@@ -345,7 +345,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <silent> <Leader>a :Startify<CR>
 
 " Run Git commands
-nnoremap <Leader>G :Git\ 
+nnoremap <Leader>G :Git 
 
 " Run chezmoi apply to apply dotfile changes
 nnoremap <silent> <Leader>ca :Dispatch! chezmoi apply<CR>
