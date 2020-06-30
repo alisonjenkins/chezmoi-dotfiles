@@ -294,18 +294,18 @@ let maplocalleader = ","
 
 if has('win32') || has('win64')
   let directory=.,$TEMP " Swap file support for windows.
-  let vimrcpath = $HOME . "/_vimrc"
-  let vimhomepath = $HOME . "/_vim"
-  let vimrceditpath = $HOME . "/_vimrc"
+  let s:vimrcpath = $HOME . "/_vimrc"
+  let s:vimhomepath = $HOME . "/_vim"
+  let s:vimrceditpath = $HOME . "/_vimrc"
 else
-  let vimrcpath = $HOME . "/.vimrc"
-  let vimhomepath = $HOME . "/.vim"
-  let vimrceditpath = $HOME . "/.local/share/chezmoi/dot_vimrc"
+  let s:vimrcpath = $HOME . "/.vimrc"
+  let s:vimhomepath = $HOME . "/.vim"
+  let s:vimrceditpath = $HOME . "/.local/share/chezmoi/dot_vimrc"
 endif
-nnoremap <silent> <LocalLeader>vd :e <C-R>=vimhomepath<CR> <CR>       " View .vim directory
-nnoremap <silent> <LocalLeader>ve :e <C-R>=vimrceditpath<CR>          " Edit vimrc
-nnoremap <silent> <LocalLeader>vs :source <C-R>=vimrcpath<CR><CR><CR> " Source the vimrc
-nnoremap <silent> <LocalLeader>vt :tabnew <C-R>=vimhomepath<CR><CR>   " View vim directory in a new tab
+nnoremap <silent> <LocalLeader>vd :e <C-R>=s:vimhomepath<CR> <CR>       " View .vim directory
+nnoremap <silent> <LocalLeader>ve :e <C-R>=s:vimrceditpath<CR>          " Edit vimrc
+nnoremap <silent> <LocalLeader>vs :source <C-R>=s:vimrcpath<CR><CR><CR> " Source the vimrc
+nnoremap <silent> <LocalLeader>vt :tabnew <C-R>=s:vimhomepath<CR><CR>   " View vim directory in a new tab
 
 " Stop highlighting searches
 nnoremap <silent> <LocalLeader><Space> :noh<CR>
@@ -349,8 +349,8 @@ nnoremap <Leader>G :Git\
 
 " Run chezmoi apply to apply dotfile changes
 function ChezmoiApply()
-  :Start! chezmoi apply
-  :source vimrcpath
+  :Dispatch! chezmoi apply
+  :source . s:vimrcpath
 endfunction
 nnoremap <silent> <Leader>ca :exec ChezmoiApply()<CR>
 
