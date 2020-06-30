@@ -291,26 +291,23 @@ au FileType javascript setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 " Key mappings " {{{
 let mapleader = "\<Space>"
 let maplocalleader = ","
+
 if has('win32') || has('win64')
   let directory=.,$TEMP " Swap file support for windows.
   let vimrcpath = $HOME . "/_vimrc"
-  nnoremap <silent> <LocalLeader>vs :source $HOME/_vimrc<CR>
-  nnoremap <silent> <LocalLeader>vt :tabnew $HOME/_vimrc<CR>
-  nnoremap <silent> <LocalLeader>ve :e $HOME/_vimrc<CR>
-  nnoremap <silent> <LocalLeader>vd :e $HOME/.vim/ <CR>
-  nnoremap <silent> <LocalLeader>vc :vsplit $HOME/.vim/cheatsheet.md<CR>
+  let vimhomepath = $HOME . "/_vim"
+  let vimrceditpath = $HOME . "/_vimrc"
 else
-  let vimrcpath = $HOME . "/git/dotfiles/vim/vimrc"
-  nnoremap <silent> <LocalLeader>vs :source ~/.local/share/chezmoi/dot_vimrc<CR>
-  nnoremap <silent> <LocalLeader>vt :tabnew ~/.local/share/chezmoi/dot_vimrc<CR>
-  nnoremap <silent> <LocalLeader>ve :e ~/.local/share/chezmoi/dot_vimrc<CR>
-  nnoremap <silent> <LocalLeader>vc :vsplit ~/git/dotfiles/vim/cheatsheet.md<CR>
-  nnoremap <silent> <LocalLeader>vd :e ~/.vim/ <CR>
-  nnoremap <silent> <LocalLeader>tN :e ~/Dropbox/todo/todo.txt<CR>
-  nnoremap <silent> <LocalLeader>tn :e ~/Dropbox/quicktask/tasks.quicktask<CR>
-  nnoremap <silent> <LocalLeader>tp :e ~/Dropbox/quicktask/tasks-personal.quicktask<CR>
+  let vimrcpath = $HOME . "/.vimrc"
+  let vimhomepath = $HOME . "/.vim"
+  let vimrceditpath = $HOME . "/.local/share/chezmoi/dot_vimrc"
 endif
+nnoremap <silent> <LocalLeader>vd :e <C-R>=vimhomepath<CR> <CR>       " View .vim directory
+nnoremap <silent> <LocalLeader>ve :e <C-R>=vimrceditpath<CR>          " Edit vimrc
+nnoremap <silent> <LocalLeader>vs :source <C-R>=vimrcpath<CR><CR><CR> " Source the vimrc
+nnoremap <silent> <LocalLeader>vt :tabnew <C-R>=vimhomepath<CR><CR>   " View vim directory in a new tab
 
+" Stop highlighting searches
 nnoremap <silent> <LocalLeader><Space> :noh<CR>
 
 " Buffer maps
@@ -351,7 +348,14 @@ nmap <silent> <Leader>a :Startify<CR>
 nnoremap <Leader>G :Git\ 
 
 " Run chezmoi apply to apply dotfile changes
-nnoremap <silent> <Leader>ca :Start! chezmoi apply<CR>
+function ChezmoiApply()
+  :Start! chezmoi apply
+  :source vimrcpath
+endfunction
+nnoremap <silent> <Leader>ca :exec ChezmoiApply()<CR>
+
+" Edit chezmoi dotfiles using FZF
+nnoremap <Leader>ce :FZF ~/.local/share/chezmoi/<CR>
 " " }}}
 " Plugin Config " {{{
 " {{{ ale linters
