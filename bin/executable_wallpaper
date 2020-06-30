@@ -49,6 +49,13 @@ function wallpaper_picker() {
   set_wallpaper "$WALLPAPER_PATH"
 }
 
+function print_usage() {
+      echo "Usage: $0 [-r] [-s <wallpaper path>] [-p]"
+      echo -e "\t-r select random wallpaper."
+      echo -e "\t-s set the wallpaper to the image at the specified path."
+      echo -e "\t-p open sxiv as a wallpaper picker. Mark the image you want to use using 'm' then quit using 'q'."
+}
+
 WALLPAPERS_PATH="$HOME/git/wallpapers"
 WALLPAPERS_REPO="https://github.com/LukeSmithxyz/wallpapers.git"
 
@@ -65,8 +72,10 @@ while getopts ":s:rp" opt; do
       wallpaper_picker
       ;;
     \? )
-      echo "Usage: $0 [-r] [-s] [-p]"
-      echo ""
+      print_usage
+      ;;
+    * )
+      print_usage
       ;;
   esac
 done
