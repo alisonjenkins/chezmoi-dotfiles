@@ -340,10 +340,10 @@ map <silent> <F12> :set invlist<CR>
 
 map <F1> :Gwrite<CR>
 map <F2> :Gcommit<CR>
-map <F3> :Git push<CR>
+map <F3> :Gpush<CR>
 imap <F1> <ESC>:Gwrite<CR>i
 imap <F2> <ESC>:Gcommit<CR>
-imap <F3> <ESC>:Git push<CR>i
+imap <F3> <ESC>:Gpush<CR>i
 
 " generate HTML version current buffer using current color scheme
 map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR>
