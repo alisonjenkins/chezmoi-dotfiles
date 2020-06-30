@@ -155,6 +155,7 @@ Plug 'vimwiki/vimwiki'                                                          
 " Plug 'camspiers/animate.vim'                                         " Dependency of lens.vim to enable animation of the resize of splits.
 " Plug 'camspiers/lens.vim'                                            " Resizes Vim splits based on the to ensure that you are able to see what you are editing.
 " Plug 'junegunn/vim-peekaboo'                                       " Plugin to show the contents of registers when you use '\ " ' '@' or CTRL-R in insert mode.
+"Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}                           " asynchronous execution plugin for Vim.
 Plug 'ciaranm/securemodelines'                                       " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'                                        " Adds the ability to use Vim as a REST client. Requires cURL.
@@ -162,7 +163,6 @@ Plug 'haya14busa/is.vim'                                             " Improves 
 Plug 'haya14busa/vim-operator-flashy'                                " Adds a temporary highlight of what text was yanked.
 Plug 'kana/vim-operator-user'                                        " Dependency of vim-operator-flashy.
 Plug 'kshenoy/vim-signature'                                         " Enhanced vim mark support (adds gutter icons for marks and extra mappings).
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } " Adds a menu that appears when you use leader or local leader to show you what is mapped to what.
 Plug 'machakann/vim-sandwich'                                        " Adds mappings to work with surrounding quotes / tags / parenthesis / more.
 Plug 'majutsushi/tagbar'                                             " Adds a tagbar for exhuberant ctags command is :TagbarToggle (mapped to F8 key).
 Plug 'mbbill/undotree'                                               " Adds :UndotreeToggle command to enable you to visualise your undo history and the changes you have made to the file (mapped to F5).
@@ -574,11 +574,7 @@ nmap Y <Plug>(operator-flashy)$
 " }}}
 " {{{ vim-polyglot
 let g:polyglot_disabled = ['markdown']
-" }}}
-" WhichKey {{{
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-" }}}
+"}}}
 filetype plugin indent on
 " }}}
 " Visual "{{{
