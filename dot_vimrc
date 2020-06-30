@@ -1,3 +1,4 @@
+" vim: foldmethod=marker:foldlevel=0
 " TODO: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/225852#225852
 " Setting up vim plug"{{{
 let vimPlugNOTInstalled=1
@@ -206,9 +207,6 @@ set path+=**
 set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
 set timeoutlen=600  " Time to wait after ESC (default causes an annoying delay)
 let &t_ut='' " Disable background colour erase
-" Modeline
-set modeline
-set modelines=5 " default numbers of lines to read for modeline instructions
 " Backup
 set nowritebackup
 set nobackup
@@ -376,6 +374,22 @@ nnoremap <Leader>G :Git
 " }}}
 " Black {{{
 autocmd BufWritePre *.py execute ':Black'
+" }}}
+" securemodelines {{{
+let g:secure_modelines_modelines=5
+
+let g:secure_modelines_allowed_items = [
+      \ "textwidth",   "tw",
+      \ "softtabstop", "sts",
+      \ "tabstop",     "ts",
+      \ "shiftwidth",  "sw",
+      \ "expandtab",   "et",   "noexpandtab", "noet",
+      \ "filetype",    "ft",
+      \ "foldmethod",  "fdm",
+      \ "foldlevel",
+      \ "readonly",    "ro",   "noreadonly", "noro",
+      \ "rightleft",   "rl",   "norightleft", "norl"
+      \ ]
 " }}}
 " COC {{{
 " Install plugins
