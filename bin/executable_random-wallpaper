@@ -1,8 +1,0 @@
-#!/bin/bash
-if ! test -d "$HOME/git/wallpapers"; then
-  git clone https://github.com/LukeSmithxyz/wallpapers.git "$HOME/git/wallpapers"
-fi;
-WALLPAPER_PATH="$(find "$HOME/git/wallpapers/" -type f | shuf -n1)"
-feh --bg-fill "$WALLPAPER_PATH"
-echo "$WALLPAPER_PATH" > ~/.wallpaper
-betterlockscreen -u $(< ~/.wallpaper)

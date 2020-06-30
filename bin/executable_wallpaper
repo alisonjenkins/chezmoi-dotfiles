@@ -1,0 +1,45 @@
+#!/bin/bash
+function get_wallpapers() {
+  if ! test -d "$WALLPAPERS_PATH"; then
+    git clone "$WALLPAPERS_REPO" "$HOME/git/wallpapers"
+  fi;
+}
+
+function random_wallpaper() {
+  WALLPAPER_PATH="$(find "$HOME/git/wallpapers/" -type f | shuf -n1)"
+  set_wallpaper "$WALLPAPER_PATH"
+}
+
+function set_wallpaper() {
+  WALLPAPER_PATH="$1"
+  feh --bg-fill "$WALLPAPER_PATH"
+  echo "$WALLPAPER_PATH" > ~/.wallpaper
+  betterlockscreen -u "$(< ~/.wallpaper)"
+}
+
+function wallpaper_picker() {
+  WALLPAPER_PATH=$(sxiv -tro "$WALLPAPERS_PATH")
+  set_wallpaper "$WALLPAPER_PATH"
+}
+
+WALLPAPERS_PATH="$HOME/git/wallpapers"
+WALLPAPERS_REPO="https://github.com/LukeSmithxyz/wallpapers.git"
+
+get_wallpapers
+while getopts ":s:rp" opt; do
+  case ${opt} in
+    s )
+      set_wallpaper "$OPTARG"
+      ;;
+    r )
+      random_wallpaper
+      ;;
+    p )
+      wallpaper_picker
+      ;;
+    \? )
+      echo "Usage: $0 [-r] [-s] [-p]"
+      echo ""
+      ;;
+  esac
+done
