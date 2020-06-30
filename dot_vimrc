@@ -365,9 +365,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 nmap <silent> <Leader>a :Startify<CR>
 
-" Toggle display of NERD Tree
-nmap <silent> <Leader>n :NERDTreeToggle<CR>
-
 " Toggle Lens (resizing of splits on enter)
 function! MyToggleLens()
   let g:lens#enter_disabled = !g:lens#enter_disabled
@@ -561,10 +558,10 @@ let g:UltiSnipsEditSplit="vertical"
 " {{{ Undotree
 nnoremap <F5> :UndotreeToggle<CR>
 " }}}
-" {{{ vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 0
-" }}}
+" " {{{ vim-airline
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 0
+" " }}}
 " {{{ vim-notes
 let g:notes_directories = ['~/Documents/Notes']
 " }}}
