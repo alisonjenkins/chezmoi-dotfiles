@@ -349,6 +349,9 @@ nmap <silent> <Leader>a :Startify<CR>
 
 " Run Git commands
 nnoremap <Leader>G :Git\ 
+
+" Run chezmoi apply to apply dotfile changes
+nnoremap <silent> <Leader>ca :Start! chezmoi apply<CR>
 " " }}}
 " Plugin Config " {{{
 " {{{ ale linters
