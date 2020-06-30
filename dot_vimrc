@@ -347,12 +347,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 nmap <silent> <Leader>a :Startify<CR>
 
-" " Toggle Lens (resizing of splits on enter)
-" function! MyToggleLens()
-"   let g:lens#enter_disabled = !g:lens#enter_disabled
-" endfunction
-" nmap <silent> <Leader>r :call MyToggleLens()<CR>
-
 " Run Git commands
 nnoremap <Leader>G :Git\ 
 " " }}}
