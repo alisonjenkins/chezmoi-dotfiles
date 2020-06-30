@@ -328,9 +328,6 @@ nmap <silent> <Leader>zA :set foldlevel=999<CR>
 " Split line(opposite to S-J joining line)
 nnoremap <silent> <C-J> gEa<CR><ESC>ew
 
-" Add a new line at the end of the line.
-map <S-CR> A<CR><ESC>
-
 " Control+S and Control+Q are flow-control characters: disable them in your terminal settings.
 " $ stty -ixon -ixoff
 noremap <C-S> :update<CR>
