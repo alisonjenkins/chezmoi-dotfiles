@@ -60,6 +60,11 @@ WALLPAPERS_PATH="$HOME/git/wallpapers"
 WALLPAPERS_REPO="https://github.com/LukeSmithxyz/wallpapers.git"
 
 get_wallpapers
+
+if [ ! "$#" -gt 1 ]; then
+   print_usage
+   exit
+fi
 while getopts ":s:rp" opt; do
   case ${opt} in
     s )
@@ -74,7 +79,7 @@ while getopts ":s:rp" opt; do
     \? )
       print_usage
       ;;
-    * )
+    *)
       print_usage
       ;;
   esac
