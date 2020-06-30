@@ -328,12 +328,6 @@ nmap <silent> <Leader>zA :set foldlevel=999<CR>
 " Split line(opposite to S-J joining line)
 nnoremap <silent> <C-J> gEa<CR><ESC>ew
 
-" Control+S and Control+Q are flow-control characters: disable them in your terminal settings.
-" $ stty -ixon -ixoff
-noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <C-O>:update<CR>
-
 " show/Hide hidden Chars
 map <silent> <F12> :set invlist<CR>
 
