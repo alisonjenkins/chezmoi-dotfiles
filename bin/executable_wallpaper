@@ -1,23 +1,50 @@
 #!/bin/bash
+set -euo pipefail
+
 function get_wallpapers() {
+  if ! command -v 'git' &>/dev/null; then
+    echo "Missing git which is used for retrieving the wallpapers from the git repo $WALLPAPERS_REPO. Please install git and try again."
+    exit 1
+  fi
+
   if ! test -d "$WALLPAPERS_PATH"; then
     git clone "$WALLPAPERS_REPO" "$HOME/git/wallpapers"
   fi;
 }
 
 function random_wallpaper() {
+  if ! command -v 'shuf' &>/dev/null; then
+    echo "Missing the shuf command which is used for randomisation of the wallpapers. Please install shuf and try again."
+    exit 1
+  fi
+
   WALLPAPER_PATH="$(find "$HOME/git/wallpapers/" -type f | shuf -n1)"
   set_wallpaper "$WALLPAPER_PATH"
 }
 
 function set_wallpaper() {
   WALLPAPER_PATH="$1"
+
+  if ! command -v 'feh' &>/dev/null; then
+    echo "Missing the feh command which is used for setting the wallpaper. Please install feh and try again."
+    exit 1
+  fi
+
   feh --bg-fill "$WALLPAPER_PATH"
   echo "$WALLPAPER_PATH" > ~/.wallpaper
-  betterlockscreen -u "$(< ~/.wallpaper)"
+
+  if command -v 'betterlockscreen' &>/dev/null; then
+    betterlockscreen -u "$(< ~/.wallpaper)"
+  else
+    echo "Missing the betterlockscreen command which I typically use for locking the screen. Please install betterlockscreen if you want to use the wallpaper as the lock screen."
+  fi
 }
 
 function wallpaper_picker() {
+  if ! command -v 'sxiv' &>/dev/null; then
+    echo "Missing the sxiv command which is used as a wallpaper picker. Please install sxiv and try again."
+    exit 1
+  fi
   WALLPAPER_PATH=$(sxiv -tro "$WALLPAPERS_PATH")
   set_wallpaper "$WALLPAPER_PATH"
 }
