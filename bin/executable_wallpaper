@@ -61,7 +61,7 @@ WALLPAPERS_REPO="https://github.com/LukeSmithxyz/wallpapers.git"
 
 get_wallpapers
 
-if [ ! "$#" -gt 1 ]; then
+if [ ! "$#" -gt 0 ]; then
    print_usage
    exit
 fi
