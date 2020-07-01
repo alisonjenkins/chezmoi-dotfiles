@@ -23,7 +23,7 @@ alias -- -="cd -"
 
 alias cdd="cd ~/Downloads/"
 alias cdg="cd ~/git/"
-alias cdot="chezmoi cd"
+alias cdot="cd ~/.local/share/chezmoi"
 alias cdgo="cd \$GOPATH"
 # }}}
 # {{{ Archlinux specific aliases
