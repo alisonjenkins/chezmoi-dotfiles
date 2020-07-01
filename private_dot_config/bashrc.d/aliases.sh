@@ -15,7 +15,6 @@ alias cdgo="cd \$GOPATH"
 alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 
 # {{{ Misc
-alias awsconsole="~/git/awsconsole/awsconsole -b google-chrome-stable"
 alias librarian-puppet='docker run --rm -v "$PWD:/puppet" -v /etc/passwd:/etc/passwd:ro --user="$(id -u):$(id -g)" claranet/librarian-puppet'
 alias codebuild="~/git/aws-codebuild-docker-images/local_builds/codebuild_build.sh"
 alias ewm="cd ~/git/ewmg"

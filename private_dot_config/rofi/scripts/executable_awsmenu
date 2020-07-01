@@ -22,6 +22,11 @@ else
   INCOGNITO="--incognito"
 fi
 export AWS_MFA_ZENITY="true"
-URL=$(assume-role -console "$profile")
+
+if command -v "awsconsole" &>/dev/null; then
+  URL=$(awsconsole -u "$profile")
+else
+  URL=$(assume-role -console "$profile")
+fi
 
 xdg-open "$URL"
