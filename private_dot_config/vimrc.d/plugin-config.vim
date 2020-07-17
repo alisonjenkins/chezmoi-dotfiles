@@ -22,5 +22,6 @@ source ~/.config/vimrc.d/plugin-config/todo-txt.vim
 source ~/.config/vimrc.d/plugin-config/undotree.vim
 source ~/.config/vimrc.d/plugin-config/vim-notes.vim
 source ~/.config/vimrc.d/plugin-config/vim-operator-flashy.vim
+source ~/.config/vimrc.d/plugin-config/vim-zettel.vim
 
 filetype plugin indent on
