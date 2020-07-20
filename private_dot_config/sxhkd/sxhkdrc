@@ -42,7 +42,7 @@ super + f
   fi
 
 super + alt + l
-  betterlockscreen -l
+  ~/bin/screen-lock
 
 super + shift + q
   bspc node -c

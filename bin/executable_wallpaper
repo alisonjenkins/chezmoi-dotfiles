@@ -33,11 +33,11 @@ function set_wallpaper() {
   feh --bg-fill "$WALLPAPER_PATH"
   echo "$WALLPAPER_PATH" > ~/.wallpaper
 
-  if command -v 'betterlockscreen' &>/dev/null; then
-    betterlockscreen -u "$(< ~/.wallpaper)"
-  else
-    echo "Missing the betterlockscreen command which I typically use for locking the screen. Please install betterlockscreen if you want to use the wallpaper as the lock screen."
-  fi
+  # if command -v 'betterlockscreen' &>/dev/null; then
+  #   betterlockscreen -u "$(< ~/.wallpaper)"
+  # else
+  #   echo "Missing the betterlockscreen command which I typically use for locking the screen. Please install betterlockscreen if you want to use the wallpaper as the lock screen."
+  # fi
 }
 
 function wallpaper_picker() {
