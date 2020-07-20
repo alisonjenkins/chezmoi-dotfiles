@@ -1,7 +1,7 @@
 [Unit]
-Description=XScreenSaver
+Description=xss-lock locks the system on inactivity and suspend events.
 [Service]
-ExecStart=/usr/bin/xss-lock -- /sbin/betterlockscreen --lock
+ExecStart=/usr/bin/xss-lock -n /usr/lib/xsecurelock/dimmer -l -- ~/bin/screen-lock
 Restart=always
 RestartSec=3
 [Install]
