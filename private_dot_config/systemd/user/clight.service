@@ -1,0 +1,8 @@
+[Unit]
+Description=Manage the screen and keyboard backlights using webcam and ambient light sensors.
+[Service]
+ExecStart=/usr/bin/clight --no-dimmer --no-dpms
+Restart=always
+RestartSec=3
+[Install]
+WantedBy=default.target
