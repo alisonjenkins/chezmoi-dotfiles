@@ -16,11 +16,11 @@ augroup filetype_vimwiki
   autocmd FileType vimwiki nmap T <Plug>ZettelYankNameMap
   autocmd FileType vimwiki xmap z <Plug>ZettelNewSelectedMap
   autocmd FileType vimwiki nmap gZ <Plug>ZettelReplaceFileWithLink
-  autocmd FileType vimwiki nmap <Leader>wg <Plug>ZettelGenerateTags
-  autocmd FileType vimwiki nmap <Leader>wi <Plug>ZettelInbox
-  autocmd FileType vimwiki nmap <Leader>ws <Plug>ZettelOpen
-  autocmd FileType vimwiki nmap <Leader>wll <Plug>ZettelGenerateLinks
-  autocmd FileType vimwiki nmap <Leader>wbl <Plug>ZettelBacklinks
+  autocmd FileType vimwiki nmap <Leader>wg :ZettelGenerateTags<CR>
+  autocmd FileType vimwiki nmap <Leader>wi :ZettelInbox<CR>
+  autocmd FileType vimwiki nmap <Leader>wo :ZettelOpen<CR>
+  autocmd FileType vimwiki nmap <Leader>wll :ZettelGenerateLinks<CR>
+  autocmd FileType vimwiki nmap <Leader>wbl :ZettelBacklinks<CR>
 augroup END
 
 " Set template and custom header variable for the second Wiki
