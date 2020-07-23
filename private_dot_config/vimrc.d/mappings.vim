@@ -67,6 +67,3 @@ nnoremap <Leader>ce :FZF ~/.local/share/chezmoi/<CR>
 
 " View registers
 nnoremap <silent> <Leader>" :reg<CR>
-
-" Save file with sudo
-command! W SudoWrite
