@@ -1,10 +1,27 @@
 " COC
 
 " Install plugins
+ " \'coc-tabnine',
 let g:coc_global_extensions = [
- \'coc-snippets', 'coc-stylelint', 'coc-tabnine', 'coc-tslint', 'coc-tsserver', 'coc-vimtex',
- \'coc-lists', 'coc-marketplace', 'coc-prettier', 'coc-python', 'coc-rls', 'coc-sh',
- \'coc-browser', 'coc-css', 'coc-docker', 'coc-emmet', 'coc-eslint', 'coc-go', 'coc-highlight', 'coc-html',
+ \'coc-browser',
+ \'coc-css',
+ \'coc-docker',
+ \'coc-emmet',
+ \'coc-eslint',
+ \'coc-go',
+ \'coc-highlight',
+ \'coc-html',
+ \'coc-lists',
+ \'coc-marketplace',
+ \'coc-prettier',
+ \'coc-python',
+ \'coc-rls',
+ \'coc-sh',
+ \'coc-snippets',
+ \'coc-stylelint',
+ \'coc-tslint',
+ \'coc-tsserver',
+ \'coc-vimtex',
  \'coc-yaml'
 \]
 

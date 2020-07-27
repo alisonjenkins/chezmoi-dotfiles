@@ -121,6 +121,7 @@ Plug 'mhinz/vim-startify'                                                       
 Plug 'mtth/scratch.vim', { 'on': [ 'Scratch', 'ScratchInsert', 'ScratchPreview', 'ScratchSelection'] }              " Adds the gs command to normal mode to open a scratch buffer (for making quick notes).
 Plug 'powerman/vim-plugin-AnsiEsc'                                                                                  " ANSI colour code support (using for taskwiki).
 Plug 'rafaqz/ranger.vim'
+Plug 'voldikss/vim-floaterm'
 Plug 'roman/golden-ratio'                                                                                           " Resizes the split you are in to the golden ratio of the editing space.
 Plug 'simeji/winresizer'                                                                                            " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                                                                                    " Allows you to select more text in visual mode by repeatedly pressing 'v'.

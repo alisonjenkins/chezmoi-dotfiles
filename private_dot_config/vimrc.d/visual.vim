@@ -13,9 +13,7 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
-set cmdheight=1
 set cursorline
-set updatetime=300
 
 set nolist " Display unprintable characters f12 - switches
 

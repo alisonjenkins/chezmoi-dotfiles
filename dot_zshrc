@@ -252,6 +252,11 @@ function br {
     eval "$d"
 }
 # }}}
+# {{{ kubectl completion
+if ! command -v kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
+# }}}
 
 if ! command -v assume-role &>/dev/null; then
   go get -u github.com/alanjjenkins/assume-role

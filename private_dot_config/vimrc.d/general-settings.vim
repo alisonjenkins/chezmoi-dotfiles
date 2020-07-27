@@ -9,6 +9,9 @@ set path+=**
 set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
 set timeoutlen=600  " Time to wait after ESC (default causes an annoying delay)
 let &t_ut='' " Disable background colour erase
+set cmdheight=2 " Give more space for displaying messages. (Recommended by COC)
+set updatetime=300 " " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
 
 " Backup
 set nowritebackup
