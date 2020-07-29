@@ -53,7 +53,7 @@ test -f "$RASPBIAN_ZIP_PATH" || aria2c "https://downloads.raspberrypi.org/raspbi
 unzip "$RASPBIAN_ZIP_PATH" -d "$TEMPDIR"
 IMGPATH=$(find "$TEMPDIR" -name '*.img')
 dd if="$IMGPATH" of="${DRIVE_PATH}" bs=1M status=progress
-sync
+eject "$DRIVE_PATH"
 
 mkdir boot
 get_partitions "$(echo $DRIVE_PATH | cut -d'/' -f3)"
