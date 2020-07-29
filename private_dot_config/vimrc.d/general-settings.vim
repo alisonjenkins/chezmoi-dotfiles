@@ -34,5 +34,12 @@ set smartcase   " be sensitive when there's a capital letter
 set nofixeol
 set noeol
 
-" Completion
-set omnifunc=syntaxcomplete#Complete
+" Always use system Python
+" Figure out the system Python for Neovim.
+if exists("$VIRTUAL_ENV")
+    let g:python2_host_prog=substitute(system("which -a python2 | head -n2 | tail -n1"), "\n", '', 'g')
+    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
+else
+    let g:python2_host_prog=substitute(system("which python2"), "\n", '', 'g')
+    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
+endif
