@@ -30,14 +30,15 @@ function set_wallpaper() {
     exit 1
   fi
 
-  feh --bg-fill "$WALLPAPER_PATH"
-  echo "$WALLPAPER_PATH" > ~/.wallpaper
+  ln -s "$WALLPAPER_PATH" ~/.config/wallpaper
+  chezmoi add ~/.config/wallpaper
 
-  # if command -v 'betterlockscreen' &>/dev/null; then
-  #   betterlockscreen -u "$(< ~/.wallpaper)"
-  # else
-  #   echo "Missing the betterlockscreen command which I typically use for locking the screen. Please install betterlockscreen if you want to use the wallpaper as the lock screen."
-  # fi
+  if [ "$DESKTOP_SESSION" == "/usr/share/wayland-sessions/sway" ]; then
+    swaymsg output "*" background ~/.config/wallpaper fill
+  else
+    feh --bg-fill "$WALLPAPER_PATH"
+  fi
+
 }
 
 function wallpaper_picker() {
