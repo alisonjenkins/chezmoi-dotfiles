@@ -30,7 +30,7 @@ function set_wallpaper() {
     exit 1
   fi
 
-  ln -s "$WALLPAPER_PATH" ~/.config/wallpaper
+  ln -sf "$WALLPAPER_PATH" ~/.config/wallpaper
   chezmoi add ~/.config/wallpaper
 
   if [ "$DESKTOP_SESSION" == "/usr/share/wayland-sessions/sway" ]; then
