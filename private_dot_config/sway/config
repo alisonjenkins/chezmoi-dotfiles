@@ -357,10 +357,6 @@ bindsym $mod+Shift+s exec "/home/alan/.config/rofi/scripts/passmenu --type"
 bindsym $mod+Shift+x exec "/home/alan/.config/rofi/scripts/awsmenu"
 
 # launcher shortcuts
-bindsym Mod4+Mod1+l exec betterlockscreen -l
-# bindsym Mod4+Mod1+Shift+l exec xscreensaver-command --lock
-# bindsym Mod4+Mod1+l exec xscreensaver-command --lock && keepass --lock-all
-# bindsym Mod4+Mod1+Shift+l exec xscreensaver-command --lock
 bindsym $mod+p exec i3finder
 bindsym $mod+g exec i3finder -a move
 bindsym $mod+b exec i3finder -a back
@@ -368,7 +364,6 @@ bindsym $mod+b exec i3finder -a back
 # autostart
 # exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id /usr/bin/lxsession
-exec --no-startup-id xss-lock -- betterlockscreen -l &
 exec --no-startup-id libinput-gestures-setup start &
 exec /usr/bin/nice -n 19 /usr/bin/slack
 exec kitty --single-instance --session ~/.config/kitty/session-tmux.conf
