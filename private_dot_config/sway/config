@@ -400,7 +400,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 # sway specific options (disable if using i3)
-output "*" background "/home/alan/.wallpaper" fill
+output "*" background "/home/alan/.config/wallpaper" fill
 
 output eDP-1 {
   pos 0 0 res 1920x1080@143.998001Hz
