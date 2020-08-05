@@ -1,10 +1,2 @@
 #!/bin/sh
-export XSECURELOCK_AUTH_BACKGROUND_COLOR="#222222"
-export XSECURELOCK_AUTH_TIMEOUT=2
-export XSECURELOCK_GLOBAL_SAVER="/usr/lib/xsecurelock/saver_mpv"
-export XSECURELOCK_LIST_VIDEOS_COMMAND="find ~/Videos/Screensavers -type f"
-export XSECURELOCK_PASSWORD_PROMPT="time"
-export XSECURELOCK_SHOW_HOSTNAME=0
-export XSECURELOCK_SHOW_USERNAME=0
-export XSECURE_SHOW_DATETIME=1
-xsecurelock
+loginctl lock-session
