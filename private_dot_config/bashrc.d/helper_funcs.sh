@@ -7,7 +7,7 @@ fi
 # {{{ Asdf installation
 ASDF_DIR="$HOME/.local/share/asdf"
 if [ ! -e "$ASDF_DIR" ]; then
-  git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR" --branch v0.5.0
+  git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR" --branch v0.7.8
 fi
 # }}}
 # {{{ base16 installation
