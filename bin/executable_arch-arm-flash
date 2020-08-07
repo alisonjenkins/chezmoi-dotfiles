@@ -26,6 +26,8 @@ SBC_TYPES=(
   [raspi]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz"
   [raspi3]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz"
   [raspi3_64]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-3-latest.tar.gz"
+  [raspi4]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-4-latest.tar.gz"
+  [odroidhc2]="http://os.archlinuxarm.org/os/ArchLinuxARM-odroid-xu3-latest.tar.gz"
 )
 
 if [[ "$#" -ne 2 ]]; then
@@ -86,8 +88,9 @@ get_partition 1
 mount "/dev/$PART_NAME" root
 
 echo -e "\n* Downloading Arch tar"
-aria2c "${SBC_TYPES[$SBC_TYPE]}" -o arch.tar.gz
-bsdtar -xpf arch.tar.gz -C root
+ARCH_DOWNLOAD_PATH="/tmp/arch-${SBC_TYPE}.tar.gz"
+test -f "$ARCH_DOWNLOAD_PATH" || aria2c "${SBC_TYPES[$SBC_TYPE]}" -d /tmp -o "$(basename ${ARCH_DOWNLOAD_PATH})"
+bsdtar -xpf "$ARCH_DOWNLOAD_PATH" -C root
 sync
 
 echo -e "\n* Copying boot files"
