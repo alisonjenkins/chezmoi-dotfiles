@@ -27,6 +27,7 @@ SBC_TYPES=(
   [raspi3]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz"
   [raspi3_64]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-3-latest.tar.gz"
   [raspi4]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-4-latest.tar.gz"
+  [raspi4_64]="https://olegtown.pw/Public/ArchLinuxArm/RPi4/rootfs/ArchLinuxARM-rpi-4-aarch64-2020-07-12.tar.gz"
   [odroidhc2]="http://os.archlinuxarm.org/os/ArchLinuxARM-odroid-xu3-latest.tar.gz"
 )
 
@@ -67,8 +68,8 @@ fi
 
 echo -e "\n* Partitioning disk"
 parted -s "$DRIVE_PATH" "mklabel msdos"
-parted -s "$DRIVE_PATH" "mkpart primary fat32 1M 100M"
-parted -s "$DRIVE_PATH" "mkpart primary ext4 100M -1"
+parted -s "$DRIVE_PATH" "mkpart primary fat32 1M 300M"
+parted -s "$DRIVE_PATH" "mkpart primary ext4 300M -1"
 
 echo -e "\n* Formatting partitions"
 get_partitions "$(echo $DRIVE_PATH | cut -d'/' -f3)"
