@@ -69,14 +69,14 @@ fi
 echo -e "\n* Partitioning disk"
 parted -s "$DRIVE_PATH" "mklabel msdos"
 parted -s "$DRIVE_PATH" "mkpart primary fat32 1M 300M"
-parted -s "$DRIVE_PATH" "mkpart primary ext4 300M -1"
+parted -s "$DRIVE_PATH" "mkpart primary xfs 300M -1"
 
 echo -e "\n* Formatting partitions"
 get_partitions "$(echo $DRIVE_PATH | cut -d'/' -f3)"
 get_partition 0
 mkfs.vfat -F 32 "/dev/$PART_NAME"
 get_partition 1
-mkfs.ext4 "/dev/$PART_NAME"
+mkfs.xfs "/dev/$PART_NAME"
 
 echo -e "\n* Mounting partitions"
 TEMPDIR="$(mktemp -d)"
