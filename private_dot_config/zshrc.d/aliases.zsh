@@ -28,13 +28,13 @@ else
 fi
 
 # SSH key aliases
-alias key='ssh-add ~/git/ssh_keys/id_bashton_alan'
-alias keyaur="ssh-add ~/git/ssh_keys/id_aur"
-alias keyb='ssh-add ~/git/ssh_keys/id_bashton'
+alias key='ssh-add ~/.ssh/ssh_keys/id_bashton_alan'
+alias keyaur="ssh-add ~/.ssh/ssh_keys/id_aur"
+alias keyb='ssh-add ~/.ssh/ssh_keys/id_bashton'
 alias keycl='ssh-add -D'
-alias keyp='ssh-add ~/git/ssh_keys/id_personal'
-alias keypa='ssh-add ~/git/ssh_keys/id_alan-aws'
-alias keypo='ssh-add ~/git/ssh_keys/id_personal_old'
+alias keyp='ssh-add ~/.ssh/ssh_keys/id_personal'
+alias keypa='ssh-add ~/.ssh/ssh_keys/id_alan-aws'
+alias keypo='ssh-add ~/.ssh/ssh_keys/id_personal_old'
 alias kmse='export EYAML_CONFIG=$PWD/.kms-eyaml.yaml'
 
 # Servicenow script aliases
