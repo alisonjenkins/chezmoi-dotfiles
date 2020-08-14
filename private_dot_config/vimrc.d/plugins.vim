@@ -104,7 +104,7 @@ Plug 'vim-scripts/VOoM', {'on': 'Voom'}                                         
 Plug 'vimoutliner/vimoutliner'                                                                                                                         " Adds an outliner to vim for planning things out.
 Plug 'vimwiki/vimwiki'                                                                                                                                 " Adds Vim wiki for taking notes (use <Space>ww to open) see :help vimwiki.
 Plug 'michal-h21/vim-zettel'                                                                                                                           " Implements ideas from the Zettelkasten method into Vimwiki.
-Plug 'michal-h21/vimwiki-sync'                                                                                                                         " Syncs vimwiki to a configured git repository and auto commits changed files.
+" Plug 'michal-h21/vimwiki-sync'                                                                                                                         " Syncs vimwiki to a configured git repository and auto commits changed files.
 " }}}
 " {{{ Vim functionality improvements
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}                                                                          " asynchronous execution plugin for Vim.
