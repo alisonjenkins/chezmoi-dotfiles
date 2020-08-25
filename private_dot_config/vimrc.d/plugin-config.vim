@@ -24,5 +24,6 @@ source ~/.config/vimrc.d/plugin-config/vim-notes.vim
 source ~/.config/vimrc.d/plugin-config/vim-operator-flashy.vim
 source ~/.config/vimrc.d/plugin-config/vim-wiki.vim
 source ~/.config/vimrc.d/plugin-config/vim-zettel.vim
+source ~/.config/vimrc.d/plugin-config/vimtex.vim
 
 filetype plugin indent on
