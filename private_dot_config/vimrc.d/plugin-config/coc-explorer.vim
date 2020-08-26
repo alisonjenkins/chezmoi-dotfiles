@@ -1,6 +1,6 @@
 let g:coc_explorer_global_presets = {
-\   '.vim': {
-\     'root-uri': '~/.vim',
+\   'chezmoi-dotfiles': {
+\     'root-uri': '~/.local/share/chezmoi/',
 \   },
 \   'tab': {
 \     'position': 'tab',
@@ -33,7 +33,8 @@ let g:coc_explorer_global_presets = {
 \ }
 
 " Use preset argument to open it
-nmap <Leader>ed :CocCommand explorer --preset .vim<CR>
+nmap <Leader>ee :CocCommand explorer<CR>
+nmap <Leader>ed :CocCommand explorer --preset chezmoi-dotfiles<CR>
 nmap <Leader>ef :CocCommand explorer --preset floating<CR>
 
 " List all presets

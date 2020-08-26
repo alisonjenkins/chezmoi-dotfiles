@@ -10,6 +10,7 @@ source ~/.config/vimrc.d/plugin-config/doge.vim
 source ~/.config/vimrc.d/plugin-config/easymotion.vim
 source ~/.config/vimrc.d/plugin-config/emmet.vim
 source ~/.config/vimrc.d/plugin-config/fzf.vim
+source ~/.config/vimrc.d/plugin-config/golden-ratio.vim
 source ~/.config/vimrc.d/plugin-config/large-file-editing.vim
 source ~/.config/vimrc.d/plugin-config/rainbow.vim
 source ~/.config/vimrc.d/plugin-config/ranger.vim
