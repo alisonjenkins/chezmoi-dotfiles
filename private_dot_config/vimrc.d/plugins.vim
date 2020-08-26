@@ -28,16 +28,16 @@ Plug 'vim-scripts/jQuery', {'for': 'javascript'}                     " Adds synt
 Plug 'wting/cheetah.vim'                                             " Cheetah templating syntax support.
 " }}}
 " {{{ Git plugins
-Plug 'airblade/vim-gitgutter'        " adds a +-~ to the gutter where things have been changed from what git is aware.
 Plug 'christoomey/vim-conflicted'    " Aids in resolving merge conflicts.
 Plug 'gregsexton/gitv'               " Extension to fugitive to see the git branching history.
 Plug 'int3/vim-extradite'            " Extension to fugitive that adds a git commit browser.
 Plug 'junegunn/gv.vim'               " A git log viewer.
 Plug 'mattn/gist-vim'                " Adds :Gist command for creating a Github gist from the current buffer or selected text.
+Plug 'mhinz/vim-signify'             " adds a +-~ to the gutter where things have been changed from what the vcs is aware.
 Plug 'rhysd/committia.vim'           " Improved commit message window.
-Plug 'tpope/vim-fugitive'            " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
-Plug 'tommcdo/vim-fubitive'          " Extend fugitive.vim to support Bitbucket URLs in :Gbrowse.
 Plug 'shumphrey/fugitive-gitlab.vim' " This plugin allows you to use it with https://gitlab.com or your own private gitlab instance.
+Plug 'tommcdo/vim-fubitive'          " Extend fugitive.vim to support Bitbucket URLs in :Gbrowse.
+Plug 'tpope/vim-fugitive'            " Adds git integration to Vim. Many commands are added but :Gwrite is mapped to F1 and :Gcommit is mapped to F2.
 Plug 'tpope/vim-rhubarb'             " Adds support for Github to Fugitive's Gbrowse command.
 " }}}
 " {{{ Gamified Vim Practice
