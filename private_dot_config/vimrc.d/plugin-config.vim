@@ -4,6 +4,7 @@
 " source ~/.config/vimrc.d/plugin-config/ripgrep.vim
 " source ~/.config/vimrc.d/plugin-config/ultisnips.vim
 source ~/.config/vimrc.d/plugin-config/black.vim
+source ~/.config/vimrc.d/plugin-config/coc-explorer.vim
 source ~/.config/vimrc.d/plugin-config/coc.vim
 source ~/.config/vimrc.d/plugin-config/doge.vim
 source ~/.config/vimrc.d/plugin-config/easymotion.vim

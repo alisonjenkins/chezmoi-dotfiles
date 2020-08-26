@@ -8,6 +8,7 @@ let g:coc_global_extensions = [
  \'coc-docker',
  \'coc-emmet',
  \'coc-eslint',
+ \'coc-explorer',
  \'coc-go',
  \'coc-highlight',
  \'coc-html',
