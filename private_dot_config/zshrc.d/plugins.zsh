@@ -1,3 +1,18 @@
+mkdir -p ~/.local/share/zinit
+test -d ~/.local/share/zinit/bin || git clone https://github.com/zdharma/zinit.git ~/.local/share/zinit/bin
+
+# Configure zinit
+declare -A ZINIT
+ZINIT[BIN_DIR]=~/.local/share/zinit/bin
+ZINIT[HOME_DIR]=~/.local/share/zinit/
+
+source ~/.local/share/zinit/bin/zinit.zsh
+
+# Sort completion out
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Install tools used by plugins
 if command -v fasd &> /dev/null; then
   eval "$(fasd --init auto)"
 fi
@@ -5,84 +20,46 @@ if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-export ZPLUG_HOME="$HOME/.local/share/zplug"
-if [ ! -e "$ZPLUG_HOME" ]; then
-  git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-fi
+# Plugins
+zinit load Aloxaf/fzf-tab
+zinit load alanjjenkins/assume-role-1
+zinit load alanjjenkins/zsh-my-aws
+zinit load chriskempson/base16-shell
+zinit load fabiokiatkowski/exercism.plugin.zsh
+zinit load joepvd/zsh-hints
+zinit load kiurchv/asdf.plugin.zsh
+zinit load macunha1/zsh-terraform
+zinit load marzocchi/zsh-notify
+zinit load molovo/tipz
+zinit load romkatv/powerlevel10k
+zinit load softmoth/zsh-vim-mode
+zinit load zsh-users/zsh-completions
 
-source "$ZPLUG_HOME/init.zsh"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
 
 
-zplug "chriskempson/base16-shell"
-zplug "marzocchi/zsh-notify"
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
+zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/fzf/fzf.plugin.zsh'
+zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh'
 
-zplug "alanjjenkins/assume-role-1", defer:2
-zplug "alanjjenkins/zsh-my-aws", defer:2
-zplug "kiurchv/asdf.plugin.zsh", defer:2
-zplug "molovo/tipz", defer:2
-zplug "plugins/fzf", from:oh-my-zsh, defer:2
-zplug "softmoth/zsh-vim-mode", defer:2
+# zinit ice wait
+# zinit light unixorn/kubectx-zshplugin
 
-zplug "Aloxaf/fzf-tab", defer:3
-zplug "Dbz/kube-aliases", defer:3
-zplug "fabiokiatkowski/exercism.plugin.zsh", defer:3
-zplug "joepvd/zsh-hints", defer:3
-zplug "macunha1/zsh-terraform", defer:3
-zplug "plugins/aws", from:oh-my-zsh, defer:3
-zplug "unixorn/kubectx-zshplugin", defer:3
-zplug "zsh-users/zsh-completions", defer:3
+zinit ice lucid wait
+zinit load Dbz/kube-aliases
 
-# Then, source plugins and add commands to $PATH
-zplug load
+# Kubectl completion
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
-# plugins=(
-#   # assume-role
-#   # command-not-found
-#   adb
-#   alias-finder
-#   ansible
-#   archlinux
-#   asdf
-#   autopep8
-#   battery
-#   bgnotify
-#   colorize
-#   docker
-#   docker-compose
-#   dotenv
-#   git
-#   git-auto-fetch
-#   git-extras
-#   git-prompt
-#   gitfast
-#   golang
-#   gpg-agent
-#   jsontools
-#   kube-ps1
-#   kubectl
-#   man
-#   minikube
-#   nmap
-#   node
-#   npm
-#   pass
-#   pep8
-#   python
-#   ripgrep
-#   ssh-agent
-#   sudo
-#   systemd
-#   terraform
-#   tig
-#   vi-mode
-#   yarn
-# )
+# Kubens and kubectx completion
+# if [ -d ~/.asdf/installs/kubectx/0.9.0/completion ]; then
+#   source ~/.asdf/installs/kubectx/0.9.0/completion/kubectx.zsh
+  # source ~/.asdf/installs/kubectx/0.9.0/completion/kubens.zsh
+# fi
