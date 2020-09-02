@@ -11,6 +11,9 @@ alias cdg="cd ~/git/"
 alias cdot="cd ~/.local/share/chezmoi"
 alias cdgo="cd \$GOPATH"
 
+# Generate SHA-512 Password hash
+alias pwhash='python -c "import crypt,getpass; print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))"'
+
 # Archlinux aliases
 alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 
