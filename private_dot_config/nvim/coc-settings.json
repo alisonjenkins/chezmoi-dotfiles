@@ -1,12 +1,6 @@
 {
   "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "go",
-    "json",
-    "jsonc",
-    "terraform",
-    "typescript"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["go", "json", "jsonc", "python", "terraform", "typescript", "yaml"],
   "prettier.printWidth": 160,
   "prettier.singleQuote": true,
   "codeLens.enable": true,
@@ -14,12 +8,8 @@
   "diagnostic.checkCurrentLine": true,
   "signature.target": "echo",
   "snippets.extends": {
-    "javascriptreact": [
-      "javascript"
-    ],
-    "typescript": [
-      "javascript"
-    ]
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
   },
   "list.normalMappings": {
     "<C-c>": "do:exit"
@@ -30,59 +20,23 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": [
-        "c",
-        "cpp",
-        "cuda",
-        "objc",
-        "objcpp"
-      ],
-      "rootPatterns": [
-        "compile_commands.json",
-        ".ccls",
-        ".root",
-        ".git/"
-      ],
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": ["compile_commands.json", ".ccls", ".root", ".git/"],
       "initializationOptions": {
         "cacheDirectory": "/tmp/ccls"
       }
     },
     "rust": {
       "command": "ra_lsp_server",
-      "filetypes": [
-        "rust"
-      ],
-      "rootPatterns": [
-        "Cargo.toml"
-      ]
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
     },
     "terraform": {
       "command": "terraform-ls",
-      "args": [
-        "serve"
-      ],
-      "filetypes": [
-        "terraform",
-        "tf"
-      ],
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {}
-    },
-    "puppet": {
-      "command": "ruby",
-      "args": [
-        "~/.local/share/language-servers/puppet-editor-services/puppet-languageserver",
-        "--stdio",
-        "--puppet-settings=--moduledir,/path/to/module/path"
-      ],
-      "cwd": "/path/to/puppet-editor-services",
-      "filetypes": [
-        "puppet"
-      ],
-      "rootPatterns": [
-        ".git/",
-        "metadata.json"
-      ]
     }
   },
   "coc.preferences.extensionUpdateCheck": "daily"
