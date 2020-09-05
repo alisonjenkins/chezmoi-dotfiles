@@ -4,7 +4,7 @@ test -d ~/.local/share/zinit/bin || git clone https://github.com/zdharma/zinit.g
 # Configure zinit
 declare -A ZINIT
 ZINIT[BIN_DIR]=~/.local/share/zinit/bin
-ZINIT[HOME_DIR]=~/.local/share/zinit/
+ZINIT[HOME_DIR]=~/.local/share/zinit
 
 source ~/.local/share/zinit/bin/zinit.zsh
 
@@ -13,12 +13,15 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Install tools used by plugins
-if command -v fasd &> /dev/null; then
-  eval "$(fasd --init auto)"
-fi
-if command -v direnv &> /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
+zinit as"program" make'!' atclone'./fasd --init zsh-ccomp > zhook.zsh' \
+    atpull'%atclone' pick"fasd" src"zhook.zsh" for \
+        clvv/fasd
+
+# Setup direnv
+zinit from"gh-r" as"program" mv"direnv* -> direnv" \
+    atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+    pick"direnv" src="zhook.zsh" for \
+        direnv/direnv
 
 # Plugins
 zinit load Aloxaf/fzf-tab
@@ -43,10 +46,13 @@ zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+zinit as"completion" mv"lf.zsh -> _lf" for 'https://raw.githubusercontent.com/gokcehan/lf/master/etc/lf.zsh'
+
+zinit snippet 'https://raw.githubusercontent.com/gokcehan/lf/master/etc/lfcd.sh'
 
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
-zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/fzf/fzf.plugin.zsh'
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh'
+zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/fzf/fzf.plugin.zsh'
 
 # zinit ice wait
 # zinit light unixorn/kubectx-zshplugin

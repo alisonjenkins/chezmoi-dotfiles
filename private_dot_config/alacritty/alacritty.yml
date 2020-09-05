@@ -1,0 +1,21 @@
+# Font configuration (changes require restart)
+font:
+  # The size to use.
+  size: 8
+  # The normal (roman) font face to use.
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Regular
+    # Style can be specified to pick a specific face.
+
+  # The bold font face
+  bold:
+    family: FiraCode Nerd Font Mono
+    style: Bold
+    # Style can be specified to pick a specific face.
+
+  # The italic font face
+  italic:
+    family: FiraCode Nerd Font Mono
+    style: Italic
+    # Style can be specified to pick a specific face.
