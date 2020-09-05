@@ -118,23 +118,23 @@ Plug 'machakann/vim-sandwich'                                                   
 Plug 'majutsushi/tagbar'                                                                                            " Adds a tagbar for exhuberant ctags command is :TagbarToggle (mapped to F8 key).
 Plug 'mbbill/undotree'                                                                                              " Adds :UndotreeToggle command to enable you to visualise your undo history and the changes you have made to the file (mapped to F5).
 Plug 'mhinz/vim-startify'                                                                                           " Adds Startify which is a nice startup screen for Vim with the most recently opened files.
+Plug 'moll/vim-bbye'                                                                                                " Deals with closing buffers without closing the associated window or split (dependency of the LF plugin).
 Plug 'mtth/scratch.vim', { 'on': [ 'Scratch', 'ScratchInsert', 'ScratchPreview', 'ScratchSelection'] }              " Adds the gs command to normal mode to open a scratch buffer (for making quick notes).
 Plug 'powerman/vim-plugin-AnsiEsc'                                                                                  " ANSI colour code support (using for taskwiki).
-Plug 'rafaqz/ranger.vim'
-Plug 'voldikss/vim-floaterm'
-Plug 'roman/golden-ratio'                                                                                           " Resizes the split you are in to the golden ratio of the editing space.
+Plug 'radenling/vim-dispatch-neovim'                                                                                " Adds support for neovim's async to vim-dispatch.
 Plug 'simeji/winresizer'                                                                                            " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                                                                                    " Allows you to select more text in visual mode by repeatedly pressing 'v'.
+Plug 'alanjjenkins/vim-lf', {'branch': 'ajj/fix-nvim-load'}                                                                  " LF is a Ranger like file manager written in Golang which is much faster than Ranger.
+Plug 'tpope/vim-dispatch'                                                                                           " Run vim commands asynchronously.
 Plug 'tpope/vim-obsession'                                                                                          " Automatic vim session saving plugin.
 Plug 'tpope/vim-repeat'                                                                                             " Adds repeat ('.') support to various plugins.
 Plug 'tpope/vim-rsi'                                                                                                " Adds Readline shortcuts to vim command mode.
 Plug 'tpope/vim-sensible'                                                                                           " Vim sensible defaults (allows you to delete a huge amount of stuff from your Vimrc).
 Plug 'tpope/vim-speeddating'                                                                                        " Improves the CTRL-A and CTRL-X increment and decrement shortcuts to work with dates.
 Plug 'tpope/vim-unimpaired'                                                                                         " Adds various mappings for, moving between files, buffers and toggling Vim options on and off (see :help unimpaired ).
+Plug 'voldikss/vim-floaterm'
 Plug 'xolox/vim-misc'                                                                                               " Dependency of vim-notes
 Plug 'xolox/vim-notes', {'on': ['Note', 'NoteFromSelectedText', 'NoteToHTML', 'NoteToMarkdown', 'NoteToMediawiki']} " Adds :Note command to create a new note. The notes are automatically named and saved into a Notes directory in ~/Documents/Notes
-Plug 'tpope/vim-dispatch'                                                                                           " Run vim commands asynchronously.
-Plug 'radenling/vim-dispatch-neovim'                                                                                " Adds support for neovim's async to vim-dispatch.
 
 if has('win32') || has('win64')
   Plug 'powerline/fonts', { 'do': './install.ps1' }

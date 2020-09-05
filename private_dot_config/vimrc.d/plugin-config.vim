@@ -1,6 +1,7 @@
 " Plugin Config
 " source ~/.config/vimrc.d/plugin-config/ale.vim
 " source ~/.config/vimrc.d/plugin-config/pymode.vim
+" source ~/.config/vimrc.d/plugin-config/ranger.vim
 " source ~/.config/vimrc.d/plugin-config/ripgrep.vim
 " source ~/.config/vimrc.d/plugin-config/ultisnips.vim
 source ~/.config/vimrc.d/plugin-config/black.vim
@@ -12,8 +13,8 @@ source ~/.config/vimrc.d/plugin-config/emmet.vim
 source ~/.config/vimrc.d/plugin-config/fzf.vim
 source ~/.config/vimrc.d/plugin-config/golden-ratio.vim
 source ~/.config/vimrc.d/plugin-config/large-file-editing.vim
+source ~/.config/vimrc.d/plugin-config/lf.vim
 source ~/.config/vimrc.d/plugin-config/rainbow.vim
-source ~/.config/vimrc.d/plugin-config/ranger.vim
 source ~/.config/vimrc.d/plugin-config/scratch.vim
 source ~/.config/vimrc.d/plugin-config/securemodelines.vim
 source ~/.config/vimrc.d/plugin-config/simpylfold.vim
