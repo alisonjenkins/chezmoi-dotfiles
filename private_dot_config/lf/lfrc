@@ -1,4 +1,4 @@
-set previewer ~/.config/lf/preview
+set previewer pistol
 # Basic Settings
 set preview true
 set hidden true
