@@ -6,6 +6,7 @@ set color256 true
 set drawbox true
 set icons true
 set ignorecase true
+set relativenumber true
 
 # Custom Functions
 cmd open ${{

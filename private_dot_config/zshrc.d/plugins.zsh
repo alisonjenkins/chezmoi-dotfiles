@@ -13,6 +13,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Install tools used by plugins
+export PISTOL_CHROMA_STYLE="native"
+zinit as"program" make'!' \
+    atpull'%atclone' pick"pistol" for \
+        doronbehar/pistol
+
 zinit as"program" make'!' atclone'./fasd --init zsh-ccomp > zhook.zsh' \
     atpull'%atclone' pick"fasd" src"zhook.zsh" for \
         clvv/fasd
