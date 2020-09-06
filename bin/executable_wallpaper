@@ -18,7 +18,7 @@ function random_wallpaper() {
     exit 1
   fi
 
-  WALLPAPER_PATH="$(find "$HOME/git/wallpapers/" -type f | shuf -n1)"
+  WALLPAPER_PATH="$(find "$HOME/git/wallpapers/" -type d -path "$HOME/git/wallpapers/.git" -prune -o -type f | shuf -n1)"
   set_wallpaper "$WALLPAPER_PATH"
 }
 
