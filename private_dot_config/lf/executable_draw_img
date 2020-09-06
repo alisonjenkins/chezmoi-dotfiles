@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 clear_screen() {
-    printf '\e[%sH\e[9999C\e[1J%b\e[1;%sr' \
-           "$((LINES-2))" "${TMUX:+\e[2J}" "$max_items"
+    # max_items="$1"
+    # printf '\e[%sH\e[9999C\e[1J%b\e[1;%sr' \
+    #        "$((LINES-2))" "${TMUX:+\e[2J}" "$max_items"
+    printf '\e[1;1H\e[2J';
 }
 
 # Get a file's mime_type.
@@ -19,7 +21,7 @@ read -r w3m _ < <(type -p w3mimgdisplay "${w3m_paths[@]}")
 read -r LINES COLUMNS < <(stty size)
 
 # Get terminal window size in pixels and set it to WIDTH and HEIGHT.
-export $(xdotool getactivewindow getwindowgeometry --shell)
+export "$(xdotool getactivewindow getwindowgeometry --shell)"
 
 # Get the image size in pixels.
 read -r img_width img_height < <("$w3m" <<< "5;${CACHE:-$1}")
@@ -35,12 +37,12 @@ read -r img_width img_height < <("$w3m" <<< "5;${CACHE:-$1}")
 }
 
 # Variable needed for centering image.
-HALF_HEIGHT=$(expr $HEIGHT / 2)
-HALF_WIDTH=$(expr $WIDTH / 2)
-HALF_IMG_HEIGHT=$(expr $img_height / 2)
-HALF_IMG_WIDTH=$(expr $img_width / 2)
-X_POS=$(expr $HALF_WIDTH - $HALF_IMG_WIDTH)
-Y_POS=$(expr $HALF_HEIGHT - $HALF_IMG_HEIGHT)
+HALF_HEIGHT=$((HEIGHT / 2))
+HALF_WIDTH=$((WIDTH / 2))
+HALF_IMG_HEIGHT=$((img_height / 2))
+HALF_IMG_WIDTH=$((img_width / 2))
+X_POS=$((HALF_WIDTH - HALF_IMG_WIDTH))
+Y_POS=$((HALF_HEIGHT - HALF_IMG_HEIGHT))
 
 clear_screen
 # Hide the cursor.
