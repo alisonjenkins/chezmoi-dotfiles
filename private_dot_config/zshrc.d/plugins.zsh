@@ -18,9 +18,10 @@ zinit as"program" make'!' \
     atpull'%atclone' pick"pistol" for \
         doronbehar/pistol
 
-zinit as"program" make'!' atclone'./fasd --init zsh-ccomp > zhook.zsh' \
-    atpull'%atclone' pick"fasd" src"zhook.zsh" for \
-        clvv/fasd
+export _ZL_MATCH_MODE=1
+zinit as"program"  \
+    atpull'%atclone' pick"z.lua" src"z.lua.plugin.zsh" for \
+        skywind3000/z.lua
 
 # Setup direnv
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
