@@ -16,14 +16,13 @@ Plug 'chrisyip/Better-CSS-Syntax-for-Vim', {'for':'css'}             " Adds CSS3
 Plug 'dbeniamine/todo.txt-vim', {'for': 'todo'}                      " todo.txt syntax plugin for vim.
 Plug 'digitaltoad/vim-pug'                                           " Pug templating engine syntax support.
 Plug 'fatih/vim-go'                                                  " Golang syntax.
-Plug 'jtratner/vim-flavored-markdown', {'for': 'markdown'}           " Github flavoured Markdown syntax support.
 Plug 'lervag/vimtex'                                                 " Adds Syntax and completion for Latex
 Plug 'luochen1990/rainbow'                                           " Adds 'rainbow' parenthesis (colour codes them to easier see matching pairs)
 Plug 'mhinz/vim-hugefile'                                            " Disables Filetype autocmds, syntax highlighting, folding, swapfiles, MatchParen for files bigger than 2MB to ensure that Vim opens them quickly.
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'} " Syntax for various Javascript libraries (to allow completion)
 Plug 'sheerun/vim-polyglot'                                          " Syntax files for many different languages
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}                       " simple, correct folding for Python.
-Plug 'tpope/vim-markdown', {'for': 'markdown'}                       " Syntax for Markdown.
+Plug 'gabrielelana/vim-markdown', {'for': 'markdown'}                " Syntax for Markdown.
 Plug 'vim-scripts/jQuery', {'for': 'javascript'}                     " Adds syntax support for JQuery.
 Plug 'wting/cheetah.vim'                                             " Cheetah templating syntax support.
 " }}}
@@ -41,7 +40,7 @@ Plug 'tpope/vim-fugitive'            " Adds git integration to Vim. Many command
 Plug 'tpope/vim-rhubarb'             " Adds support for Github to Fugitive's Gbrowse command.
 " }}}
 " {{{ Gamified Vim Practice
-Plug 'ThePrimeagen/vim-be-good'   " Practice for jumping to lines Type :VimBeGood (Might need to run :UpdateRemotePlugins first)
+" Plug 'ThePrimeagen/vim-be-good'   " Practice for jumping to lines Type :VimBeGood (Might need to run :UpdateRemotePlugins first)
 " }}}
 " {{{ File / directory navigation plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder of files (mapped to <leader>;)
@@ -124,7 +123,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'                                              
 Plug 'radenling/vim-dispatch-neovim'                                                                                " Adds support for neovim's async to vim-dispatch.
 Plug 'simeji/winresizer'                                                                                            " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                                                                                    " Allows you to select more text in visual mode by repeatedly pressing 'v'.
-Plug 'alanjjenkins/vim-lf', {'branch': 'ajj/fix-nvim-load'}                                                                  " LF is a Ranger like file manager written in Golang which is much faster than Ranger.
+Plug 'alanjjenkins/vim-lf', {'branch': 'ajj/lfcd'}                                                                  " LF is a Ranger like file manager written in Golang which is much faster than Ranger.
 Plug 'tpope/vim-dispatch'                                                                                           " Run vim commands asynchronously.
 Plug 'tpope/vim-obsession'                                                                                          " Automatic vim session saving plugin.
 Plug 'tpope/vim-repeat'                                                                                             " Adds repeat ('.') support to various plugins.
