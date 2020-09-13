@@ -76,6 +76,10 @@ if [ $commands[helm] ]; then
   source <(helm completion zsh)
 fi
 
+if [ $commands[fluxctl] ]; then
+  source <(fluxctl completion zsh)
+fi
+
 # Kubens and kubectx completion
 # if [ -d ~/.asdf/installs/kubectx/0.9.0/completion ]; then
 #   source ~/.asdf/installs/kubectx/0.9.0/completion/kubectx.zsh
