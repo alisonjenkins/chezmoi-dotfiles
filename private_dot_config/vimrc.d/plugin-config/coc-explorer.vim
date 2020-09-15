@@ -39,3 +39,5 @@ nmap <Leader>ef :CocCommand explorer --preset floating<CR>
 
 " List all presets
 nmap <Leader>el :CocList explPresets<CR>
+
+autocmd FileType coc-explorer set number relativenumber
