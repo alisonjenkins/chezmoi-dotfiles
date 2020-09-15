@@ -67,18 +67,14 @@ zinit ice lucid wait
 zinit load Dbz/kube-aliases
 
 # Kubectl completion
-if [ $commands[kubectl] ]; then
-    source <(kubectl completion zsh)
-    complete -F __start_kubectl k
-fi
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
-if [ $commands[helm] ]; then
-  source <(helm completion zsh)
-fi
+# Helm completion
+source <(helm completion zsh)
 
-if [ $commands[fluxctl] ]; then
-  source <(fluxctl completion zsh)
-fi
+# fluxctl completion
+source <(fluxctl completion zsh)
 
 # Kubens and kubectx completion
 # if [ -d ~/.asdf/installs/kubectx/0.9.0/completion ]; then
