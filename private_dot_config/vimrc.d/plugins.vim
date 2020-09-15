@@ -51,13 +51,13 @@ Plug 'Lokaltog/vim-easymotion' " Adds extra motions
 Plug 'google/vim-searchindex'  " Adds search indexing (match x of x when searching)
 " }}}
 " {{{ Snippet and completion plugins
-Plug 'honza/vim-snippets'                                                                   " Snippets for various programming languages in Ultisnips and snipmate format.
-Plug 'alanjjenkins/ultisnips-terraform-snippets', {'for': 'terraform' }                     " terraform snippets for ultisnips.
-Plug 'juliosueiras/vim-terraform-completion', {'for': 'terraform' }                         " Auto completion for terraform.
-Plug 'matthewsimo/angular-vim-snippets', {'for':'javascript'}                               " Adds AngularJS vim snippets.
-Plug 'myhere/vim-nodejs-complete', {'for':'javascript'}                                     " Nodejs omnicompletion support.
-Plug 'scrooloose/snipmate-snippets'                                                         " A collection of Snipmate snippets.
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release', 'do': { -> coc#util#install()}} " Intellisense completion engine for Vim and Neovim.
+Plug 'honza/vim-snippets'                                               " Snippets for various programming languages in Ultisnips and snipmate format.
+Plug 'alanjjenkins/ultisnips-terraform-snippets', {'for': 'terraform' } " terraform snippets for ultisnips.
+Plug 'juliosueiras/vim-terraform-completion', {'for': 'terraform' }     " Auto completion for terraform.
+Plug 'matthewsimo/angular-vim-snippets', {'for':'javascript'}           " Adds AngularJS vim snippets.
+Plug 'myhere/vim-nodejs-complete', {'for':'javascript'}                 " Nodejs omnicompletion support.
+Plug 'scrooloose/snipmate-snippets'                                     " A collection of Snipmate snippets.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                         " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.
