@@ -25,7 +25,7 @@ steam -silent &
 ~/.config/polybar/launch.sh &
 #$(sleep 2 && st -e tmux new-session -As main) &
 # st -e tmux new-session -As main &
-$(start-preferred-terminal --tmux && bspc desktop -f '2') &
+$(/home/alan/bin/start-preferred-terminal --tmux && bspc desktop -f '2') &
 $(slack && bspc desktop -f '1') &
 
 bspc config border_width         2
