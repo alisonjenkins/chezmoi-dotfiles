@@ -1,8 +1,20 @@
 #!/bin/sh
+ARGS=$(getopt -o 't' --long 'tmux' -- "$@") || exit
+eval "set -- $ARGS"
+
+while true; do
+    case $1 in
+      ('-t'|'--tmux')
+            USE_TMUX=1; shift;;
+      (--)  shift; break;;
+      (*)   exit 1;;           # error
+    esac
+done
+
 # shellcheck disable=SC2153
 for terminal in $TERMINAL st kitty alacritty urxvt rxvt termite terminology qterminal Eterm aterm uxterm xterm roxterm xfce4-terminal.wrapper mate-terminal lxterminal konsole x-terminal-emulator; do
     if command -v "$terminal" > /dev/null 2>&1; then
-        if command -v tmux >/dev/null 2>&1; then
+        if command -v tmux >/dev/null 2>&1 && [ "$USE_TMUX" = "1" ]; then
             if [ "$terminal" = "st" ]; then
                 exec st -e tmux a
             else
