@@ -1,0 +1,15 @@
+#!/bin/sh
+# shellcheck disable=SC2153
+for terminal in $TERMINAL st kitty alacritty urxvt rxvt termite terminology qterminal Eterm aterm uxterm xterm roxterm xfce4-terminal.wrapper mate-terminal lxterminal konsole x-terminal-emulator; do
+    if command -v "$terminal" > /dev/null 2>&1; then
+        if command -v tmux >/dev/null 2>&1; then
+            if [ "$terminal" = "st" ]; then
+                exec st -e tmux a
+            else
+                exec "$terminal" "$@"
+            fi
+        else
+            exec "$terminal" "$@"
+        fi
+    fi
+done
