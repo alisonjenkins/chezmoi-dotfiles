@@ -7,10 +7,10 @@ super + shift + {a,s,x}
   /home/alan/.config/rofi/scripts/{passmenu,passmenu --type,awsmenu}
 
 super + Return
-  kitty --single-instance --session ~/.config/kitty/session-tmux.conf
+  /home/alan/bin/start-preferred-terminal --tmux
 
 super + shift + Return
-  st -e tmux new-session -As main
+  /home/alan/bin/start-preferred-terminal
 
 super + {_,shift + ,ctrl + shift +,ctrl +}{0-9}
   ;~/bin/bspwm_dynamic_desktops {--df,--ns,--nm,--da} {0-9}
