@@ -106,9 +106,12 @@ Plug 'michal-h21/vim-zettel'                                                    
 " Plug 'michal-h21/vimwiki-sync'                                                                                                                         " Syncs vimwiki to a configured git repository and auto commits changed files.
 " }}}
 " {{{ Vim functionality improvements
+
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}                                                                          " asynchronous execution plugin for Vim.
+Plug 'alanjjenkins/vim-lf', {'branch': 'ajj/lfcd'}                                                                  " LF is a Ranger like file manager written in Golang which is much faster than Ranger.
 Plug 'ciaranm/securemodelines'                                                                                      " Makes modelines secure without disabling them. See https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 Plug 'diepm/vim-rest-console'                                                                                       " Adds the ability to use Vim as a REST client. Requires cURL.
+Plug 'dyng/ctrlsf.vim'                                                                                              " An ack/ag/pt/rg powered code search and view tool, takes advantage of Vim 8's power to support asynchronous searching, and lets you edit file in-place with Edit Mode.
 Plug 'haya14busa/is.vim'                                                                                            " Improves incremental searching in Vim.
 Plug 'haya14busa/vim-operator-flashy'                                                                               " Adds a temporary highlight of what text was yanked.
 Plug 'kana/vim-operator-user'                                                                                       " Dependency of vim-operator-flashy.
@@ -123,7 +126,6 @@ Plug 'powerman/vim-plugin-AnsiEsc'                                              
 Plug 'radenling/vim-dispatch-neovim'                                                                                " Adds support for neovim's async to vim-dispatch.
 Plug 'simeji/winresizer'                                                                                            " Vim plugin for easy resizing of splits (https://github.com/simeji/winresizer).
 Plug 'terryma/vim-expand-region'                                                                                    " Allows you to select more text in visual mode by repeatedly pressing 'v'.
-Plug 'alanjjenkins/vim-lf', {'branch': 'ajj/lfcd'}                                                                  " LF is a Ranger like file manager written in Golang which is much faster than Ranger.
 Plug 'tpope/vim-dispatch'                                                                                           " Run vim commands asynchronously.
 Plug 'tpope/vim-obsession'                                                                                          " Automatic vim session saving plugin.
 Plug 'tpope/vim-repeat'                                                                                             " Adds repeat ('.') support to various plugins.
@@ -134,7 +136,6 @@ Plug 'tpope/vim-unimpaired'                                                     
 Plug 'voldikss/vim-floaterm'
 Plug 'xolox/vim-misc'                                                                                               " Dependency of vim-notes
 Plug 'xolox/vim-notes', {'on': ['Note', 'NoteFromSelectedText', 'NoteToHTML', 'NoteToMarkdown', 'NoteToMediawiki']} " Adds :Note command to create a new note. The notes are automatically named and saved into a Notes directory in ~/Documents/Notes
-
 if has('win32') || has('win64')
   Plug 'powerline/fonts', { 'do': './install.ps1' }
 else

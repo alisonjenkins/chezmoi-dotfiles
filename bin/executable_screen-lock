@@ -1,2 +1,3 @@
 #!/bin/sh
-loginctl lock-session
+#loginctl lock-session
+betterlockscreen -l
