@@ -554,7 +554,7 @@ globalkeys = my_table.join(
         {description = "show rofi pass menu", group = "launcher"}),
 
     awful.key({ modkey }, "Delete", function ()
-            os.execute(string.format("%s/.config/rofi/scripts/owermenu", os.getenv('HOME')))
+            os.execute(string.format("%s/.config/rofi/scripts/powermenu", os.getenv('HOME')))
         end,
         {description = "show rofi power menu", group = "launcher"}),
 
