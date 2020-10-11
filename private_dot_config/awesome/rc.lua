@@ -544,14 +544,19 @@ globalkeys = my_table.join(
         {description = "show rofi application launcher", group = "launcher"}),
 
     awful.key({ modkey, 'Shift' }, "x", function ()
-            os.execute("/home/alan/.config/rofi/scripts/awsmenu")
+            os.execute(string.format("%s/.config/rofi/scripts/awsmenu", os.getenv('HOME')))
         end,
         {description = "show rofi aws menu", group = "launcher"}),
 
     awful.key({ modkey, 'Shift' }, "a", function ()
-            os.execute("/home/alan/.config/rofi/scripts/passmenu")
+            os.execute(string.format("%s/.config/rofi/scripts/passmenu", os.getenv('HOME')))
         end,
         {description = "show rofi pass menu", group = "launcher"}),
+
+    awful.key({ modkey }, "Delete", function ()
+            os.execute(string.format("%s/.config/rofi/scripts/owermenu", os.getenv('HOME')))
+        end,
+        {description = "show rofi power menu", group = "launcher"}),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,

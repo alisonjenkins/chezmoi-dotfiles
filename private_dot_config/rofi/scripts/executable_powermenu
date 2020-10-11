@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+shopt -s nullglob globstar
+
+power_options=(
+  'hibernate'
+  'lock'
+  'reboot'
+  'poweroff'
+  'suspend'
+)
+
+power_option=$(printf '%s\n' "${power_options[@]}" | rofi -dmenu "$@")
+
+[[ -n $power_option ]] || exit
+
+case $power_option in
+  'hibernate')
+    sudo systemctl hibernate
+    ;;
+  'lock')
+    betterlockscreen -l
+    ;;
+  'reboot')
+    sudo systemctl reboot
+    ;;
+  'poweroff')
+    sudo systemctl shutdown
+    ;;
+  'suspend')
+    sudo systemctl suspend
+    ;;
+esac
