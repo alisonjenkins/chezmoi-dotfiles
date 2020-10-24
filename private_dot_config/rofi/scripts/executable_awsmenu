@@ -24,7 +24,7 @@ fi
 export AWS_MFA_ZENITY="true"
 
 # if command -v awsconsole &>/dev/null; then
-URL=$(~/bin/awsconsole -u "$profile")
+URL=$(aws-vault login --prompt=zenity "$profile")
 # else
   # URL=$(assume-role -console "$profile")
 # fi
