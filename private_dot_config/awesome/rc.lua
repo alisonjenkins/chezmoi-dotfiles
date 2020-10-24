@@ -539,22 +539,42 @@ globalkeys = my_table.join(
     -- check https://github.com/DaveDavenport/rofi for more details
     -- rofi
     awful.key({ modkey }, "d", function ()
-            os.execute('rofi -show drun -show-icons -matching fuzzy -theme ~/.config/rofi/themes/onedark.rasi -location 2')
+            local command = 'rofi -show drun -show-icons -matching fuzzy -theme ~/.config/rofi/themes/onedark.rasi -location 2'
+            awful.spawn.easy_async_with_shell(command, function()
+                awful.spawn.easy_async_with_shell("cat /tmp/foo.txt", function(out)
+                    mylabel.text = out
+                end)
+            end)
         end,
         {description = "show rofi application launcher", group = "launcher"}),
 
     awful.key({ modkey, 'Shift' }, "x", function ()
-            os.execute(string.format("%s/.config/rofi/scripts/awsmenu", os.getenv('HOME')))
+            local command = string.format("%s/.config/rofi/scripts/awsmenu", os.getenv('HOME'))
+            awful.spawn.easy_async_with_shell(command, function()
+                awful.spawn.easy_async_with_shell("cat /tmp/foo.txt", function(out)
+                    mylabel.text = out
+                end)
+            end)
         end,
         {description = "show rofi aws menu", group = "launcher"}),
 
     awful.key({ modkey, 'Shift' }, "a", function ()
-            os.execute(string.format("%s/.config/rofi/scripts/passmenu", os.getenv('HOME')))
+            local command = string.format("%s/.config/rofi/scripts/passmenu", os.getenv('HOME'))
+            awful.spawn.easy_async_with_shell(command, function()
+                awful.spawn.easy_async_with_shell("cat /tmp/foo.txt", function(out)
+                    mylabel.text = out
+                end)
+            end)
         end,
         {description = "show rofi pass menu", group = "launcher"}),
 
     awful.key({ modkey }, "Delete", function ()
-            os.execute(string.format("%s/.config/rofi/scripts/powermenu", os.getenv('HOME')))
+            local command = string.format("%s/.config/rofi/scripts/powermenu", os.getenv('HOME'))
+            awful.spawn.easy_async_with_shell(command, function()
+                awful.spawn.easy_async_with_shell("cat /tmp/foo.txt", function(out)
+                    mylabel.text = out
+                end)
+            end)
         end,
         {description = "show rofi power menu", group = "launcher"}),
 
