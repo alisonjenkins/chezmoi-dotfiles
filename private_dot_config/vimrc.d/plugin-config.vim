@@ -2,7 +2,6 @@
 " source ~/.config/vimrc.d/plugin-config/ale.vim
 " source ~/.config/vimrc.d/plugin-config/pymode.vim
 " source ~/.config/vimrc.d/plugin-config/ranger.vim
-" source ~/.config/vimrc.d/plugin-config/ripgrep.vim
 " source ~/.config/vimrc.d/plugin-config/ultisnips.vim
 source ~/.config/vimrc.d/plugin-config/black.vim
 source ~/.config/vimrc.d/plugin-config/coc-explorer.vim
