@@ -43,8 +43,9 @@ Plug 'tpope/vim-rhubarb'             " Adds support for Github to Fugitive's Gbr
 " Plug 'ThePrimeagen/vim-be-good'   " Practice for jumping to lines Type :VimBeGood (Might need to run :UpdateRemotePlugins first)
 " }}}
 " {{{ File / directory navigation plugins
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder of files (mapped to <leader>;)
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/telescope.nvim'
 " }}}
 " {{{ Buffer navigation plugins
 Plug 'Lokaltog/vim-easymotion' " Adds extra motions
