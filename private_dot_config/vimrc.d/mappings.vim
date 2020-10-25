@@ -62,9 +62,6 @@ nnoremap <Leader>G :Git
 " Run chezmoi apply to apply dotfile changes
 nnoremap <silent> <Leader>ca :Dispatch! chezmoi apply<CR>
 
-" Edit chezmoi dotfiles using FZF
-nnoremap <Leader>ce :FZF ~/.local/share/chezmoi/<CR>
-
 " Find files using Telescope
 nnoremap <leader>; :TelescopeFindGitFile<cr>
 nnoremap <leader>' :TelescopeFindFile<cr>
