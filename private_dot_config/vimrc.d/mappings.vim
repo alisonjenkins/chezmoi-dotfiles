@@ -64,6 +64,3 @@ nnoremap <silent> <Leader>ca :Dispatch! chezmoi apply<CR>
 
 " Edit chezmoi dotfiles using FZF
 nnoremap <Leader>ce :FZF ~/.local/share/chezmoi/<CR>
-
-" View registers
-nnoremap <silent> <Leader>" :reg<CR>
