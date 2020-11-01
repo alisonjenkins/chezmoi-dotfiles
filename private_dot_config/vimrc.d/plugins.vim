@@ -55,11 +55,12 @@ Plug 'google/vim-searchindex'  " Adds search indexing (match x of x when searchi
 " }}}
 " {{{ Snippet and completion plugins
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}                       " Intellisense completion engine for Vim and Neovim.
+Plug 'SirVer/ultisnips'                                                 " snippets engine that integrates with completion-nvim
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }                 " Tabnine completion for completion-nvim
 Plug 'alanjjenkins/ultisnips-terraform-snippets', {'for': 'terraform' } " terraform snippets for ultisnips.
 Plug 'honza/vim-snippets'                                               " Snippets for various programming languages in Ultisnips and snipmate format.
 Plug 'juliosueiras/vim-terraform-completion', {'for': 'terraform' }     " Auto completion for terraform.
 Plug 'matthewsimo/angular-vim-snippets', {'for':'javascript'}           " Adds AngularJS vim snippets.
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }                 " Tabnine completion for completion-nvim
 Plug 'myhere/vim-nodejs-complete', {'for':'javascript'}                 " Nodejs omnicompletion support.
 Plug 'neovim/nvim-lsp'                                                  " Configuration for the inbuilt Neovim LSP.
 Plug 'neovim/nvim-lspconfig'                                            " Configuration for the inbuilt Neovim LSP.
