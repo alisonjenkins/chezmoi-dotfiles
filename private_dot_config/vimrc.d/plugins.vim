@@ -60,6 +60,7 @@ Plug 'honza/vim-snippets'                                               " Snippe
 Plug 'juliosueiras/vim-terraform-completion', {'for': 'terraform' }     " Auto completion for terraform.
 Plug 'matthewsimo/angular-vim-snippets', {'for':'javascript'}           " Adds AngularJS vim snippets.
 Plug 'myhere/vim-nodejs-complete', {'for':'javascript'}                 " Nodejs omnicompletion support.
+Plug 'neovim/nvim-lsp'                                                  " Configuration for the inbuilt Neovim LSP.
 Plug 'neovim/nvim-lspconfig'                                            " Configuration for the inbuilt Neovim LSP.
 Plug 'nvim-lua/completion-nvim'                                         " Completion system that works with the Neovim LSP
 Plug 'nvim-lua/diagnostic-nvim'                                         " Show diagnostics for code you are writing (e.g. misspelled variable names etc)
