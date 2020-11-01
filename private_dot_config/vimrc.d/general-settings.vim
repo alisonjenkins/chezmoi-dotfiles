@@ -1,17 +1,20 @@
 " General
-set autowrite  " Writes on make/shell commands
-set ttyfast     " Improves terminal redraw
-set lazyredraw  " redraw only when we need to.
-set ttimeoutlen=100 " the time in milliseconds for a key sequence to complete.
-set nocompatible  " disable vi compatibility.
-set pastetoggle=<F10> "  toggle between paste and normal: for 'safer' pasting from keyboard
+set autowrite         " Writes on make/shell commands
+set ttyfast           " Improves terminal redraw
+set lazyredraw        " redraw only when we need to.
+set ttimeoutlen=100   " the time in milliseconds for a key sequence to complete.
+set nocompatible      " disable vi compatibility.
+set pastetoggle=<F10> " toggle between paste and normal: for 'safer' pasting from keyboard
 set path+=**
 set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
-set timeoutlen=600  " Time to wait after ESC (default causes an annoying delay)
-let &t_ut='' " Disable background colour erase
-set cmdheight=2 " Give more space for displaying messages. (Recommended by COC)
-set updatetime=300 " " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
-set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+set timeoutlen=600    " Time to wait after ESC (default causes an annoying delay)
+let &t_ut=''          " Disable background colour erase
+set cmdheight=2       " Give more space for displaying messages. (Recommended by COC)
+set updatetime=300    "                                                                    " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+set shortmess+=c      " Don't pass messages to |ins-completion-menu|.
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
 " Backup
 set nowritebackup
