@@ -69,6 +69,7 @@ Plug 'itchyny/lightline.vim'                              " Adds a pretty and us
 " }}}
 " {{{ External tool integration
 Plug 'hashivim/vim-terraform', {'for': 'terraform' } " Allows running Terraform from inside Vim
+Plug 'lambdalisue/suda.vim'                          " Add support for writing to root owned files using sudo
 Plug 'markcornick/vim-vagrant', {'on': ['Vagrant'] } " Adds :Vagrant command for interacting with Vagrant from within Vim.
 Plug 'tmux-plugins/vim-tmux-focus-events'            " Focus gained and focus lost (used by plugins) do not work in Tmux, this fixes that.
 Plug 'tpope/vim-eunuch'                              " Adds support for many unix commands into Vim (too many commands added to list here).

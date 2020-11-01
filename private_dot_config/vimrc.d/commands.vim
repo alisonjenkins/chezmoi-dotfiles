@@ -1,7 +1,7 @@
 " Command and Auto commands
 
 " Save file with sudo
-command! W SudoWrite
+command! W SudaWrite
 
 "Auto commands
 au BufRead,BufNewFile *.quicktask                                     setf quicktask
