@@ -29,3 +29,9 @@ au FileType quicktask setlocal nocindent
 au FileType puppet setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType javascript setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+augroup CompletionTriggerCharacter
+    autocmd!
+    autocmd BufEnter * let g:completion_trigger_character = ['.']
+    autocmd BufEnter *.c,*.cpp let g:completion_trigger_character = ['.', '::']
+augroup end
