@@ -70,12 +70,12 @@ nnoremap <Leader>G :Git
 nnoremap <silent> <Leader>ca :Dispatch! chezmoi apply<CR>
 
 " Find files using Telescope
-nnoremap <leader>; :TelescopeFindGitFile<cr>
-nnoremap <leader>' :TelescopeFindFile<cr>
+nnoremap <leader>; :Telescope git_files<cr>
+nnoremap <leader>' :Telescope find_files<cr>
+
+" Grep using ripgrep via Telescope
+nnoremap <leader>g :Telescope live_grep<cr>
 
 " Open Lua Tree
 nnoremap <Leader>ee :LuaTreeToggle<CR>
 nnoremap <Leader>ef :LuaTreeFindFile<CR>
-
-" Grep using ripgrep via Telescope
-nnoremap <leader>g :TelescopeLiveGrep<cr>
