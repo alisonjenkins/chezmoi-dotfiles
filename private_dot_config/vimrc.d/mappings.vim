@@ -47,6 +47,13 @@ imap <F1> <ESC>:Gwrite<CR>i
 imap <F2> <ESC>:Gcommit<CR>
 imap <F3> <ESC>:Gpush<CR>i
 
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Confirm completion
+let g:completion_confirm_key = "\<C-y>"
+
 " generate HTML version current buffer using current color scheme
 map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR>
 
@@ -65,6 +72,10 @@ nnoremap <silent> <Leader>ca :Dispatch! chezmoi apply<CR>
 " Find files using Telescope
 nnoremap <leader>; :TelescopeFindGitFile<cr>
 nnoremap <leader>' :TelescopeFindFile<cr>
+
+" Open Lua Tree
+nnoremap <Leader>ee :LuaTreeToggle<CR>
+nnoremap <Leader>ef :LuaTreeFindFile<CR>
 
 " Grep using ripgrep via Telescope
 nnoremap <leader>g :TelescopeLiveGrep<cr>

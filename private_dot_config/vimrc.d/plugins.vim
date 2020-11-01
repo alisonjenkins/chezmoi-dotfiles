@@ -46,19 +46,24 @@ Plug 'tpope/vim-rhubarb'             " Adds support for Github to Fugitive's Gbr
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons for nvim-tree
+Plug 'kyazdani42/nvim-tree.lua'
 " }}}
 " {{{ Buffer navigation plugins
 Plug 'Lokaltog/vim-easymotion' " Adds extra motions
 Plug 'google/vim-searchindex'  " Adds search indexing (match x of x when searching)
 " }}}
 " {{{ Snippet and completion plugins
-Plug 'honza/vim-snippets'                                               " Snippets for various programming languages in Ultisnips and snipmate format.
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}                         " Intellisense completion engine for Vim and Neovim.
 Plug 'alanjjenkins/ultisnips-terraform-snippets', {'for': 'terraform' } " terraform snippets for ultisnips.
+Plug 'honza/vim-snippets'                                               " Snippets for various programming languages in Ultisnips and snipmate format.
 Plug 'juliosueiras/vim-terraform-completion', {'for': 'terraform' }     " Auto completion for terraform.
 Plug 'matthewsimo/angular-vim-snippets', {'for':'javascript'}           " Adds AngularJS vim snippets.
 Plug 'myhere/vim-nodejs-complete', {'for':'javascript'}                 " Nodejs omnicompletion support.
+Plug 'neovim/nvim-lspconfig'                                            " Configuration for the inbuilt Neovim LSP.
+Plug 'nvim-lua/completion-nvim'                                         " Completion system that works with the Neovim LSP
+Plug 'nvim-lua/diagnostic-nvim'                                         " Show diagnostics for code you are writing (e.g. misspelled variable names etc)
 Plug 'scrooloose/snipmate-snippets'                                     " A collection of Snipmate snippets.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                         " Intellisense completion engine for Vim and Neovim.
 " }}}
 " {{{ Vim colour themes and appearance plugins
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.

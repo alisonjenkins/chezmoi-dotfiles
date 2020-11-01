@@ -33,9 +33,9 @@ let g:coc_explorer_global_presets = {
 \ }
 
 " Use preset argument to open it
-nmap <Leader>ee :CocCommand explorer<CR>
-nmap <Leader>ed :CocCommand explorer --preset chezmoi-dotfiles<CR>
-nmap <Leader>ef :CocCommand explorer --preset floating<CR>
+" nmap <Leader>ee :CocCommand explorer<CR>
+" nmap <Leader>ed :CocCommand explorer --preset chezmoi-dotfiles<CR>
+" nmap <Leader>ef :CocCommand explorer --preset floating<CR>
 
 " List all presets
 nmap <Leader>el :CocList explPresets<CR>

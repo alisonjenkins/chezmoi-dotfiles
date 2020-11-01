@@ -1,6 +1,4 @@
 " Terraform completion
-"(Optional)Remove Info(Preview) window
-set completeopt-=preview
 
 " (Optional) Default: 0, enable(1)/disable(0) plugin's keymapping
 let g:terraform_completion_keys = 1
