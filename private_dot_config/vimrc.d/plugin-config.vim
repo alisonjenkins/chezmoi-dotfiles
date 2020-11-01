@@ -13,6 +13,7 @@ source ~/.config/vimrc.d/plugin-config/fzf.vim
 source ~/.config/vimrc.d/plugin-config/golden-ratio.vim
 source ~/.config/vimrc.d/plugin-config/large-file-editing.vim
 source ~/.config/vimrc.d/plugin-config/lf.vim
+source ~/.config/vimrc.d/plugin-config/nvim-lsp.vim
 source ~/.config/vimrc.d/plugin-config/nvim-tree.vim
 source ~/.config/vimrc.d/plugin-config/rainbow.vim
 source ~/.config/vimrc.d/plugin-config/scratch.vim
