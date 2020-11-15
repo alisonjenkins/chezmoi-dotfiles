@@ -1,24 +1,5 @@
 #!/bin/bash
 
-# External rules for BSPWM.  This script is part of my dotfiles:
-# https://gitlab.com/protesilaos/dotfiles.
-#
-# Copyright (c) 2019 Protesilaos Stavrou <info@protesilaos.com>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 # Manual tiling
 # =============
 
@@ -26,6 +7,10 @@
 # to it.  For presels priority is given to the current desktop.
 _bspc_query() {
 	bspc query -N -n "$@"
+}
+
+_query_desktops() {
+	bspc query -D -d "$@"
 }
 
 recept="$(_bspc_query 'any.leaf.!window')"
@@ -47,8 +32,8 @@ elif [ -n "$presel" ]; then
 	target="$presel"
 fi
 
-echo "node=${target:-focused}"
-echo "follow=${attention:-on}"
+# echo "node=${target:-focused}"
+# echo "follow=${attention:-on}"
 
 # Window rules
 # ============
@@ -58,41 +43,67 @@ echo "follow=${attention:-on}"
 window_id="$1"
 window_class="$2"
 window_instance="$3"
-window_title="$(xwininfo -id "$window_id" | sed ' /^xwininfo/!d ; s,.*"\(.*\)".*,\1,')"
+window_title="$(xwininfo -id "$window_id" 2>/dev/null | sed ' /^xwininfo/!d ; s,.*"\(.*\)".*,\1,')"
+
+echo "Window ID: $window_id" >> /tmp/bswpm_external_rules_debug.log
+echo "Window Class: $window_class" >> /tmp/bswpm_external_rules_debug.log
+echo "Window instance: $window_instance" >> /tmp/bswpm_external_rules_debug.log
+echo "Window title: $window_title" >> /tmp/bswpm_external_rules_debug.log
+
+OUTPUT=""
 
 case "$window_class" in
 	[Mm]pv|[Vv]lc|[Pp]avucontrol|[Ee]o[mg]|[Ff]eh|[Rr]istretto|[Ss]xiv|my_float_window)
-		echo "state=floating"
-		echo "center=on"
+		OUTPUT="$OUTPUT state=floating"
+		OUTPUT="$OUTPUT center=on"
   ;;
   [Mm]ate-calc)
-		echo "state=pseudo_tiled"
+		OUTPUT="$OUTPUT state=pseudo_tiled"
   ;;
   Slack)
-		echo "desktop=1"
+		OUTPUT="$OUTPUT desktop=1"
+    TARGET_DESKTOP=1
   ;;
   St|kitty)
-		echo "desktop=2"
+		OUTPUT="$OUTPUT desktop=2"
+    TARGET_DESKTOP=2
+  ;;
+  Pinentry-gtk-2)
+    OUTPUT="focused=true floating=true"
   ;;
   Chromium|firefox)
-		echo "desktop=3"
+    if [[ "$window_instance" == "Devtools" ]]; then
+      OUTPUT=""
+    elif [[ "$window_instance" == "Places" ]]; then
+      OUTPUT=""
+    else
+      OUTPUT="$OUTPUT desktop=3"
+      TARGET_DESKTOP=3
+    fi
   ;;
-  Microsoft)
-		echo "desktop=4"
+  "Microsoft Teams - Preview")
+		OUTPUT="$OUTPUT desktop=4"
+    TARGET_DESKTOP=4
   ;;
   Steam)
-    echo "desktop=9"
+    OUTPUT="desktop=9"
+    TARGET_DESKTOP=9
   ;;
   steam_app_*)
-    echo "desktop=0"
+    OUTPUT="$OUTPUT desktop=0"
+    TARGET_DESKTOP=0
+  ;;
+  SteamTinkerLaunch-OpenSettings)
+    OUTPUT="$OUTPUT desktop=0"
+    TARGET_DESKTOP=0
   ;;
 	* )
 		case "$(xprop -id "$window_id" _NET_WM_WINDOW_TYPE)" in
 			*_NET_WM_WINDOW_TYPE_DIALOG*)
-				echo "state=floating"
+				OUTPUT="$OUTPUT state=floating"
       ;;
 			*)
-				echo "state=tiled"
+				OUTPUT="$OUTPUT state=tiled"
       ;;
 		esac
   ;;
@@ -100,14 +111,23 @@ esac
 
 # FIXME the "file operations" applies to the `caja` file manager.
 # TODO There should be a better way of handling this.
-case "$window_title" in
-	'File Operations'*)
-		echo "state=floating"
-		echo "center=on"
-		;;
-	my_float_window)
-		echo "state=floating"
-		;;
-esac
+# case "$window_title" in
+# 	'File Operations'*)
+# 		OUTPUT="$OUTPUT state=floating"
+# 		OUTPUT="$OUTPUT center=on"
+# 		;;
+# 	my_float_window)
+# 		OUTPUT="$OUTPUT state=floating"
+# 		;;
+# esac
+OUTPUT=$(echo "${OUTPUT}" | xargs)
+
+if ! _query_desktops "$TARGET_DESKTOP" > /dev/null; then
+  bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
+fi
+
+echo "$OUTPUT"
+echo -e "Result: $OUTPUT\n" >>/tmp/bswpm_external_rules_debug.log
+
 
 echo "$@" >> /tmp/bswpm_external_rules.log

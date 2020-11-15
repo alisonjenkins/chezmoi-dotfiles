@@ -1,32 +1,30 @@
-#! /bin/sh
+#!/bin/bash
 export AWT_TOOLKIT=MToolkit
-sxhkd &
+bspc config external_rules_command /home/alan/bin/bspwm_external_rules
+# sxhkd &
 
-MONITOR_NAMES=( $(bspc query -M --names) )
+# MONITOR_NAMES=( $(bspc query -M --names) )
 
 bspc monitor HDMI-0 -d 1 4
 bspc monitor DP-0 -d 2 3 9 0
 
-bspc rule -a Slack desktop='1'
-bspc rule -a St desktop='2'
-bspc rule -a Kitty desktop='2'
-bspc rule -a Chromium desktop='3'
-bspc rule -a firefox desktop='3'
-bspc rule -a 'Microsoft Teams - Preview' desktop='4'
-bspc rule -a Steam desktop='9' floating=on
-bspc rule -a steam_app_* desktop='0'
-# bspc config external_rules_command ~/bin/bspwm_external_rules
+# bspc rule -a Slack desktop='1'
+# bspc rule -a St desktop='2'
+# bspc rule -a Kitty desktop='2'
+# bspc rule -a Chromium desktop='3'
+# bspc rule -a firefox desktop='3'
+# bspc rule -a 'Microsoft Teams - Preview' desktop='4'
+# bspc rule -a Steam desktop='9' floating=on
+# bspc rule -a 'steam_app_*' desktop='0'
 
 source ~/.fehbg &
-clight &
+# clight &
 picom &
 dex bspwm -ae bspwm &
-steam -silent &
+# steam -silent &
 ~/.config/polybar/launch.sh &
-#$(sleep 2 && st -e tmux new-session -As main) &
-# st -e tmux new-session -As main &
-$(/home/alan/bin/start-preferred-terminal --tmux && bspc desktop -f '2') &
-$(slack && bspc desktop -f '1') &
+/home/alan/bin/start-preferred-terminal --tmux &
+# slack &
 
 bspc config border_width         2
 bspc config window_gap          12
