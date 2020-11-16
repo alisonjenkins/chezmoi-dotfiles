@@ -123,7 +123,13 @@ esac
 OUTPUT=$(echo "${OUTPUT}" | xargs)
 
 if ! _query_desktops "$TARGET_DESKTOP" > /dev/null; then
-  bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
+  if [[ "${TARGET_DESKTOP}" == 1 ]]; then
+    bspc monitor "HDMI-0" -a "$TARGET_DESKTOP"
+  elif [[ "${TARGET_DESKTOP}" == 4 ]]; then
+    bspc monitor "HDMI-0" -a "$TARGET_DESKTOP"
+  else
+    bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
+  fi
 fi
 
 echo "$OUTPUT"
