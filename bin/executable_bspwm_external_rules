@@ -89,9 +89,16 @@ case "$window_class" in
     OUTPUT="desktop=9"
     TARGET_DESKTOP=9
   ;;
+  Keybase)
+    OUTPUT="$OUTPUT state=floating"
+  ;;
   steam_app_*)
     OUTPUT="$OUTPUT desktop=0"
     TARGET_DESKTOP=0
+
+    if [[ "$window_title" == "Ubisoft Connect" ]]; then
+      OUTPUT="$OUTPUT tiled border=off"
+    fi
   ;;
   SteamTinkerLaunch-OpenSettings)
     OUTPUT="$OUTPUT desktop=0"
@@ -124,9 +131,9 @@ OUTPUT=$(echo "${OUTPUT}" | xargs)
 
 if ! _query_desktops "$TARGET_DESKTOP" > /dev/null; then
   if [[ "${TARGET_DESKTOP}" == 1 ]]; then
-    bspc monitor "HDMI-0" -a "$TARGET_DESKTOP"
+    bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
   elif [[ "${TARGET_DESKTOP}" == 4 ]]; then
-    bspc monitor "HDMI-0" -a "$TARGET_DESKTOP"
+    bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
   else
     bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
   fi
