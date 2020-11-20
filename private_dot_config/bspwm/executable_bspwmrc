@@ -5,8 +5,8 @@ bspc config external_rules_command /home/alan/bin/bspwm_external_rules
 
 # MONITOR_NAMES=( $(bspc query -M --names) )
 
-bspc monitor HDMI-0 -d 1 4
-bspc monitor DP-0 -d 2 3 9 0
+bspc monitor HDMI-A-0 -d 1 4
+bspc monitor DisplayPort-2 -d 2 3 9 0
 
 # bspc rule -a Slack desktop='1'
 # bspc rule -a St desktop='2'
