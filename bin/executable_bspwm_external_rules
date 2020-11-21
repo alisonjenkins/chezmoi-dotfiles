@@ -127,20 +127,20 @@ esac
 # 		OUTPUT="$OUTPUT state=floating"
 # 		;;
 # esac
-OUTPUT=$(echo "${OUTPUT}" | xargs)
-
 if ! _query_desktops "$TARGET_DESKTOP" > /dev/null; then
   if [[ "${TARGET_DESKTOP}" == 1 ]]; then
     bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
   elif [[ "${TARGET_DESKTOP}" == 4 ]]; then
     bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
+  elif [[ "${TARGET_DESKTOP}" == 0 ]]; then
+    bspc monitor "DisplayPort-2" -a "$TARGET_DESKTOP"
   else
     bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
   fi
 fi
 
+OUTPUT=$(echo "${OUTPUT}" | xargs)
 echo "$OUTPUT"
 echo -e "Result: $OUTPUT\n" >>/tmp/bswpm_external_rules_debug.log
-
 
 echo "$@" >> /tmp/bswpm_external_rules.log
