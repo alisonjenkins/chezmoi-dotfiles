@@ -105,6 +105,10 @@ case "$window_class" in
     TARGET_DESKTOP=0
   ;;
 	* )
+    if [[ "$window_title" == "Steam" ]]; then
+      OUTPUT="$OUTPUT desktop=9"
+      TARGET_DESKTOP=9
+    fi
 		case "$(xprop -id "$window_id" _NET_WM_WINDOW_TYPE)" in
 			*_NET_WM_WINDOW_TYPE_DIALOG*)
 				OUTPUT="$OUTPUT state=floating"
