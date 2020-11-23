@@ -6,6 +6,10 @@ super + d
 super + shift + {a,s,x}
   /home/alan/.config/rofi/scripts/{passmenu,passmenu --type,awsmenu}
 
+# Bookmarks search
+super + b
+  /usr/bin/buku-rofi
+
 super + Return
   /home/alan/bin/start-preferred-terminal --tmux
 
