@@ -74,6 +74,8 @@ case "$window_class" in
   Chromium|firefox)
     if [[ "$window_instance" == "Devtools" ]]; then
       OUTPUT=""
+    elif [[ "$window_title" == "File Upload" ]]; then
+      OUTPUT="state=floating"
     elif [[ "$window_instance" == "Places" ]]; then
       OUTPUT=""
     else
