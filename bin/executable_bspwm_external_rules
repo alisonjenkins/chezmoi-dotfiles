@@ -53,6 +53,9 @@ echo "Window title: $window_title" >> /tmp/bswpm_external_rules_debug.log
 OUTPUT=""
 
 case "$window_class" in
+  App)
+		OUTPUT="$OUTPUT state=floating"
+  ;;
 	[Mm]pv|[Vv]lc|[Pp]avucontrol|[Ee]o[mg]|[Ff]eh|[Rr]istretto|[Ss]xiv|my_float_window)
 		OUTPUT="$OUTPUT state=floating"
 		OUTPUT="$OUTPUT center=on"
@@ -108,7 +111,7 @@ case "$window_class" in
   ;;
 	* )
     if [[ "$window_title" == "Steam" ]]; then
-      OUTPUT="$OUTPUT desktop=9"
+      OUTPUT="$OUTPUT desktop=0"
       TARGET_DESKTOP=9
     fi
 		case "$(xprop -id "$window_id" _NET_WM_WINDOW_TYPE)" in
@@ -135,11 +138,11 @@ esac
 # esac
 if ! _query_desktops "$TARGET_DESKTOP" > /dev/null; then
   if [[ "${TARGET_DESKTOP}" == 1 ]]; then
-    bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
+    bspc monitor "DisplayPort-1" -a "$TARGET_DESKTOP"
   elif [[ "${TARGET_DESKTOP}" == 4 ]]; then
-    bspc monitor "HDMI-A-0" -a "$TARGET_DESKTOP"
+    bspc monitor "DisplayPort-1" -a "$TARGET_DESKTOP"
   elif [[ "${TARGET_DESKTOP}" == 0 ]]; then
-    bspc monitor "DisplayPort-2" -a "$TARGET_DESKTOP"
+    bspc monitor "DisplayPort-0" -a "$TARGET_DESKTOP"
   else
     bspc monitor "$(bspc query -M -m --names)" -a "$TARGET_DESKTOP"
   fi
