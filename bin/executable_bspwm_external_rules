@@ -91,19 +91,19 @@ case "$window_class" in
     TARGET_DESKTOP=4
   ;;
   Steam)
-    OUTPUT="desktop=9"
-    TARGET_DESKTOP=9
+    OUTPUT="desktop=0"
+    TARGET_DESKTOP=0
   ;;
   Keybase)
     OUTPUT="$OUTPUT state=floating"
   ;;
   steam_app_*)
-    OUTPUT="$OUTPUT desktop=0"
-    TARGET_DESKTOP=0
-
     if [[ "$window_title" == "Ubisoft Connect" ]]; then
-      OUTPUT="$OUTPUT tiled border=off"
+      OUTPUT="$OUTPUT border=off desktop=0"
+    else
+      OUTPUT="$OUTPUT state=floating desktop=0"
     fi
+    TARGET_DESKTOP=0
   ;;
   SteamTinkerLaunch-OpenSettings)
     OUTPUT="$OUTPUT desktop=0"

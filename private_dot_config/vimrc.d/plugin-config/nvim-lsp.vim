@@ -4,28 +4,28 @@ local on_attach_vim = function(client)
   require'diagnostic'.on_attach(client)
 end
 
--- require'nvim_lsp'.cmake.setup{on_attach=on_attach_vim}
--- require'nvim_lsp'.jedi_language_server.setup{on_attach=on_attach_vim}
--- require'nvim_lsp'.sqlls.setup{on_attach=on_attach_vim}
--- require'nvim_lsp'.vimls.setup{on_attach=on_attach_vim}
--- require'nvim_lsp'.cssls.setup{on_attach=on_attach_vim}
--- require'nvim_lsp'.ccls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.bashls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.codeqlls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.diagnosticls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.dockerls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.gopls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.html.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.jdtls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.jsonls.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.pyls.setup{}
-require'nvim_lsp'.rust_analyzer.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.sumneko_lua.setup{on_attach=on_attach_vim}
-require'nvim_lsp'.terraformls.setup{
+-- require'lspconfig'.cmake.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.jedi_language_server.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.sqlls.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.vimls.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.cssls.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.ccls.setup{on_attach=on_attach_vim}
+require'lspconfig'.bashls.setup{on_attach=on_attach_vim}
+require'lspconfig'.codeqlls.setup{on_attach=on_attach_vim}
+require'lspconfig'.diagnosticls.setup{on_attach=on_attach_vim}
+require'lspconfig'.dockerls.setup{on_attach=on_attach_vim}
+require'lspconfig'.gopls.setup{on_attach=on_attach_vim}
+require'lspconfig'.html.setup{on_attach=on_attach_vim}
+require'lspconfig'.jdtls.setup{on_attach=on_attach_vim}
+require'lspconfig'.jsonls.setup{on_attach=on_attach_vim}
+require'lspconfig'.pyls.setup{}
+require'lspconfig'.rust_analyzer.setup{on_attach=on_attach_vim}
+require'lspconfig'.sumneko_lua.setup{on_attach=on_attach_vim}
+require'lspconfig'.terraformls.setup{
   on_attach=on_attach_vim;
   cmd = {"terraform-ls", "serve"};
 }
-require'nvim_lsp'.yamlls.setup{on_attach=on_attach_vim}
+require'lspconfig'.yamlls.setup{on_attach=on_attach_vim}
 EOF
 
 " I either want it off, or the trigger higher | default = 1
