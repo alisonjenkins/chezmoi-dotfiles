@@ -1,7 +1,6 @@
 lua <<EOF
 local on_attach_vim = function(client)
   require'completion'.on_attach(client)
-  require'diagnostic'.on_attach(client)
 end
 
 -- require'lspconfig'.cmake.setup{on_attach=on_attach_vim}
@@ -12,7 +11,6 @@ end
 -- require'lspconfig'.ccls.setup{on_attach=on_attach_vim}
 require'lspconfig'.bashls.setup{on_attach=on_attach_vim}
 require'lspconfig'.codeqlls.setup{on_attach=on_attach_vim}
-require'lspconfig'.diagnosticls.setup{on_attach=on_attach_vim}
 require'lspconfig'.dockerls.setup{on_attach=on_attach_vim}
 require'lspconfig'.gopls.setup{on_attach=on_attach_vim}
 require'lspconfig'.html.setup{on_attach=on_attach_vim}
