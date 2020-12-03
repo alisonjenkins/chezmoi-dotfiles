@@ -68,7 +68,6 @@ Plug 'nvim-lua/completion-nvim'                                         " Comple
 Plug 'scrooloose/snipmate-snippets'                                     " A collection of Snipmate snippets.
 " }}}
 " {{{ Vim colour themes and appearance plugins
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " highlights colour descriptions in CSS files with the colour they will create.
 Plug 'Yggdroot/indentLine'                                " adds indentation lines showing the different indentation levels.
 Plug 'chriskempson/base16-vim'                            " Adds base16 colour scheme support to Vim
 Plug 'jszakmeister/vim-togglecursor'                      " Handles changing the cursor shape while taking into account things that can break it.
