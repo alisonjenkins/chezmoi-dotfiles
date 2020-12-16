@@ -75,9 +75,11 @@ Plug 'itchyny/lightline.vim'                              " Adds a pretty and us
 " }}}
 " {{{ External tool integration
 Plug 'hashivim/vim-terraform', {'for': 'terraform' } " Allows running Terraform from inside Vim
+Plug 'kristijanhusak/vim-dadbod-ui'                  " A gui for the dadbod SQL client for managing connections.
 Plug 'lambdalisue/suda.vim'                          " Add support for writing to root owned files using sudo
 Plug 'markcornick/vim-vagrant', {'on': ['Vagrant'] } " Adds :Vagrant command for interacting with Vagrant from within Vim.
 Plug 'tmux-plugins/vim-tmux-focus-events'            " Focus gained and focus lost (used by plugins) do not work in Tmux, this fixes that.
+Plug 'tpope/vim-dadbod'                              " Allow using Vim as a SQL client.
 Plug 'tpope/vim-eunuch'                              " Adds support for many unix commands into Vim (too many commands added to list here).
 Plug 'tpope/vim-tbone', {'on': 'Tmux'}               " Adds tmux support to Vim (:Tmux for running any tmux command, :Tyank for yanking to Tmux's clipboard, :Tput for pasting from Tmux's clipboard and more).
 Plug 'vim-vdebug/vdebug'                             " Multi programming language debugging in Vim.
