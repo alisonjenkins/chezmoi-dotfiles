@@ -21,7 +21,7 @@ require'lspconfig'.jsonls.setup{
 }
 require'lspconfig'.pyls.setup{}
 require'lspconfig'.rust_analyzer.setup{on_attach=on_attach_vim}
-require'lspconfig'.sumneko_lua.setup{on_attach=on_attach_vim}
+-- require'lspconfig'.sumneko_lua.setup{on_attach=on_attach_vim}
 require'lspconfig'.terraformls.setup{
   on_attach=on_attach_vim;
   cmd = {"terraform-ls", "serve"};
