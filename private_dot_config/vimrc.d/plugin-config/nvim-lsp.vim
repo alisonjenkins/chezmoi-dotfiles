@@ -15,7 +15,10 @@ require'lspconfig'.dockerls.setup{on_attach=on_attach_vim}
 require'lspconfig'.gopls.setup{on_attach=on_attach_vim}
 require'lspconfig'.html.setup{on_attach=on_attach_vim}
 require'lspconfig'.jdtls.setup{on_attach=on_attach_vim}
-require'lspconfig'.jsonls.setup{on_attach=on_attach_vim}
+require'lspconfig'.jsonls.setup{
+  on_attach=on_attach_vim,
+  cmd={"/usr/bin/json-languageserver","--stdio"}
+}
 require'lspconfig'.pyls.setup{}
 require'lspconfig'.rust_analyzer.setup{on_attach=on_attach_vim}
 require'lspconfig'.sumneko_lua.setup{on_attach=on_attach_vim}
