@@ -402,12 +402,11 @@ for_window [window_role="task_dialog"] floating enable
 # sway specific options (disable if using i3)
 output "*" background "/home/alan/.config/wallpaper" fill
 
-output eDP-1 {
-  pos 0 0 res 1920x1080@143.998001Hz
-  # scale 1
-}
-
 output DP-1 {
-  pos 1920 0 res 3440x1440@100Hz
+  pos 0 1440 res 5120x1440@239.761002Hz
+  scale 1
 }
 
+output DP-2 {
+  pos 850 0 res 3440x1440@100Hz
+}
