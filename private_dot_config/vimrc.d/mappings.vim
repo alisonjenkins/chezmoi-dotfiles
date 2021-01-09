@@ -77,5 +77,5 @@ nnoremap <leader>' :Telescope find_files<cr>
 nnoremap <leader>g :Telescope live_grep<cr>
 
 " Open Lua Tree
-nnoremap <Leader>ee :LuaTreeToggle<CR>
-nnoremap <Leader>ef :LuaTreeFindFile<CR>
+nnoremap <Leader>ee :NvimTreeToggle<CR>
+nnoremap <Leader>ef :NvimTreeFindFile<CR>
