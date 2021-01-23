@@ -74,7 +74,7 @@ case "$window_class" in
   Pinentry-gtk-2)
     OUTPUT="focused=true floating=true"
   ;;
-  Chromium|firefox)
+  Chromium|firefox|brave-browser)
     if [[ "$window_instance" == "Devtools" ]]; then
       OUTPUT=""
     elif [[ "$window_title" == "File Upload" ]]; then
