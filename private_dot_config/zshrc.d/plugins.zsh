@@ -38,7 +38,9 @@ zinit load fabiokiatkowski/exercism.plugin.zsh
 zinit load joepvd/zsh-hints
 zinit load kiurchv/asdf.plugin.zsh
 zinit load macunha1/zsh-terraform
-zinit load marzocchi/zsh-notify
+if [ "$(uname 2> /dev/null)" = "Linux" ]; then
+  zinit load marzocchi/zsh-notify
+fi
 zinit load molovo/tipz
 zinit load romkatv/powerlevel10k
 zinit load softmoth/zsh-vim-mode
