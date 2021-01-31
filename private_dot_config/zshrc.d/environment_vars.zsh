@@ -9,7 +9,7 @@ fi
 export AWS_DEFAULT_REGION='eu-west-1'
 
 # Set default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Set the Go Path
 export GOPATH="/home/$USER/go"
