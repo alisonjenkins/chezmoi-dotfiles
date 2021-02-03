@@ -36,11 +36,10 @@ zinit load alanjjenkins/zsh-my-aws
 zinit load chriskempson/base16-shell
 zinit load fabiokiatkowski/exercism.plugin.zsh
 zinit load joepvd/zsh-hints
-zinit load kiurchv/asdf.plugin.zsh
+
+zinit load alanjjenkins/asdf.plugin.zsh
 zinit load macunha1/zsh-terraform
-if [ "$(uname 2> /dev/null)" = "Linux" ]; then
-  zinit load marzocchi/zsh-notify
-fi
+zinit load marzocchi/zsh-notify
 zinit load molovo/tipz
 zinit load romkatv/powerlevel10k
 zinit load softmoth/zsh-vim-mode
