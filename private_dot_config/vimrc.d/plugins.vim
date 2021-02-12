@@ -10,7 +10,8 @@ if executable('task')
   Plug 'farseer90718/vim-taskwarrior', {'on': ['TW', 'TWUndo', 'TWEditTaskrc', 'TWEditVitrc', 'TWDeleteCompleted', 'TWAdd', 'TWAnnotate', 'TWComplete', 'TWDelete', 'TWDeleteAnnotation', 'TWModifyInteractive', 'TWReportInfo', 'TWSync', 'TWToggleReadonly', 'TWToggleHLField', 'TWHistory', 'TWHistoryClear', 'TWBookmark', 'TWBookmarkClear']} " Task warrior syntax support.
   " Plug 'tbabej/taskwiki'                        " Taskwiki format (integrates with Task warrior (depends on it)).
 endif
-Plug 'aaronbieber/vim-quicktask'                                     " A task / project management plugin for Vim.
+" Plug 'aaronbieber/vim-quicktask'                                     " A task / project management plugin for Vim.
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'                " Todo.txt vim plugin
 Plug 'burnettk/vim-angular', {'for': 'javascript'}                   " AngularJS syntax support
 Plug 'chrisyip/Better-CSS-Syntax-for-Vim', {'for':'css'}             " Adds CSS3 syntax support.
 Plug 'dbeniamine/todo.txt-vim', {'for': 'todo'}                      " todo.txt syntax plugin for vim.
