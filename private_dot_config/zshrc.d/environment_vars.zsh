@@ -37,5 +37,5 @@ export PATH="$PATH:/home/$USER/.asdf/installs/ruby/truffleruby-19.2.0/bin"
 
 # Todo.txt
 export TODO_DIR="$HOME/gdrive/todo/"
-export TODO_FILE="$HOME/todo/todo.txt"
-export DONE_FILE="$HOME/todo/done.txt"
+export TODO_FILE="$HOME/gdrive/todo/todo.txt"
+export DONE_FILE="$HOME/gdrive/todo/done.txt"
