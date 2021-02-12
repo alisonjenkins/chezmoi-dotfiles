@@ -36,6 +36,6 @@ export PATH="$PATH:/home/$USER/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:/home/$USER/.asdf/installs/ruby/truffleruby-19.2.0/bin"
 
 # Todo.txt
-export TODO_DIR="~/gdrive/todo/"
-export TODO_FILE="~/gdrive/todo/todo.txt"
-export DONE_FILE="~/gdrive/todo/done.txt"
+export TODO_DIR="$HOME/gdrive/todo/"
+export TODO_FILE="$HOME/todo/todo.txt"
+export DONE_FILE="$HOME/todo/done.txt"
