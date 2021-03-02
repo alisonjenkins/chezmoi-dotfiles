@@ -41,11 +41,11 @@ nnoremap <silent> <C-J> gEa<CR><ESC>ew
 map <silent> <F12> :set invlist<CR>
 
 map <F1> :Gwrite<CR>
-map <F2> :Gcommit<CR>
-map <F3> :Gpush<CR>
+map <F2> :Git commit<CR>
+map <F3> :Git push<CR>
 imap <F1> <ESC>:Gwrite<CR>i
-imap <F2> <ESC>:Gcommit<CR>
-imap <F3> <ESC>:Gpush<CR>i
+imap <F2> <ESC>:Git commit<CR>
+imap <F3> <ESC>:Git push<CR>i
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
