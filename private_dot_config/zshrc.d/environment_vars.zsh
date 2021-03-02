@@ -34,6 +34,7 @@ export PATH="$PATH:/home/$USER/.gem/ruby/2.6.0/bin"
 export PATH="$PATH:/home/$USER/.gem/ruby/2.5.0/bin"
 export PATH="$PATH:/home/$USER/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:/home/$USER/.asdf/installs/ruby/truffleruby-19.2.0/bin"
+export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
 # Todo.txt
 export TODO_DIR="$HOME/gdrive/todo/"
