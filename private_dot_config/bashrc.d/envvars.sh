@@ -1,7 +1,7 @@
 # Environment variables
 export ARDUINO_PATH="/usr/share/arduino"
 export AWS_DEFAULT_REGION="eu-west-1"
-export EDITOR="vim"
+export EDITOR="nvim"
 export GOPATH="$HOME/go"
 export HISTCONTROL=ignoredups:ignorespace
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
