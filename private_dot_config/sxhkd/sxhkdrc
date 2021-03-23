@@ -26,7 +26,7 @@ super + {_,shift + ,ctrl + shift +,ctrl +}{0-9}
 #  bspc node --focus ${id}
 
 super + Delete ; {e,s,h,S,r,l}
-  {bspc quit,sudo systemctl suspend,sudo systemctl hibernate,sudo systemctl poweroff,sudo systemctl reboot,betterlockscreen -l}
+  {bspc quit,sudo systemctl suspend,sudo systemctl hibernate,sudo systemctl poweroff,sudo systemctl reboot,xsecurelock}
 
 super + shift + v ; {b,B,c,C}
   {nmcli connection up Bashton\ \(openvpn\),nmcli connection down Bashton\ \(openvpn\),nmcli connection up Claranet,nmcli connection down Claranet}

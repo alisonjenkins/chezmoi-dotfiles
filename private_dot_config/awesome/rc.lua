@@ -94,7 +94,7 @@ local cycle_prev   = true -- cycle trough all previous client or just the first 
 local editor       = os.getenv("EDITOR") or "nvim"
 local gui_editor   = os.getenv("GUI_EDITOR") or "nvim"
 local browser      = os.getenv("BROWSER") or "firefox"
-local scrlocker    = "betterlockscreen -l"
+local scrlocker    = "xsecurelock"
 
 awful.util.terminal = terminal
 --awful.util.tagnames = { "1", "2", "3", "4", "5" }

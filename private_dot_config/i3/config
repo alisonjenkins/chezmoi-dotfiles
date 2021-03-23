@@ -239,7 +239,7 @@ bindsym $mod+r mode "resize"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id betterlockscreen -l, mode "default"
+    bindsym l exec --no-startup-id xsecurelock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id sudo systemctl suspend, mode "default"
     bindsym h exec --no-startup-id sudo systemctl hibernate, mode "default"
@@ -353,13 +353,13 @@ bindsym $mod+Shift+s exec "/home/alan/.config/rofi/scripts/passmenu --type"
 bindsym $mod+Shift+x exec "/home/alan/.config/rofi/scripts/awsmenu"
 
 # launcher shortcuts
-bindsym Mod4+Mod1+l exec betterlockscreen -l
+bindsym Mod4+Mod1+l exec xsecurelock
 
 # autostart
 # exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id /usr/bin/lxsession -s i3
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id xss-lock -- betterlockscreen -l &
+exec --no-startup-id xss-lock -- xsecurelock &
 exec --no-startup-id libinput-gestures-setup start &
 exec /usr/bin/nice -n 19 /usr/bin/slack
 exec kitty --single-instance --session ~/.config/kitty/session-tmux.conf

@@ -18,7 +18,7 @@ case $power_option in
     sudo systemctl hibernate
     ;;
   'lock')
-    betterlockscreen -l
+    xsecurelock
     ;;
   'reboot')
     sudo systemctl reboot
