@@ -4,7 +4,7 @@ pkill polybar
 
 CONFIG=config
 
-if [ "$DESKTOP_SESSION" == '/usr/share/xsessions/bspwm' ]; then
+if [ "$DESKTOP_SESSION" == 'bspwm' ]; then
   CONFIG=config-bspwm
 fi
 
