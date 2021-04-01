@@ -109,6 +109,10 @@ case "$window_class" in
     OUTPUT="$OUTPUT desktop=0"
     TARGET_DESKTOP=0
   ;;
+  gamescope)
+    OUTPUT="$OUTPUT desktop=0"
+    TARGET_DESKTOP=0
+  ;;
 	* )
     if [[ "$window_title" == "Steam" ]]; then
       OUTPUT="$OUTPUT desktop=0"
