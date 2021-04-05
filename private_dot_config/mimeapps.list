@@ -55,3 +55,6 @@ x-scheme-handler/https=brave-browser.desktop;
 x-scheme-handler/mailto=brave-browser.desktop;
 x-scheme-handler/msteams=teams.desktop;
 x-scheme-handler/unknown=brave-browser.desktop;
+x-scheme-handler/slack=slack.desktop
+x-scheme-handler/web+stellar=keybase.desktop
+x-scheme-handler/keybase=keybase.desktop
