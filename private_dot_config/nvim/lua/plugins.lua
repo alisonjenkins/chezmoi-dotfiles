@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
     use 'junegunn/goyo.vim'                                                                          -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'junegunn/vim-peekaboo'                                                                      -- (vimscript) Peekaboo will show you the contents of the registers on the sidebar when you hit " or @ in normal mode or <CTRL-R> in insert mode.
     -- use 'kabouzeid/nvim-lspinstall'                                                                  -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
-    use '~/git/nvim-lspinstall'                                                                  -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
+    use {'~/git/nvim-lspinstall', config = configfn('nv-lspinstall')}                                                                  -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                               -- (lua) Adds filetype icons to many other plugins.
@@ -78,7 +78,7 @@ return require('packer').startup(function(use)
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua', config = configfn('nv-indentline') } -- (vimscript) Adds indentline indentation lines to blank lines in addition to lines with code on.
     use {'mattn/emmet-vim', config = configfn('nv-emmet') }                                          -- (vimscript) Allows writing html using abbreviations that are then expanded.
     use {'monaqa/dial.nvim', config = configfn('nv-dial') }                                          -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
-    use {'neovim/nvim-lspconfig', config = configfn('lsp')}                                      -- (lua) Configurations for various language's LSP servers.
+    use {'neovim/nvim-lspconfig'}                                      -- (lua) Configurations for various language's LSP servers.
     use {'norcalli/nvim-colorizer.lua', config = configfn('nv-colorizer')}                           -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
     use {'nvim-telescope/telescope.nvim', config = configfn('nv-telescope')}                         -- (lua) a extendable fuzzy finder for searching over lists.
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = configfn('nv-treesitter')}   -- (lua) Treesitter integration for Neovim.
