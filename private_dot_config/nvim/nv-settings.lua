@@ -9,6 +9,7 @@ an executable
 O.auto_complete = true
 O.colorscheme = 'gruvbox-material'
 O.auto_close_tree = 0
+O.wrap = false
 
 -- python
 -- add things like O.python.formatter.yapf.exec_path
