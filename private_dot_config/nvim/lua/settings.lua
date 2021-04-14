@@ -28,7 +28,7 @@ vim.cmd("set relativenumber")                              -- set relative numbe
 --vim.cmd("set shortmess = vim.o.shortmess") .. 'c'                 -- Don't pass messages to |ins-completion-menu|.
 --vim.cmd("showmode = true")                                    -- We don't need to see things like -- INSERT -- anymore
 vim.cmd("set showtabline=2")                                    -- Always show tabs
-vim.cmd("set signcolumn")                                 -- Always show the signcolumn, otherwise it would shift the text each time
+vim.cmd("set signcolumn=yes")                                 -- Always show the signcolumn, otherwise it would shift the text each time
 vim.cmd("set smartcase")                                   -- smartcase makes it so that searching becomes case sensitive if you use a capital letter in the search.
 -- vim.cmd("splitbelow = true")                                  -- Horizontal splits will automatically be below
 -- vim.cmd("splitright = true")                                  -- Vertical splits will automatically be to the right
