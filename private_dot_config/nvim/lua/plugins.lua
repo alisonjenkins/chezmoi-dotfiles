@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
     use 'tommcdo/vim-fubitive'                                                                       -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
     use 'tpope/vim-fugitive'                                                                         -- (vimscript) Git integration for Neovim.
     use 'tpope/vim-rhubarb'                                                                          -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
+    use 'tpope/vim-sensible'                                                                         -- Sensible default options for Neovim
     use 'tpope/vim-unimpaired'                                                                       -- (vimscript) Adds many common sense mappings for working with buffers, quickfix, lines, SCM conflict markers, etc
     use 'turbio/bracey.vim'                                                                          -- (vimscript) A plugin for live HTML, Javascript and CSS editing.
     use 'vim-scripts/Align'                                                                          -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align -- <CR>))
