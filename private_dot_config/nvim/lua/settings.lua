@@ -7,8 +7,8 @@ os.execute("mkdir -p " .. vim.o.backupdir)
 os.execute("mkdir -p " .. vim.o.directory)
 os.execute("mkdir -p " .. vim.o.undodir)
 
-vim.bo.expandtab = true                                  -- Converts tabs to spaces
-vim.bo.smartindent = true                                -- Makes indenting smart
+vim.o.expandtab = true                                   -- Converts tabs to spaces
+vim.o.smartindent = true                                 -- Makes indenting smart
 vim.o.backup = true                                      -- enable backups so if Neovim crashes or you lose power you do not lose your work.
 vim.o.cmdheight = 2                                      -- More space for displaying messages
 vim.o.colorcolumn = '99999'                              -- fix indentline for now
@@ -40,4 +40,4 @@ vim.o.undofile = true                                    -- enable persistent un
 vim.o.updatetime = 300                                   -- Faster completion
 vim.o.whichwrap = vim.o.whichwrap .. '<,>,[,],h,l'       -- move to next line with theses keys
 vim.o.writebackup = true                                 -- enable writing of the backup files
-vim.wo.wrap = O.wrap_lines                               -- Display long lines as just one line
+vim.o.wrap = O.wrap_lines                                -- Display long lines as just one line
