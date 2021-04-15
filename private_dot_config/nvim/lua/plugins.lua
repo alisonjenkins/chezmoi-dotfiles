@@ -80,6 +80,7 @@ return require('packer').startup(function(use)
     use {'neovim/nvim-lspconfig'}                                      -- (lua) Configurations for various language's LSP servers.
     use {'norcalli/nvim-colorizer.lua'}                           -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
     use {'nvim-telescope/telescope.nvim'}                         -- (lua) a extendable fuzzy finder for searching over lists.
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- (C) A C port of fzf that can be used to accelerate Telescope
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}   -- (lua) Treesitter integration for Neovim.
     use {'onsails/lspkind-nvim'}                                    -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
     use {'phaazon/hop.nvim'}                                            -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'

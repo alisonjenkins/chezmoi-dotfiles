@@ -2,7 +2,6 @@ local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
 -- '--color=never',
-require('telescope').load_extension('media_files')
 require('telescope').setup {
     defaults = {
         vimgrep_arguments     = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
@@ -68,5 +67,13 @@ require('telescope').setup {
             filetypes = {"png", "webp", "jpg", "jpeg"},
             find_cmd = "rg" -- find command (defaults to `fd`)
         }
+        fzf = {
+            override_generic_sorter = false, -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                             -- the default case_mode is "smart_case"
+        }
     }
 }
+require('telescope').load_extension('media_files')
+require('telescope').load_extension('fzf')
