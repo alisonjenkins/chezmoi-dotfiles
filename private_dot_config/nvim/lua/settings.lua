@@ -7,37 +7,36 @@ os.execute("mkdir -p " .. vim.o.backupdir)
 os.execute("mkdir -p " .. vim.o.directory)
 os.execute("mkdir -p " .. vim.o.undodir)
 
-vim.bo.expandtab = true                                  -- Converts tabs to spaces
-vim.bo.smartindent = true                                -- Makes indenting smart
-vim.o.backup = true                                      -- enable backups so if Neovim crashes or you lose power you do not lose your work.
-vim.o.cmdheight = 2                                      -- More space for displaying messages
-vim.o.colorcolumn = '99999'                              -- fix indentline for now
-vim.o.conceallevel = 0                                   -- So that I can see `` in markdown files
-vim.o.cursorline = true                                  -- Enable highlighting of the current line
-vim.o.fileencoding = "utf-8"                             -- The encoding written to file
-vim.o.guifont = "FiraCode Nerd Font Mono:h15:b"          -- Set the font used by vim GUIs
-vim.o.hidden = true                                      -- Required to keep multiple buffers open multiple buffers
-vim.o.ignorecase = true                                  -- ignore case makes searching case insensitive by default. Overridable by using a capital letter thanks to smart case.
-vim.o.iskeyword = vim.o.iskeyword .. '-'                 -- treat dash separated words as a word text object"
-vim.o.mouse = "a"                                        -- Enable your mouse
-vim.o.number = true                                      -- set numbered lines
-vim.o.pumheight = 10                                     -- Makes popup menu smaller
-vim.o.relativenumber = true                              -- set relative numbered lines
-vim.o.shortmess = vim.o.shortmess .. 'c'                 -- Don't pass messages to |ins-completion-menu|.
-vim.o.showmode = true                                    -- We don't need to see things like -- INSERT -- anymore
-vim.o.showtabline = 2                                    -- Always show tabs
-vim.o.signcolumn = "yes"                                 -- Always show the signcolumn, otherwise it would shift the text each time
-vim.o.smartcase = true                                   -- smartcase makes it so that searching becomes case sensitive if you use a capital letter in the search.
-vim.o.splitbelow = true                                  -- Horizontal splits will automatically be below
-vim.o.splitright = true                                  -- Vertical splits will automatically be to the right
-vim.o.sw=4                                               -- Change the number of space characters inserted for indentation
-vim.o.syntax = "on"                                      -- enable syntax highlighting.
-vim.o.t_Co = "256"                                       -- Support 256 colors
-vim.o.termguicolors = true                               -- set term gui colors most terminals support this
-vim.o.timeoutlen = 300                                   -- By default timeoutlen is 1000 ms
-vim.o.ts=4                                               -- Insert 4 spaces for a tab
-vim.o.undofile = true                                    -- enable persistent undo (meaning if you quit Neovim and come back to a file and want to undo previous changes you can)
-vim.o.updatetime = 300                                   -- Faster completion
-vim.o.whichwrap = vim.o.whichwrap .. '<,>,[,],h,l'       -- move to next line with theses keys
-vim.o.writebackup = true                                 -- enable writing of the backup files
-vim.wo.wrap = O.wrap_lines                               -- Display long lines as just one line
+vim.cmd("set guifont = \"FiraCode Nerd Font Mono:h15:b\"")          -- Set the font used by vim GUIs
+vim.cmd("set t_Co=256")                                       -- Support 256 colors
+vim.cmd("set backup")                                      -- enable backups so if Neovim crashes or you lose power you do not lose your work.
+vim.cmd("set ignorecase")                                  -- ignore case makes searching case insensitive by default. Overridable by using a capital letter thanks to smart case.
+vim.cmd("set expandtab")                                   -- Converts tabs to spaces
+vim.cmd("set smartindent")                                 -- Makes indenting smart
+vim.cmd("set cmdheight=2")                                -- More space for displaying messages
+vim.cmd("set mouse=a")                                -- Enable your mouse
+vim.cmd('set cursorline')                                   -- Enable highlighting of the current line
+vim.cmd('set termguicolors')                                -- set term gui colors most terminals support this
+vim.cmd('set number')                                       -- set numbered lines
+
+vim.cmd("set colorcolumn=99999")                              -- fix indentline for now
+vim.cmd("set conceallevel=0")                                   -- So that I can see `` in markdown files
+vim.cmd("set hidden")                                      -- Required to keep multiple buffers open multiple buffers
+--vim.cmd("set iskeyword = vim.o.iskeyword") .. '-'                 -- treat dash separated words as a word text object"
+vim.cmd("set pumheight=10")                                     -- Makes popup menu smaller
+vim.cmd("set relativenumber")                              -- set relative numbered lines
+--vim.cmd("set shortmess = vim.o.shortmess") .. 'c'                 -- Don't pass messages to |ins-completion-menu|.
+--vim.cmd("showmode = true")                                    -- We don't need to see things like -- INSERT -- anymore
+vim.cmd("set showtabline=2")                                    -- Always show tabs
+vim.cmd("set signcolumn=yes")                                 -- Always show the signcolumn, otherwise it would shift the text each time
+vim.cmd("set smartcase")                                   -- smartcase makes it so that searching becomes case sensitive if you use a capital letter in the search.
+-- vim.cmd("splitbelow = true")                                  -- Horizontal splits will automatically be below
+-- vim.cmd("splitright = true")                                  -- Vertical splits will automatically be to the right
+-- vim.o.sw=4                                               -- Change the number of space characters inserted for indentation
+vim.cmd("set timeoutlen=300")                                   -- By default timeoutlen is 1000 ms
+-- vim.o.ts=4                                               -- Insert 4 spaces for a tab
+vim.cmd("set undofile")                                   -- enable persistent undo (meaning if you quit Neovim and come back to a file and want to undo previous changes you can)
+vim.cmd("set updatetime=300")                                   -- Faster completion
+vim.cmd("set whichwrap=" ..vim.o.whichwrap .. '<,>,[,],h,l')       -- move to next line with theses keys
+vim.cmd("set writebackup")                                 -- enable writing of the backup files
+vim.cmd("set nowrap")                                    -- Display long lines as just one line
