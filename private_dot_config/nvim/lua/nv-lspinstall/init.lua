@@ -2,7 +2,13 @@ local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
+    if server ~= "diagnosticls" then
+      require'lspconfig'[server].setup{}
+    end
+
+    if server == "lua" then
+      require'lsp.lua'
+    end
   end
 end
 
