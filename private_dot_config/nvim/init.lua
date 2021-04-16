@@ -14,6 +14,7 @@ vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- Plugin configs
+require('nv-firenvim')
 require('nv-autocommands')
 require('nv-bookmark')
 require('nv-colorizer')
