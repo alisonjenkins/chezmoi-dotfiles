@@ -25,8 +25,7 @@ return require('packer').startup(function(use)
     use 'juliosueiras/vim-terraform-completion'                                                      -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                          -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'junegunn/vim-peekaboo'                                                                      -- (vimscript) Peekaboo will show you the contents of the registers on the sidebar when you hit " or @ in normal mode or <CTRL-R> in insert mode.
-    use 'kabouzeid/nvim-lspinstall'                                                               -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
-    -- use {'~/git/nvim-lspinstall'}                                                                    -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
+    use {'alanjjenkins/nvim-lspinstall'}                                                             -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                               -- (lua) Adds filetype icons to many other plugins.
