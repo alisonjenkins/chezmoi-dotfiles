@@ -53,13 +53,22 @@
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [diff]
-    tool = vimdiff
+    tool = nvimdiff
 
 [difftool]
     prompt = false
 
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[mergetool "nvimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
 [merge]
-    tool = vimdiff
+  tool = nvim
+
+[mergetool]
+  prompt = true
 
 [alias]
     # branch
