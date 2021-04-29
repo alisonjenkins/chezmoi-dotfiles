@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     if vim.fn.has("linux") then use 'nvim-telescope/telescope-media-files.nvim' end                  -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
     use 'ChristianChiarulli/java-snippets'                                                           -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
+    use 'ThePrimeagen/git-worktree.nvim'                                                             -- (lua) Git worktree addon for Telescope
     use 'bfredl/nvim-miniyank'                                                                       -- (vimscript) The killring-alike plugin with no default mappings.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
