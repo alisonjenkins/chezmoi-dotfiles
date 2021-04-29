@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     if vim.fn.has("linux") then use 'nvim-telescope/telescope-media-files.nvim' end                  -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
     use 'ChristianChiarulli/java-snippets'                                                           -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
+    use 'ThePrimeagen/git-worktree.nvim'                                                             -- (lua) Git worktree addon for Telescope
     use 'bfredl/nvim-miniyank'                                                                       -- (vimscript) The killring-alike plugin with no default mappings.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
@@ -30,7 +31,6 @@ return require('packer').startup(function(use)
     use 'juliosueiras/vim-terraform-completion'                                                      -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                          -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'junegunn/vim-peekaboo'                                                                      -- (vimscript) Peekaboo will show you the contents of the registers on the sidebar when you hit " or @ in normal mode or <CTRL-R> in insert mode.
-    use {'alanjjenkins/nvim-lspinstall'}                                                             -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                               -- (lua) Adds filetype icons to many other plugins.
@@ -65,33 +65,34 @@ return require('packer').startup(function(use)
     use 'turbio/bracey.vim'                                                                          -- (vimscript) A plugin for live HTML, Javascript and CSS editing.
     use 'vim-scripts/Align'                                                                          -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align -- <CR>))
     use 'windwp/nvim-ts-autotag'                                                                     -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
-    use {'MattesGroeger/vim-bookmarks'}                           -- (vimscript) This vim plugin allows toggling bookmarks per line. A quickfix window gives access to all bookmarks. Annotations can be added as well. These are special bookmarks with a comment attached.
-    use {'airblade/vim-rooter'}                                  -- (vimscript) Ensures that the current working directory is the git root
-    use {'andymass/vim-matchup'}                                   -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
-    use {'f-person/git-blame.nvim'}                                -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
-    use {'gennaro-tedesco/nvim-peekup'}                         -- (lua) Adds menu for viewing registers and selecting registers to use when pasting. Mapped to ""
+    use {'MattesGroeger/vim-bookmarks'}                                                              -- (vimscript) This vim plugin allows toggling bookmarks per line. A quickfix window gives access to all bookmarks. Annotations can be added as well. These are special bookmarks with a comment attached.
+    use {'airblade/vim-rooter'}                                                                      -- (vimscript) Ensures that the current working directory is the git root
+    use {'alanjjenkins/nvim-lspinstall'}                                                             -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
+    use {'andymass/vim-matchup'}                                                                     -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
+    use {'f-person/git-blame.nvim'}                                                                  -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
+    use {'gennaro-tedesco/nvim-peekup'}                                                              -- (lua) Adds menu for viewing registers and selecting registers to use when pasting. Mapped to ""
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                   -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
-    use {'glepnir/galaxyline.nvim'}                              -- (lua) A very fast lua statusline plugin.
-    use {'hrsh7th/nvim-compe'}                                        -- (vimscript) A completion plugin for Neovim with support for LSP completions.
+    use {'glepnir/galaxyline.nvim'}                                                                  -- (lua) A very fast lua statusline plugin.
+    use {'hrsh7th/nvim-compe'}                                                                       -- (vimscript) A completion plugin for Neovim with support for LSP completions.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                              -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
-    use {'kevinhwang91/rnvimr'}                                      -- (vimscript) Neovim integration with ranger.
-    use {'kosayoda/nvim-lightbulb'}                               -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
-    use {'kyazdani42/nvim-tree.lua'}                               -- (lua) A file drawer
-    use {'lewis6991/gitsigns.nvim'}                                -- (lua) Adds gitsigns.
-    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'} -- (vimscript) Adds indentline indentation lines to blank lines in addition to lines with code on.
-    use {'mattn/emmet-vim'}                                          -- (vimscript) Allows writing html using abbreviations that are then expanded.
-    use {'monaqa/dial.nvim'}                                          -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
-    use {'neovim/nvim-lspconfig'}                                      -- (lua) Configurations for various language's LSP servers.
-    use {'norcalli/nvim-colorizer.lua'}                           -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
-    use {'nvim-telescope/telescope.nvim'}                         -- (lua) a extendable fuzzy finder for searching over lists.
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- (C) A C port of fzf that can be used to accelerate Telescope
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}   -- (lua) Treesitter integration for Neovim.
-    use {'onsails/lspkind-nvim'}                                    -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
-    use {'phaazon/hop.nvim'}                                            -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
-    use {'puremourning/vimspector'}                              -- (vimscript) Debug adapter protocol client implementation for Neovim for debugging many languages.
+    use {'kevinhwang91/rnvimr'}                                                                      -- (vimscript) Neovim integration with ranger.
+    use {'kosayoda/nvim-lightbulb'}                                                                  -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
+    use {'kyazdani42/nvim-tree.lua'}                                                                 -- (lua) A file drawer
+    use {'lewis6991/gitsigns.nvim'}                                                                  -- (lua) Adds gitsigns.
+    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}                                      -- (vimscript) Adds indentline indentation lines to blank lines in addition to lines with code on.
+    use {'mattn/emmet-vim'}                                                                          -- (vimscript) Allows writing html using abbreviations that are then expanded.
+    use {'monaqa/dial.nvim'}                                                                         -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
+    use {'neovim/nvim-lspconfig'}                                                                    -- (lua) Configurations for various language's LSP servers.
+    use {'norcalli/nvim-colorizer.lua'}                                                              -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }                                  -- (C) A C port of fzf that can be used to accelerate Telescope
+    use {'nvim-telescope/telescope.nvim'}                                                            -- (lua) a extendable fuzzy finder for searching over lists.
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}                                       -- (lua) Treesitter integration for Neovim.
+    use {'onsails/lspkind-nvim'}                                                                     -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
+    use {'phaazon/hop.nvim'}                                                                         -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
+    use {'puremourning/vimspector'}                                                                  -- (vimscript) Debug adapter protocol client implementation for Neovim for debugging many languages.
     use {'pwntester/octo.nvim'}                                                                      -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
-    use {'terrortylor/nvim-comment'}                               -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
-    use {'unblevable/quick-scope'}                               -- (vimscript) Provides an overlay when using the 'f', 'F', 't' and 'T' motions to help with jumping to characters.
-    use {'voldikss/vim-floaterm'}                                 -- (vimscript) Allows opening terminal's using Nvim's floating windows.
+    use {'terrortylor/nvim-comment'}                                                                 -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
+    use {'unblevable/quick-scope'}                                                                   -- (vimscript) Provides an overlay when using the 'f', 'F', 't' and 'T' motions to help with jumping to characters.
+    use {'voldikss/vim-floaterm'}                                                                    -- (vimscript) Allows opening terminal's using Nvim's floating windows.
 end)
 
