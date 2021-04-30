@@ -76,6 +76,7 @@ return require('packer').startup(function(use)
     use 'tommcdo/vim-fubitive'                                                                       -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
     use 'tpope/vim-eunuch'                                                                           -- (vimscript) Adds file and directory manipulation commands to Vim.
     use 'tpope/vim-fugitive'                                                                         -- (vimscript) Git integration for Neovim.
+    use 'tpope/vim-repeat'                                                                           -- (vimscript) Makes many things that are not normally repeatable with '.' repeatable.
     use 'tpope/vim-rhubarb'                                                                          -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
     use 'tpope/vim-sensible'                                                                         -- Sensible default options for Neovim
     use 'tpope/vim-unimpaired'                                                                       -- (vimscript) Adds many common sense mappings for working with buffers, quickfix, lines, SCM conflict markers, etc
