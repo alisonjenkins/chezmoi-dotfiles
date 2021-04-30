@@ -67,7 +67,6 @@ return require('packer').startup(function(use)
     use {'alanjjenkins/nvim-lspinstall'}                                                             -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use {'andymass/vim-matchup'}                                                                     -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use {'f-person/git-blame.nvim'}                                                                  -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
-    use {'gennaro-tedesco/nvim-peekup'}                                                              -- (lua) Adds menu for viewing registers and selecting registers to use when pasting. Mapped to ""
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                   -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'glepnir/galaxyline.nvim'}                                                                  -- (lua) A very fast lua statusline plugin.
     use {'hrsh7th/nvim-compe'}                                                                       -- (vimscript) A completion plugin for Neovim with support for LSP completions.
