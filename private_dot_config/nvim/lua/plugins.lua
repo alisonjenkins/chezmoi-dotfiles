@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                               -- (lua) Adds filetype icons to many other plugins.
-    use 'liuchengxu/vim-which-key'                                                                   -- (vimscript) Displays a mapping cheat sheet for leader.
     use 'liuchengxu/vista.vim'                                                                       -- (vimscript) LSP search for symbols and tags
     use 'machakann/vim-sandwich'                                                                     -- (vimscript) Adds operators and mappings for adding / deleting / changing surrounding text.
     use 'mattn/vim-gist'                                                                             -- (vimscript) A vimscript plugin for creating Github gists.
