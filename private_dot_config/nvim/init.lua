@@ -13,7 +13,6 @@ vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- Plugin configs
 require('nv-firenvim')
-require('nv-autocommands')
 require('nv-bookmark')
 require('nv-colorizer')
 require('nv-comment')
