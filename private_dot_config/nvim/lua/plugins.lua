@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
     use 'airblade/vim-rooter'                                                                        -- (vimscript) Ensures that the current working directory is the git root
     use 'alanjjenkins/nvim-lspinstall'                                                               -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'andymass/vim-matchup'                                                                       -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
-    use 'bfredl/nvim-miniyank'                                                                       -- (vimscript) The killring-alike plugin with no default mappings.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'f-person/git-blame.nvim'                                                                    -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
