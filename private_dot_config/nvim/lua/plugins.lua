@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
     use 'terrortylor/nvim-comment'                                                                   -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use 'thosakwe/vim-flutter'                                                                       -- (lua) Vim commands for Flutter including hot reload on save and more.
     use 'tommcdo/vim-fubitive'                                                                       -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
+    use 'tpope/vim-eunuch'                                                                           -- (vimscript) Adds file and directory manipulation commands to Vim.
     use 'tpope/vim-fugitive'                                                                         -- (vimscript) Git integration for Neovim.
     use 'tpope/vim-rhubarb'                                                                          -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
     use 'tpope/vim-sensible'                                                                         -- Sensible default options for Neovim
