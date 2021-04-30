@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
     use 'puremourning/vimspector'                                                                    -- (vimscript) Debug adapter protocol client implementation for Neovim for debugging many languages.
     use 'pwntester/octo.nvim'                                                                        -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
     use 'rafamadriz/friendly-snippets'                                                               -- (-) A snippet collection for many different programming languages.
+    use 'rhysd/committia.vim'                                                                        -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing.
     use 'sainnhe/gruvbox-material'                                                                   -- (-) A meterial design version of Gruvbox
     use 'sheerun/vim-polyglot'                                                                       -- (vimscript) Adds filetype plugins for syntax highlighting of many different filetypes.
     use 'shumphrey/fugitive-gitlab.vim'                                                              -- (vimscript) Adds Fugitive Gbrowse support for Gitlab repos.
