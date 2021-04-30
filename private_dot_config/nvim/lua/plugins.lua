@@ -64,7 +64,6 @@ return require('packer').startup(function(use)
     use 'turbio/bracey.vim'                                                                          -- (vimscript) A plugin for live HTML, Javascript and CSS editing.
     use 'vim-scripts/Align'                                                                          -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align -- <CR>))
     use 'windwp/nvim-ts-autotag'                                                                     -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
-    use {'MattesGroeger/vim-bookmarks'}                                                              -- (vimscript) This vim plugin allows toggling bookmarks per line. A quickfix window gives access to all bookmarks. Annotations can be added as well. These are special bookmarks with a comment attached.
     use {'airblade/vim-rooter'}                                                                      -- (vimscript) Ensures that the current working directory is the git root
     use {'alanjjenkins/nvim-lspinstall'}                                                             -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use {'andymass/vim-matchup'}                                                                     -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
