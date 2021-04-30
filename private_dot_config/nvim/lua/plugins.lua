@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip'                                                                          -- (vimscript) Adds support for VSCode style snippets. Means you can install and use snippets from VS Code snippet repos.
     use 'juliosueiras/vim-terraform-completion'                                                      -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                          -- (vimscript) Focus mode to eliminate distractions when writing.
+    use 'justinmk/vim-dirvish'                                                                       -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kosayoda/nvim-lightbulb'                                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
