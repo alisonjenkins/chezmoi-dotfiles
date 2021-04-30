@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
     use 'juliosueiras/vim-terraform-completion'                                                      -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                          -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'kevinhwang91/nvim-bqf'                                                                      -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
-    use 'kevinhwang91/rnvimr'                                                                        -- (vimscript) Neovim integration with ranger.
     use 'kosayoda/nvim-lightbulb'                                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
     use 'kshenoy/vim-signature'                                                                      -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-tree.lua'                                                                   -- (lua) A file drawer
