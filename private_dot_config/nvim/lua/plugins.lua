@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     use 'andymass/vim-matchup'                                                                       -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'f-person/git-blame.nvim'                                                                    -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
+    use 'folke/lsp-colors.nvim'                                                                      -- (lua) Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
     use 'glepnir/galaxyline.nvim'                                                                    -- (lua) A very fast lua statusline plugin.
     use 'glepnir/lspsaga.nvim'                                                                       -- (lua) Extension to Neovim's LSP's user interface.
