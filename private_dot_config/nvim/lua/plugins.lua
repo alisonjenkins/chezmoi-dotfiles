@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
     use 'glepnir/galaxyline.nvim'                                                                    -- (lua) A very fast lua statusline plugin.
     use 'glepnir/lspsaga.nvim'                                                                       -- (lua) Extension to Neovim's LSP's user interface.
+    use 'google/vim-searchindex'                                                                     -- (vimscript) Shows the number of search results for a search and what number you are current on.
     use 'hashivim/vim-terraform'                                                                     -- (vimscript) Adds a :Terraform command for running Terrafrom from Neovim, performs automatic formatting of code.
     use 'hrsh7th/nvim-compe'                                                                         -- (vimscript) A completion plugin for Neovim with support for LSP completions.
     use 'hrsh7th/vim-vsnip'                                                                          -- (vimscript) Adds support for VSCode style snippets. Means you can install and use snippets from VS Code snippet repos.
