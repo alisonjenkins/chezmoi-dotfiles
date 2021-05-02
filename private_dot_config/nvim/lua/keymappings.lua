@@ -85,6 +85,13 @@ wk.register(
             q = { "<cmd>Telescope quickfix<cr>",                  "Quickfix" },
             r = { "<cmd>Lspsaga rename<cr>",                      "Rename" },
             s = { "<cmd>Telescope lsp_document_symbols<cr>",      "Document Symbols" },
+            t = {
+                name = "+trouble",
+                t = { "<cmd>LspTroubleToggle<cr>",      "Toggle Trouble" },
+                w = { "<cmd>LspTroubleWorkspaceToggle<cr>",      "Toggle Trouble Workspace mode" },
+                d = { "<cmd>LspTroubleDocumentToggle<cr>",       "Toggle Trouble Document mode" },
+                r = { "<cmd>LspTroubleRefresh<cr>",              "Refresh Trouble" },
+            },
             v = { "<cmd>LspVirtualTextToggle<cr>",                "LSP Toggle Virtual Text" },
             x = { "<cmd>cclose<cr>",                              "Close Quickfix" },
         },
