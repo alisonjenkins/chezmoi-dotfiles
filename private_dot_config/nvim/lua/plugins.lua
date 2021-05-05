@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim_utils'                                                                        -- (lua) Adds Neovim Lua shortcuts and extra functionality.
     use 'nvim-lua/plenary.nvim'                                                                      -- (lua) A library of Lua code used by many Neovim lua plugins.
     use 'nvim-lua/popup.nvim'                                                                        -- (lua) A implementation of the Vim popup API in Neovim. Dependency of telescope.
+    use 'nvim-telescope/telescope-github.nvim'                                                       -- (lua) Github CLI integration for Telescope.
     use 'nvim-telescope/telescope-project.nvim'                                                      -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     use 'nvim-telescope/telescope.nvim'                                                              -- (lua) a extendable fuzzy finder for searching over lists.
     use 'nvim-treesitter/nvim-treesitter-refactor'                                                   -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
