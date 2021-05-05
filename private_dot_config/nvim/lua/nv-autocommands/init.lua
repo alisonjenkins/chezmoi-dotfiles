@@ -21,5 +21,10 @@ utils.define_augroups({
         {'BufRead', '*.sol', 'setlocal filetype=solidity'},
         {'BufNewFile', '*.sol', 'setlocal filetype=solidity'}
     },
+    _zsh_vi_mode_command_editing = {
+        {'BufWinEnter', '/tmp/zvm*', 'setlocal filetype=sh'},
+        {'BufRead', '/tmp/zvm*', 'setlocal filetype=sh'},
+        {'BufNewFile', '/tmp/zvm*', 'setlocal filetype=sh'}
+    },
     _auto_formatters = auto_formatters
 })

@@ -40,9 +40,8 @@ zinit load molovo/tipz
 zinit load romkatv/powerlevel10k
 zinit load zsh-users/zsh-completions
 
+zinit light jeffreytse/zsh-vi-mode
 
-zinit wait lucid for \
-  softmoth/zsh-vim-mode
 zinit wait lucid for \
   Dbz/kube-aliases
 
@@ -51,7 +50,10 @@ zinit wait lucid for \
 
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh'
-zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/fzf/fzf.plugin.zsh'
+
+# For postponing loading `fzf`
+zinit ice lucid wait
+zinit snippet OMZP::fzf
 
 # zinit ice wait
 # zinit light unixorn/kubectx-zshplugin
