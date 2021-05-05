@@ -77,6 +77,7 @@ return require('packer').startup(function(use)
     use 'sainnhe/gruvbox-material'                                                                   -- (-) A meterial design version of Gruvbox
     use 'sheerun/vim-polyglot'                                                                       -- (vimscript) Adds filetype plugins for syntax highlighting of many different filetypes.
     use 'shumphrey/fugitive-gitlab.vim'                                                              -- (vimscript) Adds Fugitive Gbrowse support for Gitlab repos.
+    use 'tami5/sql.nvim'                                                                             -- (lua) Plugin to allow usage of SQLite from within Neovim and Neovim plugins.
     use 'terrortylor/nvim-comment'                                                                   -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use 'thosakwe/vim-flutter'                                                                       -- (lua) Vim commands for Flutter including hot reload on save and more.
     use 'tommcdo/vim-fubitive'                                                                       -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
