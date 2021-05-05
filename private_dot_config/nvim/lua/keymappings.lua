@@ -54,6 +54,7 @@ wk.register(
             D     = { "<cmd>Telescope lsp_workspace_diagnostics<cr>",                 "Workspace Diagnostics" },
             M     = { "<cmd>Telescope man_pages<cr>",                                 "Man Pages" },
             d     = { "<cmd>Telescope lsp_document_diagnostics<cr>",                  "Document Diagnostics" },
+            e     = { "<cmd>Telescope frecency<cr>",                                  "Frecently edited files" },
             f     = { "<cmd>Telescope find_files<cr>",                                "Files" },
             h     = { "<cmd>Telescope command_history<cr>",                           "Command History" },
             i     = { "<cmd>Telescope media_files<cr>",                               "Media Files" },
