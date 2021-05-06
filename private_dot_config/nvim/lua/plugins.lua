@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     use 'alanjjenkins/nvim-lspinstall'                                                               -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'andymass/vim-matchup'                                                                       -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
+    use 'dstein64/vim-startuptime'                                                                   -- (vimscript) Startup time profile viewer.
     use 'f-person/git-blame.nvim'                                                                    -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
     use 'folke/lsp-colors.nvim'                                                                      -- (lua) Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
