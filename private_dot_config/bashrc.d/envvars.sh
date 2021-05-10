@@ -5,6 +5,7 @@ export EDITOR="nvim"
 export GOPATH="$HOME/go"
 export HISTCONTROL=ignoredups:ignorespace
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
