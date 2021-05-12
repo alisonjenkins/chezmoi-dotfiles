@@ -12,7 +12,7 @@ export AWS_DEFAULT_REGION='eu-west-2'
 export EDITOR='nvim'
 
 # Set the Go Path
-export GOPATH="/home/$USER/go"
+export GOPATH="$HOME/go"
 
 # Make shell history ignore duplicated commands and ignore any command
 # starting with a space.
