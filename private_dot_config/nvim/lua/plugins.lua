@@ -102,6 +102,14 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }                                  -- (C) A C port of fzf that can be used to accelerate Telescope
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}                                       -- (lua) Treesitter integration for Neovim.
 
+    -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
+    use {'folke/tokyonight.nvim',
+        config = function()
+            vim.g.tokyonight_style = "night"
+            vim.g.tokyonight_italic_functions = true
+            vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+        end
+    }
     -- pretty list of lsp errors.
     use {
         'folke/lsp-trouble.nvim',

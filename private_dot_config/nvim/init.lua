@@ -7,7 +7,6 @@ require('plugins')
 require('nv-utils')
 require('nv-autocommands')
 require('keymappings')
-require('colorscheme')
 
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
@@ -36,3 +35,5 @@ require('nv-startify')
 require('nv-telescope')
 require('nv-vim-rooter')
 require('nv-vimspector')
+
+vim.cmd[[colorscheme tokyonight]]
