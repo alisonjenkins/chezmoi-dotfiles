@@ -89,6 +89,7 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-dap-python' }                                                                               -- (lua) Debug Adapter Protocol for Python
     use { 'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP() }                                         -- (lua) Telescope interface for Debug Adapter Protocol
     use { 'theHamsta/nvim-dap-virtual-text' }                                                                            -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
+    use {'fiatjaf/neuron.vim', config = CONFIG_NEURON() }                                                                -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG() }                                                       -- pretty list of lsp errors.
     use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG() }                                                         -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG() }                                                            -- shows mappings as you trigger them to help with remembering them.
