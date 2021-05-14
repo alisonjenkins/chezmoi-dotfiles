@@ -162,6 +162,10 @@ return require('packer').startup(function(use)
                     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
                     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
                     -- No actual key bindings are created
+                    spelling = {
+                        enabled = true,
+                        suggestions = 20,
+                    },
                     presets = {
                         operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
                         motions = true, -- adds help for motions
