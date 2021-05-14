@@ -66,6 +66,7 @@ wk.register(
             t     = { "<cmd>Telescope live_grep<cr>",                                 "Text" },
             u     = { "<cmd>Telescope colorscheme<cr>",                               "Colorschemes" },
             w     = { "<cmd>Telescope file_browser<cr>",                              "File browser" },
+            x     = { "<cmd>lua require'telescope.builtin'.find_files({prompt_title = '<Switch Project>', cwd = '$HOME/git'})<cr>", "Switch Project (file search)" },
         },
 
         -- l is for Language Server Protocol (LSP)
