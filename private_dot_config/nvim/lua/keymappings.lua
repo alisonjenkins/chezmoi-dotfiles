@@ -116,6 +116,11 @@ wk.register(
             p = { "<cmd>Git push<cr>",                "Push" },
             s = { "<cmd>Gstatus<cr>",                 "Status" },
             t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
+            w = { 
+                name = "+git worktree",
+                c = {"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree"},
+                s = {"<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",       "Switch"},
+            }
         },
 
         -- Quickfix mappings (all start with q)
