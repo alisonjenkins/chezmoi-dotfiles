@@ -35,5 +35,3 @@ require('nv-startify')
 require('nv-telescope')
 require('nv-vim-rooter')
 require('nv-vimspector')
-
-vim.cmd[[colorscheme tokyonight]]

@@ -40,3 +40,5 @@ vim.cmd("set updatetime=300")                                   -- Faster comple
 vim.cmd("set whichwrap=" ..vim.o.whichwrap .. '<,>,[,],h,l')       -- move to next line with theses keys
 vim.cmd("set writebackup")                                 -- enable writing of the backup files
 vim.cmd("set nowrap")                                    -- Display long lines as just one line
+vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[set spell]]
