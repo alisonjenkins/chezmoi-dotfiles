@@ -117,6 +117,7 @@ wk.register(
             p = { "<cmd>Git push<cr>",                "Push" },
             s = { "<cmd>Gstatus<cr>",                 "Status" },
             t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
+            m = { "<Plug>git-messenger<cr>",          "Line commit history" },
             w = { 
                 name = "+git worktree",
                 c = {"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree"},
