@@ -53,6 +53,7 @@ wk.register(
             B     = { "<cmd>Telescope git_branches<cr>",                              "Git Branches" },
             D     = { "<cmd>Telescope lsp_workspace_diagnostics<cr>",                 "Workspace Diagnostics" },
             M     = { "<cmd>Telescope man_pages<cr>",                                 "Man Pages" },
+            T     = { "<cmd>TodoTelescope<cr>",                                       "Todo comments" },
             d     = { "<cmd>Telescope lsp_document_diagnostics<cr>",                  "Document Diagnostics" },
             e     = { "<cmd>Telescope frecency<cr>",                                  "Frecently edited files" },
             f     = { "<cmd>Telescope find_files<cr>",                                "Files" },
@@ -116,6 +117,12 @@ wk.register(
             s = { "<cmd>Gstatus<cr>",                 "Status" },
             t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
         },
+
+        -- Quickfix mappings (all start with q)
+        q = {
+            name = "+quickfix",
+            t = { "<cmd>TodoQuickFix<cr>",  "Todo quickfix"},
+        }
     },
     { prefix = "<leader>" }
 )

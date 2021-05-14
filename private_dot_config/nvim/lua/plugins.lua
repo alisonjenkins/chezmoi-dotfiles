@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     use 'dstein64/vim-startuptime'                                                                   -- (vimscript) Startup time profile viewer.
     use 'f-person/git-blame.nvim'                                                                    -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
     use 'folke/lsp-colors.nvim'                                                                      -- (lua) Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
+    use 'folke/todo-comments.nvim'                                                                   -- (lua) Easily search for Todo comments in codebases and neatly present them in the code.
     use 'gennaro-tedesco/nvim-jqx'                                                                   -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
     use 'glepnir/galaxyline.nvim'                                                                    -- (lua) A very fast lua statusline plugin.
     use 'glepnir/lspsaga.nvim'                                                                       -- (lua) Extension to Neovim's LSP's user interface.
