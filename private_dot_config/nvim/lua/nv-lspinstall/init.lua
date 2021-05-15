@@ -8,6 +8,8 @@ local function setup_servers()
 
     if server == "lua" then
       require'lsp.lua'
+    elseif server == "yaml" then
+      require'lsp.yaml'
     end
   end
 end
