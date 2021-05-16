@@ -66,6 +66,7 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope-frecency.nvim'                                                     -- (lua) Sorts telescope results via frecency
     use 'nvim-telescope/telescope-github.nvim'                                                       -- (lua) Github CLI integration for Telescope.
     use 'nvim-telescope/telescope-project.nvim'                                                      -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
+    use 'nvim-telescope/telescope-z.nvim'                                                            -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use 'nvim-telescope/telescope.nvim'                                                              -- (lua) a extendable fuzzy finder for searching over lists.
     use 'nvim-treesitter/nvim-treesitter-refactor'                                                   -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
     use 'nvim-treesitter/playground'                                                                 -- (lua) View Treesitter information inside Neovim.
