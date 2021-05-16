@@ -1,7 +1,7 @@
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup {
-    enabled = O.auto_complete,
+    enabled = true,
     autocomplete = true,
     debug = false,
     min_length = 1,
@@ -23,7 +23,7 @@ require'compe'.setup {
 		nvim_lua = false,
         spell = {kind = "  "},
         tags = false,
-        emoji = {kind = " ﲃ ", filetypes={"markdown"}}
+        emoji = {kind = " ﲃ ", filetypes={"markdown"}},
     }
 }
 

@@ -1,3 +1,12 @@
+-- Compe completion
+vim.api.nvim_set_keymap('i', '<C-Space>', "compe#complete()", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<CR>', "compe#confirm('<CR>')", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-e>', "compe#close('<C-e>')", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-f>', "compe#scroll({ 'delta': +4 })", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-d>', "compe#scroll({ 'delta': -4 })", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-j>', '(\"\\<C-n>\")', {noremap = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-k>', '(\"\\<C-p>\")', {noremap = true, expr = true})
+
 -- better window movement
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
@@ -14,10 +23,6 @@ vim.api.nvim_set_keymap('i', '<C-h>', '<C-\\><C-N><C-w>h', {noremap = true, sile
 vim.api.nvim_set_keymap('i', '<C-j>', '<C-\\><C-N><C-w>j', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-k>', '<C-\\><C-N><C-w>k', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<C-l>', '<C-\\><C-N><C-w>l', {noremap = true, silent = true})
-
--- Better nav for omnicomplete
-vim.api.nvim_set_keymap('i', '<C-j>', '(\"\\<C-n>\")', {noremap = true, expr = true})
-vim.api.nvim_set_keymap('i', '<C-k>', '(\"\\<C-p>\")', {noremap = true, expr = true})
 
 -- Set leader
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
