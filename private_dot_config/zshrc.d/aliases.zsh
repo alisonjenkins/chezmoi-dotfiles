@@ -59,10 +59,16 @@ elif command -v vim &>/dev/null; then
 fi
 
 if uname -a | grep 'Darwin' &> /dev/null; then
-  alias ll='ls -G';
-  alias ls='ls -G';
-  if command -v tree &>/dev/null; then
-    alias lt='tree -C';
+  if command -v exa &>/dev/null; then
+    alias ll='exa -l --grid --git';
+    alias ls='exa';
+    alias lt='exa --tree --git --long';
+  else
+    alias ll='ls -G';
+    alias ls='ls -G';
+    if command -v tree &>/dev/null; then
+      alias lt='tree -C';
+    fi
   fi
 else
   if command -v exa &>/dev/null; then
