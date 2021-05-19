@@ -35,12 +35,9 @@ zinit load joepvd/zsh-hints
 
 zinit load alanjjenkins/asdf.plugin.zsh
 zinit load macunha1/zsh-terraform
-zinit load marzocchi/zsh-notify
 zinit load molovo/tipz
 zinit load romkatv/powerlevel10k
 zinit load zsh-users/zsh-completions
-
-zinit light jeffreytse/zsh-vi-mode
 
 zinit wait lucid for \
   Dbz/kube-aliases
@@ -63,15 +60,6 @@ zinit snippet OMZP::fzf
 
 # zinit ice lucid wait
 # zinit load Dbz/kube-aliases
-
-# Sort completion out
-zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-      zdharma/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-      zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
-      zsh-users/zsh-completions
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
