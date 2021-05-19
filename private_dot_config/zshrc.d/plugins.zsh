@@ -21,7 +21,6 @@ zinit from"gh-r" as"program" mv"direnv* -> direnv" \
 
 # Plugins
 zinit load Aloxaf/fzf-tab
-zinit load chriskempson/base16-shell
 zinit load fabiokiatkowski/exercism.plugin.zsh
 zinit load joepvd/zsh-hints
 
