@@ -41,8 +41,5 @@ zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/
 zinit ice lucid wait
 zinit snippet OMZP::fzf
 
-zinit ice lucid wait
-zinit load softmoth/zsh-vim-mode
-
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
