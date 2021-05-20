@@ -41,3 +41,7 @@ export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 export TODO_DIR="$HOME/gdrive/todo/"
 export TODO_FILE="$HOME/gdrive/todo/todo.txt"
 export DONE_FILE="$HOME/gdrive/todo/done.txt"
+
+# nnn Environment variables
+export NNN_OPTS="aedF"
+export NNN_BMS="D:~/Documents;d:~/Downloads;g:~/git;h:~;"

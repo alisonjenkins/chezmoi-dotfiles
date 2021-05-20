@@ -16,8 +16,8 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/usr/local/sbin"
 
 # {{{ nnn settings
-export NNN_USE_EDITOR=1
-export NNN_BMS="h:~;d:~/Downloads;S:~/git/superdry;g:~/git;D:~/Documents;"
+export NNN_OPTS="aedF"
+export NNN_BMS="D:~/Documents;d:~/Downloads;g:~/git;h:~;"
 # }}}
 
 if [ -z "$SSH_AUTH_SOCK" ];
