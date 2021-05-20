@@ -12,11 +12,13 @@ while true; do
 done
 
 # shellcheck disable=SC2153
-for terminal in $TERMINAL kitty alacritty st urxvt rxvt termite terminology qterminal Eterm aterm uxterm xterm roxterm xfce4-terminal.wrapper mate-terminal lxterminal konsole x-terminal-emulator; do
+for terminal in $TERMINAL alacritty kitty st urxvt rxvt termite terminology qterminal Eterm aterm uxterm xterm roxterm xfce4-terminal.wrapper mate-terminal lxterminal konsole x-terminal-emulator; do
     if command -v "$terminal" > /dev/null 2>&1; then
         if command -v tmux >/dev/null 2>&1 && [ "$USE_TMUX" = "1" ]; then
             if [ "$terminal" = "st" ]; then
                 exec st -e tmux new-session -A -s main
+            elif [ "$terminal" = "alacritty" ]; then
+                exec alacritty -e tmux new-session -A -s main
             elif [ "$terminal" = "kitty" ]; then
                 kitty --single-instance --session ~/.config/kitty/session-tmux.conf
             else
