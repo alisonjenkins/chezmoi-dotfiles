@@ -22,6 +22,7 @@ zinit from"gh-r" as"program" mv"direnv* -> direnv" \
 # Plugins
 zinit load Aloxaf/fzf-tab
 zinit load alanjjenkins/asdf.plugin.zsh
+zinit load alanjjenkins/kube-aliases
 zinit load fabiokiatkowski/exercism.plugin.zsh
 zinit load joepvd/zsh-hints
 zinit load macunha1/zsh-terraform
@@ -31,11 +32,6 @@ zinit load zsh-users/zsh-completions
 
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh'
-
-# Postponing load of kube aliases as 
-# for some reason it is slow
-zinit wait lucid for \
-  Dbz/kube-aliases
 
 # For postponing loading `fzf`
 zinit ice lucid wait
