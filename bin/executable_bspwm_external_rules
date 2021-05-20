@@ -67,7 +67,7 @@ case "$window_class" in
 		OUTPUT="$OUTPUT desktop=1"
     TARGET_DESKTOP=1
   ;;
-  St|kitty)
+  Alacritty|St|kitty)
 		OUTPUT="$OUTPUT desktop=2"
     TARGET_DESKTOP=2
   ;;
