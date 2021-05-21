@@ -11,6 +11,7 @@ source ~/.local/share/zinit/bin/zinit.zsh
 export _ZL_MATCH_MODE=1
 
 zinit light zinit-zsh/z-a-rust
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
 zinit load zdharma/null
@@ -35,7 +36,6 @@ zinit load fabiokiatkowski/exercism.plugin.zsh
 zinit load joepvd/zsh-hints
 zinit load macunha1/zsh-terraform
 zinit load molovo/tipz
-zinit load romkatv/powerlevel10k
 zinit load zsh-users/zsh-completions
 
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
