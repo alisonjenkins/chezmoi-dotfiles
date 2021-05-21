@@ -9,9 +9,17 @@ ZINIT[HOME_DIR]=~/.local/share/zinit
 source ~/.local/share/zinit/bin/zinit.zsh
 
 export _ZL_MATCH_MODE=1
-zinit as"program"  \
-    atpull'%atclone' pick"z.lua" src"z.lua.plugin.zsh" for \
-        skywind3000/z.lua
+
+zinit light zinit-zsh/z-a-rust
+
+zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
+zinit load zdharma/null
+eval "$(zoxide init zsh)"
+
+
+# zinit as"program"  \
+#     atpull'%atclone' pick"z.lua" src"z.lua.plugin.zsh" for \
+#         skywind3000/z.lua
 
 # Setup direnv
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
