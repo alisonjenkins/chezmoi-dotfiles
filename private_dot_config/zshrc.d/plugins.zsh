@@ -11,16 +11,15 @@ source ~/.local/share/zinit/bin/zinit.zsh
 export _ZL_MATCH_MODE=1
 
 zinit light zinit-zsh/z-a-rust
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
 zinit load zdharma/null
 eval "$(zoxide init zsh)"
 
-
-# zinit as"program"  \
-#     atpull'%atclone' pick"z.lua" src"z.lua.plugin.zsh" for \
-#         skywind3000/z.lua
+# Starship
+zinit ice rustup cargo'starship' as"command" pick"bin/starship"
+zinit load zdharma/null
+eval "$(starship init zsh)"
 
 # Setup direnv
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
