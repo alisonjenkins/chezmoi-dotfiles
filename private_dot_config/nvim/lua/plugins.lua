@@ -61,6 +61,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'                                                                      -- (lua) Configurations for various language's LSP servers.
     use 'norcalli/nvim-colorizer.lua'                                                                -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
     use 'norcalli/nvim_utils'                                                                        -- (lua) Adds Neovim Lua shortcuts and extra functionality.
+    use 'nvim-lua/lsp_extensions.nvim'                                                               -- (lua) Adds line hints with Rust data types from rust-analyzer.
     use 'nvim-lua/plenary.nvim'                                                                      -- (lua) A library of Lua code used by many Neovim lua plugins.
     use 'nvim-lua/popup.nvim'                                                                        -- (lua) A implementation of the Vim popup API in Neovim. Dependency of telescope.
     use 'nvim-telescope/telescope-frecency.nvim'                                                     -- (lua) Sorts telescope results via frecency
