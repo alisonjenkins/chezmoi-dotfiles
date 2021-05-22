@@ -17,11 +17,6 @@ zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
 zinit load zdharma/null
 eval "$(zoxide init zsh)"
 
-
-# zinit as"program"  \
-#     atpull'%atclone' pick"z.lua" src"z.lua.plugin.zsh" for \
-#         skywind3000/z.lua
-
 # Setup direnv
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
     atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
