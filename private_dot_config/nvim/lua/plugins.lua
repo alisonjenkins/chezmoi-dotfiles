@@ -97,7 +97,6 @@ return require('packer').startup(function(use)
     use 'vim-scripts/Align'                                                                          -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align -- <CR>))
     use 'voldikss/vim-floaterm'                                                                      -- (vimscript) Allows opening terminal's using Nvim's floating windows.
     use 'windwp/nvim-ts-autotag'                                                                     -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
-    use {'Yggdroot/indentLine.git'}                                                                  -- (vimscript) Adds indentlines.
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                   -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                              -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}                                      -- (vimscript) Adds indentline indentation lines to blank lines in addition to lines with code on.
