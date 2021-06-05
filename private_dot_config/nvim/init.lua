@@ -1,7 +1,6 @@
 -- General configuration
 require('settings')
 require('neovide-settings')
-require('plugins')
 require('nv-utils')
 require('nv-autocommands')
 require('keymappings')
@@ -9,6 +8,7 @@ require('keymappings')
 --vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- Plugin configs
+require('lsp-trouble')
 require('nv-bookmark')
 require('nv-colorizer')
 require('nv-comment')
@@ -34,3 +34,6 @@ require('nv-terraform-completion')
 require('nv-vim-rooter')
 require('nv-vimspector')
 require('vim-terraform')
+
+-- Load plugins
+require('plugins')
