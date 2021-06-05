@@ -8,12 +8,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-require('packer').init({
-    max_jobs = 50,
-    display = {
-        auto_clean = true
+require('packer').init(
+    {
+        opt_default = true,
+        max_jobs = 50,
+        display = {
+            auto_clean = true
+        }
     }
-})
+)
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                                                                     -- (lua) Vim Plugin manager
