@@ -72,7 +72,6 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-refactor'                                                   -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
     use 'nvim-treesitter/playground'                                                                 -- (lua) View Treesitter information inside Neovim.
     use 'onsails/lspkind-nvim'                                                                       -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
-    use 'p00f/nvim-ts-rainbow'                                                                       -- (lua) Rainbowification of braces using Treesitter. Good for identifying which brace pairs with which.
     use 'phaazon/hop.nvim'                                                                           -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
     use 'pwntester/octo.nvim'                                                                        -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
     use 'rafamadriz/friendly-snippets'                                                               -- (-) A snippet collection for many different programming languages.
