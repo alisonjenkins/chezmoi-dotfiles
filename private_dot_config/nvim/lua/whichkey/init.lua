@@ -1,5 +1,11 @@
-function whichkey_config()
-    require("which-key").setup {
+function WHICHKEY_CONFIG()
+    local haswhichkey, whichkey = pcall(require, 'which-key')
+
+    if not haswhichkey then
+            return
+    end
+
+    whichkey.setup {
         plugins = {
             marks = true, -- shows a list of your marks on ' and `
             registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode

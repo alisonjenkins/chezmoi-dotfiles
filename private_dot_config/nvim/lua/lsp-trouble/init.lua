@@ -1,5 +1,11 @@
-function lsp_trouble_config()
-    require("trouble").setup {
+function LSP_TROUBLE_CONFIG()
+        local hastrouble, trouble = pcall(require, "trouble")
+
+        if not hastrouble then
+                return
+        end
+
+    trouble.setup {
         height = 15, -- height of the trouble list
         icons = true, -- use dev-icons for filenames
         mode = "workspace", -- "workspace" or "document"
