@@ -8,6 +8,7 @@ require('keymappings')
 --vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- Plugin configs
+require('colorscheme-tokyonight')
 require('lsp-trouble')
 require('nv-bookmark')
 require('nv-colorizer')
@@ -33,7 +34,6 @@ require('nv-telescope')
 require('nv-terraform-completion')
 require('nv-vim-rooter')
 require('nv-vimspector')
-require('tokyonight')
 require('vim-terraform')
 require('whichkey')
 
