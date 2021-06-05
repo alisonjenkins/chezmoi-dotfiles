@@ -1,2 +1,2 @@
--- TODO create file
-vim.g.rooter_silent_chdir = 1
+vim.g.rooter_pattern = {'.terraform', '.git', 'Makefile', '_darcs', '.hg', '.bzr', '.svn', 'node_modules', 'CMakeLists.txt'}
+vim.g.outermost_root = false -- does it make sense to set this as we want to be where .terraform is...
