@@ -1,17 +1,14 @@
 -- General configuration
-require('nv-globals')
 require('settings')
 require('neovide-settings')
-vim.cmd('luafile ~/.config/nvim/nv-settings.lua')
 require('plugins')
 require('nv-utils')
 require('nv-autocommands')
 require('keymappings')
 
-vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
+--vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- Plugin configs
--- require('nv-surround')
 require('nv-bookmark')
 require('nv-colorizer')
 require('nv-comment')
