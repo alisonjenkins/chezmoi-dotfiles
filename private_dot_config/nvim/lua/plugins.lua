@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     use 'ChristianChiarulli/java-snippets'                                                           -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
     use 'ThePrimeagen/git-worktree.nvim'                                                             -- (lua) Git worktree addon for Telescope
-    use 'airblade/vim-rooter'                                                                        -- (vimscript) Ensures that the current working directory is the git root
+    -- use 'airblade/vim-rooter'                                                                        -- (vimscript) Ensures that the current working directory is the git root
     use 'alanjjenkins/nvim-lspinstall'                                                               -- (lua) Plugin to manage installation of language server protocol servers for various programming languages.
     use 'andymass/vim-matchup'                                                                       -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                             -- (vimscript) makes it easier to find and replace text through multiple files.
