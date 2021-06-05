@@ -33,7 +33,9 @@ require('nv-telescope')
 require('nv-terraform-completion')
 require('nv-vim-rooter')
 require('nv-vimspector')
+require('tokyonight')
 require('vim-terraform')
+require('whichkey')
 
 -- Load plugins
 require('plugins')
