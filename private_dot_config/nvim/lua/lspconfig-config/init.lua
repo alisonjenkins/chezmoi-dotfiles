@@ -1,6 +1,7 @@
 function CONFIG_LSPCONFIG()
     local enabled_lspconfigs = {
         "bashls",
+        "cssls",
         "sumneko_lua",
         "terraformls",
         "yamlls",
