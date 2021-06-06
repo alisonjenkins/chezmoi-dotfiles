@@ -4,9 +4,7 @@ if not haslspconfig or lspconfig == true then
     return
 end
 
-if vim.fn.executable("bash-language-server") == 1 then
-
-else
+if vim.fn.executable("bash-language-server") == 0 then
     return
 end
 
