@@ -1,9 +1,9 @@
 function LSP_TROUBLE_CONFIG()
-        local hastrouble, trouble = pcall(require, "trouble")
+    local hastrouble, trouble = pcall(require, "trouble")
 
-        if not hastrouble then
-                return
-        end
+    if not hastrouble then
+        return
+    end
 
     trouble.setup {
         height = 15, -- height of the trouble list

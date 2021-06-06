@@ -2,7 +2,7 @@ function CONFIG_TREESITTER()
     local hastreesitter, treesiter_configs = pcall(require, "nvim-treesitter.configs")
 
     if not hastreesitter then
-            return
+        return
     end
 
     treesiter_configs.setup {
@@ -29,7 +29,7 @@ function CONFIG_TREESITTER_REFACTOR()
     local hastreesitter, treesiter_configs = pcall(require, "nvim-treesitter.configs")
 
     if not hastreesitter then
-            return
+        return
     end
 
     treesiter_configs.setup {

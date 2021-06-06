@@ -5,7 +5,7 @@ end
 local haslspconfig, lspconfig = pcall(require, "lspconfig")
 
 if not haslspconfig or lspconfig == true then
-        return
+    return
 end
 
 lspconfig.terraformls.setup{}

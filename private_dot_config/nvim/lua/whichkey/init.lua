@@ -2,7 +2,7 @@ function WHICHKEY_CONFIG()
     local haswhichkey, whichkey = pcall(require, 'which-key')
 
     if not haswhichkey then
-            return
+        return
     end
 
     whichkey.setup {

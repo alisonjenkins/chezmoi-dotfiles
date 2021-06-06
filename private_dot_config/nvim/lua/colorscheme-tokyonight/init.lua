@@ -5,9 +5,9 @@ function TOKYONIGHT_CONFIG()
 
     vim.cmd([[
     try
-            colorscheme tokyonight
+        colorscheme tokyonight
     catch
-            colorscheme desert
+        colorscheme desert
     endtry
     ]])
 end

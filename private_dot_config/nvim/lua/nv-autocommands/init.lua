@@ -9,8 +9,8 @@ utils.define_augroups({
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'}
     },
     -- _java = {
-        -- {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},
-        -- {'FileType', 'java', 'nnoremap ca <Cmd>lua require(\'jdtls\').code_action()<CR>'}
+    -- {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},
+    -- {'FileType', 'java', 'nnoremap ca <Cmd>lua require(\'jdtls\').code_action()<CR>'}
     -- },
     _markdown = {
         {'FileType', 'markdown', 'setlocal wrap'},
