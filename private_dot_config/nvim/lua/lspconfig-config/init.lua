@@ -3,6 +3,7 @@ function CONFIG_LSPCONFIG()
         "bashls",
         "cssls",
         "dockerls",
+        "gopls",
         "jsonls",
         "rls",
         "rust_analyzer",
