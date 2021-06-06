@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
     use 'ThePrimeagen/git-worktree.nvim'                                                                                 -- (lua) Git worktree addon for Telescope
+    use 'alanjjenkins/friendly-snippets'                                                                                 -- (-) A snippet collection for many different programming languages.
     use 'andymass/vim-matchup'                                                                                           -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                                                 -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'dstein64/vim-startuptime'                                                                                       -- (vimscript) Startup time profile viewer.
@@ -39,6 +40,7 @@ return require('packer').startup(function(use)
     use 'hashivim/vim-terraform'                                                                                         -- (vimscript) Adds a :Terraform command for running Terrafrom from Neovim, performs automatic formatting of code.
     use 'hrsh7th/vim-vsnip'                                                                                              -- (vimscript) Adds support for VSCode style snippets. Means you can install and use snippets from VS Code snippet repos.
     use 'juliosueiras/vim-terraform-completion'                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
+    use 'juliosueiras/vim-terraform-snippets'                                                                            -- (-) Terraform snippets
     use 'junegunn/goyo.vim'                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
     use 'kevinhwang91/nvim-bqf'                                                                                          -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
@@ -59,7 +61,6 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'                                                                                          -- (lua) A library of Lua code used by many Neovim lua plugins.
     use 'nvim-lua/popup.nvim'                                                                                            -- (lua) A implementation of the Vim popup API in Neovim. Dependency of telescope.
     use 'phaazon/hop.nvim'                                                                                               -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
-    use 'rafamadriz/friendly-snippets'                                                                                   -- (-) A snippet collection for many different programming languages.
     use 'rhysd/committia.vim'                                                                                            -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing.
     use 'rhysd/git-messenger.vim'                                                                                        -- (lua) Git messenger allows looking at the commits that previous changed a line along with diffs.
     use 'sainnhe/gruvbox-material'                                                                                       -- (-) A meterial design version of Gruvbox
