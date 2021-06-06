@@ -3,6 +3,7 @@ function CONFIG_LSPCONFIG()
         "bashls",
         "cssls",
         "dockerls",
+        "rls",
         "sumneko_lua",
         "terraformls",
         "yamlls",
