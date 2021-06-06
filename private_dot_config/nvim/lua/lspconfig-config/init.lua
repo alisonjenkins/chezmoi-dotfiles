@@ -7,6 +7,7 @@ function CONFIG_LSPCONFIG()
         "rust_analyzer",
         "sumneko_lua",
         "terraformls",
+        "tflint",
         "yamlls",
     }
 
