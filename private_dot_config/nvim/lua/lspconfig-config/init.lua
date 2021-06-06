@@ -4,6 +4,7 @@ function CONFIG_LSPCONFIG()
         "cssls",
         "dockerls",
         "rls",
+        "rust_analyzer",
         "sumneko_lua",
         "terraformls",
         "yamlls",
