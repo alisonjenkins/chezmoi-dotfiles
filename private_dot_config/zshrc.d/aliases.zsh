@@ -38,6 +38,7 @@ alias keycl='ssh-add -D'
 alias keyp='ssh-add ~/.ssh/ssh_keys/id_personal'
 alias keypa='ssh-add ~/.ssh/ssh_keys/id_alan-aws'
 alias keypo='ssh-add ~/.ssh/ssh_keys/id_personal_old'
+alias keyk='ssh-add ~/.ssh/ssh_keys/id_krystal'
 alias kmse='export EYAML_CONFIG=$PWD/.kms-eyaml.yaml'
 
 # Servicenow script aliases
