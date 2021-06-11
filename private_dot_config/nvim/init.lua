@@ -35,6 +35,7 @@ require('nv-terraform-completion')
 require('nv-treesitter')
 require('nv-vim-rooter')
 require('nv-vimspector')
+require('rust-tools')
 require('vim-terraform')
 require('whichkey')
 
