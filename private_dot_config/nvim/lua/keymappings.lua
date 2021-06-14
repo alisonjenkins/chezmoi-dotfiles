@@ -62,6 +62,37 @@ function whichkey_mappings()
                         -- Startify maps
                         [";"] = { "<cmd>Startify<cr>", "Show Startify" },
 
+                        -- Debug mappings
+                        d = {
+                                name = "+debug",
+                                b     = {
+                                        name = "+breakpoint",
+                                        b     = { "<cmd>lua require\"dap\".toggle_breakpoint()<CR>", "DAP Toggle Breakpoint" },
+                                        c     = { "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>",         "DAP Set Conditional Breakpoint"},
+                                        l     = { "<cmd>lua require\"dap\".set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>" , "DAP Log Point"},
+                                },
+                                c     = { "<cmd>lua require\"dap\".continue()<CR>", "DAP Continue" },
+                                r     = { 
+                                        name = "+repl",
+                                        r = {"<cmd>lua require\"dap\".repl.open()<CR>",     "DAP REPL" }, 
+                                        l = {"<cmd>lua require\"dap\".repl.run_last()<CR>", "DAP REPL Run Last" }, 
+                                },
+                                s     = {
+                                        name  = "+step", 
+                                        i     = { "<cmd>lua require\"dap\".step_into()<CR>",                                                      "DAP Step Into" }, 
+                                        o     = { "<cmd>lua require\"dap\".step_out()<CR>",                                                       "DAP Step Out" }, 
+                                        v     = { "<cmd>lua require\"dap\".step_over()<CR>",                                                      "DAP Step Over" }, 
+                                },
+                                t = {
+                                        name = "+telescope",
+                                        b = { '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', "DAP Breakpoints" },
+                                        c = { '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', "DAP Commands" },
+                                        f = { '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', "DAP Frames" },
+                                        o = { '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', "DAP Configuration" },
+                                        v = { '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', "DAP Variables" },
+                                },
+                        },
+
                         -- Telescope mappings
                         f = { "<cmd>Telescope find_files<cr>", "Find files (Telescope)" },
 

@@ -95,6 +95,8 @@ function CONFIG_TELESCOPE_FRECENCY()
 end
 
 function CONFIG_TELESCOPE_FZF()
+        local hastelescope, _ = pcall(require,"telescope")
+
         if not hastelescope then
                 return
         end
@@ -103,6 +105,8 @@ function CONFIG_TELESCOPE_FZF()
 end
 
 function CONFIG_TELESCOPE_GITHUB()
+        local hastelescope, _ = pcall(require,"telescope")
+
         if not hastelescope then
                 return
         end
@@ -111,6 +115,8 @@ function CONFIG_TELESCOPE_GITHUB()
 end
 
 function CONFIG_TELESCOPE_MEDIA()
+        local hastelescope, _ = pcall(require,"telescope")
+
         if not hastelescope then
                 return
         end
@@ -119,6 +125,8 @@ function CONFIG_TELESCOPE_MEDIA()
 end
 
 function CONFIG_TELESCOPE_PROJECT()
+        local hastelescope, _ = pcall(require,"telescope")
+
         if not hastelescope then
                 return
         end
@@ -127,9 +135,27 @@ function CONFIG_TELESCOPE_PROJECT()
 end
 
 function CONFIG_TELESCOPE_Z()
+        local hastelescope, _ = pcall(require,"telescope")
+
         if not hastelescope then
                 return
         end
 
         require('telescope').load_extension('z')
+end
+
+function CONFIG_TELESCOPE_DAP()
+        local hastelescope, _ = pcall(require,"telescope")
+
+        if not hastelescope then
+                return
+        end
+
+        local hastsdap, _ = pcall(require,"dap")
+
+        if not hastsdap then
+                return
+        end
+
+        require('telescope').load_extension('dap')
 end
