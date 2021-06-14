@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
     use 'voldikss/vim-floaterm'                                                                                          -- (vimscript) Allows opening terminal's using Nvim's floating windows.
     use 'windwp/nvim-ts-autotag'                                                                                         -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
     use 'ygm2/rooter.nvim'                                                                                               -- (lua) Ensures that the current working directory is the git root / project root (i.e. directory where .terraform is).
-    use { 'mfussenegger/nvim-dap' }                                                                                      -- (lua) Debug Adapter Protocol for Neovim
+    use { 'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP() }                                                          -- (lua) Debug Adapter Protocol for Neovim
     use { 'mfussenegger/nvim-dap-python' }                                                                               -- (lua) Debug Adapter Protocol for Python
     use { 'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP() }                                         -- (lua) Telescope interface for Debug Adapter Protocol
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG() }                                                       -- pretty list of lsp errors.
