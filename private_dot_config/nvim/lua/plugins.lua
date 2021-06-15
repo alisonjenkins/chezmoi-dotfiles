@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                                                    -- (lua) Vim Plugin manager
 
     -- use 'pwntester/octo.nvim'                                                                                                                                                          -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
+    -- use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     if vim.fn.has("linux") then use {'nvim-telescope/telescope-media-files.nvim', config = CONFIG_TELESCOPE_MEDIA()} end -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
     use "folke/lua-dev.nvim"                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
@@ -86,6 +87,7 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP() }                                                          -- (lua) Debug Adapter Protocol for Neovim
     use { 'mfussenegger/nvim-dap-python' }                                                                               -- (lua) Debug Adapter Protocol for Python
     use { 'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP() }                                         -- (lua) Telescope interface for Debug Adapter Protocol
+    use { 'theHamsta/nvim-dap-virtual-text' }                                                                            -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG() }                                                       -- pretty list of lsp errors.
     use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG() }                                                         -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG() }                                                            -- shows mappings as you trigger them to help with remembering them.
@@ -103,7 +105,6 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-frecency.nvim', config = CONFIG_TELESCOPE_FRECENCY()}                                 -- (lua) Sorts telescope results via frecency
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }                                                      -- (C) A C port of fzf that can be used to accelerate Telescope
     use {'nvim-telescope/telescope-github.nvim', config = CONFIG_TELESCOPE_GITHUB()}                                     -- (lua) Github CLI integration for Telescope.
-    use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     use {'nvim-telescope/telescope-z.nvim', config = CONFIG_TELESCOPE_Z()}                                               -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'nvim-telescope/telescope.nvim', config = CONFIG_TELESCOPE()}                                                   -- (lua) a extendable fuzzy finder for searching over lists.
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = CONFIG_TREESITTER()}                             -- (lua) Treesitter integration for Neovim.

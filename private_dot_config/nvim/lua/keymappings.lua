@@ -72,11 +72,13 @@ function whichkey_mappings()
                                         l     = { "<cmd>lua require\"dap\".set_breakpoint(nil, nil, vim.fn.input(\"Log point message: \"))<CR>" , "DAP Log Point"},
                                 },
                                 c     = { "<cmd>lua require\"dap\".continue()<CR>", "DAP Continue" },
+                                i     = { "<cmd>lua require\"dap.ui.widgets\".hover()<CR>", "DAP Hover (Inspect Variable under cursor)"},
                                 r     = { 
                                         name = "+repl",
                                         r = {"<cmd>lua require\"dap\".repl.open()<CR>",     "DAP REPL" }, 
                                         l = {"<cmd>lua require\"dap\".repl.run_last()<CR>", "DAP REPL Run Last" }, 
                                 },
+                                S     = { "<cmd>lua require\"dap\".stop()<CR>", "DAP Stop" },
                                 s     = {
                                         name  = "+step", 
                                         i     = { "<cmd>lua require\"dap\".step_into()<CR>",                                                      "DAP Step Into" }, 
