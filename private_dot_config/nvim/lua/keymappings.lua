@@ -164,7 +164,11 @@ function whichkey_mappings()
                                 B = { "<cmd>GBrowse<cr>",                 "Browse" },
                                 a = { "<cmd>Gwrite<cr>",                  "Add" },
                                 b = { "<cmd>Gblame<cr>",                  "Blame" },
-                                c = { "<cmd>Git commit<cr>",              "Commit" },
+                                c = {
+                                        name = "+commit",
+                                        c = {"<cmd>Git commit<cr>",         "Commit" },
+                                        a = {"<cmd>Git commit --amend<cr>", "Commit Amend" },
+                                },
                                 d = { "<cmd>Git diff<cr>",                "Diff" },
                                 l = { "<cmd>Git log<cr>",                 "Log" },
                                 p = { "<cmd>Git push<cr>",                "Push" },
