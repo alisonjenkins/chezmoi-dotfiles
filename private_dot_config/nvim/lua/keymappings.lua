@@ -171,7 +171,7 @@ function whichkey_mappings()
                                 },
                                 d = { "<cmd>Git diff<cr>",                "Diff" },
                                 l = { "<cmd>Git log<cr>",                 "Log" },
-                                p = { "<cmd>Git push<cr>",                "Push" },
+                                p = { "<cmd>Gina push<cr>",               "Push" },
                                 s = { "<cmd>Gstatus<cr>",                 "Status" },
                                 t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
                                 m = { "<Plug>git-messenger<cr>",          "Line commit history" },
