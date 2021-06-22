@@ -13,9 +13,10 @@ export _ZL_MATCH_MODE=1
 zinit light zinit-zsh/z-a-rust
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
+zinit ice rustup cargo'zoxide;mcfly' as"command" pick"bin/(zoxide|mcfly)"
 zinit load zdharma/null
 eval "$(zoxide init zsh)"
+eval "$(mcfly init zsh)"
 
 # Setup direnv
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
