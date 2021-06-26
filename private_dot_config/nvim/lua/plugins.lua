@@ -85,14 +85,10 @@ return require('packer').startup(function(use)
     use 'voldikss/vim-floaterm'                                                                                          -- (vimscript) Allows opening terminal's using Nvim's floating windows.
     use 'windwp/nvim-ts-autotag'                                                                                         -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
     use 'ygm2/rooter.nvim'                                                                                               -- (lua) Ensures that the current working directory is the git root / project root (i.e. directory where .terraform is).
-    use { 'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP() }                                                          -- (lua) Debug Adapter Protocol for Neovim
-    use { 'mfussenegger/nvim-dap-python' }                                                                               -- (lua) Debug Adapter Protocol for Python
-    use { 'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP() }                                         -- (lua) Telescope interface for Debug Adapter Protocol
-    use { 'theHamsta/nvim-dap-virtual-text' }                                                                            -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
-    use {'fiatjaf/neuron.vim', config = CONFIG_NEURON() }                                                                -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
-    use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG() }                                                       -- pretty list of lsp errors.
-    use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG() }                                                         -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
-    use {'folke/which-key.nvim', config = WHICHKEY_CONFIG() }                                                            -- shows mappings as you trigger them to help with remembering them.
+    use {'fiatjaf/neuron.vim', config = CONFIG_NEURON()}                                                                -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
+    use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG()}                                                       -- pretty list of lsp errors.
+    use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG()}                                                         -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
+    use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                            -- shows mappings as you trigger them to help with remembering them.
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                                       -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'glepnir/galaxyline.nvim', config = CONFIG_GALAXYLINE()}                                                        -- (lua) A very fast lua statusline plugin.
     use {'hrsh7th/nvim-compe', config = CONFIG_NVIM_COMPE()}                                                             -- (vimscript) A completion plugin for Neovim with support for LSP completions.
@@ -102,19 +98,23 @@ return require('packer').startup(function(use)
     use {'kyazdani42/nvim-tree.lua', config = CONFIG_NVIM_TREE()}                                                        -- (lua) A file drawer
     use {'lewis6991/gitsigns.nvim', config = CONFIG_GITSIGNS()}                                                          -- (lua) Adds gitsigns.
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}                                                          -- (vimscript) Adds indentline indentation lines to blank lines in addition to lines with code on.
-    use {'monaqa/dial.nvim', config = CONFIG_DIAL() }                                                                    -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
+    use {'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP()}                                                          -- (lua) Debug Adapter Protocol for Neovim
+    use {'mfussenegger/nvim-dap-python'}                                                                               -- (lua) Debug Adapter Protocol for Python
+    use {'monaqa/dial.nvim', config = CONFIG_DIAL()}                                                                    -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
     use {'neovim/nvim-lspconfig', config = CONFIG_LSPCONFIG()}                                                           -- (lua) Configurations for various language's LSP servers.
     use {'norcalli/nvim-colorizer.lua', config = CONFIG_COLORIZER()}                                                     -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
+    use {'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP()}                                         -- (lua) Telescope interface for Debug Adapter Protocol
     use {'nvim-telescope/telescope-frecency.nvim', config = CONFIG_TELESCOPE_FRECENCY()}                                 -- (lua) Sorts telescope results via frecency
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }                                                      -- (C) A C port of fzf that can be used to accelerate Telescope
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}                                                      -- (C) A C port of fzf that can be used to accelerate Telescope
     use {'nvim-telescope/telescope-github.nvim', config = CONFIG_TELESCOPE_GITHUB()}                                     -- (lua) Github CLI integration for Telescope.
     use {'nvim-telescope/telescope.nvim', config = CONFIG_TELESCOPE()}                                                   -- (lua) a extendable fuzzy finder for searching over lists.
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = CONFIG_TREESITTER()}                             -- (lua) Treesitter integration for Neovim.
     use {'nvim-treesitter/nvim-treesitter-refactor', config = CONFIG_TREESITTER_REFACTOR()}                              -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
     use {'nvim-treesitter/playground'}                                                                                   -- (lua) View Treesitter information inside Neovim.
     use {'onsails/lspkind-nvim', config = CONFIG_LSPKIND()}                                                              -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
-    use {'ruifm/gitlinker.nvim', config = function() require("gitlinker").setup({mappings = nil}) end }                  -- (lua) Adds the ability to copy links to lines / blocks of code in git into your clipboard using <leader>gy
+    use {'ruifm/gitlinker.nvim', config = function() require("gitlinker").setup({mappings = nil}) end}                  -- (lua) Adds the ability to copy links to lines / blocks of code in git into your clipboard using <leader>gy
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
+    use {'theHamsta/nvim-dap-virtual-text'}                                                                            -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
 end)
 
