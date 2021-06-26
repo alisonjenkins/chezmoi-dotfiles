@@ -112,6 +112,7 @@ return require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter-refactor', config = CONFIG_TREESITTER_REFACTOR()}                              -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
     use {'nvim-treesitter/playground'}                                                                                   -- (lua) View Treesitter information inside Neovim.
     use {'onsails/lspkind-nvim', config = CONFIG_LSPKIND()}                                                              -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
+    use {'ruifm/gitlinker.nvim', config = function() require("gitlinker").setup({mappings = nil}) end }                  -- (lua) Adds the ability to copy links to lines / blocks of code in git into your clipboard using <leader>gy
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
 end)
