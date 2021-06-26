@@ -1,5 +1,5 @@
 function CONFIG_GITLINKER()
-    local hasgitlinker, gitlinkert = pcall(require,"gitlinker")
+    local hasgitlinker, gitlinker = pcall(require,"gitlinker")
 
     if not hasgitlinker then
         return
