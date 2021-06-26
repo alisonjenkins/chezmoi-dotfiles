@@ -96,6 +96,7 @@ return require('packer').startup(function(use)
     use {'glepnir/galaxyline.nvim', config = CONFIG_GALAXYLINE()}                                                        -- (lua) A very fast lua statusline plugin.
     use {'hrsh7th/nvim-compe', config = CONFIG_NVIM_COMPE()}                                                             -- (vimscript) A completion plugin for Neovim with support for LSP completions.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                                                  -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
+    use {'jvgrootveld/telescope-zoxide', config = CONFIG_TELESCOPE_ZOXIDE()}                                               -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'kosayoda/nvim-lightbulb', config = CONFIG_NVIM_LIGHTBULB()}                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
     use {'kyazdani42/nvim-tree.lua', config = CONFIG_NVIM_TREE()}                                                        -- (lua) A file drawer
     use {'lewis6991/gitsigns.nvim', config = CONFIG_GITSIGNS()}                                                          -- (lua) Adds gitsigns.
@@ -106,7 +107,6 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-frecency.nvim', config = CONFIG_TELESCOPE_FRECENCY()}                                 -- (lua) Sorts telescope results via frecency
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }                                                      -- (C) A C port of fzf that can be used to accelerate Telescope
     use {'nvim-telescope/telescope-github.nvim', config = CONFIG_TELESCOPE_GITHUB()}                                     -- (lua) Github CLI integration for Telescope.
-    use {'jvgrootveld/telescope-zoxide', config = CONFIG_TELESCOPE_ZOXIDE()}                                               -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'nvim-telescope/telescope.nvim', config = CONFIG_TELESCOPE()}                                                   -- (lua) a extendable fuzzy finder for searching over lists.
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = CONFIG_TREESITTER()}                             -- (lua) Treesitter integration for Neovim.
     use {'nvim-treesitter/nvim-treesitter-refactor', config = CONFIG_TREESITTER_REFACTOR()}                              -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
