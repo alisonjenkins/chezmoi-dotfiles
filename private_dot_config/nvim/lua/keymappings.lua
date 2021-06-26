@@ -163,7 +163,7 @@ function whichkey_mappings()
                                 p = { "<cmd>Gina push<cr>",               "Push" },
                                 s = { "<cmd>Git<cr>",                     "Status" },
                                 t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
-                                m = { "<Plug>git-messenger<cr>",          "Line commit history" },
+                                m = { "<cmd>GitMessenger<cr>",            "Line commit history" },
                                 w = {
                                         name = "+git worktree",
                                         c = {"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree"},
