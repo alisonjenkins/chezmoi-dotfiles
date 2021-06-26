@@ -134,14 +134,14 @@ function CONFIG_TELESCOPE_PROJECT()
         require('telescope').load_extension('project')
 end
 
-function CONFIG_TELESCOPE_Z()
+function CONFIG_TELESCOPE_ZOXIDE()
         local hastelescope, _ = pcall(require,"telescope")
 
         if not hastelescope then
                 return
         end
 
-        require('telescope').load_extension('z')
+        require('telescope').load_extension('zoxide')
 end
 
 function CONFIG_TELESCOPE_DAP()
