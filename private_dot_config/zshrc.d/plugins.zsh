@@ -29,10 +29,9 @@ zinit load molovo/tipz
 zinit load zsh-users/zsh-completions
 
 zinit light zinit-zsh/z-a-rust
-zinit ice rustup cargo'zoxide;mcfly' as"command" pick"bin/(zoxide|mcfly)"
+zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
 zinit load zdharma/null
 eval "$(zoxide init zsh)"
-eval "$(mcfly init zsh)"
 
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/aws/aws.plugin.zsh'
 zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh'
