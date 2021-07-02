@@ -6,9 +6,7 @@ function CONFIG_TELESCOPE()
         end
 
         local actions = require('telescope.actions')
-        -- Global remapping
-        ------------------------------
-        -- '--color=never',
+
         require('telescope').setup {
                 defaults = {
                         vimgrep_arguments     = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
@@ -24,12 +22,6 @@ function CONFIG_TELESCOPE()
                         generic_sorter        = require'telescope.sorters'.get_generic_fuzzy_sorter,
                         shorten_path          = true,
                         winblend              = 0,
-                        layout_config = {
-                                height           = 1,
-                                preview_cutoff   = 120,
-                                prompt_position  = "top",
-                                width            = 0.75,
-                        },
                         border                = {},
                         borderchars           = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
                         color_devicons        = true,
