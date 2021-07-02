@@ -9,28 +9,21 @@ function CONFIG_NVIM_COMPE()
 
         compe.setup {
                 enabled = true,
-                autocomplete = true,
-                debug = false,
-                min_length = 1,
-                preselect = 'enable',
-                throttle_time = 80,
-                source_timeout = 200,
-                incomplete_delay = 400,
-                max_abbr_width = 100,
-                max_kind_width = 100,
-                max_menu_width = 100,
                 documentation = true,
 
                 source = {
-                        path = {kind = "  "},
                         buffer = {kind = "  "},
-                        calc = {kind = "  "},
-                        vsnip = {kind = "  "},
+                        tabnine = {
+                                ignore_pattern = '',
+                                max_num_results = 10,
+                                priority = 5000,
+                                show_prediction_strength = true,
+                                sort = false,
+                        },
+                        luasnip = {kind = "  "},
                         nvim_lsp = {kind = "  "},
-                        nvim_lua = false,
+                        path = {kind = "  "},
                         spell = {kind = "  "},
-                        tags = false,
-                        emoji = {kind = " ﲃ ", filetypes={"markdown"}}
                 }
         }
 
