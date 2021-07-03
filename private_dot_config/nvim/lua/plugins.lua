@@ -23,10 +23,10 @@ return require('packer').startup(function(use)
     -- use 'pwntester/octo.nvim'                                                                                                                                                          -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
     -- use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     if vim.fn.has("linux") then use {'nvim-telescope/telescope-media-files.nvim', config = CONFIG_TELESCOPE_MEDIA()} end -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
-    use {'tzachar/compe-tabnine', run = './install.sh' }                                                                 -- (lua) Tabnine AI powered auto completion.
     use "folke/lua-dev.nvim"                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
+    use 'L3MON4D3/LuaSnip'                                                                                               -- (lua) Adds support for LSP snippets.
     use 'ThePrimeagen/git-worktree.nvim'                                                                                 -- (lua) Git worktree addon for Telescope
     use 'andymass/vim-matchup'                                                                                           -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                                                 -- (vimscript) makes it easier to find and replace text through multiple files.
@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
     use 'godlygeek/tabular'                                                                                              -- (vimscript) Allows aligning text in a Tabular fashion based on patterns in the text.
     use 'google/vim-searchindex'                                                                                         -- (vimscript) Shows the number of search results for a search and what number you are current on.
     use 'hashivim/vim-terraform'                                                                                         -- (vimscript) Adds a :Terraform command for running Terrafrom from Neovim, performs automatic formatting of code.
-    use 'L3MON4D3/LuaSnip'                                                                                               -- (lua) Adds support for LSP snippets.
     use 'juliosueiras/vim-terraform-completion'                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
@@ -117,5 +116,6 @@ return require('packer').startup(function(use)
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use {'theHamsta/nvim-dap-virtual-text'}                                                                            -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
+    use {'tzachar/compe-tabnine', run = './install.sh' }                                                                 -- (lua) Tabnine AI powered auto completion.
 end)
 
