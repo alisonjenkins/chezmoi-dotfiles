@@ -59,6 +59,9 @@ elif command -v vim &>/dev/null; then
   alias vi='vim'
 fi
 
+# Misc aliases
+alias j='just'
+
 if uname -a | grep 'Darwin' &> /dev/null; then
   alias ll='ls -G';
   alias ls='ls -G';
