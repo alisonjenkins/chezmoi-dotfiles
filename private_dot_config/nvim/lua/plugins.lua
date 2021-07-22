@@ -20,7 +20,6 @@ require('packer').init(
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                                                    -- (lua) Vim Plugin manager
 
-    -- use 'pwntester/octo.nvim'                                                                                                                                                          -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
     -- use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     if vim.fn.has("linux") then use {'nvim-telescope/telescope-media-files.nvim', config = CONFIG_TELESCOPE_MEDIA()} end -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
     use "folke/lua-dev.nvim"                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
@@ -112,6 +111,7 @@ return require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter-refactor', config = CONFIG_TREESITTER_REFACTOR()}                              -- (lua) A refactor of Neovim Treesitter's Highlight definitions, Highlight current scope, Smart rename and Navigation features.
     use {'nvim-treesitter/playground'}                                                                                   -- (lua) View Treesitter information inside Neovim.
     use {'onsails/lspkind-nvim', config = CONFIG_LSPKIND()}                                                              -- (lua) Adds icons for the kinds of LSP autocompletions in the completion menu.
+    use {'pwntester/octo.nvim', config=function() require"octo".setup() end}                                             -- (lua) Plugin to work with Github issues and PRs from inside Neovim.
     use {'ruifm/gitlinker.nvim', config = function() require("gitlinker").setup({mappings = nil}) end}                   -- (lua) Adds the ability to copy links to lines / blocks of code in git into your clipboard using <leader>gy
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
