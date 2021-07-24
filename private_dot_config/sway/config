@@ -362,12 +362,10 @@ bindsym $mod+g exec i3finder -a move
 bindsym $mod+b exec i3finder -a back
 
 # autostart
-# exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id /usr/bin/lxsession
 exec --no-startup-id libinput-gestures-setup start &
 exec /usr/bin/nice -n 19 /usr/bin/slack
-exec kitty --single-instance --session ~/.config/kitty/session-tmux.conf
-exec libinput-gestures-setup start
+exec ~/bin/start-preferred-terminal
 exec /usr/bin/nice -n 19 /usr/bin/run_keybase
 exec /usr/bin/xflux -l 51.9444199
 exec /usr/bin/nm-applet
