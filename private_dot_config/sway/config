@@ -204,40 +204,40 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#   # status_command /usr/bin/waybar
-#   # mode hide
-#   # hidden_state hide
+bar {
+  status_command /usr/bin/waybar
+  # mode hide
+  # hidden_state hide
 
-#   # colors {
-#   #   background $base00
-#   #   separator  $base01
-#   #   statusline $base04
+  # colors {
+  #   background $base00
+  #   separator  $base01
+  #   statusline $base04
 
-#   #   # State             Border  BG      Text
-#   #   focused_workspace   $base05 $base0D $base00
-#   #   active_workspace    $base05 $base03 $base00
-#   #   inactive_workspace  $base03 $base01 $base05
-#   #   urgent_workspace    $base08 $base08 $base00
-#   #   binding_mode        $base00 $base0A $base00
-#   # }
+  #   # State             Border  BG      Text
+  #   focused_workspace   $base05 $base0D $base00
+  #   active_workspace    $base05 $base03 $base00
+  #   inactive_workspace  $base03 $base01 $base05
+  #   urgent_workspace    $base08 $base08 $base00
+  #   binding_mode        $base00 $base0A $base00
+  # }
 
-#   # Solarized Dark
-#   colors {
-#     background #002b36
-#     statusline #839496
-#     separator  #586e75
-#     focused_workspace  #b58900 #b58900 #002b36
-#     active_workspace   #586e75 #586e75 #002b36
-#     inactive_workspace #073642 #002b36 #839496
-#     urgent_workspace   #dc322f #dc322f #fdf6e3
-#   }
-# }
+  # Solarized Dark
+  colors {
+    background #002b36
+    statusline #839496
+    separator  #586e75
+    focused_workspace  #b58900 #b58900 #002b36
+    active_workspace   #586e75 #586e75 #002b36
+    inactive_workspace #073642 #002b36 #839496
+    urgent_workspace   #dc322f #dc322f #fdf6e3
+  }
+}
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec screen-lock mode "default"
-    bindsym e exec swaymsg logout, mode "default"
+    bindsym e exec swaymsg exit, mode "default"
     bindsym s exec sudo systemctl suspend, mode "default"
     bindsym h exec sudo systemctl hibernate, mode "default"
     bindsym r exec sudo systemctl reboot, mode "default"
@@ -330,8 +330,8 @@ exec /usr/bin/nice -n 19 /usr/bin/run_keybase
 exec /usr/bin/xflux -l 51.9444199
 exec /usr/bin/nm-applet
 exec /usr/bin/blueman-applet
-exec /usr/bin/waybar
 exec /usr/bin/dunst
+exec dex sway -ae sway &
 
 # Set window classes per workspace
 assign [class="^Slack$"] → 1
@@ -341,6 +341,9 @@ assign [class="^st-256color$"] → 2
 assign [class="^kitty$"] → 2
 assign [class="sins of a solar empire rebellion.exe"] → 4
 assign [window_role="^browser$"] → 3
+assign [class="^firefox$"] → 3
+assign [class="^Steam$"] → 10
+assign [window_role="^browser$"] → 4
 # workaround for spotify not setting window hints correctly.
 for_window [class="Spotify"] move to workspace 9
 assign [class="^KeePass2$"] → 10
@@ -368,3 +371,9 @@ output DP-1 {
 output DP-2 {
   pos 850 0 res 3440x1440@100Hz
 }
+
+workspace 1 output DP-2
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 9 output DP-1
+workspace 0 output DP-1
