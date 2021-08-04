@@ -91,10 +91,10 @@ function whichkey_mappings()
                         s = {
                                 name = "+search",
                                 ["."] = { "<cmd>Telescope filetypes<cr>",                                                                               "Filetypes" },
-                                B     = { "<cmd>Telescope git_branches<cr>",                                                                            "Git Branches" },
                                 D     = { "<cmd>Telescope lsp_workspace_diagnostics<cr>",                                                               "Workspace Diagnostics" },
                                 M     = { "<cmd>Telescope man_pages<cr>",                                                                               "Man Pages" },
                                 T     = { "<cmd>TodoTelescope<cr>",                                                                                     "Todo comments" },
+                                b     = { "<cmd>Telescope git_branches<cr>",                                                                            "Git Branches" },
                                 d     = { "<cmd>Telescope lsp_document_diagnostics<cr>",                                                                "Document Diagnostics" },
                                 e     = { "<cmd>Telescope frecency<cr>",                                                                                "Frecently edited files" },
                                 f     = { "<cmd>Telescope find_files<cr>",                                                                              "Files" },
