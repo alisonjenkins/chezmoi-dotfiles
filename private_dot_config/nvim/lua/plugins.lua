@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
     use "folke/lua-dev.nvim"                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
-    use 'L3MON4D3/LuaSnip'                                                                                               -- (lua) Adds support for LSP snippets.
     use 'ThePrimeagen/git-worktree.nvim'                                                                                 -- (lua) Git worktree addon for Telescope
     use 'andymass/vim-matchup'                                                                                           -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                                                 -- (vimscript) makes it easier to find and replace text through multiple files.
@@ -90,7 +89,6 @@ return require('packer').startup(function(use)
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                             -- shows mappings as you trigger them to help with remembering them.
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                                       -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'glepnir/galaxyline.nvim', config = CONFIG_GALAXYLINE()}                                                        -- (lua) A very fast lua statusline plugin.
-    use {'hrsh7th/nvim-compe', config = CONFIG_NVIM_COMPE()}                                                             -- (vimscript) A completion plugin for Neovim with support for LSP completions.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                                                  -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
     use {'jvgrootveld/telescope-zoxide', config = CONFIG_TELESCOPE_ZOXIDE()}                                             -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'kosayoda/nvim-lightbulb', config = CONFIG_NVIM_LIGHTBULB()}                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
@@ -116,6 +114,7 @@ return require('packer').startup(function(use)
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use {'theHamsta/nvim-dap-virtual-text'}                                                                              -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
-    use {'tzachar/compe-tabnine', run = './install.sh' }                                                                 -- (lua) Tabnine AI powered auto completion.
+    use {'ms-jpq/coq_nvim', branch = 'coq', config = CONFIG_COQ()}
+    use { 'ms-jpq/coq.artifacts', branch= 'artifacts'}
 end)
 

@@ -9,6 +9,7 @@ require('keymappings')
 
 -- Plugin configs
 require('colorscheme-tokyonight')
+require('coq-config')
 require('gitlinker')
 require('lsp-trouble')
 require('lspconfig-config')
