@@ -162,7 +162,7 @@ function whichkey_mappings()
                                 l = { "<cmd>Git log<cr>",                 "Log" },
                                 p = { "<cmd>Gina push<cr>",               "Push" },
                                 s = { "<cmd>Git<cr>",                     "Status" },
-                                t = { "<cmd>!gh pr create --web<cr>",     "Pull request" },
+                                t = { "<cmd>terminal gh pr create --web<cr>",     "Pull request" },
                                 m = { "<cmd>GitMessenger<cr>",            "Line commit history" },
                                 w = {
                                         name = "+git worktree",
