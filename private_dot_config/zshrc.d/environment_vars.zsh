@@ -8,6 +8,11 @@ fi
 # Set AWS Region
 export AWS_DEFAULT_REGION='eu-west-2'
 
+# AWS Vault options
+if uname -a | grep 'Linux' &> /dev/null; then
+  export AWS_VAULT_BACKEND="file"
+fi
+
 # Set default editor
 export EDITOR='nvim'
 
