@@ -1,3 +1,6 @@
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
 systemctl --user import-environment DISPLAY
 xrdb -merge ~/.Xresources
 #exec chamfer --config=/home/alan/chamfer.py --shader-path=/usr/share/chamfer/shaders/ --device-index=0 -n
