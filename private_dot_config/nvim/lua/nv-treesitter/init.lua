@@ -12,7 +12,7 @@ function CONFIG_TREESITTER()
         highlight = {
             enable = true -- false will disable the whole extension
         },
-        indent = {enable = true, disable_filetype = {"python"}},
+        indent = {enable = false, disable_filetype = {"python"}},
         playground = {
             enable = true,
             disable = {},
