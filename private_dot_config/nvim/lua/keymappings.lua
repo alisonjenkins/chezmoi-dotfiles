@@ -25,7 +25,7 @@ vim.g.mapleader = ' '
 
 -- Setup leader based mappings with which-key so they are documented and
 -- a cheatsheet is presented when leader is activated
-function whichkey_mappings()
+function WHICHKEY_MAPPINGS()
         local wk = require("which-key")
 
         wk.register(

@@ -47,5 +47,5 @@ function WHICHKEY_CONFIG()
         hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
         show_help = true -- show help message on the command line when the popup is visible
     }
-    whichkey_mappings()
+    WHICHKEY_MAPPINGS()
 end
