@@ -27,6 +27,7 @@ function CONFIG_NVIM_CMP()
                 },
                 sources = {
                         { name = "buffer" },
+                        { name = "crates" },
                         { name = "path" },
                         { name = 'cmp_tabnine' },
                         { name = 'nvim_lsp' },
