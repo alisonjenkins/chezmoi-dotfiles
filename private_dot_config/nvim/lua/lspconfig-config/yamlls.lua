@@ -8,4 +8,9 @@ if vim.fn.executable("yaml-language-server") == 0 then
     return
 end
 
-lspconfig.yamlls.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+lspconfig.yamlls.setup{
+    capabilities = capabilities,
+}

@@ -10,4 +10,12 @@ else
     return
 end
 
-lspconfig.cssls.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+lspconfig.cssls.setup{
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end
+}

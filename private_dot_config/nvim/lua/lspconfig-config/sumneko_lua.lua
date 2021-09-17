@@ -15,8 +15,12 @@ end
 
 local hasluadev, lua_dev = pcall(require,"lua-dev")
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 if hasluadev then
     local luadev = lua_dev.setup({
+        capabilities = capabilities,
         lspconfig = {
             cmd = {lua_server}
         },
@@ -26,6 +30,7 @@ else
     local runtime_path = vim.split(package.path, ';')
 
     lspconfig.sumneko_lua.setup{
+        capabilities = capabilities,
         cmd=lua_server,
         settings = {
             Lua = {
@@ -49,5 +54,8 @@ else
                 },
             },
         },
+        on_attach = function(client, bufnr)
+            require "lsp_signature".on_attach()
+        end
     }
 end

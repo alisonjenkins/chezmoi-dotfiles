@@ -8,4 +8,9 @@ if vim.fn.executable("tflint") == 0 then
     return
 end
 
-lspconfig.tflint.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+lspconfig.tflint.setup{
+    capabilities = capabilities,
+}

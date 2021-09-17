@@ -8,4 +8,12 @@ if vim.fn.executable("docker-langserver") == 0 then
     return
 end
 
-lspconfig.dockerls.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+lspconfig.dockerls.setup{
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end
+}

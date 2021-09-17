@@ -1,29 +1,49 @@
-function CONFIG_NVIM_COMPE()
+function CONFIG_NVIM_CMP()
         vim.o.completeopt = "menuone,noselect"
 
-        local hascompe, compe = pcall(require,"compe")
+        local hascmp, cmp = pcall(require,"cmp")
+        local haslspkind, lspkind = pcall('lspkind')
 
-        if not hascompe then
+        if not hascmp then
                 return
         end
 
-        compe.setup {
-                enabled = true,
-                documentation = true,
+        local source_mapping = {
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[Lua]",
+                cmp_tabnine = "[TN]",
+                path = "[Path]",
+        }
 
-                source = {
-                        buffer = {kind = "  "},
-                        tabnine = {
-                                ignore_pattern = '',
-                                max_num_results = 10,
-                                priority = 5000,
-                                show_prediction_strength = true,
-                                sort = false,
-                        },
-                        luasnip = {kind = "  "},
-                        nvim_lsp = {kind = "  "},
-                        path = {kind = "  "},
-                        spell = {kind = "  "},
+        cmp.setup {
+                snippet = {
+                        expand = function(args)
+                                vim.fn["vsnip#anonymous"](args.body)
+                        end,
+                },
+                mapping = {
+                        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                },
+                sources = {
+                        { name = 'cmp_tabnine' },
+                        { name = 'nvim_lsp' },
+                },
+                formatting = {
+                        format = function(entry, vim_item)
+                                if haslspkind then
+                                        vim_item.kind = lspkind.presets.default[vim_item.kind]
+                                end
+                                local menu = source_mapping[entry.source.name]
+                                if entry.source.name == 'cmp_tabnine' then
+                                        if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+                                                menu = entry.completion_item.data.detail .. ' ' .. menu
+                                        end
+                                        vim_item.kind = ''
+                                end
+                                vim_item.menu = menu
+                                return vim_item
+                        end
                 }
         }
 

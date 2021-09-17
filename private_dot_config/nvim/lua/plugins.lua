@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     use 'godlygeek/tabular'                                                                                              -- (vimscript) Allows aligning text in a Tabular fashion based on patterns in the text.
     use 'google/vim-searchindex'                                                                                         -- (vimscript) Shows the number of search results for a search and what number you are current on.
     use 'hashivim/vim-terraform'                                                                                         -- (vimscript) Adds a :Terraform command for running Terrafrom from Neovim, performs automatic formatting of code.
+    use 'hrsh7th/cmp-nvim-lsp'                                                                                           -- (lua) nvim-cmp lsp completion source
     use 'juliosueiras/vim-terraform-completion'                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
@@ -61,6 +62,7 @@ return require('packer').startup(function(use)
     use 'nvim-lua/popup.nvim'                                                                                            -- (lua) A implementation of the Vim popup API in Neovim. Dependency of telescope.
     use 'phaazon/hop.nvim'                                                                                               -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
     use 'rafamadriz/friendly-snippets'                                                                                   -- (-) A snippet collection for many different programming languages.
+    use 'ray-x/lsp_signature.nvim'                                                                                       -- (lua) Uses LSP to generate Function / Class signature popups so you know what the parameters are when calling them.
     use 'rhysd/committia.vim'                                                                                            -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing.
     use 'rhysd/git-messenger.vim'                                                                                        -- (lua) Git messenger allows looking at the commits that previous changed a line along with diffs.
     use 'sainnhe/gruvbox-material'                                                                                       -- (-) A meterial design version of Gruvbox
@@ -90,7 +92,7 @@ return require('packer').startup(function(use)
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                             -- shows mappings as you trigger them to help with remembering them.
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                                       -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'glepnir/galaxyline.nvim', config = CONFIG_GALAXYLINE()}                                                        -- (lua) A very fast lua statusline plugin.
-    use {'hrsh7th/nvim-compe', config = CONFIG_NVIM_COMPE()}                                                             -- (vimscript) A completion plugin for Neovim with support for LSP completions.
+    use {'hrsh7th/nvim-cmp', requires = { 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-buffer', config = CONFIG_NVIM_CMP() }}       -- (lua) nvim-cmp completion plugin. This is the successor to the now deprecated nvim-compe.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                                                  -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
     use {'jvgrootveld/telescope-zoxide', config = CONFIG_TELESCOPE_ZOXIDE()}                                             -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'kosayoda/nvim-lightbulb', config = CONFIG_NVIM_LIGHTBULB()}                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
@@ -115,6 +117,6 @@ return require('packer').startup(function(use)
     use {'simrat39/rust-tools.nvim'}                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use {'theHamsta/nvim-dap-virtual-text'}                                                                              -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
-    use {'tzachar/compe-tabnine', run = './install.sh' }                                                                 -- (lua) Tabnine AI powered auto completion.
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}                                       -- (lua) Tabnine AI powered auto completion.
 end)
 

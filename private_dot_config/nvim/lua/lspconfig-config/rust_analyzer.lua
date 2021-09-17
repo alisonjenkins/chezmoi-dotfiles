@@ -10,12 +10,17 @@ end
 
 local hasrusttools, rusttools = pcall(require, "rust-tools")
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 if not hasrusttools or rusttools == true then
     local on_attach = function(client)
         require'completion'.on_attach(client)
+        require "lsp_signature".on_attach()
     end
 
     lspconfig.rust_analyzer.setup{
+        capabilities = capabilities,
         on_attach=on_attach,
         settings = {
             ["rust-analyzer"] = {
@@ -35,6 +40,7 @@ if not hasrusttools or rusttools == true then
 else
     rusttools.setup(
         {
+            capabilities = capabilities,
             tools = { -- rust-tools options
                 -- automatically set inlay hints (type hints)
                 -- There is an issue due to which the hints are not applied on the first

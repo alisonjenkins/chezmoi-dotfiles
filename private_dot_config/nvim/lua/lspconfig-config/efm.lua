@@ -8,7 +8,11 @@ if vim.fn.executable("efm-langserver") == 0 then
     return
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 lspconfig.efm.setup{
+    capabilities = capabilities,
     init_options = {documentFormatting = false},
     settings = {
         rootMarkers = {".git/"},
@@ -48,4 +52,7 @@ lspconfig.efm.setup{
             },
         }
     }
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end
 }
