@@ -26,6 +26,8 @@ function CONFIG_NVIM_CMP()
                         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 },
                 sources = {
+                        { name = "buffer" },
+                        { name = "path" },
                         { name = 'cmp_tabnine' },
                         { name = 'nvim_lsp' },
                 },
