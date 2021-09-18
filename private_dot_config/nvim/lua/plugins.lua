@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
 
     -- use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     if vim.fn.has("linux") then use {'nvim-telescope/telescope-media-files.nvim', config = CONFIG_TELESCOPE_MEDIA()} end -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
-    use "folke/lua-dev.nvim"                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
     use 'L3MON4D3/LuaSnip'                                                                                               -- (lua) Adds support for LSP snippets.
@@ -31,14 +30,18 @@ return require('packer').startup(function(use)
     use 'brooth/far.vim'                                                                                                 -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'dstein64/vim-startuptime'                                                                                       -- (vimscript) Startup time profile viewer.
     use 'f-person/git-blame.nvim'                                                                                        -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.
+    use 'f3fora/cmp-spell'                                                                                               -- (lua) Spelling completion for nvim-cmp
     use 'folke/lsp-colors.nvim'                                                                                          -- (lua) Automatically creates missing LSP diagnostics highlight groups for color schemes that don't yet support the Neovim 0.5 builtin lsp client.
+    use 'folke/lua-dev.nvim'                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'folke/todo-comments.nvim'                                                                                       -- (lua) Easily search for Todo comments in codebases and neatly present them in the code.
     use 'gennaro-tedesco/nvim-jqx'                                                                                       -- (lua) A plugin to enable easier navigation of JSON files. Require 'jq'.
     use 'glepnir/lspsaga.nvim'                                                                                           -- (lua) Extension to Neovim's LSP's user interface.
     use 'godlygeek/tabular'                                                                                              -- (vimscript) Allows aligning text in a Tabular fashion based on patterns in the text.
     use 'google/vim-searchindex'                                                                                         -- (vimscript) Shows the number of search results for a search and what number you are current on.
     use 'hashivim/vim-terraform'                                                                                         -- (vimscript) Adds a :Terraform command for running Terrafrom from Neovim, performs automatic formatting of code.
+    use 'hrsh7th/cmp-buffer'                                                                                             -- (lua) Buffer completion for nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp'                                                                                           -- (lua) nvim-cmp lsp completion source
+    use 'hrsh7th/cmp-path'                                                                                               -- (lua) Completion plugin for file paths for nvim-cmp
     use 'juliosueiras/vim-terraform-completion'                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
