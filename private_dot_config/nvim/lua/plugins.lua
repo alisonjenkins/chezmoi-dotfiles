@@ -89,7 +89,7 @@ return require('packer').startup(function(use)
     use 'vim-scripts/Align'                                                                                              -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align                                          -- <CR>))
     use 'voldikss/vim-floaterm'                                                                                          -- (vimscript) Allows opening terminal's using Nvim's floating windows.
     use 'windwp/nvim-ts-autotag'                                                                                         -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
-    use 'ygm2/rooter.nvim'                                                                                               -- (lua) Ensures that the current working directory is the git root / project root (i.e. directory where .terraform is).
+    use {"ahmedkhalf/project.nvim", config = CONFIG_PROJECT() }          -- (lua) Project management and vim-rooter replacement.
     use {'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' }}                                                   -- (lua) A neovim plugin that helps managing crates.io dependencies.
     use {'fiatjaf/neuron.vim', config = CONFIG_NEURON()}                                                                 -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG()}                                                        -- pretty list of lsp errors.

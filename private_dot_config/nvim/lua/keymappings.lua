@@ -95,7 +95,7 @@ function WHICHKEY_MAPPINGS()
                                 i     = { "<cmd>Telescope media_files<cr>",                                                                             "Media Files" },
                                 m     = { "<cmd>Telescope marks<cr>",                                                                                   "Marks" },
                                 o     = { "<cmd>Telescope vim_options<cr>",                                                                             "Vim Options" },
-                                p     = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>",                                               "Projects" },
+                                p     = { "<cmd>Telescope projects<cr>",                                                                                "Projects" },
                                 r     = { "<cmd>Telescope registers<cr>",                                                                               "Registers" },
                                 t     = { "<cmd>Telescope live_grep<cr>",                                                                               "Text" },
                                 u     = { "<cmd>Telescope colorscheme<cr>",                                                                             "Colorschemes" },
