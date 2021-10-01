@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
     use 'juliosueiras/vim-terraform-completion'                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
+    use 'kabouzeid/nvim-lspinstall'                                                                                      -- (lua) Allows easy setup of LSPs
     use 'kevinhwang91/nvim-bqf'                                                                                          -- (lua) A plugin that enhances the quickfix window with Fuzzy Finding.
     use 'kshenoy/vim-signature'                                                                                          -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                                                   -- (lua) Adds filetype icons to many other plugins.
