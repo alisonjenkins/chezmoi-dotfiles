@@ -1,5 +1,11 @@
 function CONFIG_PROJECT()
-        require("project_nvim").setup {
+        local hasproject, project = pcall(require,"project_nvim")
+
+        if not hasproject then
+                return
+        end
+
+        project.setup {
                 show_hidden = true
         }
 
