@@ -373,6 +373,10 @@ output DP-2 {
   pos 850 0 res 3440x1440@100Hz
 }
 
+output HDMI-A-1 {
+  pos 5120 1440 res 4096x2160@100Hz
+}
+
 workspace 1 output DP-2
 workspace 2 output DP-1
 workspace 3 output DP-1
