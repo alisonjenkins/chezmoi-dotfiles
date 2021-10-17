@@ -108,7 +108,7 @@ test -f "$ARCH_DOWNLOAD_PATH" || aria2c "${SBC_TYPES[$SBC_TYPE]}" -d /tmp -o "$(
 bsdtar -xpf "$ARCH_DOWNLOAD_PATH" -C root
 sync
 
-if [ "${SBC_FLASH_BOOTLOADER_REQ[$SBC_TYPE]}" ]; then
+if [ "${SBC_FLASH_BOOTLOADER_REQ[$SBC_TYPE]}" == "true" ]; then
   cd root/boot
   sh sd_fusing.sh "$DRIVE_PATH"
   cd ../..
