@@ -5,12 +5,15 @@ liquidctl initialize
 case "$1" in
   quiet)
     FAN_DUTY=10
+    PUMP_DUTY=30
     ;;
   balanced)
     FAN_DUTY=50
+    PUMP_DUTY=30
     ;;
   performance)
     FAN_DUTY=100
+    PUMP_DUTY=100
     ;;
   *)
     FAN_DUTY=50
@@ -25,4 +28,4 @@ done
 
 # Set pump rpm
 echo "Setting pump RPM"
-liquidctl --match commander set fan"${PUMP_CHANNEL}" speed 30
+liquidctl --match commander set fan"${PUMP_CHANNEL}" speed "$PUMP_DUTY"
