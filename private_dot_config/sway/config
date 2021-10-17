@@ -365,6 +365,7 @@ output "*" background "/home/alan/.config/wallpaper" fill
 
 output DP-1 {
   pos 0 1440 res 5120x1440@239.761002Hz
+  adaptive_sync on
   scale 1
 }
 
