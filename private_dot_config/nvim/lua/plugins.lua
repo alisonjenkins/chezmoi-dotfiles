@@ -20,7 +20,6 @@ require('packer').init(
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                                                    -- (lua) Vim Plugin manager
 
-    -- use {'nvim-telescope/telescope-project.nvim', config = CONFIG_TELESCOPE_PROJECT()}                                   -- (lua) Adds the ability to add git projects to Telescope and immediately switch to them using it's fuzzy finding.
     if vim.fn.has("linux") then use {'nvim-telescope/telescope-media-files.nvim', config = CONFIG_TELESCOPE_MEDIA()} end -- (lua) Allow previewing of media files inside Telescope (only works on Linux)
     use 'ChristianChiarulli/java-snippets'                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
@@ -64,6 +63,7 @@ return require('packer').startup(function(use)
     use 'nvim-lua/lsp_extensions.nvim'                                                                                   -- (lua) Adds line hints with Rust data types from rust-analyzer.
     use 'nvim-lua/plenary.nvim'                                                                                          -- (lua) A library of Lua code used by many Neovim lua plugins.
     use 'nvim-lua/popup.nvim'                                                                                            -- (lua) A implementation of the Vim popup API in Neovim. Dependency of telescope.
+    use {'oberblastmeister/neuron.nvim', config = NEURON_CONFIG() }                                                                                   -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
     use 'phaazon/hop.nvim'                                                                                               -- (lua) Adds motions that can be used to 'hop' to locations within the file. HopWord 's' and 'S'
     use 'rafamadriz/friendly-snippets'                                                                                   -- (-) A snippet collection for many different programming languages.
     use 'ray-x/lsp_signature.nvim'                                                                                       -- (lua) Uses LSP to generate Function / Class signature popups so you know what the parameters are when calling them.
@@ -89,9 +89,8 @@ return require('packer').startup(function(use)
     use 'vim-scripts/Align'                                                                                              -- (vimscript) Allows aligning sections of text (for example these comments in this plugin file (use visual to select the text and do :Align                                          -- <CR>))
     use 'voldikss/vim-floaterm'                                                                                          -- (vimscript) Allows opening terminal's using Nvim's floating windows.
     use 'windwp/nvim-ts-autotag'                                                                                         -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
-    use {"ahmedkhalf/project.nvim", config = CONFIG_PROJECT() }          -- (lua) Project management and vim-rooter replacement.
+    use {"ahmedkhalf/project.nvim", config = CONFIG_PROJECT() }                                                          -- (lua) Project management and vim-rooter replacement.
     use {'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' }}                                                   -- (lua) A neovim plugin that helps managing crates.io dependencies.
-    use {'fiatjaf/neuron.vim', config = CONFIG_NEURON()}                                                                 -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG()}                                                        -- pretty list of lsp errors.
     use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG()}                                                          -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                             -- shows mappings as you trigger them to help with remembering them.

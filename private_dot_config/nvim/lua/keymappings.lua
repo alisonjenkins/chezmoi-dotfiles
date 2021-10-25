@@ -168,6 +168,16 @@ function WHICHKEY_MAPPINGS()
                         q = {
                                 name = "+quickfix",
                                 t = { "<cmd>TodoQuickFix<cr>",  "Todo quickfix"},
+                        },
+                        z = {
+                                name = "Zettelkasten",
+                                n = {"<cmd>lua require('neuron/cmd').new_edit(require'neuron'.config.neuron_dir)<CR>", "Create new note"},
+                                f = {"<cmd>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes"},
+                                i = {"<cmd>lua require'neuron/telescope'.find_zettels {insert = true}<CR>", "Find note ID and insert it"},
+                                b = {"<cmd>lua require'neuron/telescope'.find_backlinks()<CR>", "Find note backlinks"},
+                                B = {"<cmd>lua require'neuron/telescope'.find_backlinks {insert = true}<CR>", "Find note backlinks and insert their IDs"},
+                                t = {"<cmd>lua require'neuron/telescope'.find_tags()<CR>", "Find note tags"},
+                                z = {"<cmd>lua require'neuron'.rib {address = \"127.0.0.1:8200\", verbose = true}<CR>", "Start Neuron server"},
                         }
                 },
                 { prefix = "<leader>" }
