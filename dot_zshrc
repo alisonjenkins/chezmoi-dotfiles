@@ -6,3 +6,4 @@ source ~/.config/zshrc.d/plugins.zsh
 source ~/.config/zshrc.d/bash_helpers.zsh
 source ~/.config/zshrc.d/zsh_functions.zsh
 source ~/.config/zshrc.d/zsh_settings.zsh
+if [ -e /Users/alanjenkins/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/alanjenkins/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
