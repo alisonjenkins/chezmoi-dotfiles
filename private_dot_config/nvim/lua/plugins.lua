@@ -91,7 +91,7 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-ts-autotag'                                                                                         -- (lua) Plugin for automatically closing and renaming html tags. Uses Treesitter.
     use {"ahmedkhalf/project.nvim", config = CONFIG_PROJECT() }          -- (lua) Project management and vim-rooter replacement.
     use {'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' }}                                                   -- (lua) A neovim plugin that helps managing crates.io dependencies.
-    use {'fiatjaf/neuron.vim', config = CONFIG_NEURON()}                                                                 -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
+    use {'fiatjaf/neuron.vim'}                                                                 -- (lua) Neuron is a Zettelkasten management tool. This is the plugin for Vim/Neovim to integrate and view the notes.
     use {'folke/lsp-trouble.nvim', config = LSP_TROUBLE_CONFIG()}                                                        -- pretty list of lsp errors.
     use {'folke/tokyonight.nvim', config = TOKYONIGHT_CONFIG()}                                                          -- (lua) A nice colour scheme written in Lua with support for many Treesitter features.
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                             -- shows mappings as you trigger them to help with remembering them.
