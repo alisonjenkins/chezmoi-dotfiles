@@ -168,6 +168,15 @@ function WHICHKEY_MAPPINGS()
                         q = {
                                 name = "+quickfix",
                                 t = { "<cmd>TodoQuickFix<cr>",  "Todo quickfix"},
+                        },
+                        m = {
+                                name = "+Marks (using Harpoon)",
+                                m = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Create mark using Harpoon"},
+                                a = {"<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Open mark 1"},
+                                s = {"<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Open mark 2"},
+                                d = {"<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Open mark 3"},
+                                f = {"<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Open mark 4"},
+                                M = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle marks menu"}
                         }
                 },
                 { prefix = "<leader>" }
