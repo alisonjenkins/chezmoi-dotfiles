@@ -33,10 +33,6 @@ function WHICHKEY_MAPPINGS()
                         -- Goyo maps
                         z = { "<cmd>Goyo<cr>", "Goyo" },
 
-                        -- NvimTree maps
-                        e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree Toggle" },
-                        ["?"] = { "<cmd>NvimTreeFindFile<cr>", "Nvim Tree Find File" },
-
                         -- Splitting maps (ported from the old whichkey bindings
                         h = { "<C-W>s", "Split horizontally" },
                         v = { "<C-W>v", "Split vertically" },
