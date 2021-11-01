@@ -10,7 +10,6 @@ require('keymappings')
 -- Plugin configs
 require('colorscheme-tokyonight')
 require('nv-crates')
-require('nv-gitlinker')
 require('lsp-trouble')
 require('lspconfig-config')
 require('nv-navigator')
