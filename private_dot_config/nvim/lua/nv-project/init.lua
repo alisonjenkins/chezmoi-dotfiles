@@ -6,7 +6,7 @@ function CONFIG_PROJECT()
         end
 
         project.setup {
-                show_hidden = true
+                show_hidden = false
         }
 
         CONFIG_TELESCOPE_PROJECT()
