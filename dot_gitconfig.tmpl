@@ -13,6 +13,9 @@
     name = {{ .name }}
     #signingkey = **Your GPG ID**
 
+[branch]
+    autosetuprebase = always
+
 [branch "master"]
     remote = origin
     merge = refs/heads/master
@@ -175,6 +178,7 @@
 
 [pull]
 	rebase = true
+
 [credential]
   helper = !aws codecommit credential-helper $@
   UseHttpPath = true
