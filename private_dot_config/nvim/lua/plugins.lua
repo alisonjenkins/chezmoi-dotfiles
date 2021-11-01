@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
     use {'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP()}                                                                                            -- (lua) Debug Adapter Protocol for Neovim
     use {'mfussenegger/nvim-dap-python'}                                                                                                                 -- (lua) Debug Adapter Protocol for Python
     use {'monaqa/dial.nvim', config = CONFIG_DIAL()}                                                                                                     -- (lua) Upgrades Ctrl-a and Ctrl-x to increment dates, alphabet and other types in addition to just numbers
+    use {'ms-jpq/chadtree', branch="chad", run="python3 -m chadtree deps" }                                                                              -- (lua) A very fast file tree addon.
     use {'neovim/nvim-lspconfig', config = CONFIG_LSPCONFIG()}                                                                                           -- (lua) Configurations for various language's LSP servers.
     use {'norcalli/nvim-colorizer.lua', config = CONFIG_COLORIZER()}                                                                                     -- (lua) A plugin to allow previewing of html/css colour codes inside Neovim.
     use {'nvim-telescope/telescope-dap.nvim', config = CONFIG_TELESCOPE_DAP()}                                                                           -- (lua) Telescope interface for Debug Adapter Protocol
