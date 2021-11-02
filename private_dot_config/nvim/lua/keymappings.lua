@@ -134,7 +134,11 @@ function WHICHKEY_MAPPINGS()
                         M = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Markdown" },
 
                         -- Treesitter mappings
-                        T = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight Treesitter capture under cursor" },
+                        -- T = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight Treesitter capture under cursor" },
+                        T = { 
+                                name = "+Treesitter",
+                                b = {"<cmd>lua require('nvim-biscuits').toggle_biscuits()<cr>", "Toggle biscuits" },
+                        },
 
                         -- Git mappings (all start with g)
                         g = {
