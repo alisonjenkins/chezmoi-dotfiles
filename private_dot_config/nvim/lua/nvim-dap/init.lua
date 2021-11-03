@@ -222,5 +222,5 @@ function CONFIG_NVIM_DAP()
         },
     }
 
-    vim.g.dap_virtual_text = "all frames"
+    require'nvim-dap-virtual-text'.setup()
 end
