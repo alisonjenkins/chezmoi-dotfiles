@@ -17,6 +17,13 @@ require('packer').init(
     }
 )
 
+-- *TODO* Fix todo-comments
+-- *TODO* Move all plugins installs and their configs into their own files.
+-- *TODO* Setup nvim-dap properly
+-- *TODO* Configure Neuron note taking and get it working.
+-- *TODO* Disable nvim-biscuits by default?
+-- *TODO* Confirm nvim-lightbulb is working
+
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                                                    -- (lua) Vim Plugin manager
 
