@@ -31,7 +31,8 @@ function WHICHKEY_MAPPINGS()
         wk.register(
                 {
                         -- Goyo maps
-                        z = { "<cmd>Goyo 100%x100%<cr>", "Goyo" },
+                        z = { "<cmd>Goyo 100%x100%<cr>", "Start Goyo fullscreen" },
+                        Z = { "<cmd>Goyo<cr>", "Toggle Goyo" },
 
                         -- Splitting maps (ported from the old whichkey bindings
                         h = { "<C-W>s", "Split horizontally" },
