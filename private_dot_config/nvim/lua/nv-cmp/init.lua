@@ -31,6 +31,7 @@ function CONFIG_NVIM_CMP()
                         { name = "path" },
                         { name = 'cmp_tabnine' },
                         { name = 'nvim_lsp' },
+                        { name = 'orgmode' },
                 },
                 formatting = {
                         format = function(entry, vim_item)

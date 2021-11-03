@@ -103,6 +103,7 @@ return require('packer').startup(function(use)
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                                                                                  -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
     use {'jvgrootveld/telescope-zoxide', config = CONFIG_TELESCOPE_ZOXIDE()}                                                                             -- (lua) A Telescope plugin which allows quickly switching directory using z.
     use {'kosayoda/nvim-lightbulb', config = CONFIG_NVIM_LIGHTBULB()}                                                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
+    use {'kristijanhusak/orgmode.nvim', config = function() require('orgmode').setup{} end }                                                             -- (lua) Org Mode for Neovim.
     use {'lewis6991/gitsigns.nvim', config = CONFIG_GITSIGNS()}                                                                                          -- (lua) Adds gitsigns.
     use {'lukas-reineke/indent-blankline.nvim'}                                                                                                          -- (lua) Adds indentline indentation lines to blank lines in addition to lines with code on.
     use {'mfussenegger/nvim-dap', config = CONFIG_NVIM_DAP()}                                                                                            -- (lua) Debug Adapter Protocol for Neovim
