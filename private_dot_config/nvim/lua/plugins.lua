@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     use 'kshenoy/vim-signature'                                                                                                                          -- (vimscript) Adds mark characters in the gutter.
     use 'kyazdani42/nvim-web-devicons'                                                                                                                   -- (lua) Adds filetype icons to many other plugins.
     use 'lambdalisue/gina.vim'                                                                                                                           -- (vimscript) Async git commands.
+    use 'lewis6991/impatient.nvim'                                                                                                                       -- (lua) Lua caching for Neovim to speed up startup times.
     use 'liuchengxu/vista.vim'                                                                                                                           -- (vimscript) LSP search for symbols and tags
     use 'machakann/vim-sandwich'                                                                                                                         -- (vimscript) Adds operators and mappings for adding / deleting / changing surrounding text.
     use 'mattn/emmet-vim'                                                                                                                                -- (vimscript) Allows writing html using abbreviations that are then expanded.
