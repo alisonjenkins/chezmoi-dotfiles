@@ -1,3 +1,9 @@
+-- Caching
+local hasimpatient, impatient = pcall(require, "impatient")
+if hasimpatient then
+  impatient.enable_profile()
+end
+
 -- General configuration
 require('settings')
 require('neovide-settings')
