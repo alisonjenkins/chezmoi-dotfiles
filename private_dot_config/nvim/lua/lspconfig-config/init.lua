@@ -16,14 +16,14 @@ function CONFIG_LSPCONFIG()
 
     local enabled_lspconfigs = {
         "bashls",
-        "cssls",
-        "dockerls",
+        -- "cssls",
+        -- "dockerls",
         "gopls",
         "jdtls",
         "jsonls",
         "rls",
         "rust_analyzer",
-        "sumneko_lua",
+        -- "sumneko_lua",
         "terraformls",
         "tflint",
         "yamlls",
