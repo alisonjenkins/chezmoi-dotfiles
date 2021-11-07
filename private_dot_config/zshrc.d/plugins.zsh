@@ -1,5 +1,5 @@
 mkdir -p ~/.local/share/zinit
-test -d ~/.local/share/zinit/bin || git clone https://github.com/zdharma/zinit.git ~/.local/share/zinit/bin
+test -d ~/.local/share/zinit/bin || git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/bin
 
 # Configure zinit
 declare -A ZINIT
@@ -40,7 +40,7 @@ zinit snippet 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/
 # Sort completion out
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma/fast-syntax-highlighting \
+    zdharma-continuum/fast-syntax-highlighting \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
