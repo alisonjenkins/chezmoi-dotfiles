@@ -22,8 +22,12 @@ zinit load macunha1/zsh-terraform
 zinit load molovo/tipz
 zinit load zsh-users/zsh-completions
 
-zinit light zdharma-continuum/z-a-rust.git
-zinit ice rustup cargo'zoxide' as"command" pick"bin/zoxide"
+if ! command -v zoxide &>/dev/null; then
+        if command -v &>/dev/null; then
+                cargo install zoxide
+        fi
+fi
+
 eval "$(zoxide init zsh)"
 
 # Setup direnv

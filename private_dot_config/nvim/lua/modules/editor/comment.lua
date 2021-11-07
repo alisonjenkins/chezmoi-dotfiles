@@ -5,7 +5,7 @@ function M.config()
         -- Linters prefer comment and line to hae a space in between
         left_marker_padding = true,
         -- should comment out empty or whitespace only lines
-        comment_empty = false,
+        comment_empty = true,
         -- Should key mappings be created
         create_mappings = true,
         -- Normal mode mapping left hand side

@@ -52,15 +52,29 @@ function M.config()
         },
     })
 
-    hasfzynative, _ = pcall(require, "fzy_native")
+    local extensions = {
+            dap = nil,
+            fzy_native = nil,
+            gh = nil,
+            git_worktree = function() require("git-worktree").setup({}) end,
+            projects = function() require('project_nvim').setup() end,
+            zoxide = nil,
+    }
 
-    M.keymap()
+    for extension, setup in pairs(extensions) do
+            local hasextension, _ = pcall(require, "telescope._extensions." .. extension)
 
-    if not hasfzynative then
-        return
+            if hasextension then
+                    telescope.load_extension(extension)
+                    if setup ~= nil then
+                        setup()
+                    end
+            else
+                print("Could not load telescope plugin: " .. extension .. " is it installed?")
+            end
     end
 
-    telescope.load_extension("fzy_native")
+    M.keymap()
 end
 
 function M.keymap()

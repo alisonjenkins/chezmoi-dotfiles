@@ -8,7 +8,7 @@ function M.config()
             use_languagetree = true,
         },
         indent = {
-            enable = true,
+            enable = false,
             disable = { "python" },
         },
         rainbow = {

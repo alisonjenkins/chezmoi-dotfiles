@@ -33,41 +33,39 @@ function M.custom_on_attach(client, bufnr)
     local aerial = require("aerial")
     aerial.on_attach(client)
 
-    local keymap = function(mode, key, result)
-        vim.api.nvim_buf_set_keymap(bufnr, mode, key, result, { noremap = true, silent = true })
-    end
+    -- local keymap = function(mode, key, result)
+    --     vim.api.nvim_buf_set_keymap(bufnr, mode, key, result, { noremap = true, silent = true })
+    -- end
 
-    keymap("n", "K", "<CMD>lua show_documentation()<CR>")
-    keymap("n", "ga", '<CMD>lua require("telescope.builtin").lsp_code_actions()<CR>')
-    keymap("n", "ga", [[<CMD>'<, '>lua require("telescope.builtin").lsp_code_actions()<CR>]])
-    keymap("n", "gd", '<CMD>lua require("telescope.builtin").lsp_definitions()<CR>')
-    keymap("n", "[e", "<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>")
-    keymap("n", "]e", "<CMD>lua vim.lsp.diagnostic.goto_next()<CR>")
-    keymap("n", "gr", "<CMD>lua vim.lsp.buf.rename()<CR>")
+    -- keymap("n", "ga", '<CMD>lua require("telescope.builtin").lsp_code_actions()<CR>')
+    -- keymap("n", "ga", [[<CMD>'<, '>lua require("telescope.builtin").lsp_code_actions()<CR>]])
+    -- keymap("n", "gd", '<CMD>lua require("telescope.builtin").lsp_definitions()<CR>')
+    -- keymap("n", "[e", "<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>")
+    -- keymap("n", "]e", "<CMD>lua vim.lsp.diagnostic.goto_next()<CR>")
+    -- keymap("n", "gr", "<CMD>lua vim.lsp.buf.rename()<CR>")
 
     -- aerial
-    keymap("n", "<leader>a", '<CMD>lua require"aerial".toggle()<CR>')
-    keymap("n", "[[", '<CMD>lua require("aerial").prev_item()<CR>zvzz')
-    keymap("v", "[[", '<CMD>lua require("aerial").prev_item()<CR>zvzz')
-    keymap("n", "]]", '<CMD>lua require("aerial").next_item()<CR>zvzz')
-    keymap("v", "]]", '<CMD>lua require("aerial").next_item()<CR>zvzz')
+    -- keymap("n", "<leader>a", '<CMD>lua require"aerial".toggle()<CR>')
+    -- keymap("n", "[[", '<CMD>lua require("aerial").prev_item()<CR>zvzz')
+    -- keymap("v", "[[", '<CMD>lua require("aerial").prev_item()<CR>zvzz')
+    -- keymap("n", "]]", '<CMD>lua require("aerial").next_item()<CR>zvzz')
+    -- keymap("v", "]]", '<CMD>lua require("aerial").next_item()<CR>zvzz')
 
-    -- trouble
-    keymap("n", "<leader>d", "<CMD>LspTroubleToggle<CR>")
-    keymap("n", "<leader>D", "<CMD>LspTroubleWorkspaceToggle<CR>")
+    -- -- trouble
+    -- keymap("n", "<leader>d", "<CMD>LspTroubleToggle<CR>")
+    -- keymap("n", "<leader>D", "<CMD>LspTroubleWorkspaceToggle<CR>")
 
     -- Set some keybinds conditional on server capabilities
-    if client.resolved_capabilities.document_formatting then
-        keymap("n", "<leader>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
-    else
-        keymap("n", "<leader>f", "<CMD>FormatWrite<CR>")
-    end
-
-    if client.resolved_capabilities.document_range_formatting then
-        keymap("v", "<leader>f", "<CMD>lua vim.lsp.buf.range_formatting()<CR>")
-    else
-        keymap("v", "<leader>f", "<CMD>FormatWrite<CR>")
-    end
+--     if client.resolved_capabilities.document_formatting then
+--         keymap("n", "<leader>f", "<CMD>lua vim.lsp.buf.formatting()<CR>")
+--     else
+--         keymap("n", "<leader>f", "<CMD>FormatWrite<CR>")
+--     end
+--     if client.resolved_capabilities.document_range_formatting then
+--         keymap("v", "<leader>f", "<CMD>lua vim.lsp.buf.range_formatting()<CR>")
+--     else
+--         keymap("v", "<leader>f", "<CMD>FormatWrite<CR>")
+--     end
 end
 
 function M.default(configs)
