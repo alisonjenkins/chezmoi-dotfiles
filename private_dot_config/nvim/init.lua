@@ -8,25 +8,11 @@ require"modules.core.settings"
 require"modules.packer"
 require"modules.core.keymap"
 
--- General configuration
--- require('settings')
--- require('neovide-settings')
--- require('nv-utils')
--- require('nv-autocommands')
--- require('keymappings')
-
---vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
-
 -- Plugin configs
--- require('colorscheme-tokyonight')
--- require('nv-crates')
--- require('lsp-trouble')
 -- require('lspconfig-config')
 -- require('nv-navigator')
 -- require('nv-neuron')
--- require('nv-cmp')
 -- require('nv-colorizer')
--- require('nv-comment')
 -- require('nv-dial')
 -- require('nv-emmet')
 -- require('nv-firenvim')

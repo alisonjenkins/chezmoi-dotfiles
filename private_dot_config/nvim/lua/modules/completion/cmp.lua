@@ -2,12 +2,19 @@ local M = {}
 
 function M.config()
     local cmp = require("cmp")
-    vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+
+    local source_mapping = {
+        buffer = "[BUF]",
+        cmp_tabnine = "[TN]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[LUA]",
+        path = "[PATH]",
+    }
 
     cmp.setup({
-        completion = {
-            autocomplete = { cmp.TriggerEvent.TextChanged },
-        },
+        -- completion = {
+            -- autocomplete = { cmp.TriggerEvent.TextChanged },
+        -- },
         documentation = {
             border = "single",
             winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
@@ -16,18 +23,23 @@ function M.config()
                 native_menu = false,
                 ghost_text = true,
         },
-        -- formatting = {
-        --         format = lspkind.cmp_format {
-        --                 with_text = true,
-        --                 menu = {
-        --                         buffer = "[BUF]",
-        --                         luasnip = "[SNIP]",
-        --                         nvim_lsp = "[LSP]",
-        --                         nvim_lua = "[LUA]",
-        --                         path = "[PATH]",
-        --                 },
-        --         }
-        -- },
+        formatting = {
+                format = function(entry, vim_item)
+                        if haslspkind then
+                                vim_item.kind = lspkind.presets.default[vim_item.kind]
+                        end
+                        local menu = source_mapping[entry.source.name]
+                        if entry.source.name == 'cmp_tabnine' then
+                                if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+                                        menu = entry.completion_item.data.detail .. ' ' .. menu
+                                end
+                                vim_item.kind = ''
+                        end
+
+                        vim_item.menu = menu
+                        return vim_item
+                end
+        },
         mapping = {
                 ['<C-d>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -44,8 +56,11 @@ function M.config()
                 end
         },
         sources = {
+            { name = "crates" },
             { name = "nvim_lua" },
+            { name = 'orgmode' },
             { name = "nvim_lsp" },
+            { name = 'cmp_tabnine' },
             { name = "buffer" },
             { name = "path", keyword_length = 5 },
         },

@@ -1,5 +1,12 @@
 local Completion = {}
 
+function Completion.autopair()
+    return {
+        "windwp/nvim-autopairs",
+        config = require("modules.completion.autopairs")(),
+    }
+end
+
 function Completion.cmp()
     return {
         "hrsh7th/nvim-cmp",
@@ -15,13 +22,6 @@ function Completion.cmp()
     }
 end
 
-function Completion.lsp()
-    return {
-        "neovim/nvim-lspconfig",
-        config = require("modules.completion.lsp")(),
-    }
-end
-
 function Completion.emmet()
     return {
         "mattn/emmet-vim",
@@ -29,13 +29,30 @@ function Completion.emmet()
     }
 end
 
-
-function Completion.autopair()
+function Completion.lsp()
     return {
-        "windwp/nvim-autopairs",
-        config = require("modules.completion.autopairs")(),
+        "neovim/nvim-lspconfig",
+        config = require("modules.completion.lsp")(),
     }
 end
 
+function Completion.lspsaga()
+    return {
+        "glepnir/lspsaga.nvim",
+        config = require("modules.completion.lsp.lsp_saga_config")(),
+    }
+end
+
+function Completion.lsp_containers()
+    return {
+        "lspcontainers/lspcontainers.nvim"
+    }
+end
+
+function Completion.lspkind()
+    return {
+            "onsails/lspkind-nvim"
+    }
+end
 
 return Completion

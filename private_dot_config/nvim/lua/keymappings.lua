@@ -111,7 +111,7 @@ function WHICHKEY_MAPPINGS()
                                 L = { "<cmd>Lspsaga show_line_diagnostics<cr>",       "Line Diagnostics" },
                                 S = { "<cmd>Telescope lsp_workspace_symbols<cr>",     "Workspace Symbols" },
                                 T = { "<cmd>LspTypeDefinition<cr>",                   "Type Defintion" },
-                                a = { "<cmd>Lspsaga code_action<cr>",                 "Code Action" },
+                                a = { "<cmd>lua require('lspsaga.codeaction').code_action()<cr>", "Code Action" },
                                 d = { "<cmd>Telescope lsp_document_diagnostics<cr>",  "Document Diagnostics" },
                                 f = { "<cmd>LspFormatting<cr>",                       "Format" },
                                 l = { "<cmd>Lspsaga lsp_finder<cr>",                  "LSP Finder" },

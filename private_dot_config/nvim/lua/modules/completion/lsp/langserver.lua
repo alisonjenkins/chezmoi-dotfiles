@@ -1,4 +1,9 @@
-local lspconfig = require("lspconfig")
+local haslspconfig, lspconfig = pcall(require, "lspconfig")
+if not haslspconfig then
+        return
+end
+
+local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
 local c = require("modules.completion.lsp.custom")
 
 lspconfig.tsserver.setup(c.default({
@@ -22,8 +27,28 @@ lspconfig.tsserver.setup(c.default({
     },
 }))
 
+
+local lua_lsp_cmd = nil
+
+if vim.fn.executable("lua-language-server") ~= 0 then
+        lua_lsp_cmd = { 
+                "lua-language-server",
+                string.format("--logpath=%s/.cache/nvim/sumneko_lua",
+                vim.loop.os_homedir())
+        }
+elseif haslspcontainers and vim.fn.executable("podman") == 1 then
+        lua_lsp_cmd = lspcontainers.command(
+                'sumneko_lua',
+                {
+                        container_runtime = "podman",
+                }
+        )
+elseif haslspcontainers and vim.fn.executable("docker") == 1 then
+        lua_lsp_cmd = lspcontainers.command('sumneko_lua')
+end
+
 lspconfig.sumneko_lua.setup(c.default({
-    cmd = { "lua-language-server", string.format("--logpath=%s/.cache/nvim/sumneko_lua", vim.loop.os_homedir()) },
+    cmd = lua_lsp_cmd,
     root_dir = c.custom_cwd,
     settings = {
         Lua = {

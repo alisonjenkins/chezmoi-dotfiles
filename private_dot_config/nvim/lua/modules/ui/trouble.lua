@@ -1,4 +1,6 @@
-function LSP_TROUBLE_CONFIG()
+local M = {}
+
+function M.config()
     local hastrouble, trouble = pcall(require, "trouble")
 
     if not hastrouble then
@@ -42,3 +44,9 @@ function LSP_TROUBLE_CONFIG()
         use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
     }
 end
+
+return setmetatable({}, {
+    __call = function()
+        return M.config()
+    end,
+})

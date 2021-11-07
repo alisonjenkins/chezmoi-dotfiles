@@ -10,22 +10,18 @@ function M.config()
         vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', 'g0', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', 'gW', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', {silent = true})
-        vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', {silent = true})
- 
+        vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>', {silent = true})
+
         -- better window movement
         vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
         vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
         vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
         vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
-        
-        -- Better nav for omnicomplete
-        vim.api.nvim_set_keymap('i', '<C-j>', '(\"\\<C-n>\")', {noremap = true, expr = true})
-        vim.api.nvim_set_keymap('i', '<C-k>', '(\"\\<C-p>\")', {noremap = true, expr = true})
 
         -- Set leader
         vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
         vim.g.mapleader = ' '
- 
+
         -- Setup leader based mappings with which-key so they are documented and
         -- a cheatsheet is presented when leader is activated
         local wk = require("which-key")
@@ -112,12 +108,12 @@ function M.config()
                                 I = { "<cmd>LspInfo<cr>",                             "LSP Info" },
                                 L = { "<cmd>Lspsaga show_line_diagnostics<cr>",       "Line Diagnostics" },
                                 S = { "<cmd>Telescope lsp_workspace_symbols<cr>",     "Workspace Symbols" },
-                                T = { "<cmd>LspTypeDefinition<cr>",                   "Type Defintion" },
+                                T = { "<cmd>lua require'lspsaga.provider'.preview_definition(<cr>", "Type Defintion" },
                                 a = { "<cmd>Lspsaga code_action<cr>",                 "Code Action" },
                                 d = { "<cmd>Telescope lsp_document_diagnostics<cr>",  "Document Diagnostics" },
-                                f = { "<cmd>LspFormatting<cr>",                       "Format" },
+                                f = { "<cmd>lua vim.lsp.buf.formatting()<cr>",        "Format" },
                                 l = { "<cmd>Lspsaga lsp_finder<cr>",                  "LSP Finder" },
-                                o = { "<cmd>Vista!!<cr>",                             "Outline" },
+                                o = { "<cmd>AerialToggle<cr>",                        "Outline" },
                                 p = { "<cmd>Lspsaga preview_definition<cr>",          "Preview Definition" },
                                 q = { "<cmd>Telescope quickfix<cr>",                  "Quickfix" },
                                 r = { "<cmd>Lspsaga rename<cr>",                      "Rename" },
