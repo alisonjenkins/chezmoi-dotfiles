@@ -1,11 +1,9 @@
 local Ui = {}
 
-function Ui.bufferline()
+function Ui.git()
     return {
-        "romgrk/barbar.nvim",
-        wants = "nvim-web-devicons",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
-        config = require("modules.ui.bufferline")(),
+        "tpope/vim-fugitive",
+        -- config = require("modules.ui.statusline")(),
     }
 end
 
@@ -30,9 +28,7 @@ end
 
 function Ui.filemanager()
     return {
-        "kyazdani42/nvim-tree.lua",
-        wants = "nvim-web-devicons",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        "justinmk/vim-dirvish",
         config = require("modules.ui.filemanager")(),
     }
 end
@@ -71,19 +67,17 @@ function Ui.treesitter()
     }
 end
 
-function Ui.colorizer()
-    return {
-        "norcalli/nvim-colorizer.lua",
-        config = require("modules.ui.colorizer")(),
-    }
-end
+-- function Ui.colorizer()
+--     return {
+--         "norcalli/nvim-colorizer.lua",
+--         config = require("modules.ui.colorizer")(),
+--     }
+-- end
 
 function Ui.colorscheme()
-    -- note: if you want use gruvboy.nvim please change to mnabila/gruvboy.nvim
     return {
-        "mnabila/gruvboy.nvim",
---        wants = "gruvboy.nvim",
---        requires = { "", opt = true },
+        "folke/tokyonight.nvim",
+        config = require("modules.ui.colorscheme_settings")(),
     }
 end
 

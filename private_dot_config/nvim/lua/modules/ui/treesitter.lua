@@ -2,15 +2,7 @@ local M = {}
 
 function M.config()
     local options = {
-        ensure_installed = {
-            "bash",
-            "lua",
-            "python",
-            "html",
-            "javascript",
-            "css",
-            "json",
-        },
+        ensure_installed = "all",
         highlight = {
             enable = true,
             use_languagetree = true,
@@ -19,15 +11,12 @@ function M.config()
             enable = true,
             disable = { "python" },
         },
-        -- p00f/nvim-ts-rainbow
         rainbow = {
             enable = true,
         },
-        -- windwp/nvim-autopairs
         autopairs = {
             enable = true,
         },
-        -- windwp/nvim-ts-autotag
         autotag = {
             enable = true,
             filetypes = { "html", "xml" },
