@@ -34,7 +34,11 @@ function M.config()
         use_lsp_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
     }
 
-    require("trouble").setup(options)
+    local hastrouble, trouble = pcall(require, "trouble")
+    if not hastrouble then
+       return
+    end
+    trouble.setup(options)
 end
 
 return setmetatable({}, {

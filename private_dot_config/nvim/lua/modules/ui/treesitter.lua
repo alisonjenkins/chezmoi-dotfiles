@@ -34,7 +34,11 @@ function M.config()
         },
     }
 
-    require("nvim-treesitter.configs").setup(options)
+    local hastreesitterconfigs, treesitterconfigs = pcall(require, "nvim-treesitter.configs")
+    if not hastreesitterconfigs then
+      return
+    end
+    treesitterconfigs.setup(options)
 end
 
 return setmetatable({}, {
