@@ -72,6 +72,7 @@ else
         use(editor.matchup())
         use(editor.sql())
         use(editor.surround())
+        use(editor.terraform())
         use(editor.translator())
 
     end)
