@@ -35,6 +35,12 @@ function Ui.git()
     }
 end
 
+function Ui.harpoon()
+    return {
+        "ThePrimeagen/harpoon"
+    }
+end
+
 function Ui.statusline()
     return {
         "glepnir/galaxyline.nvim",
