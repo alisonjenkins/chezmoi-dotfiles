@@ -59,6 +59,12 @@ function Ui.lsp_colors()
         }
 end
 
+function Ui.searchindex()
+       return {
+               'google/vim-searchindex'
+       }
+end
+
 function Ui.statusline()
     return {
         "glepnir/galaxyline.nvim",
