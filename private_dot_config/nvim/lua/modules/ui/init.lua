@@ -47,9 +47,9 @@ function Ui.harpoon()
     }
 end
 
-function Ui.matchup()
+function Ui.lsp_colors()
         return {
-                'andymass/vim-matchup'
+                'folke/lsp-colors.nvim'
         }
 end
 
