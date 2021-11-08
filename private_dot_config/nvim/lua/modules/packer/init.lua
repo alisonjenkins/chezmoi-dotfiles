@@ -52,6 +52,7 @@ else
         use(ui.filemanager())
         use(ui.git())
         use(ui.git_blame())
+        use(ui.goyo())
         use(ui.harpoon())
         use(ui.jqx())
         use(ui.lsp_colors())

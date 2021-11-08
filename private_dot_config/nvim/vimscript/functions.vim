@@ -59,11 +59,5 @@ command! DebugGetSession lua require'dap'.session()
 let blacklist = ['java']
 autocmd CursorHold,CursorHoldI * if index(blacklist, &ft) < 0 | lua require'nvim-lightbulb'.update_lightbulb()
 
-autocmd! User GoyoEnter lua require('gitsigns').toggle_signs()
-autocmd! User GoyoLeave lua require('gitsigns').toggle_signs()
-
-autocmd User GoyoEnter set laststatus=0 
-autocmd User GoyoLeave set laststatus=2
-
 " autocmd! User GoyoEnter lua require('galaxyline').disable_galaxyline()
 " autocmd! User GoyoLeave lua require('galaxyline').galaxyline_augroup()
