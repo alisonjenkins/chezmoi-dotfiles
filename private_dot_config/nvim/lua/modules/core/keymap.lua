@@ -88,6 +88,7 @@ function M.config()
                                 f     = { "<cmd>Telescope find_files<cr>",                                                                              "Files" },
                                 h     = { "<cmd>Telescope command_history<cr>",                                                                         "Command History" },
                                 i     = { "<cmd>Telescope media_files<cr>",                                                                             "Media Files" },
+                                j     = { "<cmd>JqxList<cr>",                                                                                           "List the JSON keys in the JSON file" },
                                 m     = { "<cmd>Telescope marks<cr>",                                                                                   "Marks" },
                                 o     = { "<cmd>Telescope vim_options<cr>",                                                                             "Vim Options" },
                                 p     = { "<cmd>Telescope projects<cr>",                                                                                "Projects" },
