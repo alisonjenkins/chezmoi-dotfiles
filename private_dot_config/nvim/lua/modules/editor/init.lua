@@ -50,6 +50,12 @@ function Editor.matchup()
         }
 end
 
+function Editor.terraform()
+       return {
+               'hashivim/vim-terraform'
+       }
+end
+
 function Editor.translator()
     return {
         "voldikss/vim-translator",
