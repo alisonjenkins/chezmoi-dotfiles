@@ -35,9 +35,6 @@ return require('packer').startup(function(use)
     use 'folke/lua-dev.nvim'                                                                                                                             -- (lua) Enhanced Lua LSP configuration and documentation.
     use 'godlygeek/tabular'                                                                                                                              -- (vimscript) Allows aligning text in a Tabular fashion based on patterns in the text.
     use 'google/vim-searchindex'                                                                                                                         -- (vimscript) Shows the number of search results for a search and what number you are current on.
-    use 'hrsh7th/cmp-buffer'                                                                                                                             -- (lua) Buffer completion for nvim-cmp
-    use 'hrsh7th/cmp-nvim-lsp'                                                                                                                           -- (lua) nvim-cmp lsp completion source
-    use 'hrsh7th/cmp-path'                                                                                                                               -- (lua) Completion plugin for file paths for nvim-cmp
     use 'juliosueiras/vim-terraform-completion'                                                                                                          -- (vimscript) Provides mapping for quickly opening documentation for Terraform resources.
     use 'junegunn/goyo.vim'                                                                                                                              -- (vimscript) Focus mode to eliminate distractions when writing.
     use 'justinmk/vim-dirvish'                                                                                                                           -- (vimscript) Replaces netrw with something much faster, designed to work with eunuch and Vim for creation of files and directories.
@@ -87,7 +84,6 @@ return require('packer').startup(function(use)
     use {'folke/which-key.nvim', config = WHICHKEY_CONFIG()}                                                                                             -- shows mappings as you trigger them to help with remembering them.
     use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end}                                                                       -- (vimscript) Allows using Neovim to edit input boxes in browsers via a browser plugin.
     use {'glepnir/galaxyline.nvim', config = CONFIG_GALAXYLINE()}                                                                                        -- (lua) A very fast lua statusline plugin.
-    use {'hrsh7th/nvim-cmp', requires = { 'hrsh7th/vim-vsnip', 'hrsh7th/cmp-buffer', config = CONFIG_NVIM_CMP() }}                                       -- (lua) nvim-cmp completion plugin. This is the successor to the now deprecated nvim-compe.
     use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install'}                                                                                  -- (vimscript) Allow previewing markdown with syncronised scrolling in a browser.
     use {'kosayoda/nvim-lightbulb', config = CONFIG_NVIM_LIGHTBULB()}                                                                                    -- (lua) Shows a lightbulb on a line when a codeAction is available for it.
     use {'kristijanhusak/orgmode.nvim', branch = "tree-sitter", config = function() require('orgmode').setup{mappings={disable_all=false}} end }         -- (lua) Org Mode for Neovim.
@@ -106,7 +102,6 @@ return require('packer').startup(function(use)
     use {'simrat39/rust-tools.nvim'}                                                                                                                     -- (lua) Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
     use {'terrortylor/nvim-comment', config = CONFIG_NVIM_COMMENT()}                                                                                     -- (lua) Adds commands and mappings for commenting and uncommenting lines of code using the language's comment string.
     use {'theHamsta/nvim-dap-virtual-text'}                                                                                                              -- (lua) Debug Adapter Protocol virtual text to show the contents of variables.
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}                                                                       -- (lua) Tabnine AI powered auto completion.
     use({'jameshiew/nvim-magic', config = function() require('nvim-magic').setup() end, requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' }}) -- OpenAI powered autocompletion.
 end)
 
