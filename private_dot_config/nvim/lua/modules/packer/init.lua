@@ -33,10 +33,10 @@ else
 
         use({ "lewis6991/impatient.nvim" })
 
-        -- use({
-        --     "tweekmonster/startuptime.vim",
-        --     cmd = "StartupTime",
-        -- })
+        use({
+            "tweekmonster/startuptime.vim",
+            cmd = "StartupTime",
+        })
 
         use(core.keymap())
 
@@ -46,14 +46,11 @@ else
         use(completion.lspsaga())
         use(completion.lsp_containers())
         use(completion.lspkind())
-        --use(completion.autopair())
 
-        -- use(ui.colorizer())
         use(ui.colorscheme())
         use(ui.crates())
         use(ui.filemanager())
         use(ui.git())
-        use(ui.indentline())
         use(ui.statusline())
         use(ui.telescope())
         use(ui.treesitter())
