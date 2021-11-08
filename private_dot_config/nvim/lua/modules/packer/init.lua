@@ -53,6 +53,7 @@ else
         use(ui.git())
         use(ui.git_blame())
         use(ui.harpoon())
+        use(ui.jqx())
         use(ui.lsp_colors())
         use(ui.statusline())
         use(ui.telescope())

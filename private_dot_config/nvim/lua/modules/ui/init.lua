@@ -47,6 +47,12 @@ function Ui.harpoon()
     }
 end
 
+function Ui.jqx()
+        return {
+                'gennaro-tedesco/nvim-jqx'
+        }
+end
+
 function Ui.lsp_colors()
         return {
                 'folke/lsp-colors.nvim'
