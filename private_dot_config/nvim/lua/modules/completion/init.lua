@@ -12,6 +12,7 @@ function Completion.cmp()
         "hrsh7th/nvim-cmp",
         requires = {
             "L3MON4D3/LuaSnip",
+            "f3fora/cmp-spell",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",

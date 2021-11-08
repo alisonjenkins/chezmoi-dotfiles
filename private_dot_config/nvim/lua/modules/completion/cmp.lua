@@ -62,6 +62,7 @@ function M.config()
             { name = "nvim_lsp" },
             { name = 'cmp_tabnine' },
             { name = "buffer" },
+            { name = 'spell' },
             { name = "path", keyword_length = 5 },
         },
     })
