@@ -68,6 +68,12 @@ function Ui.jqx()
         }
 end
 
+function Ui.lua_guide()
+       return {
+               'nanotee/nvim-lua-guide'
+       }
+end
+
 function Ui.lsp_colors()
         return {
                 'folke/lsp-colors.nvim'

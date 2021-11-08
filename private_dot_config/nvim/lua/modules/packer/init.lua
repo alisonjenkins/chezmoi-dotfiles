@@ -56,6 +56,7 @@ else
         use(ui.harpoon())
         use(ui.jqx())
         use(ui.lsp_colors())
+        use(ui.lua_guide())
         use(ui.searchindex())
         use(ui.statusline())
         use(ui.telescope())
