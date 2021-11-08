@@ -51,6 +51,7 @@ else
         use(ui.crates())
         use(ui.filemanager())
         use(ui.git())
+        use(ui.harpoon())
         use(ui.statusline())
         use(ui.telescope())
         use(ui.treesitter())
