@@ -25,6 +25,8 @@ function Ui.git()
     return {
         "tpope/vim-fugitive",
         requires = {
+                -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing. 
+                'rhysd/committia.vim',
                 -- (vimscript) Adds Fugitive Gbrowse support for Gitlab repos.,
                 'shumphrey/fugitive-gitlab.vim',
                 -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
