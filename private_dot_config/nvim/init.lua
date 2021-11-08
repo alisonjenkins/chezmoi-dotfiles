@@ -21,7 +21,6 @@ require"modules.core.keymap"
 -- require('nv-gitblame')
 -- require('nv-gitsigns')
 -- require('nv-hop')
--- require('nv-indentline')
 -- require('nv-lightbulb')
 -- require('nv-lspkind')
 -- require('nv-matchup')

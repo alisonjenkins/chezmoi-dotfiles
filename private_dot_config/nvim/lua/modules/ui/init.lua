@@ -35,16 +35,6 @@ function Ui.git()
     }
 end
 
-function Ui.indentline()
-    return {
-        "lukas-reineke/indent-blankline.nvim",
-        event = "BufRead",
-        setup = function()
-            require("modules.ui.indentline")()
-        end,
-    }
-end
-
 function Ui.statusline()
     return {
         "glepnir/galaxyline.nvim",
