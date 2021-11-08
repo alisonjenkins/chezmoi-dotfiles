@@ -41,6 +41,12 @@ function Ui.harpoon()
     }
 end
 
+function Ui.matchup()
+        return {
+                'andymass/vim-matchup'
+        }
+end
+
 function Ui.statusline()
     return {
         "glepnir/galaxyline.nvim",

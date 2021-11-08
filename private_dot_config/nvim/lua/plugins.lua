@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
 
     use 'ChristianChiarulli/java-snippets'                                                                                                               -- (-) Java snippets
     use 'JoosepAlviste/nvim-ts-context-commentstring'                                                                                                    -- (lua) Uses Treesitter to set the commentstring variable based on context. Good for embedded languages (e.g. html inside Javascript). Allows smarter commenting using nvim-comment.
-    use 'andymass/vim-matchup'                                                                                                                           -- (vimscript) extends vim's % key to language-specific words instead of just single characters.
     use 'brooth/far.vim'                                                                                                                                 -- (vimscript) makes it easier to find and replace text through multiple files.
     use 'dstein64/vim-startuptime'                                                                                                                       -- (vimscript) Startup time profile viewer.
     use 'f-person/git-blame.nvim'                                                                                                                        -- (lua) Shows Git blame text for highlighted lines as virtual text using Neovim LSP.

@@ -44,6 +44,12 @@ function Editor.header()
     }
 end
 
+function Editor.matchup()
+        return {
+                'andymass/vim-matchup'
+        }
+end
+
 function Editor.translator()
     return {
         "voldikss/vim-translator",
