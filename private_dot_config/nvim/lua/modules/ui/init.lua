@@ -35,6 +35,12 @@ function Ui.git()
     }
 end
 
+function Ui.git_blame()
+        return {
+                "f-person/git-blame.nvim"
+        }
+end
+
 function Ui.harpoon()
     return {
         "ThePrimeagen/harpoon"
