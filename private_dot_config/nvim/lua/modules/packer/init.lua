@@ -66,8 +66,10 @@ else
         use(editor.golang())
         use(editor.header())
         use(editor.markdown())
+        use(editor.matchup())
         use(editor.sql())
         use(editor.surround())
         use(editor.translator())
+
     end)
 end
