@@ -41,6 +41,21 @@ function Ui.git_blame()
         }
 end
 
+function Ui.goyo()
+       return {
+               'junegunn/goyo.vim',
+               config = function()
+                       vim.cmd([[
+                       autocmd! User GoyoEnter lua require('gitsigns').toggle_signs()
+                       autocmd! User GoyoLeave lua require('gitsigns').toggle_signs()
+
+                       autocmd User GoyoEnter set laststatus=0 
+                       autocmd User GoyoLeave set laststatus=2
+                       ]])
+               end
+       }
+end
+
 function Ui.harpoon()
     return {
         "ThePrimeagen/harpoon"
