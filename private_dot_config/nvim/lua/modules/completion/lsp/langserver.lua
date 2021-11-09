@@ -1,3 +1,4 @@
+-- vim: set foldmethod=marker
 local haslspconfig, lspconfig = pcall(require, "lspconfig")
 if not haslspconfig then
         return
@@ -6,11 +7,14 @@ end
 local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
 local c = require("modules.completion.lsp.custom")
 
+-- {{{ CSS
 lspconfig.cssls.setup(c.default({
     cmd = { "css-languageserver", "--stdio" },
     root_dir = c.custom_cwd,
 }))
+-- }}}
 
+-- {{{ Go
 lspconfig.gopls.setup(c.default({
     cmd = { "gopls", "serve" },
     root_dir = c.custom_cwd,
@@ -24,7 +28,9 @@ lspconfig.gopls.setup(c.default({
         },
     },
 }))
+-- }}}
 
+-- {{{ Lua
 local lua_lsp_cmd = nil
 
 if vim.fn.executable("lua-language-server") ~= 0 then
@@ -44,6 +50,36 @@ elseif haslspcontainers and vim.fn.executable("docker") == 1 then
         lua_lsp_cmd = lspcontainers.command('sumneko_lua')
 end
 
+lspconfig.sumneko_lua.setup(c.default({
+    cmd = lua_lsp_cmd,
+    root_dir = c.custom_cwd,
+    settings = {
+        Lua = {
+            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+            telemetry = {
+                enable = false,
+            },
+            diagnostics = {
+                enable = true,
+                globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                    ["/usr/share/awesome/lib"] = true,
+                    ["/usr/share/lua/5.1"] = true,
+                    ["/usr/share/lua/5.3"] = true,
+                    ["/usr/share/lua/5.4"] = true,
+                },
+            },
+        },
+    },
+}))
+
+-- }}}
+
+-- {{{ Python - Jedi
 -- lspconfig.jedi_language_server.setup(c.default({
 --     settings = {
 --         jedi = {
@@ -59,12 +95,16 @@ end
 --         },
 --     },
 -- }))
+-- }}}
 
+-- {{{ JSON
 lspconfig.jsonls.setup(c.default({
     cmd = { "vscode-json-languageserver", "--stdio" },
     root_dir = c.custom_cwd,
 }))
+-- }}}
 
+-- {{{ Python - Pyright
 lspconfig.pyright.setup(c.default({
     settings = {
         python = {
@@ -77,7 +117,9 @@ lspconfig.pyright.setup(c.default({
         },
     },
 }))
+-- }}}
 
+-- {{{ SQL
 lspconfig.sqls.setup({
     cmd = { "sqls", "-config", vim.loop.os_homedir() .. "/.config/sqls/config.yml" },
     on_init = c.custom_on_init,
@@ -87,7 +129,9 @@ lspconfig.sqls.setup({
         require("sqls").setup({ picker = "default" })
     end,
 })
+-- }}}
 
+-- {{{ Typescript
 lspconfig.tsserver.setup(c.default({
     root_dir = c.custom_cwd,
     settings = {
@@ -108,7 +152,9 @@ lspconfig.tsserver.setup(c.default({
         },
     },
 }))
+-- }}}
 
+-- {{{ YAML
 lspconfig.yamlls.setup(c.default({
     settings = {
         yaml = {
@@ -127,6 +173,7 @@ lspconfig.yamlls.setup(c.default({
         },
     },
 }))
+-- }}}
 
 local servers = { "dockerls", "clangd", "texlab", "bashls", "vimls" }
 for _, lsp in ipairs(servers) do
