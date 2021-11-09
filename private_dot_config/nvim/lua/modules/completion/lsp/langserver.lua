@@ -38,28 +38,28 @@ lspconfig.jsonls.setup(c.default({
 -- }}}
 
 -- {{{ Lua
-local lua_lsp_cmd = nil
+local lsp_cmd = nil
 
 if vim.fn.executable("lua-language-server") ~= 0 then
-        lua_lsp_cmd = { 
+        lsp_cmd = { 
                 "lua-language-server",
                 string.format("--logpath=%s/.cache/nvim/sumneko_lua",
                 vim.loop.os_homedir())
         }
 elseif haslspcontainers and vim.fn.executable("podman") == 1 then
-        lua_lsp_cmd = lspcontainers.command(
+        lsp_cmd = lspcontainers.command(
                 'sumneko_lua',
                 {
                         container_runtime = "podman",
                 }
         )
 elseif haslspcontainers and vim.fn.executable("docker") == 1 then
-        lua_lsp_cmd = lspcontainers.command('sumneko_lua')
+        lsp_cmd = lspcontainers.command('sumneko_lua')
 end
 
-if lua_lsp_cmd ~= nil then
+if lsp_cmd ~= nil then
         lspconfig.sumneko_lua.setup(c.default({
-                cmd = lua_lsp_cmd,
+                cmd = lsp_cmd,
                 root_dir = c.custom_cwd,
                 settings = {
                         Lua = {
