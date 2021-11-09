@@ -29,6 +29,13 @@ lspconfig.gopls.setup(c.default({
     },
 }))
 -- }}}
+--
+-- {{{ JSON
+lspconfig.jsonls.setup(c.default({
+    cmd = { "vscode-json-languageserver", "--stdio" },
+    root_dir = c.custom_cwd,
+}))
+-- }}}
 
 -- {{{ Lua
 local lua_lsp_cmd = nil
@@ -95,13 +102,6 @@ lspconfig.sumneko_lua.setup(c.default({
 --         },
 --     },
 -- }))
--- }}}
-
--- {{{ JSON
-lspconfig.jsonls.setup(c.default({
-    cmd = { "vscode-json-languageserver", "--stdio" },
-    root_dir = c.custom_cwd,
-}))
 -- }}}
 
 -- {{{ Python - Pyright
