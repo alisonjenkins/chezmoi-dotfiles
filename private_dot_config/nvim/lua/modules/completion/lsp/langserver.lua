@@ -57,33 +57,34 @@ elseif haslspcontainers and vim.fn.executable("docker") == 1 then
         lua_lsp_cmd = lspcontainers.command('sumneko_lua')
 end
 
-lspconfig.sumneko_lua.setup(c.default({
-    cmd = lua_lsp_cmd,
-    root_dir = c.custom_cwd,
-    settings = {
-        Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            telemetry = {
-                enable = false,
-            },
-            diagnostics = {
-                enable = true,
-                globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                    ["/usr/share/awesome/lib"] = true,
-                    ["/usr/share/lua/5.1"] = true,
-                    ["/usr/share/lua/5.3"] = true,
-                    ["/usr/share/lua/5.4"] = true,
+if lua_lsp_cmd ~= nil then
+        lspconfig.sumneko_lua.setup(c.default({
+                cmd = lua_lsp_cmd,
+                root_dir = c.custom_cwd,
+                settings = {
+                        Lua = {
+                                runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+                                telemetry = {
+                                        enable = false,
+                                },
+                                diagnostics = {
+                                        enable = true,
+                                        globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
+                                },
+                                workspace = {
+                                        library = {
+                                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                                                ["/usr/share/awesome/lib"] = true,
+                                                ["/usr/share/lua/5.1"] = true,
+                                                ["/usr/share/lua/5.3"] = true,
+                                                ["/usr/share/lua/5.4"] = true,
+                                        },
+                                },
+                        },
                 },
-            },
-        },
-    },
-}))
-
+        }))
+end
 -- }}}
 
 -- {{{ Python - Jedi
