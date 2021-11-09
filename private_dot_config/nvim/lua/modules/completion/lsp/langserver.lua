@@ -1,4 +1,4 @@
--- vim: set foldmethod=marker
+-- vim: set foldmethod=marker foldlevel=0:
 local haslspconfig, lspconfig = pcall(require, "lspconfig")
 if not haslspconfig then
         return
