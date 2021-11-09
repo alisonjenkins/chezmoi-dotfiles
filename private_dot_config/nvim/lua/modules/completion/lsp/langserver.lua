@@ -7,84 +7,73 @@ end
 local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
 local c = require("modules.completion.lsp.custom")
 
+local lsp_servers = {}
+
+-- {{{ Bash
+lsp_servers["bashls"] = {}
+-- }}}
+
+-- {{{ C
+lsp_servers["clangd"] = {}
+-- }}}
+
 -- {{{ CSS
-lspconfig.cssls.setup(c.default({
-    cmd = { "css-languageserver", "--stdio" },
-    root_dir = c.custom_cwd,
-}))
+lsp_servers["cssls"] = {}
+lsp_servers["cssls"]["cmd"] = {"lua-language-server", "--stdio"}
+-- }}}
+
+-- {{{ Docker
+lsp_servers["dockerls"] = {}
 -- }}}
 
 -- {{{ Go
-lspconfig.gopls.setup(c.default({
-    cmd = { "gopls", "serve" },
-    root_dir = c.custom_cwd,
-    settings = {
+lsp_servers["gopls"] = {}
+lsp_servers["gopls"]["cmd"] = {"gopls", "serve"}
+lsp_servers["gopls"]["settings"] = {
         gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-            usePlaceholders = false,
+                analyses = {
+                        unusedparams = true,
+                },
+                staticcheck = true,
+                usePlaceholders = false,
         },
-    },
-}))
+}
 -- }}}
---
+
 -- {{{ JSON
-lspconfig.jsonls.setup(c.default({
-    cmd = { "vscode-json-languageserver", "--stdio" },
-    root_dir = c.custom_cwd,
-}))
+lsp_servers["jsonls"] = {}
+lsp_servers["jsonls"]["cmd"] = "vscode-json-languageserver", "--stdio" }
 -- }}}
 
 -- {{{ Lua
-local lsp_cmd = nil
-
-if vim.fn.executable("lua-language-server") ~= 0 then
-        lsp_cmd = { 
-                "lua-language-server",
-                string.format("--logpath=%s/.cache/nvim/sumneko_lua",
-                vim.loop.os_homedir())
-        }
-elseif haslspcontainers and vim.fn.executable("podman") == 1 then
-        lsp_cmd = lspcontainers.command(
-                'sumneko_lua',
-                {
-                        container_runtime = "podman",
-                }
-        )
-elseif haslspcontainers and vim.fn.executable("docker") == 1 then
-        lsp_cmd = lspcontainers.command('sumneko_lua')
-end
-
-if lsp_cmd ~= nil then
-        lspconfig.sumneko_lua.setup(c.default({
-                cmd = lsp_cmd,
-                root_dir = c.custom_cwd,
-                settings = {
-                        Lua = {
-                                runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-                                telemetry = {
-                                        enable = false,
-                                },
-                                diagnostics = {
-                                        enable = true,
-                                        globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
-                                },
-                                workspace = {
-                                        library = {
-                                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                                                ["/usr/share/awesome/lib"] = true,
-                                                ["/usr/share/lua/5.1"] = true,
-                                                ["/usr/share/lua/5.3"] = true,
-                                                ["/usr/share/lua/5.4"] = true,
-                                        },
-                                },
+lsp_servers["sumneko_lua"] = {}
+lsp_servers["sumneko_lua"]["cmd"] = {
+        "lua-language-server",
+        string.format("--logpath=%s/.cache/nvim/sumneko_lua",
+        vim.loop.os_homedir())
+}
+lsp_servers["sumneko_lua"]["settings"] = {
+        Lua = {
+                runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+                telemetry = {
+                        enable = false,
+                },
+                diagnostics = {
+                        enable = true,
+                        globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
+                },
+                workspace = {
+                        library = {
+                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                                ["/usr/share/awesome/lib"] = true,
+                                ["/usr/share/lua/5.1"] = true,
+                                ["/usr/share/lua/5.3"] = true,
+                                ["/usr/share/lua/5.4"] = true,
                         },
                 },
-        }))
-end
+        },
+}
 -- }}}
 
 -- {{{ Python - Jedi
@@ -106,77 +95,95 @@ end
 -- }}}
 
 -- {{{ Python - Pyright
-lspconfig.pyright.setup(c.default({
-    settings = {
+lsp_servers["pyright"] = {}
+lsp_servers["pyright"]["settings"] = {
         python = {
-            analysis = {
-                useLibraryCodeForTypes = false,
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                typeCheckingMode = "basic",
-            },
+                analysis = {
+                        useLibraryCodeForTypes = false,
+                        autoSearchPaths = true,
+                        diagnosticMode = "openFilesOnly",
+                        typeCheckingMode = "basic",
+                },
         },
-    },
-}))
+}
 -- }}}
 
 -- {{{ SQL
-lspconfig.sqls.setup({
-    cmd = { "sqls", "-config", vim.loop.os_homedir() .. "/.config/sqls/config.yml" },
-    on_init = c.custom_on_init,
-    capabilities = c.custom_capabilities(),
-    on_attach = function(client)
+lsp_servers["sqls"] = {}
+lsp_servers["sqls"]["cmd"] = {
+        "sqls",
+        "-config",
+        vim.loop.os_homedir() .. "/.config/sqls/config.yml"
+}
+lsp_servers["sqls"]["on_init"] = c.custom_on_init
+lsp_servers["sqls"]["capabilities"] = c.custom_capabilities()
+lsp_servers["sqls"]["on_attach"] = function(client)
         client.resolved_capabilities.execute_command = true
         require("sqls").setup({ picker = "default" })
-    end,
-})
+end
+-- }}}
+
+-- {{{ Tex
+lsp_servers["texlab"] = {}
 -- }}}
 
 -- {{{ Typescript
-lspconfig.tsserver.setup(c.default({
-    root_dir = c.custom_cwd,
-    settings = {
+lsp_servers["tsserver"] = {}
+lsp_servers["tsserver"]["settings"] = {
         tsserver = {
-            useBatchedBufferSync = true,
+                useBatchedBufferSync = true,
         },
         javascript = {
-            autoClosingTags = true,
-            suggest = {
-                autoImports = true,
-            },
-            updateImportsOnFileMove = {
-                enable = true,
-            },
-            suggestionActions = {
-                enabled = false,
-            },
+                autoClosingTags = true,
+                suggest = {
+                        autoImports = true,
+                },
+                updateImportsOnFileMove = {
+                        enable = true,
+                },
+                suggestionActions = {
+                        enabled = false,
+                },
         },
-    },
-}))
+}
+-- }}}
+
+-- {{{ Vim
+lsp_servers["vimls"] = {}
 -- }}}
 
 -- {{{ YAML
-lspconfig.yamlls.setup(c.default({
-    settings = {
+lsp_servers["yamlls"] = {}
+lsp_servers["yamlls"]["settings"] = {
         yaml = {
-            format = {
-                enable = true,
-                singleQuote = true,
-                bracketSpacing = true,
-            },
-            editor = {
-                tabSize = 2,
-            },
-            schemas = {
-                ["https://json.schemastore.org/github-workflow.json"] = "ci.yml",
-                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.yml",
-            },
+                format = {
+                        enable = true,
+                        singleQuote = true,
+                        bracketSpacing = true,
+                },
+                editor = {
+                        tabSize = 2,
+                },
+                schemas = {
+                        ["https://json.schemastore.org/github-workflow.json"] = "ci.yml",
+                        ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.yml",
+                },
         },
-    },
-}))
+}
 -- }}}
 
-local servers = { "dockerls", "clangd", "texlab", "bashls", "vimls" }
-for _, lsp in ipairs(servers) do
+if haslspcontainers then
+        lspconfig_lsps = {}
+        ""
+        for lsp in string.gmatch(vim.fn.globpath("/home/alan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig", "*.lua"), "([^\n]+)") do
+                lsp_config = pcall(dofile, lsp)
+                if vim.fn.executable() then
+                elseif vim.fn.executable("podman") == 1 then
+                elseif vim.fn.executable("docker") == 1 then
+                end
+        end
+end
+
+for _, lsp in ipairs(lsp_servers) do
     lspconfig[lsp].setup(c.default())
 end

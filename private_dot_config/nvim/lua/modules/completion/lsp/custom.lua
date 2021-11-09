@@ -69,18 +69,20 @@ function M.custom_on_attach(client, bufnr)
 end
 
 function M.default(configs)
-    local custom_config = {
-        root_dir = M.custom_cwd,
-        on_init = M.custom_on_init,
-        on_attach = M.custom_on_attach,
-        capabilities = M.custom_capabilities(),
-    }
-    if configs ~= nil then
-        for key, value in pairs(configs) do
-            custom_config[key] = value
+        local custom_config = {
+                root_dir = M.custom_cwd,
+                on_init = M.custom_on_init,
+                on_attach = M.custom_on_attach,
+                capabilities = M.custom_capabilities(),
+        }
+        if configs ~= nil then
+                for key, value in pairs(configs) do
+                        if value ~= nil then
+                                custom_config[key] = value
+                        end
+                end
         end
-    end
-    return custom_config
+        return custom_config
 end
 
 return M
