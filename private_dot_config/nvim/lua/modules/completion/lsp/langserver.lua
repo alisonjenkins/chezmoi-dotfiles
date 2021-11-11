@@ -40,6 +40,10 @@ lsp_servers["gopls"]["settings"] = {
 }
 -- }}}
 
+-- {{{ HTML
+lsp_servers["html"] = {}
+-- }}}
+
 -- {{{ JSON
 lsp_servers["jsonls"] = {}
 lsp_servers["jsonls"]["cmd"] = { "vscode-json-languageserver", "--stdio" }
