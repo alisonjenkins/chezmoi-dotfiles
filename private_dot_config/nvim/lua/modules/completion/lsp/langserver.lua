@@ -196,6 +196,7 @@ end
 
 for lsp_name, lsp in pairs(lsp_servers) do
     lspconfig[lsp_name].setup(c.default({
-        ["cmd"] = lsp["cmd"]
+        ["cmd"] = lsp["cmd"],
+        ["settings"] = lsp["settings"],
 }))
 end
