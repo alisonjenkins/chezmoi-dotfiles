@@ -42,7 +42,7 @@ lsp_servers["gopls"]["settings"] = {
 
 -- {{{ JSON
 lsp_servers["jsonls"] = {}
-lsp_servers["jsonls"]["cmd"] = "vscode-json-languageserver", "--stdio" }
+lsp_servers["jsonls"]["cmd"] = { "vscode-json-languageserver", "--stdio" }
 -- }}}
 
 -- {{{ Lua
@@ -173,17 +173,25 @@ lsp_servers["yamlls"]["settings"] = {
 -- }}}
 
 if haslspcontainers then
-        lspconfig_lsps = {}
-        ""
-        for lsp in string.gmatch(vim.fn.globpath("/home/alan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig", "*.lua"), "([^\n]+)") do
-                lsp_config = pcall(dofile, lsp)
-                if vim.fn.executable() then
-                elseif vim.fn.executable("podman") == 1 then
-                elseif vim.fn.executable("docker") == 1 then
+        for lsp_name, lsp in pairs(lsp_servers) do
+                if lspcontainers.supported_languages[lsp_name] ~= nil then
+                        if vim.fn.executable("podman") == 1 then
+                                container_runtime = "podman"
+                        elseif vim.fn.executable("docker") then
+                                container_runtime = "docker"
+                        end
+                        lsp_servers[lsp_name]["cmd"] = lspcontainers.command(
+                                lsp_name,
+                                {
+                                        container_runtime = container_runtime
+                                }
+                        )
                 end
         end
 end
 
-for _, lsp in ipairs(lsp_servers) do
-    lspconfig[lsp].setup(c.default())
+for lsp_name, lsp in pairs(lsp_servers) do
+    lspconfig[lsp_name].setup(c.default({
+        ["cmd"] = lsp["cmd"]
+}))
 end
