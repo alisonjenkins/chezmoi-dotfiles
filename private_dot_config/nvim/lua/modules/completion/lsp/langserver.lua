@@ -123,6 +123,10 @@ lsp_servers["sqls"]["on_attach"] = function(client)
 end
 -- }}}
 
+-- {{{ Terraform
+lsp_servers["terraformls"] = {}
+-- }}}
+
 -- {{{ Tex
 lsp_servers["texlab"] = {}
 -- }}}
