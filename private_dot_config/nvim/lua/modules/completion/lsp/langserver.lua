@@ -185,9 +185,9 @@ if haslspcontainers then
         for lsp_name, lsp in pairs(lsp_servers) do
                 if lspcontainers.supported_languages[lsp_name] ~= nil then
                         if vim.fn.executable("podman") == 1 then
-                                container_runtime = "podman"
+                                local container_runtime = "podman"
                         elseif vim.fn.executable("docker") then
-                                container_runtime = "docker"
+                                local container_runtime = "docker"
                         end
                         lsp_servers[lsp_name]["cmd"] = lspcontainers.command(
                                 lsp_name,
