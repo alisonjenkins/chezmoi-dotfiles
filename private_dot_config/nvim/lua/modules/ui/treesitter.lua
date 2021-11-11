@@ -6,8 +6,16 @@ function M.config()
                 return
         end
 
+        local ignore_plugin = {}
+
+        if vim.fn.has("macunix") == 1 then
+                table.insert(ignore_plugin, "haskell")
+        end
+
         local options = {
                 ensure_installed = "all",
+                ignore_install = ignore_plugin,
+
                 highlight = {
                         enable = true,
                         use_languagetree = true,
