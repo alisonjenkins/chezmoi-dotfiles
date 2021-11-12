@@ -73,6 +73,7 @@ else
         use(editor.header())
         use(editor.markdown())
         use(editor.matchup())
+        use(editor.neuron())
         use(editor.sql())
         use(editor.surround())
         use(editor.terraform())

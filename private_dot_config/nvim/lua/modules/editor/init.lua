@@ -50,6 +50,18 @@ function Editor.matchup()
         }
 end
 
+function Editor.neuron()
+        return {
+                'oberblastmeister/neuron.nvim',
+                requires = {
+                        'nvim-lua/plenary.nvim',
+                        'nvim-lua/popup.nvim',
+                        'nvim-telescope/telescope.nvim',
+                },
+                config = require "modules.editor.neuron",
+        }
+end
+
 function Editor.terraform()
        return {
                'hashivim/vim-terraform',
