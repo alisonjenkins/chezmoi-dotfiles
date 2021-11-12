@@ -31,15 +31,16 @@ fi
 
 # Setup Path variable
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/home/$USER/go/bin"
-export PATH="$PATH:/home/$USER/bin"
-export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="$PATH:/home/$USER/.gem/ruby/2.7.0/bin"
-export PATH="$PATH:/home/$USER/.gem/ruby/2.6.0/bin"
-export PATH="$PATH:/home/$USER/.gem/ruby/2.5.0/bin"
-export PATH="$PATH:/home/$USER/.gem/ruby/2.4.0/bin"
-export PATH="$PATH:/home/$USER/.asdf/installs/ruby/truffleruby-19.2.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+export PATH="$PATH:$HOME/.asdf/installs/ruby/truffleruby-19.2.0/bin"
+export PATH="$PATH:$HOME/.asdf/installs/ruby/truffleruby-19.2.0/bin"
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
 # Todo.txt
