@@ -6,7 +6,6 @@ function M.config()
         return
     end
 
-    local gl = require("galaxyline")
     local gls = gl.section
     local condition = require("galaxyline.condition")
     local vcs = require("galaxyline.provider_vcs")
