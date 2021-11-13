@@ -80,6 +80,10 @@ lsp_servers["sumneko_lua"]["settings"] = {
 }
 -- }}}
 
+-- {{{ Nix
+lsp_servers["rnix"] = {}
+-- }}}
+
 -- {{{ Python - Jedi
 -- lspconfig.jedi_language_server.setup(c.default({
 --     settings = {
