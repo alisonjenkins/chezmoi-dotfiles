@@ -159,8 +159,8 @@ function M.config()
                                 m = { "<cmd>GitMessenger<cr>",                "Line commit history" },
                                 w = {
                                         name = "+git worktree",
-                                        c = {"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree"},
-                                        s = {"<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",       "Switch"},
+                                        c = {"<cmd>lua require('modules.core.custom_functions').create_git_worktree()<cr>", "Create worktree"},
+                                        s = {"<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",   "Switch"},
                                 }
                         },
 
