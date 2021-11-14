@@ -81,7 +81,7 @@ end
 
 function Editor.comment()
     return {
-        "terrortylor/nvim-comment",
+        "numToStr/Comment.nvim",
         event = "BufRead",
         config = function()
             require("modules.editor.comment")()
