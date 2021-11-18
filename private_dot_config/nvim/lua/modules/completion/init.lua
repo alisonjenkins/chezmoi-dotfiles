@@ -1,12 +1,5 @@
 local Completion = {}
 
-function Completion.autopair()
-    return {
-        "windwp/nvim-autopairs",
-        config = require("modules.completion.autopairs")(),
-    }
-end
-
 function Completion.cmp()
     return {
         "hrsh7th/nvim-cmp",

@@ -15,16 +15,6 @@ function M.config()
     local lspclient = require("galaxyline.provider_lsp")
     local icons = require("galaxyline.provider_fileinfo").define_file_icon()
 
-    local hasgruvboycolors, gruvboycolors = pcall(require, "gruvboy.colors")
-    if hasgruvboycolors then
-        return
-    end
-
-    local colors = gruvboycolors
-
-
-    icons["man"] = { colors.green, "" }
-
     gls.left = {
         {
             Mode = {
@@ -35,9 +25,7 @@ function M.config()
                     end
                     return string.format("   %s ", alias[vim.fn.mode()])
                 end,
-                highlight = { colors.bg0, colors.yellow, "bold" },
                 separator = " ",
-                separator_highlight = { colors.none, colors.none },
             },
         },
         {
@@ -56,7 +44,6 @@ function M.config()
                     end
                     return condition.check_git_workspace() and condition.hide_in_width() and is_empty()
                 end,
-                highlight = { colors.bg0, colors.gray },
             },
         },
         {
@@ -66,7 +53,6 @@ function M.config()
                 condition = function()
                     return condition.check_git_workspace() and condition.hide_in_width()
                 end,
-                highlight = { colors.bg0, colors.gray },
             },
         },
         {
@@ -76,7 +62,6 @@ function M.config()
                 condition = function()
                     return condition.check_git_workspace() and condition.hide_in_width()
                 end,
-                highlight = { colors.bg0, colors.gray },
             },
         },
         {
@@ -86,7 +71,6 @@ function M.config()
                 condition = function()
                     return condition.check_git_workspace() and condition.hide_in_width()
                 end,
-                highlight = { colors.bg0, colors.gray },
             },
         },
         {
@@ -94,7 +78,6 @@ function M.config()
                 provider = function()
                     return " "
                 end,
-                highlight = { colors.bg0, colors.bg0 },
             },
         },
         {
@@ -102,7 +85,6 @@ function M.config()
                 provider = function()
                     return ""
                 end,
-                highlight = { colors.bg0, colors.bg0 },
             },
         },
     }
@@ -114,7 +96,6 @@ function M.config()
                 condition = condition.buffer_not_empty,
                 highlight = {
                     fileinfo.get_file_icon_color,
-                    colors.bg0,
                 },
             },
         },
@@ -124,7 +105,6 @@ function M.config()
                     return string.format("%s| %s ", fileinfo.get_file_size(), fileinfo.get_current_file_name())
                 end,
                 condition = condition.buffer_not_empty,
-                highlight = { colors.fg1, colors.bg0 },
             },
         },
     }
@@ -136,7 +116,6 @@ function M.config()
                 condition = function()
                     return condition.check_active_lsp() and condition.hide_in_width()
                 end,
-                highlight = { colors.red, colors.bg0 },
             },
         },
         {
@@ -146,7 +125,6 @@ function M.config()
                 condition = function()
                     return condition.check_active_lsp() and condition.hide_in_width()
                 end,
-                highlight = { colors.yellow, colors.bg0 },
             },
         },
         {
@@ -156,7 +134,6 @@ function M.config()
                 condition = function()
                     return condition.check_active_lsp() and condition.hide_in_width()
                 end,
-                highlight = { colors.aqua, colors.bg0 },
             },
         },
         {
@@ -166,7 +143,6 @@ function M.config()
                 condition = function()
                     return condition.check_active_lsp() and condition.hide_in_width()
                 end,
-                highlight = { colors.aqua, colors.bg0 },
             },
         },
         {
@@ -178,7 +154,6 @@ function M.config()
                 condition = function()
                     return condition.check_active_lsp() and condition.hide_in_width()
                 end,
-                highlight = { colors.fg4, colors.bg0 },
             },
         },
         {
@@ -189,7 +164,6 @@ function M.config()
                 condition = function()
                     return buffer.get_buffer_filetype() ~= ""
                 end,
-                highlight = { colors.fg4, colors.bg0 },
             },
         },
         {
@@ -198,7 +172,6 @@ function M.config()
                     return string.format("   %s ", fileinfo.get_file_format())
                 end,
                 condition = condition.hide_in_width,
-                highlight = { colors.bg0, colors.fg4 },
             },
         },
         {
@@ -207,7 +180,6 @@ function M.config()
                     return string.format("   %s ", fileinfo.get_file_encode())
                 end,
                 condition = condition.hide_in_width,
-                highlight = { colors.bg0, colors.gray },
             },
         },
         {
@@ -216,9 +188,7 @@ function M.config()
                 provider = function()
                     return fileinfo.line_column()
                 end,
-                highlight = { colors.bg0, colors.yellow },
                 separator = " ",
-                separator_highlight = { colors.none, colors.none },
             },
         },
     }
@@ -233,7 +203,6 @@ function M.config()
                         return string.format(" %s ", icon)
                     end
                 end,
-                highlight = { colors.fg4, colors.bg0 },
             },
         },
         {
@@ -256,7 +225,6 @@ function M.config()
                     end
                 end,
                 separator = "",
-                highlight = { colors.fg4, colors.bg0 },
             },
         },
     }
