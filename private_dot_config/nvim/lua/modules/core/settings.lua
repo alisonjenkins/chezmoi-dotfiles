@@ -3,9 +3,9 @@ vim.o.directory = vim.fn.stdpath('data') .. '/directory' -- Configure 'directory
 vim.o.undodir = vim.fn.stdpath('data') .. '/undo'        -- set undodir to ensure that the undofiles are not saved to git repos.
 
 -- ensure the above directories exist
-os.execute("mkdir -p " .. vim.o.backupdir)
-os.execute("mkdir -p " .. vim.o.directory)
-os.execute("mkdir -p " .. vim.o.undodir)
+vim.loop.fs_mkdir(vim.o.backupdir, 750)
+vim.loop.fs_mkdir(vim.o.directory, 750)
+vim.loop.fs_mkdir(vim.o.undodir, 750)
 
 --vim.cmd("set guifont = \"FiraCode Nerd Font Mono:h15:b\"") -- Set the font used by vim GUIs
 vim.cmd("set t_Co=256")                                    -- Support 256 colors
@@ -32,4 +32,3 @@ vim.cmd("set updatetime=300")                              -- Faster completion
 vim.cmd("set writebackup")                                 -- enable writing of the backup files
 vim.cmd("set nowrap")                                      -- Display long lines as just one line
 vim.cmd[[set spell]]
-
