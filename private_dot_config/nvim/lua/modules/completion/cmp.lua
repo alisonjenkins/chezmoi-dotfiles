@@ -66,14 +66,6 @@ function M.config()
             { name = "path", keyword_length = 5 },
         },
     })
-
-    -- If you want insert `(` after select function or method item
-    local hascmpautopairs, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-    if not hascmpautopairs then
-        return
-    end
-
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return setmetatable({}, {
