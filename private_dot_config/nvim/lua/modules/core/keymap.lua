@@ -4,7 +4,7 @@ function M.config()
         -- Code navigation shortcuts
         vim.api.nvim_set_keymap('n', '<c-]>',  ':lua vim.lsp.buf.definition()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {silent = true})
-        vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.implementation()<CR>', {silent = true})
+        vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', '1gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', {silent = true})
         vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {silent = true})
@@ -103,22 +103,21 @@ function M.config()
                         -- l is for Language Server Protocol (LSP)
                         l = {
                                 name = "+lsp",
-                                A = { "<cmd>Lspsaga range_code_action<cr>",           "Selected Action" },
-                                D = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
-                                H = { "<cmd>Lspsaga signature_help<cr>",              "Signature Help" },
-                                I = { "<cmd>LspInfo<cr>",                             "LSP Info" },
-                                L = { "<cmd>Lspsaga show_line_diagnostics<cr>",       "Line Diagnostics" },
-                                S = { "<cmd>Telescope lsp_workspace_symbols<cr>",     "Workspace Symbols" },
-                                T = { "<cmd>lua require'lspsaga.provider'.preview_definition(<cr>", "Type Defintion" },
-                                a = { "<cmd>Lspsaga code_action<cr>",                 "Code Action" },
-                                d = { "<cmd>Telescope lsp_document_diagnostics<cr>",  "Document Diagnostics" },
-                                f = { "<cmd>lua vim.lsp.buf.formatting()<cr>",        "Format" },
-                                l = { "<cmd>Lspsaga lsp_finder<cr>",                  "LSP Finder" },
-                                o = { "<cmd>AerialToggle<cr>",                        "Outline" },
-                                p = { "<cmd>Lspsaga preview_definition<cr>",          "Preview Definition" },
-                                q = { "<cmd>Telescope quickfix<cr>",                  "Quickfix" },
-                                r = { "<cmd>Lspsaga rename<cr>",                      "Rename" },
-                                s = { "<cmd>Telescope lsp_document_symbols<cr>",      "Document Symbols" },
+                                A = { "<cmd>Telescope lsp_range_code_actions<cr>",               "LSP Range Code Actions" },
+                                D = { "<cmd>Telescope lsp_workspace_diagnostics<cr>",            "Workspace Diagnostics" },
+                                H = { "<cmd>lua vim.lsp.buf.signature_help()<cr>",               "Signature Help" },
+                                I = { "<cmd>LspInfo<cr>",                                        "LSP Info" },
+                                L = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Line Diagnostics" },
+                                S = { "<cmd>Telescope lsp_workspace_symbols<cr>",                "Workspace Symbols" },
+                                T = { "<cmd>Telescope lsp_type_definitions<cr>",                 "Type Defintion" },
+                                a = { "<cmd>Telescope lsp_code_actions<cr>",                     "Code Action" },
+                                d = { "<cmd>Telescope lsp_document_diagnostics<cr>",             "Document Diagnostics" },
+                                f = { "<cmd>lua vim.lsp.buf.formatting()<cr>",                   "Format" },
+                                o = { "<cmd>AerialToggle<cr>",                                   "Outline" },
+                                -- p = { "<cmd>Lspsaga preview_definition<cr>",          "Preview Definition" },
+                                q = { "<cmd>Telescope quickfix<cr>",                             "Quickfix" },
+                                r = { "<cmd>lua vim.lsp.buf.rename()<cr>",                       "Rename" },
+                                s = { "<cmd>Telescope lsp_document_symbols<cr>",                 "Document Symbols" },
                                 t = {
                                         name = "+trouble",
                                         t = { "<cmd>LspTroubleToggle<cr>",      "Toggle Trouble" },

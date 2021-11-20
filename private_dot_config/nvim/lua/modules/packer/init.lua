@@ -43,7 +43,6 @@ else
         use(completion.cmp())
         use(completion.emmet())
         use(completion.lsp())
-        use(completion.lspsaga())
         use(completion.lsp_containers())
         use(completion.lspkind())
 
