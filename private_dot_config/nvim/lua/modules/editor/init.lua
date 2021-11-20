@@ -36,14 +36,6 @@ function Editor.gitsigns()
     }
 end
 
-function Editor.header()
-    return {
-        "mnabila/vim-header",
-        cmd = "AddMITLicense",
-        config = require("modules.editor.header")(),
-    }
-end
-
 function Editor.matchup()
         return {
                 'andymass/vim-matchup'
