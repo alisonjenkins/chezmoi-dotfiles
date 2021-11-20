@@ -31,13 +31,6 @@ function Completion.lsp()
     }
 end
 
-function Completion.lspsaga()
-    return {
-        "glepnir/lspsaga.nvim",
-        config = require("modules.completion.lsp.lsp_saga_config")(),
-    }
-end
-
 function Completion.lsp_containers()
     return {
         "lspcontainers/lspcontainers.nvim"
