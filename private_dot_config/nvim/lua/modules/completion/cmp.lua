@@ -4,9 +4,9 @@ function M.config()
     local cmp = require("cmp")
 
     local source_mapping = {
-        buffer = "[BUF]",
-        cmp_tabnine = "[TN]",
         nvim_lsp = "[LSP]",
+        cmp_tabnine = "[TN]",
+        buffer = "[BUF]",
         nvim_lua = "[LUA]",
         path = "[PATH]",
     }
@@ -56,10 +56,10 @@ function M.config()
                 end
         },
         sources = {
+            { name = "nvim_lsp" },
             { name = "crates" },
             { name = "nvim_lua" },
             { name = 'orgmode' },
-            { name = "nvim_lsp" },
             { name = 'cmp_tabnine' },
             { name = "buffer" },
             { name = 'spell' },
