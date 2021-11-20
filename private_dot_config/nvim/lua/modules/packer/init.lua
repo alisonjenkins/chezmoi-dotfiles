@@ -69,7 +69,6 @@ else
         use(editor.gist())
         use(editor.gitsigns())
         use(editor.golang())
-        use(editor.header())
         use(editor.markdown())
         use(editor.matchup())
         use(editor.neuron())
