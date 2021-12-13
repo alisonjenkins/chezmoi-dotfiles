@@ -187,7 +187,16 @@ lsp_servers["yamlls"]["settings"] = {
 
 if haslspcontainers then
         for lsp_name, _ in pairs(lsp_servers) do
-                if lspcontainers.supported_languages[lsp_name] ~= nil then
+                lsp_executable_present = false
+                if lsp_servers[lsp_name]["cmd"] ~= nil then
+                        if lsp_servers[lsp_name]["cmd"][1] ~= nil then
+                                if vim.fn.executable(lsp_servers[lsp_name]["cmd"][1]) then
+                                        lsp_executable_present = true
+                                end
+                        end
+                end
+
+                if lsp_executable_present ~= true and lspcontainers.supported_languages[lsp_name] ~= nil then
                         local container_runtime = nil
                         if vim.fn.executable("podman") == 1 then
                                 container_runtime = "podman"
