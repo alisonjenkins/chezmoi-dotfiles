@@ -205,12 +205,22 @@ if haslspcontainers then
                         end
 
                         if container_runtime ~= nil then
-                                lsp_servers[lsp_name]["cmd"] = lspcontainers.command(
-                                        lsp_name,
-                                        {
-                                                container_runtime = container_runtime
-                                        }
-                                )
+                                if lsp_name == "terraformls" then
+                                        lsp_servers[lsp_name]["cmd"] = lspcontainers.command(
+                                                lsp_name,
+                                                {
+                                                        container_runtime = container_runtime,
+                                                        image = "terraform-ls",
+                                                }
+                                        )
+                                else
+                                        lsp_servers[lsp_name]["cmd"] = lspcontainers.command(
+                                                lsp_name,
+                                                {
+                                                        container_runtime = container_runtime,
+                                                }
+                                        )
+                                end
                         end
                 end
         end
