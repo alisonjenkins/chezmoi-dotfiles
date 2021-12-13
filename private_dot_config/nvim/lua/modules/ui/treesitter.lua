@@ -6,6 +6,15 @@ function M.config()
                 return
         end
 
+        -- local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+        -- parser_configs.norg = {
+                -- install_info = {
+                        -- url = "https://github.com/nvim-neorg/tree-sitter-norg",
+                        -- files = { "src/parser.c", "src/scanner.cc" },
+                        -- branch = "main"
+                -- },
+        -- }
+
         local ignore_plugin = {}
 
         if vim.fn.has("macunix") == 1 then
