@@ -116,6 +116,10 @@ lsp_servers["pyright"]["settings"] = {
 }
 -- }}}
 
+-- {{{ Rust - rust-analyzer
+lsp_servers["rust_analyzer"] = {}
+-- }}}
+
 -- {{{ SQL
 lsp_servers["sqls"] = {}
 lsp_servers["sqls"]["cmd"] = {
