@@ -72,6 +72,7 @@ else
         use(editor.markdown())
         use(editor.matchup())
         use(editor.neuron())
+        -- use(editor.neorg())
         use(editor.sql())
         use(editor.surround())
         use(editor.terraform())
