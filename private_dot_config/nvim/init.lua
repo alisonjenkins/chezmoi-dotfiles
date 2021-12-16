@@ -4,9 +4,14 @@ if hasimpatient then
   impatient.enable_profile()
 end
 
-require"modules.core.settings"
-require"modules.packer"
-require"modules.core.keymap"
+require"plugins"
+require"mappings"
+require"options"
+require"autocmd"
+
+--require"modules.core.settings"
+--require"modules.packer"
+--require"modules.core.keymap"
 
 -- Plugin configs
 -- require('lspconfig-config')
