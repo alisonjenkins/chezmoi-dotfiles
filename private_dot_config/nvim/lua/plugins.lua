@@ -1,25 +1,25 @@
+-- vim: set foldmethod=marker foldlevel=0:
 local packer_installed, packer = pcall(require, "packer")
 local use = packer.use
 
-local function bootstrap_packer()
+local function bootstrap_packer()--{{{
         local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
         if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
                 vim.fn.system({ "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path })
                 vim.cmd("packadd packer.nvim")
         end
-end
+end--}}}
 
-local function get_plugin_config(name)
+local function get_plugin_config(name)--{{{
         return string.format("require(\"plugin-config/%s\")", name)
-end
+end--}}}
 
-if not packer_installed then
+if not packer_installed then--{{{
         bootstrap_packer()
         local packer_installed, packer = pcall(require, "packer")
-end
+end--}}}
 
-
-packer.init({
+packer.init({--{{{
         display = {
                 open_cmd = "leftabove 80vnew [packer]",
                 header_sym = "─",
@@ -28,16 +28,23 @@ packer.init({
                 enable = true,
                 threshold = 1,
         },
-})
+})--}}}
 
 packer.startup(function()
-        use({"lewis6991/impatient.nvim"})
-        use({"wbthomason/packer.nvim"})
-        use({"folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})
-        use({"justinmk/vim-dirvish"}) 
-        use({"folke/tokyonight.nvim", config = get_plugin_config("tokyonight")})
-        use({"numToStr/Comment.nvim", config = get_plugin_config("comment")})
 
+        -- Packer self update{{{
+        use({"wbthomason/packer.nvim"})--}}}
+        -- Lua caching{{{
+        use({"lewis6991/impatient.nvim"})--}}}
+        -- Key mapping{{{
+        use({"folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})--}}}
+        -- File manager{{{
+        use({"justinmk/vim-dirvish"}) --}}}
+        -- Colour schemes{{{
+        use({"folke/tokyonight.nvim", config = get_plugin_config("tokyonight")})--}}}
+        -- Commenting{{{
+        use({"numToStr/Comment.nvim", config = get_plugin_config("comment")})--}}}
+        -- Completion{{{
         use({
                 'ms-jpq/coq_nvim', 
                 branch = 'coq',
@@ -60,8 +67,8 @@ packer.startup(function()
                         -- "saadparwaiz1/cmp_luasnip",
                         -- {"tzachar/cmp-tabnine", run="./install.sh"},
                 -- },
-        -- })
-
+        -- })}}}
+        -- Git integration{{{
         use({ 
                 "tpope/vim-fugitive",
                 requires = {
@@ -74,8 +81,8 @@ packer.startup(function()
                         -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
                         'tpope/vim-rhubarb', 
                 }
-        })
-
+        })--}}}
+        -- Fuzzy finding{{{
         use({ 
                 "nvim-telescope/telescope.nvim",
                 config = get_plugin_config("telescope"),
@@ -94,5 +101,6 @@ packer.startup(function()
                                 opt = true,
                         },
                 },
-        })
+        })--}}}
+
 end)
