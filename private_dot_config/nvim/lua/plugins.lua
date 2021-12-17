@@ -117,7 +117,6 @@ packer.startup(function()
         })
         use({
                 "junegunn/fzf",
-                config = get_plugin_config(""),
                 run = function()
                         vim.fn['fzf#install']()
                 end,
@@ -177,6 +176,11 @@ packer.startup(function()
                 'kevinhwang91/nvim-bqf',
                 config = get_plugin_config("bqf"),
                 ft = 'qf'
+        })--}}}
+        -- Surround{{{
+        use({
+                "blackCauldron7/surround.nvim",
+                config = get_plugin_config("surround"),
         })--}}}
 
 end)
