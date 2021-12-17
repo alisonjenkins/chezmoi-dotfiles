@@ -10,7 +10,7 @@ local function bootstrap_packer()
 end
 
 local function get_plugin_config(name)
-        return string.format("require\"plugin-config/%s\"", name)
+        return string.format("require(\"plugin-config/%s\")", name)
 end
 
 if not packer_installed then
