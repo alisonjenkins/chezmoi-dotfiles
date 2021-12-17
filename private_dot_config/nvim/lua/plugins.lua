@@ -112,6 +112,12 @@ packer.startup(function()
                 },
                 config = get_plugin_config("lspconfig"),
         })
+        use({
+                "folke/lsp-trouble.nvim",
+                wants = {"nvim-web-devicons", "nvim-lspconfig"},
+                requires = {"kyazdani42/nvim-web-devicons", opt = true},
+                config = get_plugin_config("trouble"),
+        })
         --}}}
 
 end)
