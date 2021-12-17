@@ -35,6 +35,10 @@ packer.startup(function()
         use({ "wbthomason/packer.nvim" })
         use({ "folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})
         use({ "justinmk/vim-dirvish" }) 
+        use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight")} )
+        use({ "numToStr/Comment.nvim", config = get_plugin_config("comment")} )
+
+
         use({ "tpope/vim-fugitive", requires = {
                 -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing. 
                 'rhysd/committia.vim',
@@ -45,5 +49,22 @@ packer.startup(function()
                 -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
                 'tpope/vim-rhubarb', }
         })
-        use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight")} )
+
+        use({ "nvim-telescope/telescope.nvim",
+        requires = {
+            "ahmedkhalf/project.nvim",
+            "jvgrootveld/telescope-zoxide",
+            "nvim-lua/plenary.nvim",
+            "nvim-lua/popup.nvim",
+            "nvim-telescope/telescope-fzy-native.nvim",
+            "nvim-telescope/telescope-dap.nvim",
+            "nvim-telescope/telescope-github.nvim",
+            "ThePrimeagen/git-worktree.nvim",
+            {
+                "kyazdani42/nvim-web-devicons",
+                opt = true,
+            },
+        },
+        wants = "nvim-web-devicons",
+        config = get_plugin_config("telescope")} )
 end)
