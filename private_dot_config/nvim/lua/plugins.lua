@@ -196,5 +196,7 @@ packer.startup(function()
         -- Grammar checking{{{
         use({ "rhysd/vim-grammarous", cmd = "GrammarousCheck" })
         --}}}
+        -- Highlight of use{{{
+        use {"RRethy/vim-illuminate", event = "CursorHold"}--}}}
 
 end)
