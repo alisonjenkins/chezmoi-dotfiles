@@ -36,35 +36,64 @@ packer.startup(function()
         use({ "folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})
         use({ "justinmk/vim-dirvish" }) 
         use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight")} )
-        use({ "numToStr/Comment.nvim", config = get_plugin_config("comment")} )
+        use({ "numToStr/Comment.nvim", config = get_plugin_config("comment"),
+})
 
+        use({
+                'ms-jpq/coq_nvim', 
+                branch = 'coq',
+                requires = {
+                        { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+                        { 'ms-jpq/coq.thirdparty', branch = '3p' },
+                },
 
-        use({ "tpope/vim-fugitive", requires = {
-                -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing. 
-                'rhysd/committia.vim',
-                -- (vimscript) Adds Fugitive Gbrowse support for Gitlab repos.,
-                'shumphrey/fugitive-gitlab.vim',
-                -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
-                'tommcdo/vim-fubitive',
-                -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
-                'tpope/vim-rhubarb', }
+        })
+        -- use({ 
+                -- "hrsh7th/nvim-cmp",
+                -- config = get_plugin_config("cmp"),
+                -- requires = {
+                        -- "L3MON4D3/LuaSnip",
+                        -- "f3fora/cmp-spell",
+                        -- "hrsh7th/cmp-buffer",
+                        -- "hrsh7th/cmp-nvim-lsp",
+                        -- "hrsh7th/cmp-nvim-lua",
+                        -- "hrsh7th/cmp-path",
+                        -- "saadparwaiz1/cmp_luasnip",
+                        -- {"tzachar/cmp-tabnine", run="./install.sh"},
+                -- },
+        -- })
+
+        use({ 
+                "tpope/vim-fugitive",
+                requires = {
+                        -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing. 
+                        'rhysd/committia.vim',
+                        -- (vimscript) Adds Fugitive Gbrowse support for Gitlab repos.,
+                        'shumphrey/fugitive-gitlab.vim',
+                        -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
+                        'tommcdo/vim-fubitive',
+                        -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
+                        'tpope/vim-rhubarb', 
+                }
         })
 
-        use({ "nvim-telescope/telescope.nvim",
-        requires = {
-            "ahmedkhalf/project.nvim",
-            "jvgrootveld/telescope-zoxide",
-            "nvim-lua/plenary.nvim",
-            "nvim-lua/popup.nvim",
-            "nvim-telescope/telescope-fzy-native.nvim",
-            "nvim-telescope/telescope-dap.nvim",
-            "nvim-telescope/telescope-github.nvim",
-            "ThePrimeagen/git-worktree.nvim",
-            {
-                "kyazdani42/nvim-web-devicons",
-                opt = true,
-            },
-        },
-        wants = "nvim-web-devicons",
-        config = get_plugin_config("telescope")} )
+        use({ 
+                "nvim-telescope/telescope.nvim",
+                config = get_plugin_config("telescope"),
+                wants = "nvim-web-devicons",
+                requires = {
+                        "ahmedkhalf/project.nvim",
+                        "jvgrootveld/telescope-zoxide",
+                        "nvim-lua/plenary.nvim",
+                        "nvim-lua/popup.nvim",
+                        "nvim-telescope/telescope-fzy-native.nvim",
+                        "nvim-telescope/telescope-dap.nvim",
+                        "nvim-telescope/telescope-github.nvim",
+                        "ThePrimeagen/git-worktree.nvim",
+                        {
+                                "kyazdani42/nvim-web-devicons",
+                                opt = true,
+                        },
+                },
+        })
 end)
