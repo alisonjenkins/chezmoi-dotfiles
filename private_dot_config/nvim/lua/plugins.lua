@@ -198,5 +198,11 @@ packer.startup(function()
         --}}}
         -- Highlight of use{{{
         use {"RRethy/vim-illuminate", event = "CursorHold"}--}}}
+        -- Smooth scrolling{{{
+        use({
+                "karb94/neoscroll.nvim",
+                keys = {"<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-e>", "zt", "zz", "zb"},
+                config = get_plugin_config("neoscroll")
+        })--}}}
 
 end)
