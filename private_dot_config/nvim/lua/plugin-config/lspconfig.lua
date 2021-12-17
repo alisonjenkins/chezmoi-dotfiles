@@ -5,7 +5,57 @@ if not haslspconfig then
 end
 
 local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
-local c = require("modules.completion.lsp.custom")
+
+function show_documentation()--{{{
+    if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+        vim.cmd("h " .. vim.fn.expand("<cword>"))
+    else
+        vim.cmd("lua vim.lsp.buf.hover()")
+    end
+end--}}}
+
+function custom_capabilities()--{{{
+    -- local cmp_lsp = require("cmp_nvim_lsp")
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities = cmp_lsp.update_capabilities(capabilities)
+    return capabilities
+end--}}}
+
+function custom_on_init()--{{{
+    print("Language Server Protocol started!")
+end--}}}
+
+function custom_cwd()--{{{
+    if vim.loop.cwd() == vim.loop.os_homedir() then
+        return vim.fn.expand("%:p:h")
+    end
+    return vim.loop.cwd()
+end--}}}
+
+function custom_on_attach()--{{{
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+
+    local aerial = require("aerial")
+    aerial.on_attach(client)
+end--}}}
+
+function default(configs)--{{{
+        local custom_config = {
+                root_dir = custom_cwd,
+                on_init = custom_on_init,
+                on_attach = custom_on_attach,
+                capabilities = custom_capabilities(),
+        }
+        if configs ~= nil then
+                for key, value in pairs(configs) do
+                        if value ~= nil then
+                                custom_config[key] = value
+                        end
+                end
+        end
+        return custom_config
+end--}}}
 
 local lsp_servers = {}
 
@@ -84,24 +134,6 @@ lsp_servers["sumneko_lua"]["settings"] = {
 lsp_servers["rnix"] = {}
 -- }}}
 
--- {{{ Python - Jedi
--- lspconfig.jedi_language_server.setup(c.default({
---     settings = {
---         jedi = {
---             enable = true,
---             startupMessage = true,
---             markupKindPreferred = "markdown",
---             jediSettings = {
---                 autoImportModules = {},
---                 completion = { disableSnippets = false },
---                 diagnostics = { enable = true, didOpen = true, didSave = true, didChange = true },
---             },
---             workspace = { extraPaths = {} },
---         },
---     },
--- }))
--- }}}
-
 -- {{{ Python - Pyright
 lsp_servers["pyright"] = {}
 lsp_servers["pyright"]["settings"] = {
@@ -127,8 +159,8 @@ lsp_servers["sqls"]["cmd"] = {
         "-config",
         vim.loop.os_homedir() .. "/.config/sqls/config.yml"
 }
-lsp_servers["sqls"]["on_init"] = c.custom_on_init
-lsp_servers["sqls"]["capabilities"] = c.custom_capabilities()
+lsp_servers["sqls"]["on_init"] = custom_on_init
+lsp_servers["sqls"]["capabilities"] = custom_capabilities()
 lsp_servers["sqls"]["on_attach"] = function(client)
         client.resolved_capabilities.execute_command = true
         require("sqls").setup({ picker = "default" })
@@ -189,7 +221,7 @@ lsp_servers["yamlls"]["settings"] = {
 }
 -- }}}
 
-if haslspcontainers then
+if haslspcontainers then--{{{
         for lsp_name, _ in pairs(lsp_servers) do
                 lsp_executable_present = false
                 if lsp_servers[lsp_name]["cmd"] ~= nil then
@@ -228,11 +260,11 @@ if haslspcontainers then
                         end
                 end
         end
-end
+end--}}}
 
-for lsp_name, lsp in pairs(lsp_servers) do
-    lspconfig[lsp_name].setup(c.default({
+for lsp_name, lsp in pairs(lsp_servers) do--{{{
+    lspconfig[lsp_name].setup(default({
         ["cmd"] = lsp["cmd"],
         ["settings"] = lsp["settings"],
-}))
-end
+    }))
+end--}}}
