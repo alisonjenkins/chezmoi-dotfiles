@@ -102,5 +102,15 @@ packer.startup(function()
                         },
                 },
         })--}}}
+        -- Language servers{{{
+        use({
+                "neovim/nvim-lspconfig",
+                requires = {
+                        "lspcontainers/lspcontainers.nvim",
+                        "onsails/lspkind-nvim",
+                },
+                config = get_plugin_config("lspconfig"),
+        })
+        --}}}
 
 end)
