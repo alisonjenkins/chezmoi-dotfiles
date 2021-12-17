@@ -204,5 +204,10 @@ packer.startup(function()
                 keys = {"<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-e>", "zt", "zz", "zb"},
                 config = get_plugin_config("neoscroll")
         })--}}}
+        -- Per project marks{{{
+        use({
+                "ThePrimeagen/harpoon",
+                requires = {"nvim-lua/plenary.nvim"},
+        })--}}}
 
 end)
