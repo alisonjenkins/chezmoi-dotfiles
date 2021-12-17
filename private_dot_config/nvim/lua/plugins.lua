@@ -31,13 +31,12 @@ packer.init({
 })
 
 packer.startup(function()
-        use({ "lewis6991/impatient.nvim" })
-        use({ "wbthomason/packer.nvim" })
-        use({ "folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})
-        use({ "justinmk/vim-dirvish" }) 
-        use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight")} )
-        use({ "numToStr/Comment.nvim", config = get_plugin_config("comment"),
-})
+        use({"lewis6991/impatient.nvim"})
+        use({"wbthomason/packer.nvim"})
+        use({"folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key")})
+        use({"justinmk/vim-dirvish"}) 
+        use({"folke/tokyonight.nvim", config = get_plugin_config("tokyonight")})
+        use({"numToStr/Comment.nvim", config = get_plugin_config("comment")})
 
         use({
                 'ms-jpq/coq_nvim', 
