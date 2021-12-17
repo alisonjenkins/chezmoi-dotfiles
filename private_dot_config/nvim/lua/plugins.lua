@@ -193,5 +193,8 @@ packer.startup(function()
         use({
                 "junegunn/vim-easy-align",
         })--}}}
+        -- Grammar checking{{{
+        use({ "rhysd/vim-grammarous", cmd = "GrammarousCheck" })
+        --}}}
 
 end)
