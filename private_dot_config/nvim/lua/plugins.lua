@@ -188,5 +188,10 @@ packer.startup(function()
                  requires = "nvim-lua/plenary.nvim",
                  config = get_plugin_config("todo-comments"),
         })--}}}
+        -- Alignment{{{
+        -- TODO: Configure the mappings for this plugin.
+        use({
+                "junegunn/vim-easy-align",
+        })--}}}
 
 end)
