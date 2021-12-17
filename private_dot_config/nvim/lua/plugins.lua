@@ -219,5 +219,14 @@ packer.startup(function()
                 "folke/twilight.nvim",
                 config = get_plugin_config("twilight"),
         }--}}}
+        -- Markdown previews{{{
+        use {
+                "iamcco/markdown-preview.nvim",
+                run = function()
+                        vim.fn["mkdp#util#install"]()
+                end,
+                ft = {"markdown"},
+                config = get_plugin_config("markdown-preview")
+        }--}}}
 
 end)
