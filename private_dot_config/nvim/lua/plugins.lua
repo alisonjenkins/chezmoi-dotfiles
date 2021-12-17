@@ -182,5 +182,11 @@ packer.startup(function()
                 "blackCauldron7/surround.nvim",
                 config = get_plugin_config("surround"),
         })--}}}
+        -- Todo comments{{{
+        use({
+                "folke/todo-comments.nvim",
+                 requires = "nvim-lua/plenary.nvim",
+                 config = get_plugin_config("todo-comments"),
+        })--}}}
 
 end)
