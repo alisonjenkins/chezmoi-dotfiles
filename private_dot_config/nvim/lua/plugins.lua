@@ -232,4 +232,13 @@ packer.startup(function()
         -- TODO: Learn how to use this plugin properly and decide whether or not it is safe to use with macros...
         use {"ggandor/lightspeed.nvim", event = "BufReadPre"}--}}}
 
+        -- TODO: Add the following...
+        -- https://github.com/tpope/vim-repeat
+        -- https://github.com/tpope/vim-unimpaired
+        -- https://github.com/tpope/vim-speeddating
+        -- crispgm/telescope-heading.nvim
+        -- lewis6991/gitsigns.nvim
+        -- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L94
+        -- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L51
+
 end)
