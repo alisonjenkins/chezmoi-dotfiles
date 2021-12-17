@@ -108,6 +108,7 @@ packer.startup(function()
                 requires = {
                         "lspcontainers/lspcontainers.nvim",
                         "onsails/lspkind-nvim",
+                        "stevearc/aerial.nvim",
                 },
                 config = get_plugin_config("lspconfig"),
         })

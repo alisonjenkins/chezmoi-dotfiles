@@ -6,7 +6,7 @@ end
 
 local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
 
-function show_documentation()--{{{
+local function show_documentation()--{{{
     if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
         vim.cmd("h " .. vim.fn.expand("<cword>"))
     else
@@ -14,25 +14,25 @@ function show_documentation()--{{{
     end
 end--}}}
 
-function custom_capabilities()--{{{
+local function custom_capabilities()--{{{
     -- local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     -- capabilities = cmp_lsp.update_capabilities(capabilities)
     return capabilities
 end--}}}
 
-function custom_on_init()--{{{
+local function custom_on_init()--{{{
     print("Language Server Protocol started!")
 end--}}}
 
-function custom_cwd()--{{{
+local function custom_cwd()--{{{
     if vim.loop.cwd() == vim.loop.os_homedir() then
         return vim.fn.expand("%:p:h")
     end
     return vim.loop.cwd()
 end--}}}
 
-function custom_on_attach()--{{{
+local function custom_on_attach(client, _)--{{{
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
@@ -40,7 +40,7 @@ function custom_on_attach()--{{{
     aerial.on_attach(client)
 end--}}}
 
-function default(configs)--{{{
+local function default(configs)--{{{
         local custom_config = {
                 root_dir = custom_cwd,
                 on_init = custom_on_init,
@@ -223,7 +223,7 @@ lsp_servers["yamlls"]["settings"] = {
 
 if haslspcontainers then--{{{
         for lsp_name, _ in pairs(lsp_servers) do
-                lsp_executable_present = false
+                local lsp_executable_present = false
                 if lsp_servers[lsp_name]["cmd"] ~= nil then
                         if lsp_servers[lsp_name]["cmd"][1] ~= nil then
                                 if vim.fn.executable(lsp_servers[lsp_name]["cmd"][1]) then
