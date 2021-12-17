@@ -49,11 +49,21 @@ telescope.setup({
         },
 })
 
+local function packer_setup()
+        return {
+                theme = "ivy",
+                layout_config = {
+                        height = .5
+                }
+        }
+end
+
 local extensions = {
         dap = nil,
         fzy_native = nil,
         gh = nil,
         git_worktree = function() require("git-worktree").setup({}) end,
+        packer = packer_setup,
         projects = function() require('project_nvim').setup() end,
         zoxide = nil,
 }

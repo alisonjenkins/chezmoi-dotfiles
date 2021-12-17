@@ -69,7 +69,7 @@ packer.startup(function()
                 -- },
         -- })}}}
         -- Git integration{{{
-        use({ 
+        use({
                 "tpope/vim-fugitive",
                 requires = {
                         -- (vimscript) Plugin improve the git commit interface showing diffs to remind you want you are changing. 
@@ -79,35 +79,57 @@ packer.startup(function()
                         -- (vimscript) Adds Fugitive Gbrowse support for Bitbucket repos.
                         'tommcdo/vim-fubitive',
                         -- (vimscript) Adds Fugitive Gbrowse support for GitHub repos.
-                        'tpope/vim-rhubarb', 
+                        'tpope/vim-rhubarb',
                 }
-        })--}}}
+        })
+        use({
+                "mattn/gist-vim",
+                wants = "webapi-vim",
+                requires = { "mattn/webapi-vim", opt = true },
+                cmd = "Gist",
+                config = get_plugin_config("gist"),
+        })
+        use({
+                "f-person/git-blame.nvim",
+                config = get_plugin_config("git-blame"),
+        })
+        --}}}
         -- Fuzzy finding{{{
-        use({ 
+        use({
                 "nvim-telescope/telescope.nvim",
                 config = get_plugin_config("telescope"),
                 wants = "nvim-web-devicons",
                 requires = {
+                        "ThePrimeagen/git-worktree.nvim",
                         "ahmedkhalf/project.nvim",
                         "jvgrootveld/telescope-zoxide",
                         "nvim-lua/plenary.nvim",
                         "nvim-lua/popup.nvim",
-                        "nvim-telescope/telescope-fzy-native.nvim",
                         "nvim-telescope/telescope-dap.nvim",
+                        "nvim-telescope/telescope-fzy-native.nvim",
                         "nvim-telescope/telescope-github.nvim",
-                        "ThePrimeagen/git-worktree.nvim",
+                        "nvim-telescope/telescope-packer.nvim",
                         {
                                 "kyazdani42/nvim-web-devicons",
                                 opt = true,
                         },
                 },
-        })--}}}
+        })
+        use({
+                "junegunn/fzf",
+                config = get_plugin_config(""),
+                run = function()
+                        vim.fn['fzf#install']()
+                end,
+        })
+        --}}}
         -- Language servers + LSP tools{{{
         use({
                 "neovim/nvim-lspconfig",
                 requires = {
                         "lspcontainers/lspcontainers.nvim",
                         "onsails/lspkind-nvim",
+                        "ray-x/lsp_signature.nvim",
                         "stevearc/aerial.nvim",
                 },
                 config = get_plugin_config("lspconfig"),
@@ -122,6 +144,39 @@ packer.startup(function()
                 "jose-elias-alvarez/null-ls.nvim",
                 config = get_plugin_config("null-ls"),
         })
+        use({
+                "ray-x/go.nvim",
+                config = get_plugin_config("go"),
+                requires = {
+                        "mfussenegger/nvim-dap",
+                        "rcarriga/nvim-dap-ui",
+                        "theHamsta/nvim-dap-virtual-text",
+                },
+        })
         --}}}
+        -- Treesitter + Addons{{{
+        use({
+                "nvim-treesitter/nvim-treesitter",
+                config = get_plugin_config("treesitter"),
+                run = ":TSUpdate",
+                requires = {
+                        {"nvim-treesitter/nvim-treesitter-textobjects"},
+                        {"p00f/nvim-ts-rainbow", opt = true},
+                },
+                wants = {
+                        "nvim-ts-rainbow",
+                },
+        })--}}}
+        -- Statusline{{{
+        use({
+                "nvim-lualine/lualine.nvim",
+                config = get_plugin_config("lualine"),
+        })--}}}
+        -- Quickfix{{{
+        use({
+                'kevinhwang91/nvim-bqf',
+                config = get_plugin_config("bqf"),
+                ft = 'qf'
+        })--}}}
 
 end)
