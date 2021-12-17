@@ -209,5 +209,15 @@ packer.startup(function()
                 "ThePrimeagen/harpoon",
                 requires = {"nvim-lua/plenary.nvim"},
         })--}}}
+        -- Zen mode{{{
+        use({
+                "folke/zen-mode.nvim",
+                config = get_plugin_config("zen-mode"),
+        })--}}}
+        -- Twilight Highlighting (Zen mode focusing){{{
+        use {
+                "folke/twilight.nvim",
+                config = get_plugin_config("twilight"),
+        }--}}}
 
 end)
