@@ -102,7 +102,7 @@ packer.startup(function()
                         },
                 },
         })--}}}
-        -- Language servers{{{
+        -- Language servers + LSP tools{{{
         use({
                 "neovim/nvim-lspconfig",
                 requires = {
@@ -117,6 +117,10 @@ packer.startup(function()
                 wants = {"nvim-web-devicons", "nvim-lspconfig"},
                 requires = {"kyazdani42/nvim-web-devicons", opt = true},
                 config = get_plugin_config("trouble"),
+        })
+        use({
+                "jose-elias-alvarez/null-ls.nvim",
+                config = get_plugin_config("null-ls"),
         })
         --}}}
 
