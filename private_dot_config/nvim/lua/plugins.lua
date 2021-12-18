@@ -231,10 +231,11 @@ packer.startup(function()
         -- Lightspeed motions{{{
         -- TODO: Learn how to use this plugin properly and decide whether or not it is safe to use with macros...
         use {"ggandor/lightspeed.nvim", event = "BufReadPre"}--}}}
+        -- Unimpaired shortcuts{{{
+        use({ "tpope/vim-unimpaired" })--}}}
 
         -- TODO: Add the following...
         -- https://github.com/tpope/vim-repeat
-        -- https://github.com/tpope/vim-unimpaired
         -- https://github.com/tpope/vim-speeddating
         -- crispgm/telescope-heading.nvim
         -- lewis6991/gitsigns.nvim
