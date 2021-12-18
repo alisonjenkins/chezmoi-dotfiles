@@ -233,9 +233,10 @@ packer.startup(function()
         use {"ggandor/lightspeed.nvim", event = "BufReadPre"}--}}}
         -- Unimpaired shortcuts{{{
         use({ "tpope/vim-unimpaired" })--}}}
+        -- Repeat{{{
+        use({ "tpope/vim-repeat" })--}}}
 
         -- TODO: Add the following...
-        -- https://github.com/tpope/vim-repeat
         -- https://github.com/tpope/vim-speeddating
         -- crispgm/telescope-heading.nvim
         -- lewis6991/gitsigns.nvim
