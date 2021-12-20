@@ -169,6 +169,7 @@ end
 
 -- {{{ Terraform
 lsp_servers["terraformls"] = {}
+lsp_servers["terraformls"]["cmd"] = { "terraform-ls", "serve" }
 -- }}}
 
 -- {{{ Tex
