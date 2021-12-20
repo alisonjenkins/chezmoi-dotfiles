@@ -136,7 +136,7 @@ packer.startup(function()
         use({
                 "folke/lsp-trouble.nvim",
                 wants = {"nvim-web-devicons", "nvim-lspconfig"},
-                requires = {"kyazdani42/nvim-web-devicons", opt = true},
+                requires = {"kyazdani42/nvim-web-devicons"},
                 config = get_plugin_config("trouble"),
         })
         use({
@@ -235,6 +235,20 @@ packer.startup(function()
         use({ "tpope/vim-unimpaired" })--}}}
         -- Repeat{{{
         use({ "tpope/vim-repeat" })--}}}
+        -- nvim-dev-webicons{{{
+        use({
+                "kyazdani42/nvim-web-devicons",
+                config = get_plugin_config("nvim-web-devicons"),
+        })--}}}
+        -- Startup Dashboard{{{
+        use {
+                'goolord/alpha-nvim',
+                requires = { 'kyazdani42/nvim-web-devicons' },
+                wants = "nvim-web-devicons",
+                config = function ()
+                        require'alpha'.setup(require'alpha.themes.startify'.opts)
+                end
+        }--}}}
 
         -- TODO: Make the k8s support of the Yaml LSP work
         -- TODO: Add the following...
