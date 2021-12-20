@@ -236,11 +236,18 @@ packer.startup(function()
         -- Repeat{{{
         use({ "tpope/vim-repeat" })--}}}
 
+        -- TODO: Make the k8s support of the Yaml LSP work
         -- TODO: Add the following...
         -- https://github.com/tpope/vim-speeddating
         -- crispgm/telescope-heading.nvim
         -- lewis6991/gitsigns.nvim
         -- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L94
         -- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L51
+        -- TODO: Configure Packer's compiled code to be cached by Lua cache
+        -- TODO: Setup more lazy loading for packer
+        -- TODO: Setup rust plugin
+        -- TODO: Add creates plugin
+        -- TODO: Consider switching from Lightspeed to hop or get rid of both...
+        -- TODO: Setup Java plugin
 
 end)
