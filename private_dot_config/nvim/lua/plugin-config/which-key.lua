@@ -124,7 +124,7 @@ wk.register(
                 v = { "<C-W>v", "Split vertically" },
 
                 -- Startify maps
-                [";"] = { "<cmd>Startify<cr>", "Show Startify" },
+                [";"] = { "<cmd>Alpha<cr>", "Show Alpha" },
 
                 -- Debug mappings
                 d = {
