@@ -274,10 +274,12 @@ packer.startup(function()
 		event = "BufReadPre",
 		config = get_plugin_config("colorizer"),
 	}) --}}}
+	-- Speeddating (Allows incrementing and decrementing of dates){{{
+	use({
+		"tpope/vim-speeddating",
+	}) --}}}
 
 	-- TODO: Make the k8s support of the Yaml LSP work
-	-- TODO: Add the following...
-	-- https://github.com/tpope/vim-speeddating
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
 	-- TODO: Consider switching from Lightspeed to hop or get rid of both...
