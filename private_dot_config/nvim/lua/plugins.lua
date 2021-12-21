@@ -115,6 +115,7 @@ packer.startup(function()
 			"nvim-telescope/telescope-fzy-native.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"nvim-telescope/telescope-packer.nvim",
+			"crispgm/telescope-heading.nvim",
 			{
 				"kyazdani42/nvim-web-devicons",
 				opt = true,
@@ -277,7 +278,6 @@ packer.startup(function()
 	-- TODO: Make the k8s support of the Yaml LSP work
 	-- TODO: Add the following...
 	-- https://github.com/tpope/vim-speeddating
-	-- crispgm/telescope-heading.nvim
 	-- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L51
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
