@@ -251,6 +251,18 @@ packer.startup(function()
 			require("alpha").setup(require("alpha.themes.startify").opts)
 		end,
 	}) --}}}
+	-- Rust{{{
+	use({
+		"simrat39/rust-tools.nvim",
+		config = get_plugin_config("rust-tools"),
+	})
+	use({
+		"saecki/crates.nvim",
+		event = { "BufRead Cargo.toml" },
+		requires = { { "nvim-lua/plenary.nvim" } },
+		config = get_plugin_config("crates"),
+	})
+	--}}}
 
 	-- TODO: Make the k8s support of the Yaml LSP work
 	-- TODO: Add the following...
