@@ -267,12 +267,17 @@ packer.startup(function()
 		config = get_plugin_config("crates"),
 	})
 	--}}}
+	-- Colorizer (Colour previews for things that define colours in code){{{
+	use({
+		"norcalli/nvim-colorizer.lua",
+		event = "BufReadPre",
+		config = get_plugin_config("colorizer"),
+	}) --}}}
 
 	-- TODO: Make the k8s support of the Yaml LSP work
 	-- TODO: Add the following...
 	-- https://github.com/tpope/vim-speeddating
 	-- crispgm/telescope-heading.nvim
-	-- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L94
 	-- https://github.com/Allaman/nvim/blob/main/lua/plugins.lua#L51
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
