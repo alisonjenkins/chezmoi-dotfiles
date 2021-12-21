@@ -16,7 +16,7 @@ end --}}}
 
 if not packer_installed then --{{{
 	bootstrap_packer()
-	local packer_installed, packer = pcall(require, "packer")
+	_, packer = pcall(require, "packer")
 end --}}}
 
 packer.init({ --{{{
