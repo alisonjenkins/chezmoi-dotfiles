@@ -40,7 +40,9 @@ packer.startup(function()
 	-- File manager{{{
 	use({ "justinmk/vim-dirvish" }) --}}}
 	-- Colour schemes{{{
-	use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight") }) --}}}
+	use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight") })
+	use({ "sainnhe/everforest", config = get_plugin_config("everforest") })
+	--}}}
 	-- Commenting{{{
 	use({ "numToStr/Comment.nvim", config = get_plugin_config("comment") }) --}}}
 	-- Completion{{{
@@ -137,6 +139,7 @@ packer.startup(function()
 			"onsails/lspkind-nvim",
 			"ray-x/lsp_signature.nvim",
 			"stevearc/aerial.nvim",
+			"folke/lua-dev.nvim",
 		},
 		config = get_plugin_config("lspconfig"),
 	})
