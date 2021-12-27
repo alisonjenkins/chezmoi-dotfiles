@@ -303,6 +303,11 @@ packer.startup(function()
 		"aserowy/tmux.nvim",
 		config = get_plugin_config("tmux"),
 	}) --}}}
+	-- Add restoration of last location in files{{{
+	use({
+		"ethanholz/nvim-lastplace",
+		config = get_plugin_config("lastplace"),
+	}) --}}}
 
 	-- TODO: Make the k8s support of the Yaml LSP work
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
