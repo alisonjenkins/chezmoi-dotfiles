@@ -210,6 +210,8 @@ lsp_servers["yamlls"]["settings"] = {
 }
 -- }}}
 
+require("toggle_lsp_diagnostics").init({ underline = false, virtual_text = { spacing = 4 } })
+
 --{{{ LSP setup
 local lsp_installer_servers = require("nvim-lsp-installer.servers")
 
