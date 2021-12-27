@@ -15,8 +15,8 @@ local options = {
 		use_languagetree = true,
 	},
 	indent = {
-		enable = true,
-		disable = { "python" },
+		enable = false,
+		disable = { "python", "lua" },
 	},
 	rainbow = {
 		enable = true,
