@@ -1,5 +1,4 @@
 -- vim: set foldmethod=marker foldlevel=0:
-local lsp_installer = require("nvim-lsp-installer")
 
 -- local function show_documentation() --{{{
 -- 	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
@@ -16,17 +15,6 @@ local function custom_capabilities() --{{{
 	return capabilities
 end --}}}
 
-local function custom_on_init() --{{{
-	print("Language Server Protocol started!")
-end --}}}
-
-local function custom_cwd() --{{{
-	if vim.loop.cwd() == vim.loop.os_homedir() then
-		return vim.fn.expand("%:p:h")
-	end
-	return vim.loop.cwd()
-end --}}}
-
 local function custom_on_attach(client, _) --{{{
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
@@ -37,8 +25,6 @@ end --}}}
 
 local function default(configs) --{{{
 	local custom_config = {
-		root_dir = custom_cwd,
-		on_init = custom_on_init,
 		on_attach = custom_on_attach,
 		capabilities = custom_capabilities(),
 	}
@@ -73,7 +59,6 @@ lsp_servers["dockerls"] = {}
 
 -- {{{ Go
 lsp_servers["gopls"] = {}
-lsp_servers["gopls"]["cmd"] = { "gopls", "serve" }
 lsp_servers["gopls"]["settings"] = {
 	gopls = {
 		analyses = {
@@ -148,13 +133,6 @@ lsp_servers["rust_analyzer"] = {}
 
 -- {{{ SQL
 lsp_servers["sqls"] = {}
-lsp_servers["sqls"]["cmd"] = {
-	"sqls",
-	"-config",
-	vim.loop.os_homedir() .. "/.config/sqls/config.yml",
-}
-lsp_servers["sqls"]["on_init"] = custom_on_init
-lsp_servers["sqls"]["capabilities"] = custom_capabilities()
 lsp_servers["sqls"]["on_attach"] = function(client)
 	client.resolved_capabilities.execute_command = true
 	require("sqls").setup({ picker = "default" })
@@ -223,7 +201,7 @@ for lsp_name, lsp_settings in pairs(lsp_servers) do
 	local server_available, requested_server = lsp_installer_servers.get_server(lsp_name)
 	if server_available then
 		requested_server:on_ready(function()
-			requested_server:setup(lsp_settings)
+			requested_server:setup(default(lsp_settings))
 		end)
 		if not requested_server:is_installed() then
 			-- Queue the server to be installed
