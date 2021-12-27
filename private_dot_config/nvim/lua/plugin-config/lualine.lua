@@ -2,6 +2,7 @@
 -- Author: shadmansaleh
 -- Credit: glepnir
 local lualine = require("lualine")
+local gps = require("nvim-gps")
 
 -- Color table for highlights
 -- stylua: ignore
@@ -152,6 +153,11 @@ ins_left({
 	function()
 		return "%="
 	end,
+})
+
+ins_left({
+	gps.get_location,
+	cond = gps.is_available,
 })
 
 ins_left({
