@@ -4,7 +4,6 @@ local lspkind = require("lspkind")
 local source_mapping = {
 	nvim_lsp = "[LSP]",
 	cmp_tabnine = "[TN]",
-	{ name = "cmp_pandoc" },
 	buffer = "[BUF]",
 	nvim_lua = "[LUA]",
 	path = "[PATH]",
@@ -54,6 +53,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "cmp_pandoc" },
 		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
