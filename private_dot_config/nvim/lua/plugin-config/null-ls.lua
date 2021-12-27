@@ -10,7 +10,6 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.hadolint,
 		null_ls.builtins.diagnostics.markdownlint,
-		null_ls.builtins.diagnostics.selene,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.golines,
