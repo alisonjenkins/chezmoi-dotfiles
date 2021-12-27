@@ -54,27 +54,19 @@ packer.startup(function()
 	use({ "numToStr/Comment.nvim", config = get_plugin_config("comment") }) --}}}
 	-- Completion{{{
 	use({
-		"ms-jpq/coq_nvim",
-		branch = "coq",
+		"hrsh7th/nvim-cmp",
+		config = get_plugin_config("cmp"),
 		requires = {
-			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
-			{ "ms-jpq/coq.thirdparty", branch = "3p" },
+			"L3MON4D3/LuaSnip",
+			"f3fora/cmp-spell",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			{ "tzachar/cmp-tabnine", run = "./install.sh" },
 		},
-	})
-	-- use({
-	-- "hrsh7th/nvim-cmp",
-	-- config = get_plugin_config("cmp"),
-	-- requires = {
-	-- "L3MON4D3/LuaSnip",
-	-- "f3fora/cmp-spell",
-	-- "hrsh7th/cmp-buffer",
-	-- "hrsh7th/cmp-nvim-lsp",
-	-- "hrsh7th/cmp-nvim-lua",
-	-- "hrsh7th/cmp-path",
-	-- "saadparwaiz1/cmp_luasnip",
-	-- {"tzachar/cmp-tabnine", run="./install.sh"},
-	-- },
-	-- })}}}
+	}) -- }}}
 	-- Git integration{{{
 	use({
 		"tpope/vim-fugitive",
@@ -142,12 +134,13 @@ packer.startup(function()
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
+			"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
 			"folke/lua-dev.nvim",
 			"onsails/lspkind-nvim",
 			"ray-x/lsp_signature.nvim",
 			"stevearc/aerial.nvim",
 			"williamboman/nvim-lsp-installer",
-			"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
+			"hrsh7th/nvim-cmp",
 		},
 		config = get_plugin_config("lspconfig"),
 	})
