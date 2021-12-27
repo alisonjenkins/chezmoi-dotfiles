@@ -147,6 +147,7 @@ packer.startup(function()
 			"ray-x/lsp_signature.nvim",
 			"stevearc/aerial.nvim",
 			"williamboman/nvim-lsp-installer",
+			"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
 		},
 		config = get_plugin_config("lspconfig"),
 	})
