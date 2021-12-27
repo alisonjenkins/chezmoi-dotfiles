@@ -135,11 +135,11 @@ packer.startup(function()
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			"lspcontainers/lspcontainers.nvim",
+			"folke/lua-dev.nvim",
 			"onsails/lspkind-nvim",
 			"ray-x/lsp_signature.nvim",
 			"stevearc/aerial.nvim",
-			"folke/lua-dev.nvim",
+			"williamboman/nvim-lsp-installer",
 		},
 		config = get_plugin_config("lspconfig"),
 	})

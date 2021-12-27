@@ -1,18 +1,13 @@
 -- vim: set foldmethod=marker foldlevel=0:
-local haslspconfig, lspconfig = pcall(require, "lspconfig")
-if not haslspconfig then
-	return
-end
+local lsp_installer = require("nvim-lsp-installer")
 
-local haslspcontainers, lspcontainers = pcall(require, "lspcontainers")
-
-local function show_documentation() --{{{
-	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
-		vim.cmd("h " .. vim.fn.expand("<cword>"))
-	else
-		vim.cmd("lua vim.lsp.buf.hover()")
-	end
-end --}}}
+-- local function show_documentation() --{{{
+-- 	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+-- 		vim.cmd("h " .. vim.fn.expand("<cword>"))
+-- 	else
+-- 		vim.cmd("lua vim.lsp.buf.hover()")
+-- 	end
+-- end --}}}
 
 local function custom_capabilities() --{{{
 	-- local cmp_lsp = require("cmp_nvim_lsp")
@@ -221,44 +216,18 @@ lsp_servers["yamlls"]["settings"] = {
 }
 -- }}}
 
-if haslspcontainers then --{{{
-	for lsp_name, _ in pairs(lsp_servers) do
-		local lsp_executable_present = false
-		if lsp_servers[lsp_name]["cmd"] ~= nil then
-			if lsp_servers[lsp_name]["cmd"][1] ~= nil then
-				if vim.fn.executable(lsp_servers[lsp_name]["cmd"][1]) then
-					lsp_executable_present = true
-				end
-			end
-		end
+--{{{ LSP setup
+local lsp_installer_servers = require("nvim-lsp-installer.servers")
 
-		if lsp_executable_present ~= true and lspcontainers.supported_languages[lsp_name] ~= nil then
-			local container_runtime = nil
-			if vim.fn.executable("podman") == 1 then
-				container_runtime = "podman"
-			elseif vim.fn.executable("docker") then
-				container_runtime = "docker"
-			end
-
-			if container_runtime ~= nil then
-				if lsp_name == "terraformls" then
-					lsp_servers[lsp_name]["cmd"] = lspcontainers.command(lsp_name, {
-						container_runtime = container_runtime,
-						image = "terraform-ls",
-					})
-				else
-					lsp_servers[lsp_name]["cmd"] = lspcontainers.command(lsp_name, {
-						container_runtime = container_runtime,
-					})
-				end
-			end
+for lsp_name, lsp_settings in pairs(lsp_servers) do
+	local server_available, requested_server = lsp_installer_servers.get_server(lsp_name)
+	if server_available then
+		requested_server:on_ready(function()
+			requested_server:setup(lsp_settings)
+		end)
+		if not requested_server:is_installed() then
+			-- Queue the server to be installed
+			requested_server:install()
 		end
 	end
-end --}}}
-
-for lsp_name, lsp in pairs(lsp_servers) do --{{{
-	lspconfig[lsp_name].setup(default({
-		["cmd"] = lsp["cmd"],
-		["settings"] = lsp["settings"],
-	}))
 end --}}}
