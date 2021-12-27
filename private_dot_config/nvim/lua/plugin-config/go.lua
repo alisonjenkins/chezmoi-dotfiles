@@ -8,7 +8,7 @@ require("go").setup({
 	comment_placeholder = "", -- comment_placeholder your cool placeholder e.g. ﳑ       
 	icons = { breakpoint = "🧘", currentpos = "🏃" },
 	verbose = false, -- output loginf in messages
-	lsp_cfg = false, -- true: apply go.nvim non-default gopls setup, if it is a list, will merge with gopls setup e.g.
+	lsp_cfg = true, -- true: apply go.nvim non-default gopls setup, if it is a list, will merge with gopls setup e.g.
 	-- lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
 	lsp_gofumpt = false, -- true: set default gofmt in gopls format to gofumpt
 	lsp_on_attach = true, -- if a on_attach function provided:  attach on_attach function to gopls
