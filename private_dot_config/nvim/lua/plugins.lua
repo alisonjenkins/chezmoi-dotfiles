@@ -58,6 +58,7 @@ packer.startup(function()
 		config = get_plugin_config("cmp"),
 		requires = {
 			"L3MON4D3/LuaSnip",
+			"aspeddro/cmp-pandoc.nvim",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
@@ -301,6 +302,16 @@ packer.startup(function()
 		"ethanholz/nvim-lastplace",
 		config = get_plugin_config("lastplace"),
 	}) --}}}
+	-- Pandoc integration {{{
+	use({
+		"aspeddro/pandoc.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"jbyuki/nabla.nvim", -- Optional. See Extra Features
+		},
+		config = get_plugin_config("pandoc"),
+	})
+	-- }}}
 
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
