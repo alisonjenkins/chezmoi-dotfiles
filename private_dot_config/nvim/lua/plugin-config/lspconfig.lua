@@ -10,6 +10,7 @@
 
 local function custom_capabilities() --{{{
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 	return capabilities
 end --}}}
 
@@ -34,22 +35,25 @@ local function default(configs) --{{{
 		end
 	end
 
-	-- COQ auto completion configuration
-	vim.g.coq_settings = {
-		auto_start = "shut-up",
-		clients = {
-			tabnine = {
-				enabled = true,
-				short_name = "TN",
-			},
-		},
-		keymap = {
-			bigger_preview = "<c-[>",
-			jump_to_mark = "<c-]>",
-		},
-	}
+	-- COQ auto completion configuration{{{
+	-- vim.g.coq_settings = {
+	-- 	auto_start = "shut-up",
+	-- 	clients = {
+	-- 		tabnine = {
+	-- 			enabled = true,
+	-- 			short_name = "TN",
+	-- 		},
+	-- 	},
+	-- 	keymap = {
+	-- 		bigger_preview = "<c-[>",
+	-- 		jump_to_mark = "<c-]>",
+	-- 	},
+	-- }
+
 	-- Register the COQ autocompletion for LSP completions
-	custom_config = require("coq").lsp_ensure_capabilities(custom_config)
+	-- custom_config = require("coq").lsp_ensure_capabilities(custom_config)}}}
+
+	-- Register the cmp autocompletion for LSP completions
 
 	return custom_config
 end --}}}
