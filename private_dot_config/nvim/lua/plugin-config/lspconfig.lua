@@ -9,9 +9,7 @@
 -- end --}}}
 
 local function custom_capabilities() --{{{
-	-- local cmp_lsp = require("cmp_nvim_lsp")
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	-- capabilities = cmp_lsp.update_capabilities(capabilities)
 	return capabilities
 end --}}}
 
@@ -35,6 +33,20 @@ local function default(configs) --{{{
 			end
 		end
 	end
+
+	-- COQ auto completion configuration
+	vim.g.coq_settings = {
+		auto_start = "shut-up",
+		clients = {
+			tabnine = {
+				enabled = true,
+				short_name = "TN",
+			},
+		},
+	}
+	-- Register the COQ autocompletion for LSP completions
+	custom_config = require("coq").lsp_ensure_capabilities(custom_config)
+
 	return custom_config
 end --}}}
 
