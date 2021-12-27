@@ -66,6 +66,7 @@ packer.startup(function()
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 			{ "tzachar/cmp-tabnine", run = "./install.sh" },
+			"hrsh7th/cmp-cmdline",
 		},
 	}) -- }}}
 	-- Git integration{{{

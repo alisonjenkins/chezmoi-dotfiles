@@ -54,6 +54,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
 		{ name = "orgmode" },
