@@ -36,7 +36,14 @@ packer.startup(function()
 	-- Lua caching{{{
 	use({ "lewis6991/impatient.nvim" }) --}}}
 	-- Key mapping{{{
-	use({ "folke/which-key.nvim", event = "VimEnter", config = get_plugin_config("which-key") }) --}}}
+	use({
+		"folke/which-key.nvim",
+		requires = {
+			"aserowy/tmux.nvim",
+		},
+		event = "VimEnter",
+		config = get_plugin_config("which-key"),
+	}) --}}}
 	-- File manager{{{
 	use({ "justinmk/vim-dirvish" }) --}}}
 	-- Colour schemes{{{
@@ -179,6 +186,9 @@ packer.startup(function()
 	-- Statusline{{{
 	use({
 		"nvim-lualine/lualine.nvim",
+		requires = {
+			"SmiteshP/nvim-gps",
+		},
 		config = get_plugin_config("lualine"),
 	}) --}}}
 	-- Quickfix{{{
@@ -280,6 +290,17 @@ packer.startup(function()
 	-- Speeddating (Allows incrementing and decrementing of dates){{{
 	use({
 		"tpope/vim-speeddating",
+	}) --}}}
+	-- GPS for statusline (to tell where you are in large structures){{{
+	use({
+		"SmiteshP/nvim-gps",
+		config = get_plugin_config("gps"),
+		requires = "nvim-treesitter/nvim-treesitter",
+	}) --}}}
+	-- Tmux integration {{{
+	use({
+		"aserowy/tmux.nvim",
+		config = get_plugin_config("tmux"),
 	}) --}}}
 
 	-- TODO: Make the k8s support of the Yaml LSP work

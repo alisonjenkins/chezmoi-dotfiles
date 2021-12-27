@@ -55,11 +55,12 @@ vim.api.nvim_set_keymap("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>",
 vim.api.nvim_set_keymap("n", "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "gd", '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>', { silent = true }) --}}}
 
--- better window movement{{{
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true }) --}}}
+-- better window movement with Tmux integration {{{
+vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua require('tmux').move_left()<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>", { silent = true })
+--}}}
 
 -- Set leader{{{
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })

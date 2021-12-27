@@ -43,6 +43,10 @@ local function default(configs) --{{{
 				short_name = "TN",
 			},
 		},
+		keymap = {
+			bigger_preview = "<c-[>",
+			jump_to_mark = "<c-]>",
+		},
 	}
 	-- Register the COQ autocompletion for LSP completions
 	custom_config = require("coq").lsp_ensure_capabilities(custom_config)
