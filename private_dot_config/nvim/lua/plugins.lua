@@ -309,7 +309,6 @@ packer.startup(function()
 		config = get_plugin_config("lastplace"),
 	}) --}}}
 
-	-- TODO: Make the k8s support of the Yaml LSP work
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
 	-- TODO: Consider switching from Lightspeed to hop or get rid of both...
