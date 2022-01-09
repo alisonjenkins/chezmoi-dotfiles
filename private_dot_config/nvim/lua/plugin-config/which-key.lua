@@ -261,6 +261,18 @@ wk.register({
 		},
 	}, --}}}
 
+	-- Hop Mappings {{{
+	["<space>"] = {
+		name = "+hop",
+		w = { "<cmd>HopWord<cr>", "Hop Word" },
+		p = { "<cmd>HopPattern<cr>", "Hop Pattern" },
+		c = { "<cmd>HopChar1<cr>", "Hop 1 Character" },
+		C = { "<cmd>HopChar2<cr>", "Hop 2 Character" },
+		l = { "<cmd>HopLine<cr>", "Hop Line" },
+		L = { "<cmd>HopLineStart<cr>", "Hop Line Start" },
+	},
+	-- }}}
+
 	-- Quickfix mappings (all start with q){{{
 	q = {
 		name = "+quickfix",

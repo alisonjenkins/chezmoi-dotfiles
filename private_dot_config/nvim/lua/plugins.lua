@@ -235,7 +235,8 @@ packer.startup(function()
 	use({
 		"folke/twilight.nvim",
 		config = get_plugin_config("twilight"),
-	}) --}}}
+	})
+	--}}}
 	-- Markdown previews{{{
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -309,6 +310,12 @@ packer.startup(function()
 			"jbyuki/nabla.nvim", -- Optional. See Extra Features
 		},
 		config = get_plugin_config("pandoc"),
+	})
+	-- }}}
+	-- Hop {{{
+	use({
+		"phaazon/hop.nvim",
+		config = get_plugin_config("hop"),
 	})
 	-- }}}
 
