@@ -158,10 +158,6 @@ wk.register({
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
 			"Document Diagnostics",
 		},
-		e = {
-			"<cmd>Telescope frecency<cr>",
-			"Frecently edited files",
-		},
 		f = {
 			"<cmd>Telescope find_files<cr>",
 			"Files",
