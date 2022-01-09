@@ -60,6 +60,7 @@ end
 
 local extensions = {
 	dap = nil,
+	file_browser = nil,
 	fzy_native = nil,
 	gh = nil,
 	git_worktree = function()
