@@ -15,9 +15,7 @@
   "cloud_whitelist": [],
   "num_of_suggestions": 5,
   "line_suggestions": true,
-  "multiline_suggestions": false,
   "omit_prefix_suggestions": true,
-  "team_ai_local_collection": null,
   "api_key": null,
   "api_base_url": null,
   "binary_update_interval_seconds": null,
@@ -43,5 +41,8 @@
   "has_git_repos": true,
   "gusr": null,
   "exclude_file_masks": null,
-  "inline_suggestions_mode": false
+  "inline_suggestions_mode": false,
+  "use_specialized_model_if_available": null,
+  "empty_line_suggestions": null,
+  "snippets_enabled": null
 }
