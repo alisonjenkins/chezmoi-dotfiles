@@ -166,10 +166,6 @@ wk.register({
 			"<cmd>Telescope command_history<cr>",
 			"Command History",
 		},
-		i = {
-			"<cmd>Telescope media_files<cr>",
-			"Media Files",
-		},
 		j = {
 			"<cmd>JqxList<cr>",
 			"List the JSON keys in the JSON file",
