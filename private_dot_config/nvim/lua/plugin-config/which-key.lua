@@ -195,7 +195,7 @@ wk.register({
 			"Colorschemes",
 		},
 		w = {
-			"<cmd>Telescope file_browser<cr>",
+			"<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>",
 			"File browser",
 		},
 		x = {
