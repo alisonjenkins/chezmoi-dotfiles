@@ -245,12 +245,6 @@ wk.register({
 	-- Markdown Preview mappings{{{
 	M = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Markdown" }, --}}}
 
-	-- Treesitter mappings{{{
-	T = {
-		name = "+Treesitter",
-		b = { "<cmd>lua require('nvim-biscuits').toggle_biscuits()<cr>", "Toggle biscuits" },
-	}, --}}}
-
 	-- Git mappings (all start with g){{{
 	g = {
 		name = "+git",
