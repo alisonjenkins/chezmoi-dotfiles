@@ -69,9 +69,9 @@ vim.g.mapleader = " " --}}}
 -- Setup leader based mappings with which-key so they are documented and
 -- a cheatsheet is presented when leader is activated
 wk.register({
-	-- Goyo maps{{{
-	z = { "<cmd>Goyo 100%x100%<cr>", "Start Goyo fullscreen" },
-	Z = { "<cmd>Goyo<cr>", "Toggle Goyo" }, --}}}
+	-- Zenmode maps{{{
+	z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
+	--}}}
 
 	-- Splitting maps (ported from the old whichkey bindings{{{
 	h = { "<C-W>s", "Split horizontally" },
