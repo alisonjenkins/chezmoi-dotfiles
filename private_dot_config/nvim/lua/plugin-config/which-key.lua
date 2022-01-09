@@ -256,7 +256,7 @@ wk.register({
 		name = "+git",
 		B = { "<cmd>GBrowse<cr>", "Browse" },
 		a = { "<cmd>Gwrite<cr>", "Add" },
-		b = { "<cmd>Gblame<cr>", "Blame" },
+		b = { "<cmd>Git blame<cr>", "Blame" },
 		c = {
 			name = "+commit",
 			c = { "<cmd>Git commit<cr>", "Commit" },
