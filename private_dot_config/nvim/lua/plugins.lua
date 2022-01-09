@@ -245,9 +245,6 @@ packer.startup(function()
 		ft = { "markdown" },
 		config = get_plugin_config("markdown-preview"),
 	}) --}}}
-	-- Lightspeed motions{{{
-	-- TODO: Learn how to use this plugin properly and decide whether or not it is safe to use with macros...
-	use({ "ggandor/lightspeed.nvim", event = "BufReadPre" }) --}}}
 	-- Unimpaired shortcuts{{{
 	use({ "tpope/vim-unimpaired" }) --}}}
 	-- Repeat{{{
