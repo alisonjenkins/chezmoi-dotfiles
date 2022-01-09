@@ -264,7 +264,7 @@ wk.register({
 		},
 		d = { "<cmd>Git diff<cr>", "Diff" },
 		l = { "<cmd>Git log<cr>", "Log" },
-		p = { "<cmd>Git push<cr>", "Push" },
+		p = { "<cmd>Git! push<cr>", "Push" },
 		s = { "<cmd>Git<cr>", "Status" },
 		t = { "<cmd>terminal gh pr create --web<cr>", "Pull request" },
 		m = { "<cmd>GitMessenger<cr>", "Line commit history" },
