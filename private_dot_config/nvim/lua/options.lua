@@ -25,11 +25,11 @@ vim.cmd("set showtabline=2") -- Always show tabs
 vim.cmd("set signcolumn=yes") -- Always show the signcolumn, otherwise it would shift the text each time
 vim.cmd("set smartcase") -- smartcase makes it so that searching becomes case sensitive if you use a capital letter in the search.
 vim.cmd("set smartindent") -- Makes indenting smart
-vim.cmd("set sw=4") -- Set shiftwidth
+vim.cmd("set sw=2") -- Set shiftwidth
 vim.cmd("set t_Co=256") -- Support 256 colors
 vim.cmd("set termguicolors") -- set term gui colors most terminals support this
 vim.cmd("set timeoutlen=300") -- By default timeoutlen is 1000 ms
-vim.cmd("set ts=4") -- Set tabstop
+vim.cmd("set ts=2") -- Set tabstop
 vim.cmd("set undofile") -- enable persistent undo (meaning if you quit Neovim and come back to a file and want to undo previous changes you can)
 vim.cmd("set updatetime=300") -- Faster completion
 vim.cmd("set writebackup") -- enable writing of the backup files

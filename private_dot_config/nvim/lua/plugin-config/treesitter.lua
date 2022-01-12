@@ -15,7 +15,10 @@ local options = {
 		use_languagetree = true,
 	},
 	indent = {
-		enable = false,
+		enable = {
+			"terraform",
+			"yaml",
+		},
 		disable = { "python", "lua" },
 	},
 	rainbow = {
