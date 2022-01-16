@@ -318,6 +318,9 @@ packer.startup(function()
 		config = get_plugin_config("hop"),
 	})
 	-- }}}
+	-- Syntax files {{{
+	use({ "sheerun/vim-polyglot" })
+	-- }}}
 
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
