@@ -321,6 +321,13 @@ packer.startup(function()
 	-- Syntax files {{{
 	use({ "sheerun/vim-polyglot" })
 	-- }}}
+	-- {{{ Neorg (Neovim Org mode)
+  use {
+    "nvim-neorg/neorg",
+    config = get_plugin_config("neorg"),
+    requires = "nvim-lua/plenary.nvim"
+	}
+	-- }}}
 
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
