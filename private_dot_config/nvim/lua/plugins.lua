@@ -173,7 +173,7 @@ packer.startup(function()
 		config = get_plugin_config("treesitter"),
 		run = ":TSUpdate",
 		requires = {
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			-- { "nvim-treesitter/nvim-treesitter-textobjects" },
 			{ "p00f/nvim-ts-rainbow", opt = true },
 		},
 		wants = {
