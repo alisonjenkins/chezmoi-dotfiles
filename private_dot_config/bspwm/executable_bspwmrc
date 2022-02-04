@@ -1,12 +1,14 @@
 #!/bin/bash
 export AWT_TOOLKIT=MToolkit
 bspc config external_rules_command /home/alan/bin/bspwm_external_rules
-# sxhkd &
+sxhkd &
 
 # MONITOR_NAMES=( $(bspc query -M --names) )
 
-bspc monitor HDMI-A-0 -d 1 4
-bspc monitor DisplayPort-2 -d 2 3 9 0
+if [[ $(hostname) != "ajenkins-synalogik" ]]; then
+  bspc monitor HDMI-A-0 -d 1 4
+  bspc monitor DisplayPort-2 -d 2 3 9 0
+fi
 
 # bspc rule -a Slack desktop='1'
 # bspc rule -a St desktop='2'
