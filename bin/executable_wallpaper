@@ -58,7 +58,7 @@ function print_usage() {
 }
 
 WALLPAPERS_PATH="$HOME/git/wallpapers"
-WALLPAPERS_REPO="https://github.com/LukeSmithxyz/wallpapers.git"
+WALLPAPERS_REPO="https://github.com/makccr/wallpapers.git"
 
 get_wallpapers
 
