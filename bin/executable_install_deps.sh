@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+test -d ~/.asdf || git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+test -f ~/.asdf/asdf.sh && source ~/.asdf/asdf.sh
+
 PACKAGES=(
   alacritty
   discord
@@ -35,8 +40,11 @@ paru -S --noconfirm "${TO_INSTALL[@]}"
 ASDF_PLUGINS_INSTALLED=$(asdf plugin list)
 ASDF_PLUGINS_TO_INSTALL=$()
 
+echo "${ASDF_PLUGINS_INSTALLED[@]}"
 for plugin in "${ASDF_PLUGINS[@]}"; do
+  echo "Checking $plugin"
   if ! echo "${ASDF_PLUGINS_INSTALLED[@]}" | grep -q "$plugin" > /dev/null; then
+    echo "Attempting to install plugin: $plugin"
     asdf plugin add "$plugin"
   fi
 done
