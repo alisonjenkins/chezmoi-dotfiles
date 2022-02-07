@@ -11,6 +11,7 @@ PACKAGES=(
   neovim
   nerd-fonts-complete
   nnn
+  python-pip
   slack
   steam
   tmux
