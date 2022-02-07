@@ -7,6 +7,7 @@ PACKAGES=(
   alacritty
   aws-vault
   discord
+  freeplane
   gopls
   neovim
   nerd-fonts-complete
