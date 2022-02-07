@@ -19,6 +19,7 @@ PACKAGES=(
 )
 
 ASDF_PLUGINS=(
+  awscli
   direnv
   just
   kubectl
