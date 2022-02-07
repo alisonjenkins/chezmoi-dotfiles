@@ -62,3 +62,6 @@ done
 
 # ensure tmux plugin manager is setup
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# ensure codecommit grc is install
+pip install git-remote-codecommit
