@@ -5,6 +5,7 @@ test -f ~/.asdf/asdf.sh && source ~/.asdf/asdf.sh
 
 PACKAGES=(
   alacritty
+  aws-vault
   discord
   gopls
   neovim
