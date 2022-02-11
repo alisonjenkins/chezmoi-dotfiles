@@ -188,12 +188,12 @@ packer.startup(function()
 		},
 		config = get_plugin_config("lualine"),
 	}) --}}}
-	-- Quickfix{{{
-	use({
-		"kevinhwang91/nvim-bqf",
-		config = get_plugin_config("bqf"),
-		ft = "qf",
-	}) --}}}
+	-- -- Quickfix{{{
+	-- use({
+	-- 	"kevinhwang91/nvim-bqf",
+	-- 	config = get_plugin_config("bqf"),
+	-- 	ft = "qf",
+	-- }) --}}}
 	-- Surround{{{
 	use({
 		"blackCauldron7/surround.nvim",
