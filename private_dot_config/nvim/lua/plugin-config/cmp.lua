@@ -45,7 +45,6 @@ cmp.setup({
 			select = true,
 		}),
 		["<C-e>"] = cmp.mapping.close(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 	snippet = {
 		expand = function(args)

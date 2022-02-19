@@ -57,7 +57,13 @@ packer.startup(function()
 		"hrsh7th/nvim-cmp",
 		config = get_plugin_config("cmp"),
 		requires = {
-			"L3MON4D3/LuaSnip",
+			{
+				"L3MON4D3/LuaSnip",
+				requires = {
+					"rafamadriz/friendly-snippets",
+				},
+				config = get_plugin_config("luasnip"),
+			},
 			"aspeddro/cmp-pandoc.nvim",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
