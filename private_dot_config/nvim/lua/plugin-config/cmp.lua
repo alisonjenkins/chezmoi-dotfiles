@@ -45,6 +45,7 @@ cmp.setup({
 			select = true,
 		}),
 		["<C-e>"] = cmp.mapping.close(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 	snippet = {
 		expand = function(args)
@@ -53,12 +54,12 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "cmp_tabnine" },
 		{ name = "cmp_pandoc" },
 		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
 		{ name = "orgmode" },
-		{ name = "cmp_tabnine" },
 		{ name = "buffer" },
 		{ name = "spell" },
 		{ name = "path", keyword_length = 5 },

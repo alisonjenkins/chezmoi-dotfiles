@@ -11,6 +11,7 @@ vim.loop.fs_mkdir(vim.o.undodir, 750)
 vim.cmd("set backup") -- enable backups so if Neovim crashes or you lose power you do not lose your work.
 vim.cmd("set cmdheight=2") -- More space for displaying messages
 vim.cmd("set colorcolumn=99999") -- fix indentline for now
+vim.cmd("set completeopt=menu,menuone,noselect") -- Completeopt setting recommended by nvim-cmp docs.
 vim.cmd("set conceallevel=0") -- So that I can see `` in markdown files
 vim.cmd("set cursorline") -- Enable highlighting of the current line
 vim.cmd("set expandtab") -- Converts tabs to spaces
