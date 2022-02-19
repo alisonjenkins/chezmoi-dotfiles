@@ -129,6 +129,7 @@ wk.register({
 	}, --}}}
 
 	-- Telescope mappings{{{
+	b = { "<cmd>Telescope buffers<cr>", "Buffers (Telescope)" }, --}}}
 	f = { "<cmd>Telescope find_files<cr>", "Find files (Telescope)" }, --}}}
 
 	-- s is for search powered by Telescope{{{
