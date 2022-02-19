@@ -22,9 +22,11 @@ PACKAGES=(
 ASDF_PLUGINS=(
   awscli
   direnv
+  java
   just
   kubectl
   kubectx
+  maven
   terraform
   tflint
   tfsec
