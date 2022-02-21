@@ -200,11 +200,6 @@ packer.startup(function()
 	-- 	config = get_plugin_config("bqf"),
 	-- 	ft = "qf",
 	-- }) --}}}
-	-- Surround{{{
-	use({
-		"blackCauldron7/surround.nvim",
-		config = get_plugin_config("surround"),
-	}) --}}}
 	-- Todo comments{{{
 	use({
 		"folke/todo-comments.nvim",
