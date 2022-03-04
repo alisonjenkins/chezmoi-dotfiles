@@ -329,6 +329,17 @@ packer.startup(function()
 		requires = "nvim-lua/plenary.nvim",
 	})
 	-- }}}
+	-- {{{ Terraform Plugins
+	use({
+		"juliosueiras/vim-terraform-completion",
+		config = get_plugin_config("terraform-completion"),
+	})
+	use({
+		"hashivim/vim-terraform",
+		config = get_plugin_config("terraform-completion"),
+		requires = "godlygeek/tabular",
+	})
+	-- }}}
 
 	-- TODO: Configure Packer's compiled code to be cached by Lua cache
 	-- TODO: Setup more lazy loading for packer
