@@ -331,13 +331,13 @@ packer.startup(function()
 	-- }}}
 	-- {{{ Terraform Plugins
 	use({
-		"juliosueiras/vim-terraform-completion",
-		config = get_plugin_config("terraform-completion"),
+		"hashivim/vim-terraform",
+		config = get_plugin_config("terraform"),
+		requires = "godlygeek/tabular",
 	})
 	use({
-		"hashivim/vim-terraform",
+		"alanjjenkins/vim-terraform-completion",
 		config = get_plugin_config("terraform-completion"),
-		requires = "godlygeek/tabular",
 	})
 	-- }}}
 
