@@ -35,6 +35,9 @@ packer.startup(function()
 	use({ "wbthomason/packer.nvim" }) --}}}
 	-- Lua caching{{{
 	use({ "lewis6991/impatient.nvim" }) --}}}
+	-- {{{ Faster filetypes plugin
+	use({ "nathom/filetype.nvim" })
+	-- }}}
 	-- Key mapping{{{
 	use({
 		"folke/which-key.nvim",
