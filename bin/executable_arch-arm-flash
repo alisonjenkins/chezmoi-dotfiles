@@ -27,7 +27,7 @@ SBC_TYPES=(
   [raspi3]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz"
   [raspi3_64]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-3-latest.tar.gz"
   [raspi4]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-4-latest.tar.gz"
-  [raspi4_64]="https://olegtown.pw/Public/ArchLinuxArm/RPi4/rootfs/ArchLinuxARM-rpi-4-aarch64-2020-07-12.tar.gz"
+  [raspi4_64]="http://os.archlinuxarm.org/os/ArchLinuxARM-rpi-aarch64-latest.tar.gz"
   [odroidhc2]="http://os.archlinuxarm.org/os/ArchLinuxARM-odroid-xu3-latest.tar.gz"
 )
 
