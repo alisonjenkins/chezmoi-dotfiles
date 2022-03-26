@@ -86,11 +86,22 @@ vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
 
 -- Set leader{{{
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
-vim.g.mapleader = " " --}}}
+vim.api.nvim_set_keymap("v", "<Space>", "<NOP>", { noremap = true, silent = true })
+vim.g.mapleader = " "
+--}}}
 
 -- Setup leader based mappings with which-key so they are documented and
 -- a cheatsheet is presented when leader is activated
 wk.register({
+	-- {{{ AI Mappings
+	a = {
+		name = "AI",
+		c = { "<Plug>nvim-magic-append-completion<cr>", "AI Commenting" },
+		a = { "<Plug>nvim-magic-suggest-alteration<cr>", "AI Suggested Alterations" },
+		d = { "<Plug>nvim-magic-suggest-docstring<cr>", "AI Suggested Documentation String" },
+	},
+	-- }}}
+
 	-- Zenmode maps{{{
 	z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
 	--}}}

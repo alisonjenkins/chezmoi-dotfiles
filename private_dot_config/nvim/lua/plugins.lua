@@ -35,6 +35,9 @@ packer.startup(function()
 	use({ "wbthomason/packer.nvim" }) --}}}
 	-- Lua caching{{{
 	use({ "lewis6991/impatient.nvim" }) --}}}
+	-- {{{ AI Magic (nvim-magic can refactor code, write comments and more...)
+  use({ "jameshiew/nvim-magic", config = get_plugin_config("nvim-magic"), requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim', } })
+	-- }}}
 	-- Add restoration of last location in files{{{
 	use({
 		"ethanholz/nvim-lastplace",
