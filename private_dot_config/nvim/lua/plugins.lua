@@ -296,6 +296,9 @@ packer.startup(function()
 		config = get_plugin_config("pandoc"),
 	})
 	-- }}}
+	-- {{{ Registers
+	use({ "tversteeg/registers.nvim", })
+	-- }}}
 	-- Repeat{{{
 	use({ "tpope/vim-repeat" }) --}}}
 	-- Rust{{{
