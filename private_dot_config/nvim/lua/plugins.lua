@@ -215,6 +215,10 @@ packer.startup(function()
 			"theHamsta/nvim-dap-virtual-text",
 		},
 	})
+	use({
+			"j-hui/fidget.nvim",
+			config = get_plugin_config("fidget"),
+	})
 	--}}}
 	-- Markdown previews{{{
 	use({
