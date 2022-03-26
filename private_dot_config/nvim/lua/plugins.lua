@@ -154,6 +154,7 @@ packer.startup(function()
 		"lewis6991/gitsigns.nvim",
 		config = get_plugin_config("gitsigns"),
 	})
+	use({"lambdalisue/gina.vim"})
 	--}}}
 	-- Grammar checking{{{
 	use({ "rhysd/vim-grammarous", cmd = "GrammarousCheck" })
