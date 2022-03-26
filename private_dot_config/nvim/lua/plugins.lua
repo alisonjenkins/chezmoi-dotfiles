@@ -67,12 +67,12 @@ packer.startup(function()
 			"aspeddro/cmp-pandoc.nvim",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 			{ "tzachar/cmp-tabnine", run = "./install.sh", config = get_plugin_config("tabnine") },
-			"hrsh7th/cmp-cmdline",
 		},
 	}) -- }}}
 	-- Colorizer (Colour previews for things that define colours in code){{{
