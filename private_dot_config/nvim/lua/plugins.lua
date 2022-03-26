@@ -296,12 +296,6 @@ packer.startup(function()
 		config = get_plugin_config("pandoc"),
 	})
 	-- }}}
-	-- -- Quickfix{{{
-	-- use({
-	-- 	"kevinhwang91/nvim-bqf",
-	-- 	config = get_plugin_config("bqf"),
-	-- 	ft = "qf",
-	-- }) --}}}
 	-- Repeat{{{
 	use({ "tpope/vim-repeat" }) --}}}
 	-- Rust{{{
