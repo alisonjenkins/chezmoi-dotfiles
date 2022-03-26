@@ -216,10 +216,6 @@ packer.startup(function()
 			"j-hui/fidget.nvim",
 			config = get_plugin_config("fidget"),
 	})
-	use({
-			"nvim-lint",
-			config = get_plugin_config("nvim-lint"),
-	})
 	--}}}
 	-- Markdown previews{{{
 	use({
