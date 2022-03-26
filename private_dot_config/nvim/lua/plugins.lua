@@ -129,6 +129,7 @@ packer.startup(function()
 			"nvim-telescope/telescope-fzy-native.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"nvim-telescope/telescope-packer.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 			{
 				"kyazdani42/nvim-web-devicons",
 				opt = true,
