@@ -222,7 +222,7 @@ wk.register({
 		a = { "<cmd>Telescope lsp_code_actions<cr>", "Code Action" },
 		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-		o = { "<cmd>AerialToggle<cr>", "Outline" },
+		o = { "<cmd>Telescope treesitter<cr>", "Outline" },
 		-- p = { "<cmd>Lspsaga preview_definition<cr>",          "Preview Definition" },
 		q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },

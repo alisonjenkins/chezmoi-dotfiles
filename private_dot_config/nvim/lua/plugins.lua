@@ -150,7 +150,6 @@ packer.startup(function()
 			"folke/lua-dev.nvim",
 			"onsails/lspkind-nvim",
 			"ray-x/lsp_signature.nvim",
-			"stevearc/aerial.nvim",
 			"williamboman/nvim-lsp-installer",
 			"hrsh7th/nvim-cmp",
 		},
