@@ -35,3 +35,12 @@ vim.cmd("set undofile") -- enable persistent undo (meaning if you quit Neovim an
 vim.cmd("set updatetime=300") -- Faster completion
 vim.cmd("set writebackup") -- enable writing of the backup files
 vim.cmd([[set spell]])
+
+vim.cmd([[
+try
+colorscheme kanagawa
+catch
+colorscheme desert
+endtry
+]])
+

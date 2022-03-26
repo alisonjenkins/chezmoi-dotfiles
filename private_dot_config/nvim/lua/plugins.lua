@@ -51,6 +51,7 @@ packer.startup(function()
 	use({ "justinmk/vim-dirvish" }) --}}}
 	-- Colour schemes{{{
 	use({ "folke/tokyonight.nvim", config = get_plugin_config("tokyonight") })
+	use({ "rebelot/kanagawa.nvim", config = get_plugin_config("kanagawa") })
 	use({ "sainnhe/everforest", config = get_plugin_config("everforest") })
 	--}}}
 	-- Commenting{{{
