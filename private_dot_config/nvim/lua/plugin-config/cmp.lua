@@ -19,7 +19,6 @@ cmp.setup({
 		winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
 	},
 	experimental = {
-		native_menu = false,
 		ghost_text = true,
 	},
 	formatting = {
