@@ -82,6 +82,9 @@ packer.startup(function()
 		event = "BufReadPre",
 		config = get_plugin_config("colorizer"),
 	}) --}}}
+	-- Detect indent {{{
+	use({ "tpope/vim-sleuth", })
+	-- }}}
 	-- {{{ Faster filetypes plugin
 	use({ "nathom/filetype.nvim" })
 	-- }}}
