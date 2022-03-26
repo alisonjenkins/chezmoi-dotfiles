@@ -64,6 +64,7 @@ packer.startup(function()
 				},
 				config = get_plugin_config("luasnip"),
 			},
+			"andersevenrud/cmp-tmux",
 			"aspeddro/cmp-pandoc.nvim",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",

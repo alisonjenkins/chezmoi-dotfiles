@@ -63,6 +63,13 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "spell" },
 		{ name = "path", keyword_length = 5 },
+		{
+			name = "tmux" ,
+			option = {
+				all_panes = true,
+				label = '[tmux]',
+			}
+		},
 	},
 	sorting = {
 		priority_weight = 2,
