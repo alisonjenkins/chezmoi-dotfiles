@@ -8,6 +8,37 @@ local previewers = require("telescope.previewers")
 
 telescope.setup({
 	defaults = {
+		border = {},
+		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+		color_devicons = true,
+		file_ignore_patterns = {},
+		file_previewer = previewers.vim_buffer_cat.new,
+		file_sorter = require("telescope.sorters").get_fuzzy_file,
+		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		grep_previewer = previewers.vim_buffer_vimgrep.new,
+		initial_mode = "insert",
+		layout_strategy = "flex",
+		path_display = { "absolute" },
+		prompt_prefix = "❱❱ ",
+		qflist_previewer = previewers.vim_buffer_qflist.new,
+		selection_caret = "❱ ",
+		selection_strategy = "reset",
+		set_env = { ["COLORTERM"] = "truecolor" }, -- default { }, currently unsupported for shells like cmd.exe / powershell.exe
+		sorting_strategy = "descending",
+		use_less = false,
+		winblend = 0,
+
+		layout_config = {
+			horizontal = {
+				mirror = false,
+				height = 0.9,
+			},
+			vertical = {
+				mirror = false,
+				height = 0.9,
+			},
+		},
+
 		vimgrep_arguments = {
 			"rg",
 			"--color=never",
@@ -17,46 +48,8 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 		},
-		prompt_prefix = "❱❱ ",
-		selection_caret = "❱ ",
-		initial_mode = "insert",
-		selection_strategy = "reset",
-		sorting_strategy = "descending",
-		layout_strategy = "flex",
-		layout_config = {
-			horizontal = {
-				mirror = false,
-				height = 0.7,
-			},
-			vertical = {
-				mirror = false,
-				height = 0.7,
-			},
-		},
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		file_ignore_patterns = {},
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		path_display = { "absolute" },
-		winblend = 0,
-		border = {},
-		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-		color_devicons = true,
-		use_less = false,
-		set_env = { ["COLORTERM"] = "truecolor" }, -- default { }, currently unsupported for shells like cmd.exe / powershell.exe
-		file_previewer = previewers.vim_buffer_cat.new,
-		grep_previewer = previewers.vim_buffer_vimgrep.new,
-		qflist_previewer = previewers.vim_buffer_qflist.new,
 	},
 })
-
-local function packer_setup()
-	return {
-		theme = "ivy",
-		layout_config = {
-			height = 0.5,
-		},
-	}
-end
 
 local extensions = {
 	dap = nil,
@@ -66,9 +59,11 @@ local extensions = {
 	git_worktree = function()
 		require("git-worktree").setup({})
 	end,
-	packer = packer_setup,
 	projects = function()
 		require("project_nvim").setup()
+	end,
+	["ui-select"] = function()
+		require("telescope.themes").get_dropdown({})
 	end,
 	zoxide = nil,
 }
