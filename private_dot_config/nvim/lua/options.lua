@@ -17,6 +17,7 @@ vim.cmd("set cursorline") -- Enable highlighting of the current line
 vim.cmd("set expandtab") -- Converts tabs to spaces
 vim.cmd("set hidden") -- Required to keep multiple buffers open multiple buffers
 vim.cmd("set ignorecase") -- ignore case makes searching case insensitive by default. Overridable by using a capital letter thanks to smart case.
+vim.cmd("set laststatus=3") -- only show one shared statusline
 vim.cmd("set mouse=a") -- Enable your mouse
 vim.cmd("set nowrap") -- Display long lines as just one line
 vim.cmd("set number") -- set numbered lines
