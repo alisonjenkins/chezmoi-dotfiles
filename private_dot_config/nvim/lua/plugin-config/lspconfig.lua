@@ -100,10 +100,6 @@ lsp_servers["sumneko_lua"]["settings"] = {
 }
 -- }}}
 
--- {{{ Nix
--- lsp_servers["rnix"] = {}
--- }}}
-
 -- {{{ Python - Pyright
 lsp_servers["pyright"] = {}
 lsp_servers["pyright"]["settings"] = {
@@ -117,10 +113,6 @@ lsp_servers["pyright"]["settings"] = {
 	},
 }
 -- }}}
-
--- -- {{{ Rust - rust-analyzer
--- lsp_servers["rust_analyzer"] = {}
--- -- }}}
 
 -- {{{ SQL
 lsp_servers["sqls"] = {}
