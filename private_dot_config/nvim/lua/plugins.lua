@@ -227,6 +227,12 @@ packer.startup(function()
 		ft = { "markdown" },
 		config = get_plugin_config("markdown-preview"),
 	}) --}}}
+	-- Mini modules {{{
+  use({
+		"echasnovski/mini.nvim",
+		config = get_plugin_config("mini"),
+	})
+	-- }}}
 	-- {{{ Neorg (Neovim Org mode)
 	use({
 		"nvim-neorg/neorg",
