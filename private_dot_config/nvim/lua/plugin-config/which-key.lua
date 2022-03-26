@@ -62,6 +62,28 @@ vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>",
 vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>", { silent = true })
 --}}}
 
+-- nvim-hlslens {{{
+local kopts = {noremap = true, silent = true}
+
+vim.api.nvim_set_keymap(
+	'n',
+	'n',
+	[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+	kopts
+)
+vim.api.nvim_set_keymap(
+	'n',
+	'N',
+	[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+	kopts
+)
+vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
+-- }}}
+
 -- Set leader{{{
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
 vim.g.mapleader = " " --}}}
