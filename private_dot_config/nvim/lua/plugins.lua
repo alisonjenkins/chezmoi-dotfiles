@@ -216,6 +216,10 @@ packer.startup(function()
 			"j-hui/fidget.nvim",
 			config = get_plugin_config("fidget"),
 	})
+	use({
+			"nvim-lint",
+			config = get_plugin_config("nvim-lint"),
+	})
 	--}}}
 	-- Markdown previews{{{
 	use({
@@ -257,6 +261,9 @@ packer.startup(function()
 		},
 		config = get_plugin_config("lualine"),
 	}) --}}}
+  -- Tabline {{{
+	use({ "alvarosevilla95/luatab.nvim", config = get_plugin_config("luatab"), requires = { "kyazdani42/nvim-web-devicons" } })
+	-- }}}
 	-- {{{ Terraform Plugins
 	use({
 		"hashivim/vim-terraform",
