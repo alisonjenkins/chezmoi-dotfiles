@@ -203,10 +203,6 @@ packer.startup(function()
 		config = get_plugin_config("trouble"),
 	})
 	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = get_plugin_config("null-ls"),
-	})
-	use({
 		"ray-x/go.nvim",
 		config = get_plugin_config("go"),
 		requires = {
