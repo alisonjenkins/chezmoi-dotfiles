@@ -281,6 +281,7 @@ packer.startup(function()
 		run = ":TSUpdate",
 		requires = {
 			-- { "nvim-treesitter/nvim-treesitter-textobjects" },
+			{ "m-demare/hlargs.nvim", config = get_plugin_config("hlargs"), requires = { "nvim-treesitter/nvim-treesitter", }, },
 			{ "p00f/nvim-ts-rainbow", opt = true },
 		},
 		wants = {
