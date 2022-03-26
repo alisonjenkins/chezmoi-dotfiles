@@ -117,6 +117,9 @@ packer.startup(function()
 		end,
 	})
 	--}}}
+	-- Github Copilot {{{
+	use({"github/copilot.vim",})
+	-- }}}
 	-- Git integration{{{
 	use({
 		"tpope/vim-fugitive",
