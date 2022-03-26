@@ -122,7 +122,7 @@ packer.startup(function()
 	})
 	--}}}
 	-- Github Copilot {{{
-	use({"github/copilot.vim",})
+	use({"github/copilot.vim", config = get_plugin_config("copilot")})
 	-- }}}
 	-- Git integration{{{
 	use({
