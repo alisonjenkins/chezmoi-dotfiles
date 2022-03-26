@@ -1,13 +1,5 @@
 -- vim: set foldmethod=marker foldlevel=0:
 
--- local function show_documentation() --{{{
--- 	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
--- 		vim.cmd("h " .. vim.fn.expand("<cword>"))
--- 	else
--- 		vim.cmd("lua vim.lsp.buf.hover()")
--- 	end
--- end --}}}
-
 local function custom_capabilities() --{{{
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
