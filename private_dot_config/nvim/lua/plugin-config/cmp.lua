@@ -58,6 +58,7 @@ cmp.setup({
 		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
+		{ name = "luasnip" },
 		{ name = "orgmode" },
 		{ name = "buffer" },
 		{ name = "spell" },
