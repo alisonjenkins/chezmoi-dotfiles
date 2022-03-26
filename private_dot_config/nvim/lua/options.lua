@@ -28,7 +28,6 @@ vim.cmd("set sessionoptions+=tabpages,globals") -- store tabpages and globals in
 vim.cmd("set showtabline=2") -- Always show tabs
 vim.cmd("set signcolumn=yes") -- Always show the signcolumn, otherwise it would shift the text each time
 vim.cmd("set smartcase") -- smartcase makes it so that searching becomes case sensitive if you use a capital letter in the search.
-vim.cmd("set smartindent") -- Makes indenting smart
 vim.cmd("set spell") -- enable spell checking
 vim.cmd("set sw=2") -- Set shiftwidth
 vim.cmd("set t_Co=256") -- Support 256 colors
