@@ -71,7 +71,7 @@ packer.startup(function()
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
-			{ "tzachar/cmp-tabnine", run = "./install.sh" },
+			{ "tzachar/cmp-tabnine", run = "./install.sh", config = get_plugin_config("tabnine") },
 			"hrsh7th/cmp-cmdline",
 		},
 	}) -- }}}

@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local compare = require('cmp.config.compare')
 local lspkind = require("lspkind")
 
 local source_mapping = {
@@ -63,6 +64,20 @@ cmp.setup({
 		{ name = "spell" },
 		{ name = "path", keyword_length = 5 },
 	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			require("cmp_tabnine.compare"),
+			compare.offset,
+			compare.exact,
+			compare.score,
+			compare.recently_used,
+			compare.kind,
+			compare.sort_text,
+			compare.length,
+			compare.order,
+		}
+	}
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
