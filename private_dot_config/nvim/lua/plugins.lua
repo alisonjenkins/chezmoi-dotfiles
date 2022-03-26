@@ -125,10 +125,10 @@ packer.startup(function()
 			"nvim-lua/plenary.nvim",
 			"nvim-lua/popup.nvim",
 			"nvim-telescope/telescope-dap.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-fzy-native.nvim",
 			"nvim-telescope/telescope-github.nvim",
 			"nvim-telescope/telescope-packer.nvim",
-			"nvim-telescope/telescope-file-browser.nvim",
 			{
 				"kyazdani42/nvim-web-devicons",
 				opt = true,
