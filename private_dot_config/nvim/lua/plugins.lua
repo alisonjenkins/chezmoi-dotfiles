@@ -260,13 +260,21 @@ packer.startup(function()
 		config = get_plugin_config("neoscroll"),
 	}) --}}}
 	-- Statusline{{{
+	-- use({
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	requires = {
+	-- 		"SmiteshP/nvim-gps",
+	-- 	},
+	-- 	config = get_plugin_config("lualine"),
+	-- })
 	use({
-		"nvim-lualine/lualine.nvim",
+		"feline-nvim/feline.nvim",
+		config = get_plugin_config("feline"),
 		requires = {
 			"SmiteshP/nvim-gps",
-		},
-		config = get_plugin_config("lualine"),
-	}) --}}}
+		}
+	})
+	--}}}
   -- Tabline {{{
 	use({ "alvarosevilla95/luatab.nvim", config = get_plugin_config("luatab"), requires = { "kyazdani42/nvim-web-devicons" } })
 	-- }}}
