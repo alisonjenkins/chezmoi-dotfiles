@@ -63,6 +63,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "cmp_tabnine" },
 		{ name = "cmp_pandoc" },
+		{ name = "cmp_copilot" },
 		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
