@@ -179,6 +179,12 @@ packer.startup(function()
 		config = get_plugin_config("hop"),
 	})
 	-- }}}
+	-- Indentation guides {{{
+	use({
+			"lukas-reineke/indent-blankline.nvim",
+			config = get_plugin_config("indent-blankline"),
+	})
+	-- }}}
 	-- Key mapping{{{
 	use({
 		"folke/which-key.nvim",
