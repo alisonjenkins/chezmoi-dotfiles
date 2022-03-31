@@ -168,9 +168,6 @@ packer.startup(function()
 		config = get_plugin_config("gps"),
 		requires = "nvim-treesitter/nvim-treesitter",
 	}) --}}}
-	-- Search index overlay {{{
-	use({ "kevinhwang91/nvim-hlslens" })
-	-- }}}
 	-- Highlight of use{{{
 	use({ "RRethy/vim-illuminate", event = "CursorHold" }) --}}}
 	-- Hop {{{
@@ -259,6 +256,9 @@ packer.startup(function()
 		"ThePrimeagen/harpoon",
 		requires = { "nvim-lua/plenary.nvim" },
 	}) --}}}
+	-- Search index overlay {{{
+	use({ "kevinhwang91/nvim-hlslens" })
+	-- }}}
 	-- Smooth scrolling{{{
 	use({
 		"karb94/neoscroll.nvim",
