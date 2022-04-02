@@ -199,6 +199,14 @@ globalkeys = gears.table.join(
 		awful.spawn("rofi -show run")
 	end, { description = "open the rofi application launcher", group = "launcher" }),
 
+	awful.key({ modkey }, "space", function()
+		awful.spawn("dunstctl close")
+	end, { description = "close the latest notification popup", group = "launcher" }),
+
+	awful.key({ modkey }, "`", function()
+		awful.spawn("dunstctl history-pop")
+	end, { description = "open the last closed notification popup", group = "launcher" }),
+
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
