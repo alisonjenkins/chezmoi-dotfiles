@@ -69,7 +69,7 @@ packer.startup(function()
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-copilot",
+			{"hrsh7th/cmp-copilot", requires = { "github/copilot.vim" }},
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-path",
@@ -123,7 +123,7 @@ packer.startup(function()
 	})
 	--}}}
 	-- Github Copilot {{{
-	use({"github/copilot.vim", config = get_plugin_config("copilot")})
+	use({"github/copilot.vim"})
 	-- }}}
 	-- Git integration{{{
 	use({
