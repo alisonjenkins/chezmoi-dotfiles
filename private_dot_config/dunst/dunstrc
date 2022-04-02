@@ -1,4 +1,5 @@
 [global]
+    origin = top-center
     monitor = 0
     follow = keyboard
     geometry = "350x5-0+24"
