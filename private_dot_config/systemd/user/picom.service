@@ -1,0 +1,8 @@
+[Unit]
+Description=Picom compositor
+[Service]
+ExecStart=/usr/bin/picom
+Restart=always
+RestartSec=3
+[Install]
+WantedBy=default.target
