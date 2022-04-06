@@ -30,6 +30,11 @@ else
   alias saws="docker run -it --rm -e AWS_DEEFAULT_REGION=$AWS_DEFAULT_REGION AWS_ACCESS_KEY_ID=$AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN AWS_SECURITY_TOKEN=$AWS_SECURITY_TOKEN ASSUMED_ROLE=$ASSUMED_ROLE -v $HOME/.aws:/root/.aws joshdvir/saws"
 fi
 
+# allow for stupid naming of fd on Ubuntu based distros...
+if command -v fdfind &>/dev/null; then
+  alias fd="fdfind"
+fi
+
 # SSH key aliases
 alias key='ssh-add ~/.ssh/ssh_keys/id_bashton_alan'
 alias keyaur="ssh-add ~/.ssh/ssh_keys/id_aur"
