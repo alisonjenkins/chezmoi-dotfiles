@@ -14,6 +14,11 @@ alias cdgo="cd \$GOPATH"
 # Archlinux specific aliases
 alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 
+# allow for stupid naming of fd on Ubuntu based distros...
+if command -v fdfind &>/dev/null; then
+  alias fd="fdfind"
+fi
+
 # {{{ Misc
 # alias sleep="i3lock && sudo systemctl suspend"
 alias gpu-off="sudo tee /proc/acpi/bbswitch <<<OFF"
