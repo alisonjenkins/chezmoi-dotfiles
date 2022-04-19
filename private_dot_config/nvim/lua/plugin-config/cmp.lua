@@ -14,9 +14,8 @@ cmp.setup({
 	completion = {
 		autocomplete = { cmp.TriggerEvent.TextChanged },
 	},
-	documentation = {
-		border = "single",
-		winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
+	window = {
+		documentation = "native",
 	},
 	experimental = {
 		ghost_text = false,
