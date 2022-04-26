@@ -15,7 +15,7 @@ cmp.setup({
 		autocomplete = { cmp.TriggerEvent.TextChanged },
 	},
 	window = {
-		documentation = "native",
+		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
 		ghost_text = false,
