@@ -9,9 +9,9 @@ if [[ $1 == "--private-mode" ]]; then
 fi
 
 export AWS_DEFAULT_REGION=eu-west-2
+export AWS_REGION=eu-west-2
 
 aws_profiles=( $(grep '\[profile ' ~/.aws/config | sed -e 's/\[profile //' -e 's/\]//') )
-
 profile=$(printf '%s\n' "${aws_profiles[@]}" | rofi -dmenu "$@")
 
 [[ -n $profile ]] || exit
@@ -23,10 +23,6 @@ else
 fi
 export AWS_MFA_ZENITY="true"
 
-# if command -v awsconsole &>/dev/null; then
-URL=$(aws-vault login --prompt=zenity "$profile")
-# else
-  # URL=$(assume-role -console "$profile")
-# fi
+URL=$(aws-vault login --prompt=zenity --stdout "$profile")
 
 xdg-open "$URL"
