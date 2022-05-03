@@ -190,6 +190,11 @@ globalkeys = gears.table.join(
 		end
 	end, { description = "go back", group = "client" }),
 
+	-- Screenshots
+	awful.key({ }, "Print", function()
+		awful.spawn(os.getenv("HOME") .. "/.config/rofi/scripts/screenshot.sh -clipboard")
+	end, { description = "Take a screenshot", group = "launcher" }),
+
 	-- Standard program
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(terminal)
