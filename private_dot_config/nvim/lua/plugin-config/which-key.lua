@@ -63,7 +63,7 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>
 --}}}
 
 -- nvim-hlslens {{{
-local kopts = {noremap = true, silent = true}
+local kopts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap(
 	'n',
@@ -234,20 +234,21 @@ wk.register({
 	-- l is for Language Server Protocol (LSP){{{
 	l = {
 		name = "+lsp",
-		A = { "<cmd>Telescope lsp_range_code_actions<cr>", "LSP Range Code Actions" },
+		-- A = { "<cmd>Telescope lsp_range_code_actions<cr>", "LSP Range Code Actions" }, -- deprecated
 		D = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		H = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		I = { "<cmd>LspInfo<cr>", "LSP Info" },
-		L = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Line Diagnostics" },
+		L = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Line Diagnostics" },
 		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
 		T = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Defintion" },
-		a = { "<cmd>Telescope lsp_code_actions<cr>", "Code Action" },
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
 		o = { "<cmd>Telescope treesitter<cr>", "Outline" },
 		-- p = { "<cmd>Lspsaga preview_definition<cr>",          "Preview Definition" },
 		q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		r = { "<cmd>lua RustRunnables<cr>", "Runnables" },
+		R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		t = {
 			name = "+trouble",
