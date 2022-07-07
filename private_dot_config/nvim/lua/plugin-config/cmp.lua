@@ -12,23 +12,36 @@ local source_mapping = {
 
 cmp.setup({
 	completion = {
-		autocomplete = { cmp.TriggerEvent.TextChanged },
+		border = "rounded",
+		winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+	},
+	confirm_opts = {
+		border = "rounded",
+		select = false,
 	},
 	window = {
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = lspkind.presets.default[vim_item.kind]
 			local menu = source_mapping[entry.source.name]
+
+			if entry.source.name == "copilot" then
+				vim_item.kind = "[] Copilot"
+				vim_item.kind_hl_group = "CmpItemKindCopilot"
+				return vim_item
+			end
+
 			if entry.source.name == "cmp_tabnine" then
 				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
 					menu = entry.completion_item.data.detail .. " " .. menu
 				end
 				vim_item.kind = ""
+				vim_item.kind_hl_group = "CmpItemKindTabnine"
 			end
 
 			vim_item.menu = menu
@@ -36,7 +49,9 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), {'i'}),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), {'i'}),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
 		["<C-e>"] = cmp.mapping(
@@ -49,9 +64,6 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Insert,
 			select = true,
 		}),
-		["<C-g>"] = cmp.mapping(function(fallback)
-			vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](vim.api.nvim_replace_termcodes('<Tab>', true, true, true)), 'n', true)
-		end),
 	},
 	snippet = {
 		expand = function(args)
@@ -59,10 +71,10 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "cmp_tabnine" },
+		{ name = "copilot"},
+		{ name = "cmp_tabnine"},
+		{ name = "nvim_lsp"},
 		{ name = "cmp_pandoc" },
-		{ name = "cmp_copilot" },
 		{ name = "cmdline" },
 		{ name = "crates" },
 		{ name = "nvim_lua" },
@@ -82,6 +94,8 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
+			require("copilot_cmp.comparators").prioritize,
+			require("copilot_cmp.comparators").score,
 			require("cmp_tabnine.compare"),
 			compare.offset,
 			compare.exact,
