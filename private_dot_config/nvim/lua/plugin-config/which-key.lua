@@ -44,6 +44,10 @@ wk.setup { --{{{
   show_help = true, -- show help message on the command line when the popup is visible
 } --}}}
 
+-- Format on save and quit {{{
+vim.cmd [[cabbrev wq execute "Format sync" <bar> wq]]
+-- }}}
+
 -- Code navigation shortcuts{{{
 vim.api.nvim_set_keymap("n", "<c-]>", ":lua vim.lsp.buf.definition()<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { silent = true })
