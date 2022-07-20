@@ -212,6 +212,7 @@ packer.startup(function()
       "ray-x/lsp_signature.nvim",
       "williamboman/nvim-lsp-installer",
       "hrsh7th/nvim-cmp",
+      {"lukas-reineke/lsp-format.nvim", config = get_plugin_config "lsp-format" },
     },
     config = get_plugin_config "lspconfig",
   }
