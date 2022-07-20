@@ -4,6 +4,6 @@ if hasimpatient then
   impatient.enable_profile()
 end
 
-require"plugins"
-require"options"
-require"autocmd"
+require "plugins"
+require "options"
+require "autocmd"

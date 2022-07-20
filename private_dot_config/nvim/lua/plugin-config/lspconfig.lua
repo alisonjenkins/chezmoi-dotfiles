@@ -1,32 +1,32 @@
 -- vim: set foldmethod=marker foldlevel=0:
 
 local function custom_capabilities() --{{{
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-	return capabilities
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+  return capabilities
 end --}}}
 
 local function custom_on_attach(client, _) --{{{
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
-	require("lsp_signature").on_attach()
+  require("lsp_signature").on_attach()
 end --}}}
 
 local function default(configs) --{{{
-	local custom_config = {
-		on_attach = custom_on_attach,
-		capabilities = custom_capabilities(),
-	}
-	if configs ~= nil then
-		for key, value in pairs(configs) do
-			if value ~= nil then
-				custom_config[key] = value
-			end
-		end
-	end
+  local custom_config = {
+    on_attach = custom_on_attach,
+    capabilities = custom_capabilities(),
+  }
+  if configs ~= nil then
+    for key, value in pairs(configs) do
+      if value ~= nil then
+        custom_config[key] = value
+      end
+    end
+  end
 
-	return custom_config
+  return custom_config
 end --}}}
 
 local lsp_servers = {}
@@ -51,13 +51,13 @@ lsp_servers["dockerls"] = {}
 -- {{{ Go
 lsp_servers["gopls"] = {}
 lsp_servers["gopls"]["settings"] = {
-	gopls = {
-		analyses = {
-			unusedparams = true,
-		},
-		staticcheck = true,
-		usePlaceholders = false,
-	},
+  gopls = {
+    analyses = {
+      unusedparams = true,
+    },
+    staticcheck = true,
+    usePlaceholders = false,
+  },
 }
 -- }}}
 
@@ -73,52 +73,52 @@ lsp_servers["jsonls"]["cmd"] = { "vscode-json-languageserver", "--stdio" }
 -- {{{ Lua
 lsp_servers["sumneko_lua"] = {}
 lsp_servers["sumneko_lua"]["cmd"] = {
-	"lua-language-server",
-	string.format("--logpath=%s/.cache/nvim/sumneko_lua", vim.loop.os_homedir()),
+  "lua-language-server",
+  string.format("--logpath=%s/.cache/nvim/sumneko_lua", vim.loop.os_homedir()),
 }
 lsp_servers["sumneko_lua"]["settings"] = {
-	Lua = {
-		runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-		telemetry = {
-			enable = false,
-		},
-		diagnostics = {
-			enable = true,
-			globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
-		},
-		workspace = {
-			library = {
-				[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-				[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				["/usr/share/awesome/lib"] = true,
-				["/usr/share/lua/5.1"] = true,
-				["/usr/share/lua/5.3"] = true,
-				["/usr/share/lua/5.4"] = true,
-			},
-		},
-	},
+  Lua = {
+    runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+    telemetry = {
+      enable = false,
+    },
+    diagnostics = {
+      enable = true,
+      globals = { "vim", "awesome", "use", "client", "root", "s", "screen" },
+    },
+    workspace = {
+      library = {
+        [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+        [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+        ["/usr/share/awesome/lib"] = true,
+        ["/usr/share/lua/5.1"] = true,
+        ["/usr/share/lua/5.3"] = true,
+        ["/usr/share/lua/5.4"] = true,
+      },
+    },
+  },
 }
 -- }}}
 
 -- {{{ Python - Pyright
 lsp_servers["pyright"] = {}
 lsp_servers["pyright"]["settings"] = {
-	python = {
-		analysis = {
-			useLibraryCodeForTypes = false,
-			autoSearchPaths = true,
-			diagnosticMode = "openFilesOnly",
-			typeCheckingMode = "basic",
-		},
-	},
+  python = {
+    analysis = {
+      useLibraryCodeForTypes = false,
+      autoSearchPaths = true,
+      diagnosticMode = "openFilesOnly",
+      typeCheckingMode = "basic",
+    },
+  },
 }
 -- }}}
 
 -- {{{ SQL
 lsp_servers["sqls"] = {}
 lsp_servers["sqls"]["on_attach"] = function(client)
-	client.resolved_capabilities.execute_command = true
-	require("sqls").setup({ picker = "default" })
+  client.resolved_capabilities.execute_command = true
+  require("sqls").setup { picker = "default" }
 end
 -- }}}
 
@@ -134,21 +134,21 @@ lsp_servers["texlab"] = {}
 -- {{{ Typescript
 lsp_servers["tsserver"] = {}
 lsp_servers["tsserver"]["settings"] = {
-	tsserver = {
-		useBatchedBufferSync = true,
-	},
-	javascript = {
-		autoClosingTags = true,
-		suggest = {
-			autoImports = true,
-		},
-		updateImportsOnFileMove = {
-			enable = true,
-		},
-		suggestionActions = {
-			enabled = false,
-		},
-	},
+  tsserver = {
+    useBatchedBufferSync = true,
+  },
+  javascript = {
+    autoClosingTags = true,
+    suggest = {
+      autoImports = true,
+    },
+    updateImportsOnFileMove = {
+      enable = true,
+    },
+    suggestionActions = {
+      enabled = false,
+    },
+  },
 }
 -- }}}
 
@@ -159,38 +159,38 @@ lsp_servers["vimls"] = {}
 -- {{{ YAML
 lsp_servers["yamlls"] = {}
 lsp_servers["yamlls"]["settings"] = {
-	yaml = {
-		format = {
-			enable = true,
-			singleQuote = true,
-			bracketSpacing = true,
-		},
-		editor = {
-			tabSize = 2,
-		},
-		schemas = {
-			["https://json.schemastore.org/github-workflow.json"] = "ci.yml",
-			["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.yml",
-			["kubernetes"] = "/*",
-		},
-	},
+  yaml = {
+    format = {
+      enable = true,
+      singleQuote = true,
+      bracketSpacing = true,
+    },
+    editor = {
+      tabSize = 2,
+    },
+    schemas = {
+      ["https://json.schemastore.org/github-workflow.json"] = "ci.yml",
+      ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.yml",
+      ["kubernetes"] = "/*",
+    },
+  },
 }
 -- }}}
 
-require("toggle_lsp_diagnostics").init({ underline = false, virtual_text = { spacing = 4 } })
+require("toggle_lsp_diagnostics").init { underline = false, virtual_text = { spacing = 4 } }
 
 --{{{ LSP setup
-local lsp_installer_servers = require("nvim-lsp-installer.servers")
+local lsp_installer_servers = require "nvim-lsp-installer.servers"
 
 for lsp_name, lsp_settings in pairs(lsp_servers) do
-	local server_available, requested_server = lsp_installer_servers.get_server(lsp_name)
-	if server_available then
-		requested_server:on_ready(function()
-			requested_server:setup(default(lsp_settings))
-		end)
-		if not requested_server:is_installed() then
-			-- Queue the server to be installed
-			requested_server:install()
-		end
-	end
+  local server_available, requested_server = lsp_installer_servers.get_server(lsp_name)
+  if server_available then
+    requested_server:on_ready(function()
+      requested_server:setup(default(lsp_settings))
+    end)
+    if not requested_server:is_installed() then
+      -- Queue the server to be installed
+      requested_server:install()
+    end
+  end
 end --}}}

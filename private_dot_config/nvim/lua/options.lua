@@ -1,13 +1,13 @@
-vim.o.backupdir = vim.fn.stdpath("data") .. "/backup" -- set backup directory to be a subdirectory of data to ensure that backups are not written to git repos
-vim.o.directory = vim.fn.stdpath("data") .. "/directory" -- Configure 'directory' to ensure that Neovim swap files are not written to repos.
-vim.o.undodir = vim.fn.stdpath("data") .. "/undo" -- set undodir to ensure that the undofiles are not saved to git repos.
+vim.o.backupdir = vim.fn.stdpath "data" .. "/backup" -- set backup directory to be a subdirectory of data to ensure that backups are not written to git repos
+vim.o.directory = vim.fn.stdpath "data" .. "/directory" -- Configure 'directory' to ensure that Neovim swap files are not written to repos.
+vim.o.undodir = vim.fn.stdpath "data" .. "/undo" -- set undodir to ensure that the undofiles are not saved to git repos.
 
 -- ensure the above directories exist
 vim.loop.fs_mkdir(vim.o.backupdir, 750)
 vim.loop.fs_mkdir(vim.o.directory, 750)
 vim.loop.fs_mkdir(vim.o.undodir, 750)
 
-vim.cmd([[
+vim.cmd [[
 set backup                             " enable backups so if Neovim crashes or you lose power you do not lose your work.
 set cmdheight=2                        " More space for displaying messages
 set colorcolumn=99999                  " fix indentline for now
@@ -44,5 +44,4 @@ catch
 colorscheme desert
 endtry
 
-]])
-
+]]
