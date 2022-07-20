@@ -234,6 +234,10 @@ packer.startup(function()
     "j-hui/fidget.nvim",
     config = get_plugin_config("fidget"),
   })
+  use({
+    "williamboman/mason.nvim",
+    config = get_plugin_config("mason"),
+  })
   --}}}
   -- Markdown previews{{{
   use({
