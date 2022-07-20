@@ -238,11 +238,11 @@ packer.startup(function()
     "williamboman/mason.nvim",
     config = get_plugin_config "mason",
   }
-  use {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    requires = { "williamboman/mason.nvim" },
-    config = get_plugin_config "mason-tool-installer",
-  }
+  -- use {
+  --   "WhoIsSethDaniel/mason-tool-installer.nvim",
+  --   requires = { "williamboman/mason.nvim" },
+  --   config = get_plugin_config "mason-tool-installer",
+  -- }
   --}}}
   -- Markdown previews{{{
   use {
