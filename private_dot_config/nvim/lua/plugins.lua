@@ -208,10 +208,10 @@ packer.startup(function()
     requires = {
       "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
       "folke/lua-dev.nvim",
+      "hrsh7th/nvim-cmp",
       "onsails/lspkind-nvim",
       "ray-x/lsp_signature.nvim",
       "williamboman/nvim-lsp-installer",
-      "hrsh7th/nvim-cmp",
       {"lukas-reineke/lsp-format.nvim", config = get_plugin_config "lsp-format" },
     },
     config = get_plugin_config "lspconfig",
