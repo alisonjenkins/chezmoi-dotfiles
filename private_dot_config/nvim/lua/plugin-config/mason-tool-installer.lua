@@ -79,7 +79,7 @@ require("mason-tool-installer").setup {
     "pyright", -- Pyright is a fast type checker meant for large Python source bases. It can run in a “watch” mode and performs fast incremental updates when files are modified.
     -- "python-lsp-server", -- A Python 3.7+ implementation of the Language Server Protocol. (Note: versions <1.4 should still work with Python 3.6)
     "quick-lint-js", -- quick-lint-js is a JavaScript linter that runs in the background and provides linting feedback as fast as you can type.
-    "r-languageserver", -- A langauge server implementation for the R programming language.
+    -- "r-languageserver", -- A langauge server implementation for the R programming language.
     -- "reason-language-server", -- A language server implementation for the Reason programming language.
     "remark-language-server", -- A language server which can lint and format markdown files using remark.
     -- "rescript-lsp", -- A language server for the ReScript language that compiles to Javascript.
