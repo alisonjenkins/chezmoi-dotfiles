@@ -74,7 +74,12 @@ packer.startup(function()
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      'hrsh7th/cmp-nvim-lsp-document-symbol',
       { "tzachar/cmp-tabnine", run = "./install.sh", config = get_plugin_config("tabnine") },
+      { 'romgrk/fzy-lua-native', run = 'make' },
+      { 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' } },
+      { 'tzachar/cmp-fuzzy-buffer', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' } },
     },
   }) -- }}}
   -- Colorizer (Colour previews for things that define colours in code){{{
@@ -105,14 +110,11 @@ packer.startup(function()
       "nvim-lua/popup.nvim",
       "nvim-telescope/telescope-dap.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-telescope/telescope-fzy-native.nvim",
       "nvim-telescope/telescope-github.nvim",
       "nvim-telescope/telescope-packer.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      {
-        "kyazdani42/nvim-web-devicons",
-        opt = true,
-      },
+      { "nvim-telescope/telescope-fzy-native.nvim", requires = { "romgrk/fzy-lua-native" } },
+      { "kyazdani42/nvim-web-devicons", opt = true },
     },
   })
   use({

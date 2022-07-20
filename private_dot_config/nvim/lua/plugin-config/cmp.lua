@@ -49,11 +49,11 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), {'i'}),
-		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), {'i'}),
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i' }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i' }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 		["<C-e>"] = cmp.mapping(
 			{
 				i = cmp.mapping.abort(),
@@ -71,9 +71,9 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "copilot"},
-		{ name = "cmp_tabnine"},
-		{ name = "nvim_lsp"},
+		{ name = "copilot" },
+		{ name = "cmp_tabnine" },
+		{ name = "nvim_lsp" },
 		{ name = "cmp_pandoc" },
 		{ name = "cmdline" },
 		{ name = "crates" },
@@ -83,13 +83,16 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "spell" },
 		{ name = "path", keyword_length = 5 },
+		{ name = "fuzzy_path" },
+		{ name = 'fuzzy_buffer' },
 		{
-			name = "tmux" ,
+			name = "tmux",
 			option = {
 				all_panes = true,
 				label = '[tmux]',
 			}
 		},
+		{ name = 'nvim_lsp_signature_help' },
 	},
 	sorting = {
 		priority_weight = 2,
@@ -97,6 +100,8 @@ cmp.setup({
 			require("copilot_cmp.comparators").prioritize,
 			require("copilot_cmp.comparators").score,
 			require("cmp_tabnine.compare"),
+			require('cmp_fuzzy_path.compare'),
+			require('cmp_fuzzy_buffer.compare'),
 			compare.offset,
 			compare.exact,
 			compare.score,
@@ -112,15 +117,15 @@ cmp.setup({
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
 	sources = {
-		{ name = "buffer" },
+		{ name = 'fuzzy_buffer' },
+		{ name = 'nvim_lsp_document_symbol' }
 	},
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
-		{ name = "path" },
-	}, {
+		{ name = "fuzzy_path" },
 		{ name = "cmdline" },
 	}),
 })
