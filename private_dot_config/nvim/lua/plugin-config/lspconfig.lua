@@ -54,20 +54,21 @@ lsp_servers["dockerls"] = {}
 -- }}}
 
 -- efm {{{
-lsp_servers["efm"] = {}
-lsp_servers["efm"]["on_attach"] = require "lsp-format".on_attach
-lsp_servers["efm"]["init_options"] = { documentFormatting = true }
-lsp_servers["efm"]["filetypes"] = {
-  'sh',
-}
-lsp_servers["efm"]["settings"] = {
-  rootMarkers = { ".git/" },
-  languages = {
-    sh = {
-      { formatCommand = "shfmt -i 2 -ci -sr", formatStdin = true },
-    },
-  },
-}
+-- lsp_servers["efm"] = {}
+-- lsp_servers["efm"]["on_attach"] = require "lsp-format".on_attach
+-- lsp_servers["efm"]["init_options"] = { documentFormatting = true }
+-- lsp_servers["efm"]["filetypes"] = {
+--   'sh',
+--
+-- }
+-- lsp_servers["efm"]["settings"] = {
+--   rootMarkers = { ".git/" },
+--   languages = {
+--     sh = {
+--       { formatCommand = "shfmt -i 2 -ci -sr", formatStdin = true },
+--     },
+--   },
+-- }
 -- }}}
 
 -- {{{ Go

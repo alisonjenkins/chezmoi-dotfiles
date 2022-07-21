@@ -60,7 +60,11 @@ local extensions = {
     require("git-worktree").setup {}
   end,
   projects = function()
-    require("project_nvim").setup()
+    require("project_nvim").setup {
+      ignore_lsp = {
+        "null-ls",
+      },
+    }
   end,
   ["ui-select"] = function()
     require("telescope.themes").get_dropdown {}
