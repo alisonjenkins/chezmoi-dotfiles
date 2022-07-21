@@ -2,9 +2,6 @@ local null_ls = require "null-ls"
 local lSsources = {
   null_ls.builtins.formatting.rustfmt,
   null_ls.builtins.formatting.terraform_fmt,
-  null_ls.builtins.formatting.shfmt.with {
-    args = { "-filename", "$FILENAME", "-i", "2", "-s", "-ci", "-sr" },
-  },
   null_ls.builtins.formatting.prettierd.with {
     filetypes = {
       "javascript",
@@ -19,6 +16,12 @@ local lSsources = {
       "md",
       "txt",
     },
+  },
+  null_ls.builtins.formatting.rome.with {
+    filetypes = { "javascript", "json", "typescript" },
+  },
+  null_ls.builtins.formatting.shfmt.with {
+    args = { "-filename", "$FILENAME", "-i", "2", "-s", "-ci", "-sr" },
   },
   null_ls.builtins.formatting.stylua.with {
     filetypes = {
