@@ -10,7 +10,6 @@ local function custom_on_attach(client, _) --{{{
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
-
   require("lsp-format").on_attach(client)
   require("lsp_signature").on_attach()
 end --}}}
