@@ -212,11 +212,11 @@ packer.startup(function()
       "onsails/lspkind-nvim",
       "ray-x/lsp_signature.nvim",
       "williamboman/nvim-lsp-installer",
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = get_plugin_config "null-ls",
-        requires = { "nvim-lua/plenary.nvim" },
-      },
+      -- {
+      --   "jose-elias-alvarez/null-ls.nvim",
+      --   config = get_plugin_config "null-ls",
+      --   requires = { "nvim-lua/plenary.nvim" },
+      -- },
       { "lukas-reineke/lsp-format.nvim", config = get_plugin_config "lsp-format" },
     },
     config = get_plugin_config "lspconfig",
