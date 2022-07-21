@@ -12,7 +12,11 @@ local function custom_on_attach(client, _) --{{{
 
   require("lsp-format").on_attach(client)
   require("lsp_signature").on_attach()
-end --}}}
+end
+
+--}}}
+
+--}}}
 
 local function default(configs) --{{{
   local custom_config = {
@@ -47,6 +51,23 @@ lsp_servers["cssls"]["cmd"] = { "lua-language-server", "--stdio" }
 
 -- {{{ Docker
 lsp_servers["dockerls"] = {}
+-- }}}
+
+-- efm {{{
+lsp_servers["efm"] = {}
+lsp_servers["efm"]["on_attach"] = require "lsp-format".on_attach
+lsp_servers["efm"]["init_options"] = { documentFormatting = true }
+lsp_servers["efm"]["filetypes"] = {
+  'sh',
+}
+lsp_servers["efm"]["settings"] = {
+  rootMarkers = { ".git/" },
+  languages = {
+    sh = {
+      { formatCommand = "shfmt -i 2 -ci -sr", formatStdin = true },
+    },
+  },
+}
 -- }}}
 
 -- {{{ Go
