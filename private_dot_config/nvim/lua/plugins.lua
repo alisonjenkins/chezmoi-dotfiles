@@ -291,6 +291,9 @@ packer.startup(function()
     "ThePrimeagen/harpoon",
     requires = { "nvim-lua/plenary.nvim" },
   } --}}}
+  -- {{{ Per split buffer names
+  use({ "b0o/incline.nvim", config = get_plugin_config("incline") })
+  -- }}}
   -- Search index overlay {{{
   use { "kevinhwang91/nvim-hlslens" }
   -- }}}
