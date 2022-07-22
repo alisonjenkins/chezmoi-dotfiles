@@ -278,6 +278,13 @@ wk.register({
     },
     d = { "<cmd>Git diff<cr>", "Diff" },
     l = { "<cmd>Git log<cr>", "Log" },
+    r = {
+      name = "+repo",
+      b = { "<cmd>Octo repo browser<cr>", "Open the repository in the browser" },
+      f = { "<cmd>Octo repo fork<cr>", "Fork repository" },
+      l = { "<cmd>Octo repo list<cr>", "List Repos" },
+      y = { "<cmd>Octo repo url<cr>", "Copy the URL of the repository" },
+    },
     p = { "<cmd>Gina push<cr>", "Push" },
     s = { "<cmd>Git<cr>", "Status" },
     t = {
