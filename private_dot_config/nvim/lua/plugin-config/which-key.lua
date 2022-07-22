@@ -280,7 +280,14 @@ wk.register({
     l = { "<cmd>Git log<cr>", "Log" },
     p = { "<cmd>Gina push<cr>", "Push" },
     s = { "<cmd>Git<cr>", "Status" },
-    t = { "<cmd>Octo pr create<cr>", "Pull request" },
+    t = {
+      name = "+pull requests",
+      t = { "<cmd>Octo pr create<cr>", "Create Pull request" },
+      b = { "<cmd>Octo pr browser<cr>", "Open Pull request in the browser" },
+      y = { "<cmd>Octo pr url<cr>", "Copy Pull request url" },
+      m = { "<cmd>Octo pr merge<cr>", "Merge Pull request" },
+      c = { "<cmd>Octo pr checks<cr>", "Show the results Pull request checks" },
+    },
     m = { "<cmd>GitMessenger<cr>", "Line commit history" },
     w = {
       name = "+git worktree",
