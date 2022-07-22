@@ -280,7 +280,7 @@ wk.register({
     l = { "<cmd>Git log<cr>", "Log" },
     p = { "<cmd>Gina push<cr>", "Push" },
     s = { "<cmd>Git<cr>", "Status" },
-    t = { "<cmd>terminal gh pr create --web<cr>", "Pull request" },
+    t = { "<cmd>Octo pr create<cr>", "Pull request" },
     m = { "<cmd>GitMessenger<cr>", "Line commit history" },
     w = {
       name = "+git worktree",

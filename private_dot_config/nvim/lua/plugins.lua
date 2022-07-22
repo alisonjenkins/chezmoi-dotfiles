@@ -169,6 +169,15 @@ packer.startup(function()
     config = get_plugin_config "gitsigns",
   }
   use { "lambdalisue/gina.vim" }
+  use({
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+    config = get_plugin_config("octo"),
+  })
   --}}}
   -- Grammar checking{{{
   use { "rhysd/vim-grammarous", cmd = "GrammarousCheck" }
