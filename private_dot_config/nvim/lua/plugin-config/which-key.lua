@@ -1,7 +1,7 @@
 -- vim: set foldmethod=marker foldlevel=0:
-local wk = require "which-key"
+local wk = require("which-key")
 
-wk.setup { --{{{
+wk.setup({ --{{{
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -42,10 +42,10 @@ wk.setup { --{{{
   },
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
-} --}}}
+}) --}}}
 
 -- Format on save and quit {{{
-vim.cmd [[cabbrev wq execute "Format sync" <bar> wq]]
+vim.cmd([[cabbrev wq execute "Format sync" <bar> wq]])
 -- }}}
 
 -- Code navigation shortcuts{{{
